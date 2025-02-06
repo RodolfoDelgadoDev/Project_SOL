@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr17f502lsjeq"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_bv3en"]
+
+[node name="Timer" type="Node2D"]
+script = ExtResource("1_bv3en")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
