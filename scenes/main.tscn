@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=12 format=4 uid="uid://c6wvjvnf2l854"]
 
-[ext_resource type="Texture2D" uid="uid://cokhewawsbvud" path="res://testtile.png" id="1_ebyr1"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://player.tscn" id="1_hg12s"]
-[ext_resource type="Texture2D" uid="uid://dt1kgw8nl5tb6" path="res://dungeon_tiles_0.png" id="2_20k8v"]
-[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://timer.tscn" id="3_2r1fa"]
-[ext_resource type="Texture2D" uid="uid://brwk1qp0br3gv" path="res://tilemap_packed.png" id="3_vvkve"]
+[ext_resource type="Texture2D" uid="uid://cokhewawsbvud" path="res://art/testtile.png" id="1_ebyr1"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://scenes/player.tscn" id="1_hg12s"]
+[ext_resource type="Texture2D" uid="uid://dt1kgw8nl5tb6" path="res://art/dungeon_tiles_0.png" id="2_20k8v"]
+[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://scenes/timer.tscn" id="3_2r1fa"]
+[ext_resource type="Texture2D" uid="uid://brwk1qp0br3gv" path="res://art/tilemap_packed.png" id="3_vvkve"]
+[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://scenes/bat.tscn" id="6_qiuwa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hiij"]
 texture = ExtResource("1_ebyr1")
@@ -275,9 +276,9 @@ position = Vector2(-112, -113)
 tile_map_data = PackedByteArray("AAD9//r/AwABAAQAAAD+//r/AwABAAQAAAD///r/AwABAAQAAAAAAPr/AwABAAQAAAABAPr/AwABAAQAAAACAPr/AwABAAQAAAADAPr/AwABAAQAAAAEAPr/AwABAAQAAAAFAPr/AwABAAQAAAD9//v/AwABAAQAAAD+//v/AwABAAQAAAD///v/AwABAAQAAAAAAPv/AwABAAQAAAABAPv/AwABAAQAAAACAPv/AwABAAQAAAADAPv/AwABAAQAAAAEAPv/AwABAAQAAAAFAPv/AwABAAQAAAD7//3/AgAKAAQAAAD7//7/AgAKAAQAAAD7////AgAKAAQAAAD7/wAAAgAKAAQAAAD7/wEAAgAKAAQAAAD7/wIAAgAKAAQAAAD7/wMAAgAKAAQAAAD7/wQAAgAKAAQAAAD8/wMAAgAKAAQAAAD8/wQAAgAKAAQAAAD9/wMAAgAKAAQAAAD9/wQAAgAKAAQAAAD+/wMAAgAKAAQAAAD+/wQAAgAKAAQAAAD//wMAAgAKAAQAAAD//wQAAgAKAAQAAAAAAAMAAgAKAAQAAAAAAAQAAgAKAAQAAAABAAMAAgAKAAQAAAABAAQAAgAKAAQAAAACAAMAAgAKAAQAAAACAAQAAgAKAAQAAAADAAMAAgAKAAQAAAADAAQAAgAKAAQAAAAEAAMAAgAKAAQAAAAEAAQAAgAKAAQAAAAFAAMAAgAKAAQAAAAFAAQAAgAKAAQAAAAGAAMAAgAKAAQAAAAGAAQAAgAKAAQAAAAEAPn/AwABAAQAAAAFAPn/AwABAAQAAAABAPn/AwABAAQAAAACAPn/AwABAAQAAAADAPn/AwABAAQAAAD+//n/AwABAAQAAAD///n/AwABAAQAAAAAAPn/AwABAAQAAAD7//n/AgAKAAQAAAD7//r/AgAKAAQAAAD7//v/AgAKAAQAAAD9//n/AwABAAQAAAAEAPj/AwABAAQAAAAFAPj/AwABAAQAAAABAPj/AwABAAQAAAACAPj/AwABAAQAAAADAPj/AwABAAQAAAD+//j/AwABAAQAAAD///j/AwABAAQAAAAAAPj/AwABAAQAAAD7//j/AgAKAAQAAAD9//j/AwABAAQAAAD7//f/AgAKAAQAAAA=")
 tile_set = SubResource("TileSet_7ulok")
 
-[node name="piso2" type="TileMapLayer" parent="."]
+[node name="objetos" type="TileMapLayer" parent="."]
 position = Vector2(-112, -113)
-tile_map_data = PackedByteArray("AAD7//z/AgAKAAQAAAD7//3/AgAKAAQAAAD7//7/AgAKAAQAAAD7////AgAKAAQAAAD7/wAAAgAKAAQAAAD7/wEAAgAKAAQAAAD7/wIAAgAKAAQAAAD7/wMAAgAKAAQAAAD7/wQAAgAKAAQAAAD8/wQAAgAKAAQAAAD9/wQAAgAKAAQAAAD+/wQAAgAKAAQAAAD//wQAAgAKAAQAAAAAAAQAAgAKAAQAAAABAAQAAgAKAAQAAAACAAQAAgAKAAQAAAADAAQAAgAKAAQAAAAEAAQAAgAKAAQAAAAFAAQAAgAKAAQAAAAGAAQAAgAKAAQAAAD7//n/AgAKAAQAAAD7//r/AgAKAAQAAAD7//v/AgAKAAQAAAD7//j/AgAKAAQAAAD7//f/AgAKAAQAAAD+//j/AwAFAAUAAAADAPn/AwAFAAUAAAD///v/AwAEAAUAAAAEAPr/AwACAAkAAAD9//f/AwAKAAUAAAD+//f/AwAKAAUAAAD///f/AwAKAAUAAAAAAPf/AwAKAAUAAAABAPf/AwAKAAUAAAACAPf/AwAKAAUAAAADAPf/AwAKAAUAAAAEAPf/AwAKAAUAAAAFAPf/AwAKAAUAAAD9//z/AwAKAAUAAAD+//z/AwAKAAUAAAD///z/AwAKAAUAAAAAAPz/AwAKAAUAAAABAPz/AwAKAAUAAAACAPz/AwAKAAUAAAADAPz/AwAKAAUAAAAEAPz/AwAKAAUAAAAFAPz/AwAKAAUAAAAGAPj/AwALAAYAAAAGAPn/AwALAAYAAAAGAPr/AwALAAYAAAAGAPv/AwALAAYAAAD8//j/AwAJAAYAAAD8//n/AwAJAAYAAAD8//r/AwAJAAYAAAD8//v/AwAJAAYAAAD8//f/AwAJAAUAAAAGAPf/AwALAAUAAAAGAPz/AwALAAcAAAD8//z/AwAJAAcAAAACAPr/AwAGAAQAAAA=")
+tile_map_data = PackedByteArray("AAD7//z/AgAKAAQAAAD7//3/AgAKAAQAAAD7//7/AgAKAAQAAAD7////AgAKAAQAAAD7/wAAAgAKAAQAAAD7/wEAAgAKAAQAAAD7/wIAAgAKAAQAAAD7/wMAAgAKAAQAAAD7/wQAAgAKAAQAAAD8/wQAAgAKAAQAAAD9/wQAAgAKAAQAAAD+/wQAAgAKAAQAAAD//wQAAgAKAAQAAAAAAAQAAgAKAAQAAAABAAQAAgAKAAQAAAACAAQAAgAKAAQAAAADAAQAAgAKAAQAAAAEAAQAAgAKAAQAAAAFAAQAAgAKAAQAAAAGAAQAAgAKAAQAAAD7//n/AgAKAAQAAAD7//r/AgAKAAQAAAD7//v/AgAKAAQAAAD7//j/AgAKAAQAAAD7//f/AgAKAAQAAAD9//f/AwAKAAUAAAD+//f/AwAKAAUAAAD///f/AwAKAAUAAAAAAPf/AwAKAAUAAAD9//z/AwAKAAUAAAD+//z/AwAKAAUAAAD///z/AwAKAAUAAAAAAPz/AwAKAAUAAAD8//j/AwAJAAYAAAD8//n/AwAJAAYAAAD8//r/AwAJAAYAAAD8//v/AwAJAAYAAAD8//f/AwAJAAUAAAD8//z/AwAJAAcAAAD///r/AwAFAAUAAAD+//j/AwAFAAUAAAA=")
 tile_set = SubResource("TileSet_7ulok")
 
 [node name="player" parent="." instance=ExtResource("1_hg12s")]
@@ -286,3 +287,14 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Timer" parent="." instance=ExtResource("3_2r1fa")]
 position = Vector2(-116, -284)
+
+[node name="Bat" parent="." instance=ExtResource("6_qiuwa")]
+position = Vector2(-56, -217)
+scale = Vector2(0.25, 0.25)
+wait_time = 1.0
+patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(0, 1), Vector2(1, 0), Vector2(0, -1)])
+
+[node name="Bat2" parent="." instance=ExtResource("6_qiuwa")]
+position = Vector2(-56, -185)
+scale = Vector2(0.25, 0.25)
+patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0)])

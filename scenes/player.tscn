@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmax2vhkuipx5"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_kbfua"]
-[ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://MC-Ángulo prueba.png" id="2_ybe1s"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
+[ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="2_ybe1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
 size = Vector2(60, 60)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_dlx5r")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_mask = 2
-script = ExtResource("1_kbfua")
+collision_mask = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(9.53674e-07, -9.53674e-07)
-scale = Vector2(1.875, 1.875)
+position = Vector2(2.02656e-06, -2)
+scale = Vector2(2.9375, 2)
 texture = ExtResource("2_ybe1s")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
