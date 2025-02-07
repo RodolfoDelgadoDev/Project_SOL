@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene load_steps=4 format=3 uid="uid://ces2mo06830h7"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_kbfua"]
-[ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://MC-Ángulo prueba.png" id="2_ybe1s"]
+[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_kbfua"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hmegm"]
+load_path = "res://.godot/imported/MC-Ángulo prueba.png-78576be27501b0b276c7030a247c6de5.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
 size = Vector2(60, 60)
@@ -15,7 +17,7 @@ script = ExtResource("1_kbfua")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(9.53674e-07, -9.53674e-07)
 scale = Vector2(1.875, 1.875)
-texture = ExtResource("2_ybe1s")
+texture = SubResource("CompressedTexture2D_hmegm")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 

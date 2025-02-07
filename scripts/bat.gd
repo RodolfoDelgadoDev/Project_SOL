@@ -4,6 +4,7 @@ extends Node2D
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Duration in seconds to complete the move
 @export var wait_time = 0.5  # Time to wait at each patrol point
+@export var damage: int
 
 # Define the patrol path as a list of directions
 @export var patrol_path: Array[Vector2] = [
@@ -66,3 +67,10 @@ func start_moving():
 func _physics_process(_delta):
 	if not moving:
 		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+
+
+func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	print(GameManager.Segundos)
+	GameManager.takeDamage(damage)
+	print(GameManager.Segundos)
+	
