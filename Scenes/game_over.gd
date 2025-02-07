@@ -8,4 +8,5 @@ func _ready():
 
 func _on_button_pressed():
 	# Reinicia el juego o carga la escena principal
-	get_tree().change_scene_to_file("res://main.tscn")
+	GameManager.Segundos = 30
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
