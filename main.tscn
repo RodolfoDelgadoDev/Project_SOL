@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://c6wvjvnf2l854"]
 
-[ext_resource type="Texture2D" uid="uid://cokhewawsbvud" path="res://testtile.png" id="1_ebyr1"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://player.tscn" id="1_hg12s"]
-[ext_resource type="Texture2D" uid="uid://dt1kgw8nl5tb6" path="res://dungeon_tiles_0.png" id="2_20k8v"]
+[ext_resource type="Texture2D" uid="uid://cokhewawsbvud" path="res://art/testtile.png" id="1_ebyr1"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="1_hg12s"]
+[ext_resource type="Texture2D" uid="uid://dt1kgw8nl5tb6" path="res://art/dungeon_tiles_0.png" id="2_20k8v"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://timer.tscn" id="3_2r1fa"]
-[ext_resource type="Texture2D" uid="uid://brwk1qp0br3gv" path="res://tilemap_packed.png" id="3_vvkve"]
+[ext_resource type="Texture2D" uid="uid://brwk1qp0br3gv" path="res://art/tilemap_packed.png" id="3_vvkve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hiij"]
 texture = ExtResource("1_ebyr1")

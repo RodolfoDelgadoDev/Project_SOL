@@ -1,5 +1,14 @@
 extends Node2D
 
+var directions = {
+	"UP": Vector2.UP, 
+	"DOWN": Vector2.DOWN, 
+	"Left": Vector2.LEFT,
+	"RIGHT": Vector2.RIGHT  
+	}
+
+var lastDir = "DOWN"
+
 # Define the size of the grid
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Duration in seconds to complete the move
@@ -21,15 +30,20 @@ func _process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			target_velocity = Vector2.UP * (GRID_SIZE / move_duration)
 			moving = true
+			lastDir = "UP"
 		elif Input.is_action_just_pressed("ui_down"):
 			target_velocity = Vector2.DOWN * (GRID_SIZE / move_duration)
 			moving = true
+			lastDir = "DOWN"
 		elif Input.is_action_just_pressed("ui_left"):
 			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
 			moving = true
+			lastDir = "LEFT"
 		elif Input.is_action_just_pressed("ui_right"):
 			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
+			print(target_velocity)
 			moving = true
+			lastDir = "RIGHT"
 
 	if moving:
 		# Calculate the movement step
