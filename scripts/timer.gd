@@ -6,15 +6,14 @@ var segundos = GameManager.Segundos
 
 func _ready() -> void:
 	updateText()
+	
+func _process(_delta: float) -> void:
+	updateText()
+	if GameManager.Segundos <= 0:
+		get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
 
 func _on_timer_timeout() -> void:
-	if segundos > 0:
-		segundos -= 1
-		GameManager.Segundos -=1
-		updateText()
-	else:
-		timer.stop() #cambiar esto por lógica de game over
-		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+	GameManager.Segundos -=1
 
 func updateText() -> void:
-	label.text = str(segundos)
+	label.text = str(GameManager.Segundos)

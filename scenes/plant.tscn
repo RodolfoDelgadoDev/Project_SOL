@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://k5qb53ajcrce"]
+
+[ext_resource type="Script" path="res://scripts/plant.gd" id="1_y1v5c"]
+[ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="2_a3c56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu3nv"]
+atlas = ExtResource("2_a3c56")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
+size = Vector2(64, 64)
+
+[node name="Plant" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_y1v5c")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.875, 1.875)
+texture = SubResource("AtlasTexture_nu3nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_s6hlb")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_a4f3a")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

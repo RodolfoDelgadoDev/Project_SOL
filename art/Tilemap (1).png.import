@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt1kgw8nl5tb6"
-path="res://.godot/imported/dungeon_tiles_0.png-13bd12dd507f8dec2fd31904f5409e80.ctex"
+uid="uid://cytrordq4be07"
+path="res://.godot/imported/Tilemap (1).png-cce480006436d9f3419e261b360de2b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dungeon_tiles_0.png"
-dest_files=["res://.godot/imported/dungeon_tiles_0.png-13bd12dd507f8dec2fd31904f5409e80.ctex"]
+source_file="res://art/Tilemap (1).png"
+dest_files=["res://.godot/imported/Tilemap (1).png-cce480006436d9f3419e261b360de2b3.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kw26mlx677p3"]
 
-[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_pb0nm"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ic8hm"]
 
 [node name="GameOver" type="Node2D"]
 
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "ASDASDDSASDSADSDA"
-script = ExtResource("1_pb0nm")
+script = ExtResource("1_ic8hm")
 
 [node name="Gameovertext" type="Label" parent="Control"]
 light_mask = 0
