@@ -6,6 +6,7 @@ var directions = {
 	"Left": Vector2.LEFT,
 	"RIGHT": Vector2.RIGHT  
 	}
+@onready var attack_sprite: Sprite2D = $CharacterBody2D/AttackSprite
 
 var lastDir = "DOWN"
 
@@ -22,6 +23,7 @@ var move_timer: float = 0.0
 func _ready():
 	# Reference the CharacterBody2D node
 	character_body = $CharacterBody2D
+	attack_sprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -59,8 +61,26 @@ func _process(delta):
 			moving = false
 			move_timer = 0.0
 			target_velocity = Vector2.ZERO
+			
+		if Input.is_action_just_pressed("ui_attack"):
+			basicAttack(lastDir)
 
 # Ensure the player is always aligned with the grid
 func _physics_process(_delta):
 	if not moving:
 		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+
+func basicAttack(dir):
+# Set the position of the attack sprite
+	var direction_vector = directions[dir]
+	attack_sprite.position = direction_vector * GRID_SIZE  # Ajusta la posición según la dirección
+
+	# Show the attack sprite
+	attack_sprite.visible = true
+	# Optional: Add a timer to hide the attack sprite after a short delay
+	var attack_timer = get_tree().create_timer(0.2) # Oculta el sprite después de 0.2 segundos
+	attack_timer.timeout.connect(_hide_attack_sprite)
+
+# Function to hide the attack sprite
+func _hide_attack_sprite():
+	attack_sprite.visible = false
