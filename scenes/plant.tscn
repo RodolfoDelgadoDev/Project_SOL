@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://k5qb53ajcrce"]
 
-[ext_resource type="Script" path="res://scripts/plant.gd" id="1_y1v5c"]
+[ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_y1v5c"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="2_a3c56"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu3nv"]

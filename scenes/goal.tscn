@@ -1,22 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8lilq4owyygk"]
+[gd_scene load_steps=3 format=3 uid="uid://dbe6g2o4e61"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_w2tqq"]
-[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="2_6lhk3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vm1y"]
-atlas = ExtResource("2_6lhk3")
-region = Rect2(0, 161, 32, 32)
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_ljslh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8cco"]
 size = Vector2(32, 32)
 
-[node name="Coin" type="Node2D"]
-script = ExtResource("1_w2tqq")
+[node name="Goal" type="Node2D"]
+script = ExtResource("1_ljslh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.07288e-06, 0)
 scale = Vector2(0.99077, 0.990769)
-texture = SubResource("AtlasTexture_4vm1y")
 
 [node name="Area2D" type="Area2D" parent="."]
 

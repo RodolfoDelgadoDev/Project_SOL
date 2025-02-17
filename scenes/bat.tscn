@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://byycyvx2f7pjl"]
 
-[ext_resource type="Script" path="res://scripts/bat.gd" id="1_hc5au"]
+[ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_hc5au"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="1_nygj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]

@@ -111,7 +111,8 @@ func _physics_process(_delta):
 	if not moving:
 		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 
-func _on_area_2d_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	print(GameManager.Segundos)
-	GameManager.takeDamage(damage)
-	print(GameManager.Segundos)
+func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	if area.is_in_group("player"):
+		print(GameManager.Segundos)
+		GameManager.takeDamage(damage)
+		print(GameManager.Segundos)
