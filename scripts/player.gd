@@ -3,14 +3,14 @@ extends Node2D
 
 
 var directions = {
-	"UP": Vector2.UP, 
-	"DOWN": Vector2.DOWN, 
-	"LEFT": Vector2.LEFT,
-	"RIGHT": Vector2.RIGHT  
+	"UP": [Vector2.UP, "AttackUp"],
+	"DOWN": [Vector2.DOWN, "AttackDown"],
+	"LEFT": [Vector2.LEFT, "AttackLeft"],
+	"RIGHT": [Vector2.RIGHT, "AttackRight"]
 	}
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/AttackSprite
-
-var lastDir = "DOWN"
+@onready var animaton: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var lastDir = "DOWN"
 
 # Define the size of the grid
 @export var GRID_SIZE = 64
@@ -78,10 +78,10 @@ func _physics_process(_delta):
 
 func basicAttack(dir):
 # Set the position of the attack sprite
-	var direction_vector = directions[dir]
+	var direction_vector = directions[dir][0]
 	attack_sprite.position = direction_vector * GRID_SIZE  # Ajusta la posición según la dirección
-
 	# Show the attack sprite
+	animaton.play(directions[dir][1])
 	attack_sprite.visible = true
 	# Optional: Add a timer to hide the attack sprite after a short delay
 	var attack_timer = get_tree().create_timer(0.2) # Oculta el sprite después de 0.2 segundos
@@ -90,3 +90,4 @@ func basicAttack(dir):
 # Function to hide the attack sprite
 func _hide_attack_sprite():
 	attack_sprite.visible = false
+	animaton.play("Idle")
