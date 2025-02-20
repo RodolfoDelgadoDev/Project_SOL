@@ -1,6 +1,7 @@
 extends Node2D
 
-var Segundos = 30
+var Segundos : int
+var playerDamage = 10
 	
 func takeDamage(damage):
 	Segundos -= damage

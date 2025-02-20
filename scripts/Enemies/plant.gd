@@ -19,6 +19,7 @@ var tried_alternative: bool = false
 
 @export var player_node_path: NodePath
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
+@onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
 
 func _ready():
 	# Reference our own CharacterBody2D node.
@@ -113,6 +114,15 @@ func _physics_process(_delta):
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("player"):
-		print(GameManager.Segundos)
 		GameManager.takeDamage(damage)
 		print(GameManager.Segundos)
+	if area.is_in_group("weapon"):
+		takeDamage()
+	
+func takeDamage():
+	health -= GameManager.playerDamage
+	animator.play("takeDamage")
+	if health <= 0:
+		queue_free()
+	else:
+		print(health)

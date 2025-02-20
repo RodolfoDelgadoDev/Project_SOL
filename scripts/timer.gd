@@ -10,7 +10,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	updateText()
 	if GameManager.Segundos <= 0:
-		get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
+		var parent = get_parent()
+		var grandparent = parent.get_parent()
+		grandparent.change_scene("res://scenes/GameOver.tscn")
 
 func _on_timer_timeout() -> void:
 	GameManager.Segundos -=1

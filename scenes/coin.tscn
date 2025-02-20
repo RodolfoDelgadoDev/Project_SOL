@@ -10,7 +10,7 @@ region = Rect2(0, 161, 32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8cco"]
 size = Vector2(32, 32)
 
-[node name="Coin" type="Node2D"]
+[node name="Coin" type="Node2D" groups=["pickup"]]
 script = ExtResource("1_w2tqq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://kw26mlx677p3"]
+[gd_scene load_steps=2 format=3 uid="uid://dglbm32wv45w2"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ic8hm"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_xw727"]
 
-[node name="GameOver" type="Node2D"]
+[node name="Main Menu" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "ASDASDDSASDSADSDA"
-script = ExtResource("1_ic8hm")
+script = ExtResource("1_xw727")
 
 [node name="Gameovertext" type="Label" parent="Control"]
 light_mask = 0
@@ -28,7 +28,7 @@ offset_right = 94.0
 offset_bottom = -44.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "GAME OVER PAPU LINCE"
+text = "PROYECTO SOL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -45,7 +45,7 @@ offset_right = 37.5
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "RESTART"
+text = "NEW GAME"
 
 [node name="ExitButton" type="Button" parent="Control"]
 layout_mode = 1

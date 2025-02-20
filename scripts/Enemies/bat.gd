@@ -6,9 +6,12 @@ extends Node2D
 @export var initial_wait_time = 0.5  # Initial wait time before starting patrol
 @export var wait_time = 0.5  # Time to wait at each patrol point
 @export var damage: int
+@export var health: int = 20
 
 # Define the patrol path as a list of directions
 @export var patrol_path: Array[Vector2] = []
+
+@onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
 
 var character_body: CharacterBody2D
 var current_patrol_index = 0
@@ -70,6 +73,15 @@ func _physics_process(_delta):
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("player"):
-		print(GameManager.Segundos)
 		GameManager.takeDamage(damage)
 		print(GameManager.Segundos)
+	if area.is_in_group("weapon"):
+		takeDamage()
+	
+func takeDamage():
+	health -= GameManager.playerDamage
+	animator.play("takeDamage")
+	if health <= 0:
+		queue_free()
+	else:
+		print(health)

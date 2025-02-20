@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=12 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_x4ykt"]
-[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_ipg8r"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="4_xx0oc"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="6_eugwg"]
-[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/bat.tscn" id="6_qiuwa"]
-[ext_resource type="PackedScene" path="res://scenes/plant.tscn" id="7_mhg8n"]
-[ext_resource type="PackedScene" path="res://scenes/goal.tscn" id="7_w70us"]
+[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://scenes/timer.tscn" id="4_ipg8r"]
+[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://scenes/coin.tscn" id="4_xx0oc"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://scenes/player.tscn" id="6_eugwg"]
+[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://scenes/bat.tscn" id="6_qiuwa"]
+[ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://scenes/plant.tscn" id="7_mhg8n"]
+[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://scenes/goal.tscn" id="7_w70us"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="8_ffuuu"]
+[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://scenes/test_npc.tscn" id="9_5auht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_x4ykt")
@@ -220,38 +222,6 @@ tile_map_data = PackedByteArray("AAD1//n/AgAIAAIAAAD1//f/AgAKAAAAAAD1//j/AgAKAAE
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Coin" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(-88, 72)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin7" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(24, 104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin2" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(104, -72)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin3" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(104, -56)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin4" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(8, -104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin5" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(-104, -104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin6" parent="." instance=ExtResource("4_xx0oc")]
-position = Vector2(88, 72)
-scale = Vector2(0.5, 0.5)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Timer" parent="CanvasLayer" instance=ExtResource("4_ipg8r")]
-
 [node name="Bat" parent="." instance=ExtResource("6_qiuwa")]
 position = Vector2(24, -88)
 scale = Vector2(0.25, 0.25)
@@ -280,17 +250,11 @@ patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Ve
 [node name="Plant" parent="." instance=ExtResource("7_mhg8n")]
 position = Vector2(-56, -24)
 scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 5
-health = 100
 player_node_path = NodePath("../Player")
 
 [node name="Plant2" parent="." instance=ExtResource("7_mhg8n")]
 position = Vector2(-136, -72)
 scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 5
-health = 100
 player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("6_eugwg")]
@@ -303,6 +267,74 @@ tile_map_data = PackedByteArray("AAAIAP7/AgADAAMAAAAEAPj/AgAKAAMAAAAEAPn/AgAKAAQ
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Goal" parent="." instance=ExtResource("7_w70us")]
+[node name="Scene Manager" type="Node2D" parent="."]
+script = ExtResource("8_ffuuu")
+segundos = 1500
+typewriter_delay = 0.06
+cursor_blink_delay = 0.25
+
+[node name="Coin" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(-88, 72)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(24, 104)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(104, -72)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(104, -56)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(8, -104)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(-104, -104)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+position = Vector2(88, 72)
+scale = Vector2(0.5, 0.5)
+
+[node name="Goal" parent="Scene Manager" instance=ExtResource("7_w70us")]
 position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
+
+[node name="Test NPC" parent="Scene Manager" instance=ExtResource("9_5auht")]
+position = Vector2(200, -72)
+scale = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
+
+[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("4_ipg8r")]
+
+[node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
+visible = false
+offset_left = 40.0
+offset_top = 113.0
+offset_right = 242.0
+offset_bottom = 158.0
+
+[node name="TextEdit" type="TextEdit" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+wrap_mode = 1
+
+[node name="textTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
+
+[node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
+
+[connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
+[connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
