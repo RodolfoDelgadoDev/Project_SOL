@@ -1,10 +1,10 @@
 extends Node2D
 
 var directions = {
-	"UP": [Vector2.UP, "AttackUp"],
-	"DOWN": [Vector2.DOWN, "AttackDown"],
-	"LEFT": [Vector2.LEFT, "AttackLeft"],
-	"RIGHT": [Vector2.RIGHT, "AttackRight"]
+	"UP": [Vector2.UP, "AttackUp", "WalkUp"],
+	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown"],
+	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft"],
+	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight"]
 	}
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/Area2D/AttackSprite
 @onready var animaton: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
@@ -39,18 +39,23 @@ func _process(delta):
 			target_velocity = Vector2.UP * (GRID_SIZE / move_duration)
 			moving = true
 			lastDir = "UP"
+			walkAnimation(lastDir)
 		elif Input.is_action_just_pressed("ui_down"):
 			target_velocity = Vector2.DOWN * (GRID_SIZE / move_duration)
 			moving = true
 			lastDir = "DOWN"
+			walkAnimation(lastDir)
 		elif Input.is_action_just_pressed("ui_left"):
 			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
 			moving = true
 			lastDir = "LEFT"
+			walkAnimation(lastDir)
 		elif Input.is_action_just_pressed("ui_right"):
 			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
 			moving = true
 			lastDir = "RIGHT"
+			walkAnimation(lastDir)
+			
 
 	if moving:
 		# Calculate the movement step
@@ -96,3 +101,9 @@ func _on_attack_timer_timeout() -> void:
 	can_attack = true
 	attack_area.disabled = true
 	_hide_attack_sprite()
+
+func walkAnimation(dir):
+	animaton.play(directions[dir][2])
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	animaton.play("Idle")
