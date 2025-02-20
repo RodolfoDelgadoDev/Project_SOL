@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=16 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_x4ykt"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://scenes/timer.tscn" id="4_ipg8r"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://scenes/plant.tscn" id="7_mhg8n"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://scenes/goal.tscn" id="7_w70us"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://scenes/test_npc.tscn" id="8_hpgk1"]
+[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pfcrh"]
+[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_nqwt2"]
+[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_gb5t6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_x4ykt")
@@ -371,6 +374,10 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 
+[sub_resource type="Theme" id="Theme_6rhx5"]
+default_font = ExtResource("12_gb5t6")
+default_font_size = 15
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -477,6 +484,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_hpgk1")]
 position = Vector2(168, -104)
 scale = Vector2(0.5, 0.5)
+npc_portrait = ExtResource("9_pfcrh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
@@ -484,22 +492,38 @@ scale = Vector2(0.5, 0.5)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
 
-[node name="ColorRect" type="ColorRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
-visible = false
-offset_left = 40.0
-offset_top = 113.0
-offset_right = 242.0
-offset_bottom = 158.0
+[node name="ColorRect" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
+offset_left = 65.0
+offset_top = 119.0
+offset_right = 240.0
+offset_bottom = 154.0
+texture = ExtResource("10_nqwt2")
+expand_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
+[node name="TextEdit" type="Label" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 3.0
+offset_right = -18.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-wrap_mode = 1
+theme = SubResource("Theme_6rhx5")
+theme_override_colors/font_color = Color(0.294118, 0.219608, 0.192157, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Portrait" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 32.0
+expand_mode = 1
 
 [node name="textTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
