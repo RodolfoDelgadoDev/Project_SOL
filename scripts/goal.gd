@@ -1,6 +1,7 @@
 extends Node2D
 
 var reached_goal : bool = false
+@export var npc_portrait: Texture  # Ensure this is declared as Texture
 
 func _process(_delta: float) -> void:
 	if reached_goal == true:
@@ -16,8 +17,8 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		else:
 			# Get the parent node and check if allBottles is true
 			if parent.has_method("get") and parent.get("allBottles"):
-				parent.start_typewriter("Encontraste todas las botellas!")
+				parent.start_typewriter("Encontraste todas las botellas!", npc_portrait)
 			else:
-				parent.start_typewriter("Te faltaron algunas botellas!")
+				parent.start_typewriter("Te faltaron algunas botellas!", npc_portrait)
 		reached_goal = true
 	
