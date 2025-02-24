@@ -31,46 +31,49 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("attack"):
-		basicAttack(lastDir)
-	if not moving:
-		# Check for input and set the direction
-		if Input.is_action_just_pressed("ui_up"):
-			target_velocity = Vector2.UP * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "UP"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_down"):
-			target_velocity = Vector2.DOWN * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "DOWN"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_left"):
-			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "LEFT"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_right"):
-			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "RIGHT"
-			walkAnimation(lastDir)
-			
+	print(animaton.animation)
+	if alive():
+		if Input.is_action_just_pressed("attack"):
+			basicAttack(lastDir)
+		if not moving:
+			# Check for input and set the direction
+			if Input.is_action_just_pressed("ui_up"):
+				target_velocity = Vector2.UP * (GRID_SIZE / move_duration)
+				moving = true
+				lastDir = "UP"
+				walkAnimation(lastDir)
+			elif Input.is_action_just_pressed("ui_down"):
+				target_velocity = Vector2.DOWN * (GRID_SIZE / move_duration)
+				moving = true
+				lastDir = "DOWN"
+				walkAnimation(lastDir)
+			elif Input.is_action_just_pressed("ui_left"):
+				target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
+				moving = true
+				lastDir = "LEFT"
+				walkAnimation(lastDir)
+			elif Input.is_action_just_pressed("ui_right"):
+				target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
+				moving = true
+				lastDir = "RIGHT"
+				walkAnimation(lastDir)
+		if moving:
+			# Calculate the movement step
+			var remaining_time = move_duration - move_timer
+			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
+			character_body.move_and_slide()
+			move_timer += delta
 
-	if moving:
-		# Calculate the movement step
-		var remaining_time = move_duration - move_timer
-		character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-		character_body.move_and_slide()
-		move_timer += delta
+			# Stop moving if the duration is reached
+			if move_timer >= move_duration:
+				# Snap to the nearest grid position to ensure precision
+				character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+				moving = false
+				move_timer = 0.0
+				target_velocity = Vector2.ZERO
+	else:
+		animaton.play("Death")
 
-		# Stop moving if the duration is reached
-		if move_timer >= move_duration:
-			# Snap to the nearest grid position to ensure precision
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-			moving = false
-			move_timer = 0.0
-			target_velocity = Vector2.ZERO
 
 # Ensure the player is always aligned with the grid
 func _physics_process(_delta):
@@ -95,15 +98,21 @@ func basicAttack(dir):
 func _hide_attack_sprite():
 	attack_sprite.visible = false
 	animaton.play("Idle")
-
-
+	
+# Funcion que chequea si el jugador tiene segundos de juego aún
+func alive() -> bool:
+	if GameManager.Segundos <= 0:
+		return false
+	return true
 func _on_attack_timer_timeout() -> void:
-	can_attack = true
-	attack_area.disabled = true
-	_hide_attack_sprite()
+	if alive():
+		can_attack = true
+		attack_area.disabled = true
+		_hide_attack_sprite()
 
 func walkAnimation(dir):
 	animaton.play(directions[dir][2])
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	animaton.play("Idle")
+	if alive():
+		animaton.play("Idle")

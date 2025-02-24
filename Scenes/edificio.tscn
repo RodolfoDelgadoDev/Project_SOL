@@ -445,7 +445,7 @@ rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_g3pq2")
-segundos = 1500
+segundos = 10
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25
 

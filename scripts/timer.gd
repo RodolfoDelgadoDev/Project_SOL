@@ -10,12 +10,17 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	updateText()
 	if GameManager.Segundos <= 0:
+		await wait_seconds(3)
 		var parent = get_parent()
 		var grandparent = parent.get_parent()
 		grandparent.change_scene("res://scenes/GameOver.tscn")
 
 func _on_timer_timeout() -> void:
-	GameManager.Segundos -=1
+	if (GameManager.Segundos > 0):
+		GameManager.Segundos -=1
 
 func updateText() -> void:
 	label.text = str(GameManager.Segundos)
+	
+func wait_seconds(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
