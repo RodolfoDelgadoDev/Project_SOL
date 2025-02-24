@@ -3,8 +3,10 @@ extends Node2D
 # Este nodo maneja los elementos de la escena, el timer, cuantas botellas hay, etc.
 @export var segundos : int
 @export var descanso : bool #if true = indica que estás en la sala de descanso
-@onready var dialogue_image : ColorRect = $CanvasLayer/DialogueBox/ColorRect
-@onready var dialogue_text : TextEdit = $CanvasLayer/DialogueBox/ColorRect/TextEdit
+@onready var dialogue_image : TextureRect = $CanvasLayer/DialogueBox/ColorRect
+@onready var dialogue_text : Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
+@onready var npc_portrait : TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
+
 var bottleNum : int = 0
 var bottleTotal : int
 var allBottles : bool = false
@@ -39,8 +41,9 @@ func _ready() -> void:
 	add_child(cursor_timer)
 
 # Start the typewriter effect
-func start_typewriter(text: String):
+func start_typewriter(text: String, portrait: Texture):
 	dialogue_image.visible = true
+	npc_portrait.texture = portrait  # Ensure this is a valid Texture
 	typewriter_text = text
 	typewriter_index = 0
 	dialogue_text.text = ""  # Clear the text initially
