@@ -417,11 +417,6 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
 
-[node name="Bat5" parent="." groups=["Player"] instance=ExtResource("6_qiuwa")]
-position = Vector2(168, -88)
-scale = Vector2(0.25, 0.25)
-damage = 3
-
 [node name="Bat4" parent="." instance=ExtResource("6_qiuwa")]
 position = Vector2(-8, 88)
 scale = Vector2(0.25, 0.25)

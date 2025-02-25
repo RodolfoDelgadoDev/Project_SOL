@@ -288,6 +288,7 @@ rendering_quadrant_size = 32
 [node name="Player" parent="." instance=ExtResource("4_oigfh")]
 position = Vector2(88, -24)
 scale = Vector2(0.25, 0.25)
+minPitch = -0.03
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
