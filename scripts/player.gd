@@ -11,10 +11,13 @@ var directions = {
 @onready var lastDir = "DOWN"
 @onready var attack_timer: Timer = $attack_timer
 @onready var attack_area: CollisionShape2D = $CharacterBody2D/Area2D/AttackSprite/Attack_area/CollisionShape2D
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Define the size of the grid
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Duration in seconds to complete the move
+@export var attackSFX: AudioStream
+@export var hurtSFX: AudioStream
 
 # Reference to the CharacterBody2D node
 var character_body: CharacterBody2D
@@ -31,7 +34,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(animaton.animation)
+	#print(animaton.animation)
 	if alive():
 		if Input.is_action_just_pressed("attack"):
 			basicAttack(lastDir)
@@ -83,6 +86,8 @@ func _physics_process(_delta):
 func basicAttack(dir):
 	if can_attack == true:
 		can_attack = false
+		audio_player.stream = attackSFX
+		audio_player.play()  # Play attack sound
 		attack_area.disabled = false
 		# Set the position of the attack sprite
 		var direction_vector = directions[dir][0]

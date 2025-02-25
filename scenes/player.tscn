@@ -1,8 +1,10 @@
-[gd_scene load_steps=86 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene load_steps=88 format=3 uid="uid://cmax2vhkuipx5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
+[ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
 [ext_resource type="Texture2D" uid="uid://b65biq01jwkep" path="res://animations/Ataque FV - Godot.png" id="2_uf1an"]
 [ext_resource type="Texture2D" uid="uid://cybqhgrwik1q8" path="res://animations/Ataque 1 L - Godot.png" id="3_1b1lt"]
+[ext_resource type="AudioStream" uid="uid://dxvkod51ev133" path="res://SFX/player_hurt.mp3" id="3_awhw6"]
 [ext_resource type="Texture2D" uid="uid://l72xblt5c887" path="res://animations/Ataque 1 R - Godot.png" id="3_lde1e"]
 [ext_resource type="Texture2D" uid="uid://c0u5wgau3mhw0" path="res://animations/Ataque BV - Godot.png" id="5_oxjek"]
 [ext_resource type="Texture2D" uid="uid://5lisg6qo8hpf" path="res://animations/Death - Godot.png" id="6_2b0oj"]
@@ -570,6 +572,8 @@ size = Vector2(62, 62)
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dlx5r")
+attackSFX = ExtResource("2_k1amx")
+hurtSFX = ExtResource("3_awhw6")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 collision_mask = 6
@@ -579,8 +583,6 @@ scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
 animation = &"Death"
 autoplay = "Idle"
-frame = 6
-frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(1.5, 1.5)
@@ -607,6 +609,8 @@ debug_color = Color(0.908467, 0.000113781, 0.736625, 0.42)
 
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

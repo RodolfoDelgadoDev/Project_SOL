@@ -8,10 +8,16 @@ extends Node2D
 @export var damage: int
 @export var health: int = 20
 
+# Change AudioEffect to AudioStream for playback
+@export var attackSFX: AudioStream
+@export var moveSFX: AudioStream
+@export var hurtSFX: AudioStream
+
 # Define the patrol path as a list of directions
 @export var patrol_path: Array[Vector2] = []
 
-@onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var animator: AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var character_body: CharacterBody2D
 var current_patrol_index = 0
@@ -66,6 +72,10 @@ func start_moving():
 		moving = true
 		move_timer = 0.0
 
+		# Play move sound effect
+		#audio_player.stream = moveSFX
+		#audio_player.play()
+
 # Ensure the enemy is always aligned with the grid
 func _physics_process(_delta):
 	if not moving:
@@ -73,15 +83,21 @@ func _physics_process(_delta):
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("player"):
+		audio_player.stream = attackSFX
+		audio_player.play()  # Play attack sound
 		GameManager.takeDamage(damage)
 		print(GameManager.Segundos)
 	if area.is_in_group("weapon"):
+		audio_player.stream = hurtSFX
+		audio_player.play()
 		takeDamage()
 	
 func takeDamage():
-	health -= GameManager.playerDamage
-	animator.play("takeDamage")
 	if health <= 0:
-		queue_free()
+		return
 	else:
-		print(health)
+		health -= GameManager.playerDamage
+		animator.play("takeDamage")
+		if health <= 0:
+			await audio_player.finished
+			queue_free()

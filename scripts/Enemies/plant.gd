@@ -5,6 +5,10 @@ extends Node2D
 @export var wait_time = 0.5      # Seconds to wait before trying the next move
 @export var damage: int
 @export var health: int
+# Change AudioEffect to AudioStream for playback
+@export var attackSFX: AudioStream
+@export var moveSFX: AudioStream
+@export var hurtSFX: AudioStream
 
 var character_body: CharacterBody2D
 var target_velocity: Vector2 = Vector2.ZERO
@@ -20,6 +24,7 @@ var tried_alternative: bool = false
 @export var player_node_path: NodePath
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
 @onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
 	# Reference our own CharacterBody2D node.
@@ -114,15 +119,21 @@ func _physics_process(_delta):
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("player"):
+		audio_player.stream = attackSFX
+		audio_player.play()  # Play attack sound
 		GameManager.takeDamage(damage)
 		print(GameManager.Segundos)
 	if area.is_in_group("weapon"):
+		audio_player.stream = hurtSFX
+		audio_player.play()
 		takeDamage()
 	
 func takeDamage():
-	health -= GameManager.playerDamage
-	animator.play("takeDamage")
 	if health <= 0:
-		queue_free()
+		return
 	else:
-		print(health)
+		health -= GameManager.playerDamage
+		animator.play("takeDamage")
+		if health <= 0:
+			await audio_player.finished
+			queue_free()

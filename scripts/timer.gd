@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	updateText()
-	if GameManager.Segundos <= 0:
+	if GameManager.Segundos <= 0: ##This kills the player
 		await wait_seconds(3)
 		var parent = get_parent()
 		var grandparent = parent.get_parent()
