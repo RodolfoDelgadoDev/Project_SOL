@@ -51,3 +51,4 @@ animations = [{
 position = Vector2(1.19209e-07, -2)
 scale = Vector2(0.353261, 0.432143)
 sprite_frames = SubResource("SpriteFrames_1dnwh")
+frame_progress = 0.199951

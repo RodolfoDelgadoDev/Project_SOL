@@ -1,9 +1,7 @@
-
-[gd_scene load_steps=3 format=3 uid="uid://blvokahnj6vyq"]
+[gd_scene load_steps=3 format=3 uid="uid://gdp1t0u0lb6l"]
 
 [ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_cagj1"]
-[ext_resource type="Texture2D" uid="uid://divbqaffjdert" path="res://art/PUNK-NPCs estáticos.png" id="2_q8jrq"]
-
+[ext_resource type="Texture2D" uid="uid://cd5geq33umk5k" path="res://art/PUNK-NPCs estáticos.png" id="2_q8jrq"]
 
 [node name="PunkGirl" type="Node2D"]
 script = ExtResource("1_cagj1")
