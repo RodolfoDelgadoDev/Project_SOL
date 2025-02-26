@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ci4adhavm2flh"]
+[gd_scene load_steps=15 format=4 uid="uid://6p7mgf3k7win"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_uatga"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="4_62k27"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/test_npc.tscn" id="8_ag5gy"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pw04j"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_lkmvh"]
-[ext_resource type="PackedScene" uid="uid://c3g2ykksoy262" path="res://Scenes/scene_transition.tscn" id="11_76117"]
+[ext_resource type="PackedScene" path="res://Scenes/scene_transition.tscn" id="11_76117"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_oj3rn"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_bnjuu"]
 
