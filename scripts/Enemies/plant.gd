@@ -5,6 +5,10 @@ extends Node2D
 @export var wait_time = 0.5      # Seconds to wait before trying the next move
 @export var damage: int
 @export var health: int
+# Change AudioEffect to AudioStream for playback
+@export var attackSFX: AudioStream
+@export var moveSFX: AudioStream
+@export var hurtSFX: AudioStream
 
 var character_body: CharacterBody2D
 var target_velocity: Vector2 = Vector2.ZERO
@@ -20,6 +24,7 @@ var tried_alternative: bool = false
 @export var player_node_path: NodePath
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
 @onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
 	# Reference our own CharacterBody2D node.
@@ -28,30 +33,31 @@ func _ready():
 	start_moving()
 
 func _process(delta):
-	if moving:
-		var remaining_time = move_duration - move_timer
-		# Move smoothly toward the target velocity.
-		character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-		character_body.move_and_slide()
-		move_timer += delta
+	if alive():
+		if moving:
+			var remaining_time = move_duration - move_timer
+			# Move smoothly toward the target velocity.
+			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
+			character_body.move_and_slide()
+			move_timer += delta
 
-		if move_timer >= move_duration:
-			# Snap the enemy to the grid.
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-			moving = false
-			move_timer = 0.0
+			if move_timer >= move_duration:
+				# Snap the enemy to the grid.
+				character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+				moving = false
+				move_timer = 0.0
 
-			# If no movement occurred and we haven't tried the alternative axis yet...
-			if character_body.position == initial_position and not tried_alternative:
-				tried_alternative = true
-				try_alternative_move()
-			else:
-				wait_timer = 0.0
-	else:
-		# Wait until it's time to move again.
-		wait_timer += delta
-		if wait_timer >= wait_time:
-			start_moving()
+				# If no movement occurred and we haven't tried the alternative axis yet...
+				if character_body.position == initial_position and not tried_alternative:
+					tried_alternative = true
+					try_alternative_move()
+				else:
+					wait_timer = 0.0
+		else:
+			# Wait until it's time to move again.
+			wait_timer += delta
+			if wait_timer >= wait_time:
+				start_moving()
 
 # Calculate the primary move direction (the axis with the larger distance to the player).
 func start_moving():
@@ -109,20 +115,31 @@ func try_alternative_move():
 	move_timer = 0.0
 
 func _physics_process(_delta):
-	if not moving:
-		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+	if alive():
+		if not moving:
+			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	if area.is_in_group("player"):
-		GameManager.takeDamage(damage)
-		print(GameManager.Segundos)
-	if area.is_in_group("weapon"):
-		takeDamage()
-	
+	if alive():
+		if area.is_in_group("player"):
+			audio_player.stream = attackSFX
+			audio_player.play()  # Play attack sound
+			GameManager.takeDamage(damage)
+			print(GameManager.Segundos)
+		if area.is_in_group("weapon"):
+			audio_player.stream = hurtSFX
+			audio_player.play()
+			takeDamage()
+
+func alive() -> bool:
+	return health > 0
+
 func takeDamage():
-	health -= GameManager.playerDamage
-	animator.play("takeDamage")
 	if health <= 0:
-		queue_free()
+		return
 	else:
-		print(health)
+		health -= GameManager.playerDamage
+		animator.play("takeDamage")
+		if health <= 0:
+			await audio_player.finished
+			queue_free()

@@ -8,10 +8,16 @@ extends Node2D
 @export var damage: int
 @export var health: int = 20
 
+# Change AudioEffect to AudioStream for playback
+@export var attackSFX: AudioStream
+@export var moveSFX: AudioStream
+@export var hurtSFX: AudioStream
+
 # Define the patrol path as a list of directions
 @export var patrol_path: Array[Vector2] = []
 
-@onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var animator: AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var character_body: CharacterBody2D
 var current_patrol_index = 0
@@ -31,57 +37,74 @@ func _ready():
 func _process(delta):
 	if not initialized:
 		return
+	if alive():
+		if moving:
+			# Calculate the movement step
+			var remaining_time = move_duration - move_timer
+			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
+			character_body.move_and_slide()
+			move_timer += delta
 
-	if moving:
-		# Calculate the movement step
-		var remaining_time = move_duration - move_timer
-		character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-		character_body.move_and_slide()
-		move_timer += delta
+			# Stop moving if the duration is reached
+			if move_timer >= move_duration:
+				# Snap to the nearest grid position to ensure precision
+				character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+				moving = false
+				move_timer = 0.0
+				wait_timer = 0.0
 
-		# Stop moving if the duration is reached
-		if move_timer >= move_duration:
-			# Snap to the nearest grid position to ensure precision
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-			moving = false
-			move_timer = 0.0
-			wait_timer = 0.0
-
-			# Check if the position has changed
-			if character_body.position != initial_position:
-				# Move was successful, advance the patrol index
-				current_patrol_index = (current_patrol_index + 1) % patrol_path.size()
-	else:
-		# Wait at the current position
-		wait_timer += delta
-		if wait_timer >= wait_time:
-			start_moving()
+				# Check if the position has changed
+				if character_body.position != initial_position:
+					# Move was successful, advance the patrol index
+					current_patrol_index = (current_patrol_index + 1) % patrol_path.size()
+		else:
+			# Wait at the current position
+			wait_timer += delta
+			if wait_timer >= wait_time:
+				start_moving()
 
 # Start moving in the current patrol direction
 func start_moving():
-	if patrol_path.size() > 0:
-		# Record the initial position before attempting to move
-		initial_position = character_body.position
-		target_velocity = patrol_path[current_patrol_index] * (GRID_SIZE / move_duration)
-		moving = true
-		move_timer = 0.0
+	if alive():
+		if patrol_path.size() > 0:
+			# Record the initial position before attempting to move
+			initial_position = character_body.position
+			target_velocity = patrol_path[current_patrol_index] * (GRID_SIZE / move_duration)
+			moving = true
+			move_timer = 0.0
 
+		# Play move sound effect
+		#audio_player.stream = moveSFX
+		#audio_player.play()
+
+# Funcion para ver si el amiguito esta vivo
+func alive() -> bool:
+	return health > 0
+	
 # Ensure the enemy is always aligned with the grid
 func _physics_process(_delta):
-	if not moving:
-		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+	if alive():
+		if not moving:
+			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	if area.is_in_group("player"):
-		GameManager.takeDamage(damage)
-		print(GameManager.Segundos)
-	if area.is_in_group("weapon"):
-		takeDamage()
+	if alive():
+		if area.is_in_group("player"):
+			audio_player.stream = attackSFX
+			audio_player.play()  # Play attack sound
+			GameManager.takeDamage(damage)
+			print(GameManager.Segundos)
+		if area.is_in_group("weapon"):
+			audio_player.stream = hurtSFX
+			audio_player.play()
+			takeDamage()
 	
 func takeDamage():
-	health -= GameManager.playerDamage
-	animator.play("takeDamage")
 	if health <= 0:
-		queue_free()
+		return
 	else:
-		print(health)
+		health -= GameManager.playerDamage
+		animator.play("takeDamage")
+		if health <= 0:
+			await audio_player.finished
+			queue_free()

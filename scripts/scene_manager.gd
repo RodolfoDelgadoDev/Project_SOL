@@ -3,9 +3,12 @@ extends Node2D
 # Este nodo maneja los elementos de la escena, el timer, cuantas botellas hay, etc.
 @export var segundos : int
 @export var descanso : bool #if true = indica que estás en la sala de descanso
+@export var next_level : NodePath
 @onready var dialogue_image : TextureRect = $CanvasLayer/DialogueBox/ColorRect
 @onready var dialogue_text : Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
 @onready var npc_portrait : TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
+@onready var timer : Node2D = $CanvasLayer/Timer
+@onready var SceneTransition : CanvasLayer = $Scene_Transition
 
 var bottleNum : int = 0
 var bottleTotal : int
@@ -24,6 +27,11 @@ var cursor_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var current_scene = get_tree().current_scene.scene_file_path
+	GameManager.currentLevel = current_scene
+	print(current_scene)
+	GameManager.Segundos = segundos
+	SceneTransition.visible = true
 	if descanso == true:
 		pass
 	else:
@@ -94,3 +102,10 @@ func addBottle():
 		
 func change_scene(scene):
 	get_tree().change_scene_to_file(scene)
+	
+func stop_timer():
+	timer.stop_timer()
+	
+func load_next_level():
+	SceneTransition.transition_in()
+	#load

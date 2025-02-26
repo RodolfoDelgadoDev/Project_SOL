@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://k5qb53ajcrce"]
+[gd_scene load_steps=11 format=3 uid="uid://k5qb53ajcrce"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_y1v5c"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="2_a3c56"]
+[ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_d1wo7"]
+[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_g3ryw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu3nv"]
 atlas = ExtResource("2_a3c56")
@@ -56,6 +58,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1v5c")
 damage = 5
 health = 30
+attackSFX = ExtResource("2_d1wo7")
+hurtSFX = ExtResource("3_g3ryw")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 4
@@ -80,6 +84,8 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,7 +9,7 @@ func _ready():
 func _on_Restartbutton_pressed():
 	# Reinicia el juego o carga la escena principal
 	GameManager.Segundos = 30
-	get_tree().change_scene_to_file("res://scenes/edificio.tscn")
+	get_tree().change_scene_to_file(GameManager.currentLevel)
 
 func _on_Exitbutton_pressed():
 	get_tree().quit()
