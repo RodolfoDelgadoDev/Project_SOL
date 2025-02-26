@@ -6,6 +6,7 @@ extends Node2D
 @onready var dialogue_image : TextureRect = $CanvasLayer/DialogueBox/ColorRect
 @onready var dialogue_text : Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
 @onready var npc_portrait : TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
+@onready var timer : Node2D = $CanvasLayer/Timer
 
 var bottleNum : int = 0
 var bottleTotal : int
@@ -95,3 +96,6 @@ func addBottle():
 		
 func change_scene(scene):
 	get_tree().change_scene_to_file(scene)
+	
+func stop_timer():
+	timer.stop_timer()

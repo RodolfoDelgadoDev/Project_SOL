@@ -1,20 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=14 format=4 uid="uid://ci4adhavm2flh"]
 
-[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_x4ykt"]
-[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_ipg8r"]
-[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/coin.tscn" id="4_xx0oc"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_g3pq2"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="6_eugwg"]
-[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/bat.tscn" id="6_qiuwa"]
-[ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/plant.tscn" id="7_mhg8n"]
-[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_w70us"]
-[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/test_npc.tscn" id="8_hpgk1"]
-[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pfcrh"]
-[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_nqwt2"]
-[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_gb5t6"]
+[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_uatga"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="4_62k27"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_cqmo4"]
+[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/coin.tscn" id="6_sifqe"]
+[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_8i3an"]
+[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/test_npc.tscn" id="8_ag5gy"]
+[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pw04j"]
+[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_lkmvh"]
+[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_oj3rn"]
+[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_bnjuu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
-texture = ExtResource("1_x4ykt")
+texture = ExtResource("1_uatga")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16, 16, -16)
@@ -375,7 +373,7 @@ physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 
 [sub_resource type="Theme" id="Theme_6rhx5"]
-default_font = ExtResource("12_gb5t6")
+default_font = ExtResource("12_bnjuu")
 default_font_size = 15
 
 [node name="Node2D" type="Node2D"]
@@ -398,42 +396,7 @@ tile_map_data = PackedByteArray("AAD1//n/AgAIAAIAAAD1//f/AgAKAAAAAAD1//j/AgAKAAE
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Bat" parent="." instance=ExtResource("6_qiuwa")]
-position = Vector2(24, -88)
-scale = Vector2(0.25, 0.25)
-wait_time = 0.3
-damage = 3
-patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(0, -1), Vector2(0, -1)])
-
-[node name="Bat2" parent="." instance=ExtResource("6_qiuwa")]
-position = Vector2(136, 72)
-scale = Vector2(0.25, 0.25)
-damage = 3
-patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, -1), Vector2(0, -1)])
-
-[node name="Bat3" parent="." groups=["Player"] instance=ExtResource("6_qiuwa")]
-position = Vector2(120, -88)
-scale = Vector2(0.25, 0.25)
-damage = 3
-patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
-
-[node name="Bat4" parent="." instance=ExtResource("6_qiuwa")]
-position = Vector2(-8, 88)
-scale = Vector2(0.25, 0.25)
-damage = 3
-patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0)])
-
-[node name="Plant" parent="." instance=ExtResource("7_mhg8n")]
-position = Vector2(-56, -24)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
-
-[node name="Plant2" parent="." instance=ExtResource("7_mhg8n")]
-position = Vector2(-136, -72)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
-
-[node name="Player" parent="." instance=ExtResource("6_eugwg")]
+[node name="Player" parent="." instance=ExtResource("4_62k27")]
 position = Vector2(200, -40)
 scale = Vector2(0.25, 0.25)
 
@@ -444,51 +407,27 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
-script = ExtResource("5_g3pq2")
+script = ExtResource("5_cqmo4")
 segundos = 45
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25
 
-[node name="Coin" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
+[node name="Coin" parent="Scene Manager" instance=ExtResource("6_sifqe")]
 position = Vector2(-88, 72)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin7" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(24, 104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin2" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(104, -72)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin3" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(104, -56)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin4" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(8, -104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin5" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(-104, -104)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin6" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
-position = Vector2(88, 72)
-scale = Vector2(0.5, 0.5)
-
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_w70us")]
+[node name="Goal" parent="Scene Manager" instance=ExtResource("7_8i3an")]
 position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
 
-[node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_hpgk1")]
+[node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_ag5gy")]
 position = Vector2(168, -104)
 scale = Vector2(0.5, 0.5)
-npc_portrait = ExtResource("9_pfcrh")
+npc_portrait = ExtResource("9_pw04j")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
-[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("4_ipg8r")]
+[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("10_lkmvh")]
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -499,7 +438,7 @@ offset_left = 65.0
 offset_top = 119.0
 offset_right = 240.0
 offset_bottom = 154.0
-texture = ExtResource("10_nqwt2")
+texture = ExtResource("11_oj3rn")
 expand_mode = 1
 
 [node name="TextEdit" type="Label" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]

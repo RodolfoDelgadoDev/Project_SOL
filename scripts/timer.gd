@@ -57,3 +57,7 @@ func updateBar() -> void:
 
 func wait_seconds(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
+	
+func stop_timer() -> void:
+	print("time has stopped!")
+	timer.stop()
