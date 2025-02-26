@@ -1,12 +1,19 @@
-[gd_scene load_steps=78 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene load_steps=92 format=3 uid="uid://cmax2vhkuipx5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
+[ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
 [ext_resource type="Texture2D" uid="uid://b65biq01jwkep" path="res://animations/Ataque FV - Godot.png" id="2_uf1an"]
 [ext_resource type="Texture2D" uid="uid://cybqhgrwik1q8" path="res://animations/Ataque 1 L - Godot.png" id="3_1b1lt"]
+[ext_resource type="AudioStream" uid="uid://dxvkod51ev133" path="res://SFX/player_hurt.mp3" id="3_awhw6"]
 [ext_resource type="Texture2D" uid="uid://l72xblt5c887" path="res://animations/Ataque 1 R - Godot.png" id="3_lde1e"]
+[ext_resource type="AudioStream" uid="uid://ddn8hvbl2nyl2" path="res://SFX/Pisadas1.mp3" id="4_ac0vv"]
 [ext_resource type="Texture2D" uid="uid://c0u5wgau3mhw0" path="res://animations/Ataque BV - Godot.png" id="5_oxjek"]
+[ext_resource type="AudioStream" uid="uid://dxdlwg7j1q60" path="res://SFX/Pisadas2.mp3" id="5_q7u33"]
+[ext_resource type="Texture2D" uid="uid://5lisg6qo8hpf" path="res://animations/Death - Godot.png" id="6_2b0oj"]
+[ext_resource type="AudioStream" uid="uid://cu8483g1r0rqe" path="res://SFX/Pisadas4.mp3" id="6_lxvt5"]
 [ext_resource type="Texture2D" uid="uid://cp3y2r6fc6jc5" path="res://animations/Walk/Walking F - Godot.png" id="7_8aiep"]
 [ext_resource type="Texture2D" uid="uid://b87wee60er1qg" path="res://animations/Walk/Walking B - Godot.png" id="7_c43yy"]
+[ext_resource type="AudioStream" uid="uid://c1havoydtus8d" path="res://SFX/Pisadas5.mp3" id="7_dg1uu"]
 [ext_resource type="Texture2D" uid="uid://50fecn6hw4c2" path="res://animations/Idle 2 - Godot.png" id="7_g636s"]
 [ext_resource type="Texture2D" uid="uid://w77ud3qj8n1u" path="res://animations/Walk/Walking R - Godot.png" id="7_qvsfw"]
 [ext_resource type="Texture2D" uid="uid://dlndcpt3npdeg" path="res://animations/Walk/Walking L - Godot.png" id="8_8pnt4"]
@@ -126,6 +133,34 @@ region = Rect2(96, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_07c2y"]
 atlas = ExtResource("5_oxjek")
 region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsgwo"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(0, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl2vu"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(32, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crd1r"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(64, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls2bh"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(96, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqch2"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(128, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqe1a"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(160, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tymao"]
+atlas = ExtResource("6_2b0oj")
+region = Rect2(192, 0, 32, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aotje"]
 atlas = ExtResource("7_g636s")
@@ -377,6 +412,32 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsgwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl2vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crd1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls2bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqch2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqe1a")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_tymao")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_aotje")
 }, {
@@ -515,6 +576,9 @@ size = Vector2(62, 62)
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dlx5r")
+attackSFX = ExtResource("2_k1amx")
+hurtSFX = ExtResource("3_awhw6")
+movementSFX = Array[AudioStream]([ExtResource("4_ac0vv"), ExtResource("5_q7u33"), ExtResource("6_lxvt5"), ExtResource("7_dg1uu")])
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 collision_mask = 6
@@ -522,7 +586,7 @@ collision_mask = 6
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
-animation = &"WalkDown"
+animation = &"Death"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -550,6 +614,8 @@ debug_color = Color(0.908467, 0.000113781, 0.736625, 0.42)
 
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

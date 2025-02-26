@@ -5,16 +5,27 @@ var directions = {
 	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown"],
 	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft"],
 	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight"]
-	}
+}
+
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/Area2D/AttackSprite
 @onready var animaton: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var lastDir = "DOWN"
 @onready var attack_timer: Timer = $attack_timer
 @onready var attack_area: CollisionShape2D = $CharacterBody2D/Area2D/AttackSprite/Attack_area/CollisionShape2D
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Define the size of the grid
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Duration in seconds to complete the move
+@export var attackSFX: AudioStream
+@export var hurtSFX: AudioStream
+
+# Array for movement sound effects
+@export var movementSFX: Array[AudioStream] = []
+
+# Pitch variation settings
+@export var minPitch: float = -0.3  # Minimum pitch variation
+@export var maxPitch: float = 0.2   # Maximum pitch variation
 
 # Reference to the CharacterBody2D node
 var character_body: CharacterBody2D
@@ -31,79 +42,104 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("attack"):
-		basicAttack(lastDir)
-	if not moving:
-		# Check for input and set the direction
-		if Input.is_action_just_pressed("ui_up"):
-			target_velocity = Vector2.UP * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "UP"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_down"):
-			target_velocity = Vector2.DOWN * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "DOWN"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_left"):
-			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "LEFT"
-			walkAnimation(lastDir)
-		elif Input.is_action_just_pressed("ui_right"):
-			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
-			moving = true
-			lastDir = "RIGHT"
-			walkAnimation(lastDir)
-			
+	if alive():
+		if Input.is_action_just_pressed("attack"):
+			basicAttack(lastDir)
+		if not moving:
+			# Check for input and set the direction
+			if Input.is_action_just_pressed("ui_up"):
+				move(Vector2.UP)
+			elif Input.is_action_just_pressed("ui_down"):
+				move(Vector2.DOWN)
+			elif Input.is_action_just_pressed("ui_left"):
+				move(Vector2.LEFT)
+			elif Input.is_action_just_pressed("ui_right"):
+				move(Vector2.RIGHT)
+		if moving:
+			# Calculate the movement step
+			var remaining_time = move_duration - move_timer
+			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
+			character_body.move_and_slide()
+			move_timer += delta
 
-	if moving:
-		# Calculate the movement step
-		var remaining_time = move_duration - move_timer
-		character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-		character_body.move_and_slide()
-		move_timer += delta
-
-		# Stop moving if the duration is reached
-		if move_timer >= move_duration:
-			# Snap to the nearest grid position to ensure precision
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-			moving = false
-			move_timer = 0.0
-			target_velocity = Vector2.ZERO
+			# Stop moving if the duration is reached
+			if move_timer >= move_duration:
+				# Snap to the nearest grid position to ensure precision
+				character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+				moving = false
+				move_timer = 0.0
+				target_velocity = Vector2.ZERO
+	else:
+		animaton.play("Death")
 
 # Ensure the player is always aligned with the grid
 func _physics_process(_delta):
 	if not moving:
 		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 
+# Function to handle movement
+func move(direction: Vector2):
+	target_velocity = direction * (GRID_SIZE / move_duration)
+	moving = true
+	lastDir = direction_to_string(direction)
+	walkAnimation(lastDir)
+	play_random_movement_sound()
+
+# Function to play a random movement sound with pitch variation
+func play_random_movement_sound():
+	if movementSFX.size() > 0:
+		var random_index = randi() % movementSFX.size()  # Get a random index
+		audio_player.stream = movementSFX[random_index]  # Select a random sound
+		# Set a random pitch within the defined range
+		var pitch_variation = randf_range(minPitch, maxPitch)
+		audio_player.pitch_scale = 1.0 + pitch_variation  # Adjust pitch scale
+		audio_player.play()  # Play the selected sound
+
 func basicAttack(dir):
 	if can_attack == true:
 		can_attack = false
+		audio_player.stream = attackSFX
+		audio_player.play()  # Play attack sound
 		attack_area.disabled = false
 		# Set the position of the attack sprite
 		var direction_vector = directions[dir][0]
-		attack_sprite.position = direction_vector * GRID_SIZE  # Ajusta la posición según la dirección
+		attack_sprite.position = direction_vector * GRID_SIZE  # Adjust position based on direction
 		# Show the attack sprite
 		animaton.play(directions[dir][1])
 		attack_sprite.visible = true
 		# Optional: Add a timer to hide the attack sprite after a short delay
-		attack_timer.start() #empieza el timer para que no puedas atacar infinito
-	
+		attack_timer.start()  # Start the timer to prevent infinite attacking
 
 # Function to hide the attack sprite
 func _hide_attack_sprite():
 	attack_sprite.visible = false
 	animaton.play("Idle")
 
+# Function to check if the player is still alive
+func alive() -> bool:
+	return GameManager.Segundos > 0
 
 func _on_attack_timer_timeout() -> void:
-	can_attack = true
-	attack_area.disabled = true
-	_hide_attack_sprite()
+	if alive():
+		can_attack = true
+		attack_area.disabled = true
+		_hide_attack_sprite()
 
 func walkAnimation(dir):
 	animaton.play(directions[dir][2])
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	animaton.play("Idle")
+	if alive():
+		animaton.play("Idle")
+
+# Helper function to convert direction vector to string
+func direction_to_string(direction: Vector2) -> String:
+	if direction == Vector2.UP:
+		return "UP"
+	elif direction == Vector2.DOWN:
+		return "DOWN"
+	elif direction == Vector2.LEFT:
+		return "LEFT"
+	elif direction == Vector2.RIGHT:
+		return "RIGHT"
+	return ""
