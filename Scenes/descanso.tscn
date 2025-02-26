@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 
 [gd_scene load_steps=9 format=4 uid="uid://dsnc5g1q2d0th"]
+=======
+[gd_scene load_steps=14 format=4 uid="uid://dsnc5g1q2d0th"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="4_oigfh"]
@@ -7,7 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/punk_girl.tscn" id="7_gy23x"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_rjq4s"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/test_npc.tscn" id="8_lg3p3"]
+<<<<<<< Updated upstream
 
+=======
+[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_aup4q"]
+[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_5xc08"]
+[ext_resource type="PackedScene" uid="uid://c3g2ykksoy262" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_jbt40")
@@ -308,6 +318,13 @@ rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_rkmo0")
+<<<<<<< Updated upstream
+=======
+segundos = 45
+descanso = true
+typewriter_delay = 0.06
+cursor_blink_delay = 0.25
+>>>>>>> Stashed changes
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
 position = Vector2(-233, -72)

@@ -33,12 +33,15 @@ func _ready() -> void:
 	GameManager.currentLevel = current_scene
 	print(current_scene)
 	GameManager.Segundos = segundos
-	if not descanso:
+	if descanso == false:
 		GameManager.Segundos = segundos
 		for child in get_children():
 			if child.is_in_group("pickup"):
 				bottleTotal += 1
 		print("Total bottles found: ", bottleTotal)
+	else:
+		timer.stop_timer()
+		timer.visible = false
 	
 	# Initialize cursor timer
 	cursor_timer = Timer.new()
