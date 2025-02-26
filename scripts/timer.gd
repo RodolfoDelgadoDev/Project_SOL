@@ -16,6 +16,7 @@ var segundos = GameManager.Segundos
 func _ready() -> void:
 	var SceneManager = get_parent().get_parent()
 	barra.max_value = SceneManager.segundos
+	box_Sprite.texture = hp_full
 	updateBar()
 	
 func _process(_delta: float) -> void:
@@ -37,19 +38,22 @@ func updateBar() -> void:
 		botellaCounter.push_color(Color("yellow"))
 		botellaCounter.text = ("X " + str(SceneManager.bottleNum))
 	barra.value = GameManager.Segundos
-	if GameManager.Segundos >= 80 :
-		box_Sprite.texture = hp_full
-	if GameManager.Segundos < 80:
-		box_Sprite.texture = hp_80
-		if GameManager.Segundos < 60:
-			box_Sprite.texture = hp_60
-			if GameManager.Segundos < 40:
-				box_Sprite.texture = hp_40
-				if GameManager.Segundos < 20:
-					box_Sprite.texture = hp_20
-					if GameManager.Segundos == 0:
-						box_Sprite.texture = hp_dead
-			
 	
+	var porcentaje = (GameManager.Segundos / float(barra.max_value)) * 100
+
+	if porcentaje >= 80:
+		box_Sprite.texture = hp_full
+	elif porcentaje >= 60:
+		box_Sprite.texture = hp_80
+	elif porcentaje >= 40:
+		box_Sprite.texture = hp_60
+	elif porcentaje >= 20:
+		box_Sprite.texture = hp_40
+	elif porcentaje > 0:
+		box_Sprite.texture = hp_20
+	else:
+		box_Sprite.texture = hp_dead
+ 
+
 func wait_seconds(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
