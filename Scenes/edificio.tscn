@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=17 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_x4ykt"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_ipg8r"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pfcrh"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_nqwt2"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_gb5t6"]
+[ext_resource type="PackedScene" uid="uid://c3g2ykksoy262" path="res://Scenes/scene_transition.tscn" id="13_r7xou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_x4ykt")
@@ -530,6 +531,9 @@ expand_mode = 1
 [node name="textTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
+
+[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("13_r7xou")]
+visible = false
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ci4adhavm2flh"]
+[gd_scene load_steps=15 format=4 uid="uid://ci4adhavm2flh"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_uatga"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="4_62k27"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/test_npc.tscn" id="8_ag5gy"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pw04j"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_lkmvh"]
+[ext_resource type="PackedScene" uid="uid://c3g2ykksoy262" path="res://Scenes/scene_transition.tscn" id="11_76117"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_oj3rn"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_bnjuu"]
 
@@ -407,6 +408,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
+position = Vector2(0, 2)
 script = ExtResource("5_cqmo4")
 segundos = 45
 typewriter_delay = 0.06
@@ -421,7 +423,7 @@ position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
 
 [node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_ag5gy")]
-position = Vector2(168, -104)
+position = Vector2(168, -106)
 scale = Vector2(0.5, 0.5)
 npc_portrait = ExtResource("9_pw04j")
 
@@ -469,6 +471,9 @@ expand_mode = 1
 [node name="textTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
+
+[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_76117")]
+visible = false
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
