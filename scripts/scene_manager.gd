@@ -1,18 +1,20 @@
 extends Node2D
 
 # Este nodo maneja los elementos de la escena, el timer, cuantas botellas hay, etc.
-@export var segundos : int
-@export var descanso : bool #if true = indica que estás en la sala de descanso
-@export var next_level : NodePath
-@onready var dialogue_image : TextureRect = $CanvasLayer/DialogueBox/ColorRect
-@onready var dialogue_text : Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
-@onready var npc_portrait : TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
-@onready var timer : Node2D = $CanvasLayer/Timer
-@onready var SceneTransition : CanvasLayer = $Scene_Transition
+@export var segundos: int
+@export var descanso: bool # if true = indica que estás en la sala de descanso
+@export var next_level: NodePath
+@onready var dialogue_image: TextureRect = $CanvasLayer/DialogueBox/ColorRect
+@onready var dialogue_text: Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
+@onready var npc_portrait: TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
+@onready var timer: Node2D = $CanvasLayer/Timer
+@onready var SceneTransition: CanvasLayer = $Scene_Transition
+@onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
 
-var bottleNum : int = 0
-var bottleTotal : int
-var allBottles : bool = false
+var bottleNum: int = 0
+var bottleTotal: int
+var allBottles: bool = false
+var targetScene : NodePath
 
 # Typewriter effect variables
 var typewriter_text: String = ""
@@ -31,10 +33,7 @@ func _ready() -> void:
 	GameManager.currentLevel = current_scene
 	print(current_scene)
 	GameManager.Segundos = segundos
-	SceneTransition.visible = true
-	if descanso == true:
-		pass
-	else:
+	if not descanso:
 		GameManager.Segundos = segundos
 		for child in get_children():
 			if child.is_in_group("pickup"):
@@ -99,13 +98,15 @@ func addBottle():
 	if bottleNum == bottleTotal:
 		print("bien ahi")
 		allBottles = true
-		
+
+# Change scene with transition
 func change_scene(scene):
-	get_tree().change_scene_to_file(scene)
-	
-func stop_timer():
-	timer.stop_timer()
-	
-func load_next_level():
-	SceneTransition.transition_in()
-	#load
+	animation_player.play("Scene_Transition_in")  # Start the transition animation
+	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)  # Connect the signal
+	targetScene = scene
+
+# Function to handle the scene change after the animation finishes
+func _on_TransitionAnimation_finished(animation_name: String):
+	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
+		get_tree().change_scene_to_file(targetScene)  # Change to the new scene
+		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)  # Disconnect the signal to avoid multiple calls

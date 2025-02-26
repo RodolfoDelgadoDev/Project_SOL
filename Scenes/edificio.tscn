@@ -446,9 +446,7 @@ rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_g3pq2")
-segundos = 45
-typewriter_delay = 0.06
-cursor_blink_delay = 0.25
+segundos = 30
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
 position = Vector2(-88, 72)
@@ -533,7 +531,6 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("13_r7xou")]
-visible = false
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

@@ -1,10 +1,9 @@
 extends Control
 
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
-@onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer 
 
 func _ready():
-	SceneTransition.visible = true
 	# Connect the button signals
 	$RestartButton.pressed.connect(_on_Restartbutton_pressed)
 	$ExitButton.pressed.connect(_on_Exitbutton_pressed)

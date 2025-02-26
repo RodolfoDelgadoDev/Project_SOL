@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://kw26mlx677p3"]
+[gd_scene load_steps=3 format=3 uid="uid://kw26mlx677p3"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ic8hm"]
+[ext_resource type="PackedScene" uid="uid://c3g2ykksoy262" path="res://Scenes/scene_transition.tscn" id="2_n65rj"]
 
 [node name="GameOver" type="Node2D"]
 
@@ -63,3 +64,5 @@ grow_vertical = 0
 text = "EXIT"
 
 [node name="Camera2D" type="Camera2D" parent="Control"]
+
+[node name="Scene_Transition" parent="Control" instance=ExtResource("2_n65rj")]

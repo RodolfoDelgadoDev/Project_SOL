@@ -74,7 +74,6 @@ grow_vertical = 0
 text = "EXIT"
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("4_3616d")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
