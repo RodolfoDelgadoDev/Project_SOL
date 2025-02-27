@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_pfcrh"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_nqwt2"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_gb5t6"]
-[ext_resource type="PackedScene" path="res://Scenes/scene_transition.tscn" id="13_r7xou"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_r7xou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_x4ykt")
