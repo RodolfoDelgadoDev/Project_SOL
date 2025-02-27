@@ -127,9 +127,14 @@ _data = {
 script = ExtResource("1_3fciy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+z_index = -1
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1175.0
+offset_right = 1175.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lks0u")
@@ -137,12 +142,12 @@ expand_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
 z_index = 1
-y_sort_enabled = true
+z_as_relative = false
 position = Vector2(858, 486)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_wlevt")
 autoplay = "default"
-frame_progress = 0.255467
+frame_progress = 0.471352
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
