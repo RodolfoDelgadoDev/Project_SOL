@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene load_steps=12 format=3 uid="uid://8sgjnqmx3clh"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
+[ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="2_3mkai"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="2_be2es"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]
 [ext_resource type="Texture2D" uid="uid://c2x105b3aifoa" path="res://art/GameOver/GameOver_bg.png" id="3_1dqx8"]
@@ -18,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(1.7, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-120, -118), Vector2(-120, -35)]
+"values": [Vector2(-110, -118), Vector2(-110, -35)]
 }
 
 [sub_resource type="Animation" id="Animation_83asm"]
@@ -52,10 +53,10 @@ tracks/0/path = NodePath("Control/Overtext:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 3.13333),
+"times": PackedFloat32Array(2.5, 3.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-70, -118), Vector2(-70, -35)]
+"values": [Vector2(-76, -118), Vector2(-76, -35)]
 }
 
 [sub_resource type="Animation" id="Animation_dwyv7"]
@@ -106,6 +107,7 @@ offset_right = 68.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3mkai")
 text = "GAME
 "
 horizontal_alignment = 1
@@ -125,22 +127,22 @@ offset_right = 118.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3mkai")
 text = "OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -81.0
-offset_top = -11.0
-offset_right = 14.0
-offset_bottom = 20.0
+offset_left = -74.0
+offset_top = -12.0
+offset_right = 21.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.75, 0.75)
@@ -160,17 +162,16 @@ theme_override_fonts/font = ExtResource("2_qdyew")
 text = "NEW GAME"
 
 [node name="ExitButton" type="Button" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -11.0
-offset_right = 109.0
-offset_bottom = 20.0
+offset_left = 4.0
+offset_top = -12.0
+offset_right = 99.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.75, 0.75)
