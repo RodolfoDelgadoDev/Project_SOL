@@ -101,8 +101,9 @@ func addBottle():
 
 # Change scene with transition
 func change_scene(scene):
+	if not animation_player.is_connected("animation_finished", _on_TransitionAnimation_finished):
+		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)  # Connect the signal only if not already connected
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
-	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)  # Connect the signal
 	targetScene = scene
 
 # Function to handle the scene change after the animation finishes

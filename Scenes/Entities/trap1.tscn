@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp8h2tftclb1y"]
+
+[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_fej7p"]
+[ext_resource type="Texture2D" uid="uid://bduw5c5outah4" path="res://art/water puddle ver 6.png" id="2_fryk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
+size = Vector2(64, 64)
+
+[node name="Trap1" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fej7p")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_a4f3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("2_fryk7")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

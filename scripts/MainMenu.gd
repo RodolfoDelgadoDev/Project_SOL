@@ -18,4 +18,4 @@ func _on_Exitbutton_pressed():
 # Function to handle the scene change after the animation finishes
 func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
-		get_tree().change_scene_to_file("res://Scenes/edificio.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/edificio.tscn")
