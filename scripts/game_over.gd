@@ -8,6 +8,13 @@ func _ready():
 	$RestartButton.pressed.connect(_on_Restartbutton_pressed)
 	$ExitButton.pressed.connect(_on_Exitbutton_pressed)
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
+	$RestartButton.visible = false
+	$ExitButton.visible = false
+	await get_tree().create_timer(5.1).timeout
+	$RestartButton.visible = true
+	await get_tree().create_timer(0.5).timeout
+	$ExitButton.visible = true
+	
 
 func _on_Restartbutton_pressed():
 	animation_player.play("Scene_Transition_in")  # Start the transition animation

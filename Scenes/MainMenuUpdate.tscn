@@ -249,7 +249,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_fonts/font = ExtResource("7_lvm8q")
 text = "NEW GAME"
 
-[node name="RestartButton2" type="Button" parent="Control"]
+[node name="TutorialButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
