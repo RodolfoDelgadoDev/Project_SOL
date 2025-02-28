@@ -1,6 +1,11 @@
 extends Node2D
 
 @export var damage: int
+@onready var animSprite : AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	#animSprite.play("attack")
+	pass
 
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:

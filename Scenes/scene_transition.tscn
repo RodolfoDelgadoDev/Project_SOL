@@ -29,7 +29,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8c1lq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"ride",
 "speed": 5.0
 }]
 
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_5gcru"]
@@ -73,7 +73,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1175, 0), Vector2(0, 0)]
+"values": [Vector2(-1175, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -90,7 +90,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_qvt0r"]
 resource_name = "Scene_Transition_out"
-length = 0.8
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,10 +98,10 @@ tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1175, 0)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1175, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -127,14 +127,13 @@ _data = {
 script = ExtResource("1_3fciy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 show_behind_parent = true
 z_index = -1
 z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1175.0
-offset_right = 1175.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lks0u")
@@ -143,11 +142,11 @@ expand_mode = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
 z_index = 1
 z_as_relative = false
-position = Vector2(858, 486)
-scale = Vector2(5.9, 5.9)
+position = Vector2(241, 135)
 sprite_frames = SubResource("SpriteFrames_wlevt")
-autoplay = "default"
-frame_progress = 0.471352
+animation = &"ride"
+autoplay = "ride"
+frame_progress = 0.434021
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
