@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b5bah30osjq1n" path="res://art/Transition/Pseudo cielo.png" id="1_mlxmx"]
 [ext_resource type="Texture2D" uid="uid://bvp43boalei7x" path="res://art/Transition/Sunshine.png" id="2_d0mjm"]
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_spgu8"]
-[ext_resource type="Texture2D" uid="uid://bgvvhfeyh3qfg" path="res://art/Transition/Palmeras.png" id="3_doeu0"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="3_q4hgc"]
+[ext_resource type="Texture2D" uid="uid://bhx46qhm4ws2" path="res://art/Transition/Palmeris.png" id="3_vvg7v"]
 [ext_resource type="AudioStream" uid="uid://ld5vcpy7abh8" path="res://SFX/mainMenu.mp3" id="4_53hdj"]
 [ext_resource type="Texture2D" uid="uid://bsmj2qhirpu55" path="res://art/Transition/Rejillas.png" id="4_udwr0"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="6_d4kqs"]
@@ -181,7 +181,8 @@ offset_left = 852.0
 offset_top = -87.0
 offset_right = 3540.0
 offset_bottom = 81.0
-texture = ExtResource("3_doeu0")
+scale = Vector2(0.67, 1)
+texture = ExtResource("3_vvg7v")
 
 [node name="Rejillas" type="TextureRect" parent="."]
 offset_left = -146.0
