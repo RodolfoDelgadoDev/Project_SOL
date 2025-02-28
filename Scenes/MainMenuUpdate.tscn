@@ -1,0 +1,349 @@
+[gd_scene load_steps=26 format=3 uid="uid://tclvsxpekcfx"]
+
+[ext_resource type="Texture2D" uid="uid://b5bah30osjq1n" path="res://art/Transition/Pseudo cielo.png" id="1_mlxmx"]
+[ext_resource type="Texture2D" uid="uid://bvp43boalei7x" path="res://art/Transition/Sunshine.png" id="2_d0mjm"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_spgu8"]
+[ext_resource type="Texture2D" uid="uid://bgvvhfeyh3qfg" path="res://art/Transition/Palmeras.png" id="3_doeu0"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="3_q4hgc"]
+[ext_resource type="AudioStream" uid="uid://ld5vcpy7abh8" path="res://SFX/mainMenu.mp3" id="4_53hdj"]
+[ext_resource type="Texture2D" uid="uid://bsmj2qhirpu55" path="res://art/Transition/Rejillas.png" id="4_udwr0"]
+[ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="6_d4kqs"]
+[ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="7_lvm8q"]
+[ext_resource type="Texture2D" uid="uid://b83q57xkhuhvu" path="res://animations/Moto - Godot.png" id="8_4uypq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44hu4"]
+atlas = ExtResource("8_4uypq")
+region = Rect2(0, 0, 76, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xkdm"]
+atlas = ExtResource("8_4uypq")
+region = Rect2(76, 0, 76, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c1lq"]
+atlas = ExtResource("8_4uypq")
+region = Rect2(152, 0, 76, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrdk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44hu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xkdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c1lq")
+}],
+"loop": true,
+"name": &"ride",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_0f1ai"]
+resource_name = "Palmeras Loop"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Palmeras:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(820, -87), Vector2(-3218, -87)]
+}
+
+[sub_resource type="Animation" id="Animation_qi18r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Palmeras:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(852, -87)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3ae3"]
+_data = {
+"Palmeras Loop": SubResource("Animation_0f1ai"),
+"RESET": SubResource("Animation_qi18r")
+}
+
+[sub_resource type="Animation" id="Animation_7u1lr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Rejillas:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-146, -87)]
+}
+
+[sub_resource type="Animation" id="Animation_v6fku"]
+resource_name = "Rejillas Background"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Rejillas:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-146, -87), Vector2(-2460, -87)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pogts"]
+_data = {
+"RESET": SubResource("Animation_7u1lr"),
+"Rejillas Background": SubResource("Animation_v6fku")
+}
+
+[sub_resource type="Animation" id="Animation_prp5v"]
+resource_name = "Animacion Sol"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmmgc"]
+_data = {
+"Animacion Sol": SubResource("Animation_prp5v")
+}
+
+[sub_resource type="Animation" id="Animation_3w21f"]
+resource_name = "Background Loop"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-146, -87), Vector2(-2460, -87)]
+}
+
+[sub_resource type="Animation" id="Animation_ybv24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-146, -87)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdswn"]
+_data = {
+"Background Loop": SubResource("Animation_3w21f"),
+"RESET": SubResource("Animation_ybv24")
+}
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="Sun" type="Sprite2D" parent="."]
+position = Vector2(-57, -26)
+texture = ExtResource("2_d0mjm")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -146.0
+offset_top = -87.0
+offset_right = 2542.0
+offset_bottom = 81.0
+texture = ExtResource("1_mlxmx")
+
+[node name="Palmeras" type="TextureRect" parent="."]
+offset_left = 852.0
+offset_top = -87.0
+offset_right = 3540.0
+offset_bottom = 81.0
+texture = ExtResource("3_doeu0")
+
+[node name="Rejillas" type="TextureRect" parent="."]
+offset_left = -146.0
+offset_top = -87.0
+offset_right = 2542.0
+offset_bottom = 81.0
+texture = ExtResource("4_udwr0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "ASDASDDSASDSADSDA"
+script = ExtResource("2_spgu8")
+
+[node name="Gameovertext" type="Label" parent="Control"]
+light_mask = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -68.0
+offset_right = 149.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.24, 1)
+theme_override_fonts/font = ExtResource("6_d4kqs")
+text = "PROYECTO SOL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -46.0
+offset_right = 123.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0.63438, 0.231125, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_outline_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_focus_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_fonts/font = ExtResource("7_lvm8q")
+text = "NEW GAME"
+
+[node name="RestartButton2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -11.0
+offset_right = 134.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.76, 0.76)
+theme_override_colors/font_disabled_color = Color(0, 0.0978662, 0.644952, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/font_hover_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/font_pressed_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/font_focus_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/font_outline_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_normal_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_focus_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_pressed_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_hover_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_colors/icon_disabled_color = Color(0.176471, 0.403922, 0.984314, 1)
+theme_override_fonts/font = ExtResource("7_lvm8q")
+text = "TUTORIAL"
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 36.0
+offset_right = 115.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.725, 0.725)
+theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_lvm8q")
+text = "EXIT"
+
+[node name="Scene_Transition" parent="Control" instance=ExtResource("3_q4hgc")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_53hdj")
+autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+position = Vector2(-73, 47)
+sprite_frames = SubResource("SpriteFrames_mrdk0")
+animation = &"ride"
+autoplay = "ride"
+
+[node name="AnimacionPalmeras" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimacionBackground")
+libraries = {
+"": SubResource("AnimationLibrary_y3ae3")
+}
+autoplay = "Palmeras Loop"
+
+[node name="AnimacionRejillas" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimacionBackground")
+libraries = {
+"": SubResource("AnimationLibrary_pogts")
+}
+autoplay = "Rejillas Background"
+
+[node name="AnimacionSol" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimacionBackground")
+libraries = {
+"": SubResource("AnimationLibrary_qmmgc")
+}
+
+[node name="AnimacionBackground" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fdswn")
+}
+autoplay = "Background Loop"
