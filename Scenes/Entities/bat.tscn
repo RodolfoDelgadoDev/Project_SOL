@@ -55,7 +55,7 @@ script = ExtResource("1_hc5au")
 attackSFX = ExtResource("2_g6ehe")
 hurtSFX = ExtResource("3_ewqpq")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
 collision_mask = 7
 
@@ -66,7 +66,7 @@ texture = ExtResource("1_nygj6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_s6hlb")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 shape = SubResource("RectangleShape2D_a4f3a")

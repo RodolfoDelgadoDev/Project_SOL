@@ -13,6 +13,7 @@ var directions = {
 @onready var attack_timer: Timer = $attack_timer
 @onready var attack_area: CollisionShape2D = $CharacterBody2D/Area2D/AttackSprite/Attack_area/CollisionShape2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var camera: Camera2D = $CharacterBody2D/Camera2D
 
 # Define the size of the grid
 @export var GRID_SIZE = 64
@@ -34,13 +35,17 @@ var moving: bool = false
 var move_timer: float = 0.0
 var can_attack: bool = true
 
+# Camera shake variables
+@export var shake_intensity: float = 0.0
+@export var shake_duration: float = 0.0
+@export var shake_decay: float = 5.0
+
 func _ready():
 	# Reference the CharacterBody2D node
 	character_body = $CharacterBody2D
 	attack_sprite.visible = false
 	attack_area.disabled = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if alive():
 		if Input.is_action_just_pressed("attack"):
@@ -72,10 +77,19 @@ func _process(delta):
 	else:
 		animaton.play("Death")
 
-# Ensure the player is always aligned with the grid
-func _physics_process(_delta):
-	if not moving:
-		character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+	# Handle camera shake
+	if shake_duration > 0:
+		# Apply random offset to the camera
+		camera.offset = Vector2(
+			randf_range(-shake_intensity, shake_intensity),
+			randf_range(-shake_intensity, shake_intensity)
+		)
+		# Reduce shake intensity over time
+		shake_duration -= delta
+		shake_intensity = lerp(shake_intensity, 0.0, shake_decay * delta)
+	else:
+		# Reset the camera offset when shaking is done
+		camera.offset = Vector2.ZERO
 
 # Function to handle movement
 func move(direction: Vector2):
@@ -143,3 +157,9 @@ func direction_to_string(direction: Vector2) -> String:
 	elif direction == Vector2.RIGHT:
 		return "RIGHT"
 	return ""
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		# Start the camera shake
+		shake_intensity = 5.0  # Adjust intensity as needed
+		shake_duration = 0.3    # Adjust duration as needed

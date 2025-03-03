@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=14 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
-[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="4_w46hn"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="7_kn43e"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_rjq4s"]
@@ -293,21 +292,19 @@ rendering_quadrant_size = 32
 position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
 segundos = 45
+descanso = true
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25
-
-[node name="Coin" parent="Scene Manager" instance=ExtResource("4_w46hn")]
-position = Vector2(-88, 72)
-scale = Vector2(0.5, 0.5)
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
 position = Vector2(-216, -74)
 scale = Vector2(0.5, 0.5)
 
-[node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_lg3p3")]
+[node name="Olga" parent="Scene Manager" instance=ExtResource("8_lg3p3")]
 position = Vector2(40, -74)
 scale = Vector2(0.5, 0.5)
 npc_portrait = ExtResource("7_kn43e")
+dialogue_lines = ["Gracias por entregar ese paquete.", "La gente que lo recibió estará agradecida."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
@@ -338,9 +335,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_b25ds")
 theme_override_colors/font_color = Color(0.294118, 0.219608, 0.192157, 1)
+theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+justification_flags = 131
 
 [node name="Portrait" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
 layout_mode = 0
