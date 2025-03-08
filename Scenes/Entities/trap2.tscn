@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0eunisgmhv6q"]
+
+[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_aosdo"]
+[ext_resource type="Texture2D" uid="uid://c802bfsu10pyr" path="res://art/Traps-Acid puddle.png" id="2_eedhj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
+size = Vector2(34, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pclvp"]
+atlas = ExtResource("2_eedhj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4o3k"]
+atlas = ExtResource("2_eedhj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bxam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pclvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4o3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Trap2" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_aosdo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_a4f3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(1.90735e-06, -2)
+scale = Vector2(0.875, 0.8125)
+sprite_frames = SubResource("SpriteFrames_3bxam")
+autoplay = "default"
+frame_progress = 0.876165
+speed_scale = 0.5
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

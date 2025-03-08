@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 		is_scene_change_in_progress = true  # Set the state to indicate a scene change is in progress
 		var parent = get_parent()
 		var grandparent = parent.get_parent()
-		grandparent.change_scene("res://Scenes/GameOver.tscn")  # Call the scene change
+		grandparent.change_scene("res://Scenes/GameOverUpdate.tscn")  # Call the scene change
 
 func _on_timer_timeout() -> void:
 	if GameManager.Segundos > 0:

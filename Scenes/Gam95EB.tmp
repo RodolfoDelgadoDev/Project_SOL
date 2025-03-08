@@ -66,6 +66,3 @@ text = "EXIT"
 [node name="Camera2D" type="Camera2D" parent="Control"]
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("2_n65rj")]
-
-[connection signal="pressed" from="Control/RestartButton" to="Control" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Control/ExitButton" to="Control" method="_on_exit_button_pressed"]

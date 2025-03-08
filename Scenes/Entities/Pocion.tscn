@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp1f3ntsgjecj"]
+
+[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_x7jtw"]
+[ext_resource type="Texture2D" uid="uid://cvj3ydiua651m" path="res://art/Purple potion.png" id="2_0jn8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
+size = Vector2(28, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bawx"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(0, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wi7t"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(46, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6dee"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(92, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16ps2"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(138, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu4dk"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(184, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrhou"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(230, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0nxb"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(276, 0, 46, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6dm6"]
+atlas = ExtResource("2_0jn8j")
+region = Rect2(322, 0, 46, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7g2ht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bawx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wi7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6dee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16ps2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu4dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrhou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0nxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6dm6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="pocion" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_x7jtw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_a4f3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -2)
+scale = Vector2(0.5, 0.612)
+sprite_frames = SubResource("SpriteFrames_7g2ht")
+autoplay = "default"
+frame_progress = 0.694141
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

@@ -574,7 +574,6 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("9_wsi7r")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]

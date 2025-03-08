@@ -82,6 +82,14 @@ _data = {
 
 [node name="GameOver" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -155.0
+offset_top = -94.0
+offset_right = 133.0
+offset_bottom = 68.0
+scale = Vector2(1.115, 1.115)
+texture = ExtResource("3_1dqx8")
+
 [node name="Control" type="Control" parent="."]
 z_index = 2
 layout_mode = 3
@@ -101,9 +109,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.0
+offset_left = -120.0
 offset_top = -118.0
-offset_right = 78.0
+offset_right = 68.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -194,14 +202,6 @@ text = "EXIT"
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("2_be2es")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -155.0
-offset_top = -94.0
-offset_right = 133.0
-offset_bottom = 68.0
-scale = Vector2(1.115, 1.115)
-texture = ExtResource("3_1dqx8")
-
 [node name="Game" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fl6fk")
@@ -213,3 +213,6 @@ libraries = {
 "": SubResource("AnimationLibrary_4r2gc")
 }
 autoplay = "Over Animation"
+
+[connection signal="pressed" from="Control/RestartButton" to="Control" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/ExitButton" to="Control" method="_on_exit_button_pressed"]

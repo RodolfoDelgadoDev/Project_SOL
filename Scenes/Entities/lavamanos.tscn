@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8muovwc81is3"]
+
+[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_xlqi5"]
+[ext_resource type="Texture2D" uid="uid://bpucru7psn58f" path="res://art/Cocina Animada.png" id="2_a6bc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4vbc"]
+size = Vector2(68, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pige"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7gg4"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pm10"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdu5w"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt8x1"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwn5q"]
+atlas = ExtResource("2_a6bc4")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dp2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pige")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7gg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pm10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdu5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt8x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwn5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="platoslava" type="Node2D"]
+script = ExtResource("1_xlqi5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c4vbc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3dp2x")
+autoplay = "default"
+frame_progress = 0.150302
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c4vbc")

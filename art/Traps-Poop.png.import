@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt1kgw8nl5tb6"
-path="res://.godot/imported/dungeon_tiles_0.png-888a7b861115784537da799578915f83.ctex"
+uid="uid://b374uujx3ttwc"
+path="res://.godot/imported/Traps-Poop.png-898feb0fbd5806f0bbd72e17200a4bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/dungeon_tiles_0.png"
-dest_files=["res://.godot/imported/dungeon_tiles_0.png-888a7b861115784537da799578915f83.ctex"]
+source_file="res://art/Traps-Poop.png"
+dest_files=["res://.godot/imported/Traps-Poop.png-898feb0fbd5806f0bbd72e17200a4bfc.ctex"]
 
 [params]
 
