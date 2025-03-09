@@ -69,7 +69,7 @@ func start_moving():
 		if patrol_path.size() > 0:
 			# Record the initial position before attempting to move
 			initial_position = character_body.position
-			update_flip()
+			#update_flip()
 			target_velocity = patrol_path[current_patrol_index] * (GRID_SIZE / move_duration)
 			moving = true
 			move_timer = 0.0
@@ -90,14 +90,14 @@ func _physics_process(_delta):
 		if not moving:
 			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 			print(target_velocity.x)
-		update_flip()
+		#update_flip()
 
 
-func update_flip():
-	if target_velocity.x < 0:
-		animated_sprite.flip_h = true
-	else:
-		animated_sprite.flip_h = false
+#func update_flip():
+	#if target_velocity.x < 0:
+		#animated_sprite.flip_h = true
+	#else:
+		#animated_sprite.flip_h = false
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if alive():
