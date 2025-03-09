@@ -83,11 +83,11 @@ health = 30
 attackSFX = ExtResource("2_wru3d")
 hurtSFX = ExtResource("3_3cyck")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["enemy"]]
 shape = SubResource("RectangleShape2D_s6hlb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -97,9 +97,9 @@ sprite_frames = SubResource("SpriteFrames_uih8d")
 autoplay = "default"
 frame_progress = 0.726811
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" groups=["enemy"]]
 shape = SubResource("RectangleShape2D_a4f3a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
