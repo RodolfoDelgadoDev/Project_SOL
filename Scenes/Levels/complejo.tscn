@@ -545,6 +545,7 @@ rendering_quadrant_size = 32
 
 [node name="Chest" parent="." instance=ExtResource("2_6tg30")]
 position = Vector2(26, -74)
+damage = 0
 
 [node name="Player" parent="." instance=ExtResource("4_oigfh")]
 position = Vector2(56, 168)
