@@ -1,9 +1,53 @@
-[gd_scene load_steps=10 format=3 uid="uid://byycyvx2f7pjl"]
+[gd_scene load_steps=17 format=3 uid="uid://byycyvx2f7pjl"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_hc5au"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="1_nygj6"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_g6ehe"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_ewqpq"]
+[ext_resource type="Texture2D" uid="uid://co3ruibsg1jyh" path="res://animations/Enemies/Bat/Bat2 animation.png" id="4_hkvig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nimad"]
+atlas = ExtResource("4_hkvig")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7fc8"]
+atlas = ExtResource("4_hkvig")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppax4"]
+atlas = ExtResource("4_hkvig")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvrp2"]
+atlas = ExtResource("4_hkvig")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qksdl"]
+atlas = ExtResource("4_hkvig")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkuue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nimad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7fc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppax4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvrp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qksdl")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
 size = Vector2(60, 60)
@@ -59,7 +103,15 @@ hurtSFX = ExtResource("3_ewqpq")
 collision_layer = 4
 collision_mask = 7
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_bkuue")
+animation = &"Flying"
+autoplay = "Flying"
+frame_progress = 0.445503
+
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
 scale = Vector2(1.875, 1.875)
 texture = ExtResource("1_nygj6")
 

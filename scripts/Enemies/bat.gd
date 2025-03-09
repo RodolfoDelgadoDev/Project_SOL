@@ -18,6 +18,7 @@ extends Node2D
 
 @onready var animator: AnimationPlayer = $CharacterBody2D/AnimationPlayer
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
 var character_body: CharacterBody2D
 var current_patrol_index = 0
@@ -44,7 +45,6 @@ func _process(delta):
 			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
 			character_body.move_and_slide()
 			move_timer += delta
-
 			# Stop moving if the duration is reached
 			if move_timer >= move_duration:
 				# Snap to the nearest grid position to ensure precision
@@ -69,9 +69,12 @@ func start_moving():
 		if patrol_path.size() > 0:
 			# Record the initial position before attempting to move
 			initial_position = character_body.position
+			update_flip()
 			target_velocity = patrol_path[current_patrol_index] * (GRID_SIZE / move_duration)
 			moving = true
 			move_timer = 0.0
+			
+
 
 		# Play move sound effect
 		#audio_player.stream = moveSFX
@@ -86,6 +89,15 @@ func _physics_process(_delta):
 	if alive():
 		if not moving:
 			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+			print(target_velocity.x)
+		update_flip()
+
+
+func update_flip():
+	if target_velocity.x < 0:
+		animated_sprite.flip_h = true
+	else:
+		animated_sprite.flip_h = false
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if alive():
