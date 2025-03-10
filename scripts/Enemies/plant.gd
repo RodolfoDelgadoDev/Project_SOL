@@ -120,7 +120,7 @@ func _physics_process(_delta):
 			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	if alive():
+	if alive() && GameManager.Segundos > 0:
 		if area.is_in_group("player"):
 			audio_player.stream = attackSFX
 			audio_player.play()  # Play attack sound
