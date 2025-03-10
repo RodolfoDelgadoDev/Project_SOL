@@ -456,7 +456,7 @@ damage = 2
 patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(1, 0)])
 
 [node name="Ghost" parent="Enemies" instance=ExtResource("3_or4ye")]
-position = Vector2(-296, 136)
+position = Vector2(-344, 136)
 scale = Vector2(0.25, 0.25)
 health = 20000
 player_node_path = NodePath("../../Player")
