@@ -25,6 +25,8 @@ var tried_alternative: bool = false
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
 @onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var animatedSprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+
 
 func _ready():
 	# Reference our own CharacterBody2D node.
@@ -80,8 +82,10 @@ func start_moving():
 		# Move horizontally.
 		if last_diff.x > 0:
 			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
+			updateFlip(true)
 		else:
 			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
+			updateFlip(false)
 	else:
 		# Move vertically.
 		if last_diff.y > 0:
@@ -106,8 +110,11 @@ func try_alternative_move():
 		# Primary was vertical; try horizontal.
 		if last_diff.x > 0:
 			target_velocity = Vector2.RIGHT * (GRID_SIZE / move_duration)
+			updateFlip(true)
 		else:
 			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
+			updateFlip(false)
+			
 	
 	# Attempt the alternative move immediately.
 	initial_position = character_body.position
@@ -143,3 +150,9 @@ func takeDamage():
 		if health <= 0:
 			await audio_player.finished
 			queue_free()
+
+func updateFlip(dir: bool):
+	if dir == false:
+		animatedSprite.flip_h = false
+	else:
+		animatedSprite.flip_h = true
