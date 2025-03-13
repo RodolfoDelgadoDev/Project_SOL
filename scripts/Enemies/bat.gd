@@ -28,17 +28,19 @@ var move_timer: float = 0.0
 var wait_timer: float = 0.0
 var initial_position: Vector2
 var initialized: bool = false  # Flag to indicate initialization
+var SceneManager
 
 func _ready():
 	# Reference the CharacterBody2D node
 	character_body = $CharacterBody2D
 	wait_timer = -initial_wait_time  # Start with an initial wait time
 	initialized = true
+	SceneManager = get_parent()
 
 func _process(delta):
 	if not initialized:
 		return
-	if alive():
+	if alive() && !GameManager.goal:
 		if moving:
 			# Calculate the movement step
 			var remaining_time = move_duration - move_timer

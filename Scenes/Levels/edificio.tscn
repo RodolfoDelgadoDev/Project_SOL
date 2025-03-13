@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=30 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_8md0o"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_asp4p"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_q161q"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_fmbuq"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_7lmb3"]
+[ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="8_xd45n"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_2dhdg"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_j62gm"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_83hny"]
@@ -376,6 +377,84 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdo8t"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(0, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqc3"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(64, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p7gx"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(128, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by21n"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(192, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui1kg"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(256, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynyxa"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(320, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh7ks"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(384, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgrni"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(448, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n4vw"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(512, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40o6o"]
+atlas = ExtResource("8_xd45n")
+region = Rect2(576, 0, 64, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lccc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdo8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p7gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by21n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui1kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynyxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgrni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n4vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40o6o")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 5.0
+}]
+
 [sub_resource type="Theme" id="Theme_6rhx5"]
 default_font = ExtResource("12_v1avn")
 default_font_size = 15
@@ -478,9 +557,15 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(88, 72)
 scale = Vector2(0.5, 0.5)
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_fmbuq")]
+[node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_fmbuq")]
 position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene Manager/Goal"]
+position = Vector2(-16, -34)
+sprite_frames = SubResource("SpriteFrames_lccc0")
+animation = &"Open"
 
 [node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_7lmb3")]
 position = Vector2(168, -104)

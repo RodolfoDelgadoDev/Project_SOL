@@ -74,7 +74,7 @@ func _process(delta):
 				moving = false
 				move_timer = 0.0
 				target_velocity = Vector2.ZERO
-	else:
+	else:	
 		animaton.play("Death")
 
 	# Handle camera shake

@@ -35,7 +35,7 @@ func _ready():
 	start_moving()
 
 func _process(delta):
-	if alive():
+	if alive() && GameManager.goal == false:
 		if moving:
 			var remaining_time = move_duration - move_timer
 			# Move smoothly toward the target velocity.

@@ -15,6 +15,7 @@ scale = Vector2(0.99077, 0.990769)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_n8cco")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
