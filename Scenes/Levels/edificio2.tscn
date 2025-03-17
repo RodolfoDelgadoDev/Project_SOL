@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://cutxnt43fhgry"]
+[gd_scene load_steps=27 format=4 uid="uid://cutxnt43fhgry"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_ya4p3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_ktjj2"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_nkril"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_ivrbb"]
+[ext_resource type="Texture2D" uid="uid://cvm5f3ur3c051" path="res://animations/Doors/Edificio2/Level 2.png" id="7_cvcqm"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_cwi5v"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_4qr2m"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_ahpc5"]
@@ -373,6 +374,84 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o4k1"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(0, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngqjp"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(64, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhvv4"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(128, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab43w"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(192, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8ysg"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(256, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88apw"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(320, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wci37"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(384, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27l50"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(448, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suhbe"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(512, 0, 64, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe43m"]
+atlas = ExtResource("7_cvcqm")
+region = Rect2(576, 0, 64, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkh4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o4k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngqjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhvv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab43w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8ysg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88apw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wci37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27l50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suhbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe43m")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 5.0
+}]
+
 [sub_resource type="Theme" id="Theme_6rhx5"]
 default_font = ExtResource("12_hllyb")
 default_font_size = 15
@@ -516,9 +595,15 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-184, -136)
 scale = Vector2(0.5, 0.5)
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_cwi5v")]
+[node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_cwi5v")]
 position = Vector2(8, 24)
 scale = Vector2(0.5, 0.5)
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene Manager/Goal"]
+position = Vector2(-16, -34)
+sprite_frames = SubResource("SpriteFrames_bkh4d")
+animation = &"Open"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
