@@ -3,58 +3,58 @@
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_83vce"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_wru3d"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_3cyck"]
-[ext_resource type="Texture2D" uid="uid://bjnem5n0txi08" path="res://art/Dog terror.png" id="4_8jbcx"]
+[ext_resource type="Texture2D" uid="uid://dckyb8ts0ugwo" path="res://animations/Enemies/BadDog/Dog terror.png" id="5_6qss3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
 size = Vector2(60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n1tko"]
-atlas = ExtResource("4_8jbcx")
-region = Rect2(0, 0, 45, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqjfs"]
+atlas = ExtResource("5_6qss3")
+region = Rect2(225, 0, 45, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_krupl"]
-atlas = ExtResource("4_8jbcx")
-region = Rect2(45, 0, 45, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlr0s"]
-atlas = ExtResource("4_8jbcx")
-region = Rect2(90, 0, 45, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwhyh"]
-atlas = ExtResource("4_8jbcx")
-region = Rect2(135, 0, 45, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tr0q0"]
-atlas = ExtResource("4_8jbcx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvmga"]
+atlas = ExtResource("5_6qss3")
 region = Rect2(180, 0, 45, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2a60"]
-atlas = ExtResource("4_8jbcx")
-region = Rect2(225, 0, 45, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kqb2"]
+atlas = ExtResource("5_6qss3")
+region = Rect2(135, 0, 45, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjkus"]
+atlas = ExtResource("5_6qss3")
+region = Rect2(90, 0, 45, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow25s"]
+atlas = ExtResource("5_6qss3")
+region = Rect2(45, 0, 45, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buw7u"]
+atlas = ExtResource("5_6qss3")
+region = Rect2(0, 0, 45, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uih8d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n1tko")
+"texture": SubResource("AtlasTexture_vqjfs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_krupl")
+"texture": SubResource("AtlasTexture_pvmga")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nlr0s")
+"texture": SubResource("AtlasTexture_3kqb2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uwhyh")
+"texture": SubResource("AtlasTexture_xjkus")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tr0q0")
+"texture": SubResource("AtlasTexture_ow25s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f2a60")
+"texture": SubResource("AtlasTexture_buw7u")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 8.0
 }]
 
@@ -94,8 +94,8 @@ shape = SubResource("RectangleShape2D_s6hlb")
 position = Vector2(6, -0.999999)
 scale = Vector2(1.6, 1.8125)
 sprite_frames = SubResource("SpriteFrames_uih8d")
-autoplay = "default"
-frame_progress = 0.726811
+animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
 
