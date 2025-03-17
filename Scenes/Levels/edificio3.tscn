@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dvs0m58nhtvw1"]
+[gd_scene load_steps=33 format=4 uid="uid://dvs0m58nhtvw1"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_kvah8"]
 [ext_resource type="PackedScene" uid="uid://c5du1q1o0k332" path="res://Scenes/Entities/ghost.tscn" id="3_or4ye"]
@@ -460,6 +460,16 @@ animations = [{
 default_font = ExtResource("9_k13nc")
 default_font_size = 15
 
+[sub_resource type="Gradient" id="Gradient_ji05w"]
+offsets = PackedFloat32Array(0, 0.638614, 0.727723)
+colors = PackedColorArray(0.97247, 0.564351, 0.534479, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hyndh"]
+gradient = SubResource("Gradient_ji05w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -853,6 +863,13 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAAJAAAAAgASAAYAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.281187, 0.281187, 0.281187, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-74, 120)
+texture = SubResource("GradientTexture2D_hyndh")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

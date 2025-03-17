@@ -456,7 +456,7 @@ animations = [{
 default_font = ExtResource("12_hllyb")
 default_font_size = 15
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
