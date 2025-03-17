@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5du1q1o0k332"]
+[gd_scene load_steps=21 format=3 uid="uid://c5du1q1o0k332"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_0g4jc"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_71swj"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_1r7ir"]
 [ext_resource type="Shader" path="res://Scenes/Entities/ghost.gdshader" id="4_groxj"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="4_o466e"]
+[ext_resource type="Texture2D" uid="uid://ew2kcruwhgi7" path="res://animations/Enemies/Ghost/Ghost.png" id="6_jvhgg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le1ve"]
 shader = ExtResource("4_groxj")
@@ -16,6 +17,56 @@ shader_parameter/transparency = 0.285
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu3nv"]
 atlas = ExtResource("4_o466e")
 region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6epyd"]
+shader = ExtResource("4_groxj")
+shader_parameter/wave_amplitude = 5.0
+shader_parameter/wave_frequency = 3.0
+shader_parameter/wave_speed = 2.0
+shader_parameter/transparency = 0.7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w28io"]
+atlas = ExtResource("6_jvhgg")
+region = Rect2(0, 0, 28, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahyq3"]
+atlas = ExtResource("6_jvhgg")
+region = Rect2(28, 0, 28, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5qc"]
+atlas = ExtResource("6_jvhgg")
+region = Rect2(56, 0, 28, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a65ht"]
+atlas = ExtResource("6_jvhgg")
+region = Rect2(84, 0, 28, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knrpq"]
+atlas = ExtResource("6_jvhgg")
+region = Rect2(112, 0, 28, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gudec"]
+animations = [{
+"frames": [{
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_w28io")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_ahyq3")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_6t5qc")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_a65ht")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_knrpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
 size = Vector2(60, 60)
@@ -73,10 +124,19 @@ hurtSFX = ExtResource("3_1r7ir")
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
 material = SubResource("ShaderMaterial_le1ve")
 position = Vector2(-1.90735e-06, -1.90735e-06)
 scale = Vector2(2.875, 2.875)
 texture = SubResource("AtlasTexture_nu3nv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+material = SubResource("ShaderMaterial_6epyd")
+position = Vector2(-9.53674e-07, -3.8147e-06)
+scale = Vector2(2.28571, 2.28571)
+sprite_frames = SubResource("SpriteFrames_gudec")
+autoplay = "default"
+frame_progress = 0.761437
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_s6hlb")
