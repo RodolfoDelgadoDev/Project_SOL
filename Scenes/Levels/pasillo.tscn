@@ -1,17 +1,20 @@
-[gd_scene load_steps=16 format=4 uid="uid://re7fm7hr7pod"]
+[gd_scene load_steps=19 format=4 uid="uid://re7fm7hr7pod"]
 
 [ext_resource type="Texture2D" uid="uid://dnml7ans72uk2" path="res://art/Tilemap-Tutorial.png" id="1_y16f4"]
-[ext_resource type="PackedScene" uid="uid://b8muovwc81is3" path="res://Scenes/lavamanos.tscn" id="2_3odr5"]
-[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/bat.tscn" id="2_ukx5b"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/player.tscn" id="2_ventg"]
+[ext_resource type="PackedScene" uid="uid://b8muovwc81is3" path="res://Scenes/Entities/lavamanos.tscn" id="2_3odr5"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="2_ventg"]
+[ext_resource type="PackedScene" uid="uid://chdt0j2qa3ot1" path="res://Scenes/Entities/batDark.tscn" id="3_tivl6"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="3_x207l"]
-[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/coin.tscn" id="4_arjuw"]
+[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="4_arjuw"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="4_ejx0k"]
-[ext_resource type="PackedScene" uid="uid://cje475neioddk" path="res://Scenes/elJefe.tscn" id="4_jx24d"]
+[ext_resource type="PackedScene" uid="uid://cje475neioddk" path="res://Scenes/Entities/elJefe.tscn" id="4_jx24d"]
+[ext_resource type="PackedScene" uid="uid://dwtoqu15s3qus" path="res://Scenes/tutorial/hablar.tscn" id="5_3sev8"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="7_w31nn"]
+[ext_resource type="PackedScene" uid="uid://d2oeagyg6uevb" path="res://Scenes/tutorial/entrega.tscn" id="7_ywvuh"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="8_8thbn"]
+[ext_resource type="PackedScene" uid="uid://csuql642jetrp" path="res://Scenes/tutorial/botellas.tscn" id="8_qolhw"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="9_8y1lq"]
-[ext_resource type="PackedScene" path="res://Scenes/scene_transition.tscn" id="10_vwhm2"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="10_vwhm2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjgcv"]
 texture = ExtResource("1_y16f4")
@@ -215,12 +218,17 @@ position = Vector2(-48, -71)
 [node name="platoslava2" parent="." instance=ExtResource("2_3odr5")]
 position = Vector2(160, -71)
 
-[node name="Bat" parent="." instance=ExtResource("2_ukx5b")]
-position = Vector2(296, 8)
+[node name="BatDark" parent="." instance=ExtResource("3_tivl6")]
+position = Vector2(298, 6)
+scale = Vector2(0.3, 0.3)
 
 [node name="Player" parent="." instance=ExtResource("2_ventg")]
 position = Vector2(-136, -40)
 scale = Vector2(0.25, 0.25)
+
+[node name="Hablar" parent="." instance=ExtResource("5_3sev8")]
+position = Vector2(232, -46)
+scale = Vector2(0.5, 0.5)
 
 [node name="TheBoss" parent="." instance=ExtResource("4_jx24d")]
 position = Vector2(184, -41)
@@ -230,6 +238,14 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAABAP7/AAAKAAYAAAAKAAEAAAAEAAUAAAD8//7/AAAFAAYAAAD8////AAAFAAcAAAD8/wAAAAAFAAgAAAD9//7/AAAGAAYAAAD9////AAAGAAcAAAD9/wAAAAAGAAgAAAD+//7/AAAHAAYAAAD+////AAAHAAcAAAD+/wAAAAAHAAgAAAD///7/AAAIAAYAAAD/////AAAIAAcAAAD//wAAAAAIAAgAAAAAAP7/AAAJAAYAAAAAAP//AAAJAAcAAAAAAAAAAAAJAAgAAAABAP//AAAKAAcAAAABAAAAAAAKAAgAAAACAP7/AAALAAYAAAACAP//AAALAAcAAAACAAAAAAALAAgAAAAVAAMAAAADAAYAAAAWAAMAAAADAAYAAAAXAAMAAAADAAYAAAAYAAMAAAAEAAYAAAAZAAIAAAAAAAgAAAAZAAMAAAADAAsAAAAZAAEAAAAAAAcAAAAZAAAAAAAAAAcAAAAZAP//AAAAAAYAAAAYAP7/AAAEAAcAAAAZAP7/AAADAAoAAAAWAP7/AAAAAAoAAAAXAP7/AAADAAcAAAAWAP//AAAAAAgAAAA=")
 tile_set = SubResource("TileSet_0vakg")
 rendering_quadrant_size = 32
+
+[node name="Entrega" parent="." instance=ExtResource("7_ywvuh")]
+position = Vector2(339, 26)
+scale = Vector2(0.5, 0.5)
+
+[node name="Botellas" parent="." instance=ExtResource("8_qolhw")]
+position = Vector2(166, 43)
+scale = Vector2(0.5, 0.5)
 
 [node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)

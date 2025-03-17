@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwtoqu15s3qus"]
+
+[ext_resource type="Texture2D" uid="uid://be5dox280v3qx" path="res://art/instructions 2 habla con el personaje.png" id="1_dcfe5"]
+
+[node name="Hablar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dcfe5")

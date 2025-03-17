@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csuql642jetrp"]
+
+[ext_resource type="Texture2D" uid="uid://bx5agc0wv8ljn" path="res://art/instructions 2 toma las botellas de nitro.png" id="1_7tpbg"]
+
+[node name="Botellas" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7tpbg")
