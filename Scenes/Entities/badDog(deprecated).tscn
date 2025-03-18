@@ -85,13 +85,13 @@ hurtSFX = ExtResource("3_3cyck")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
-collision_mask = 5
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["enemy"]]
 shape = SubResource("RectangleShape2D_s6hlb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(6, -0.999999)
+position = Vector2(4.76837e-07, -5.96046e-08)
 scale = Vector2(1.6, 1.8125)
 sprite_frames = SubResource("SpriteFrames_uih8d")
 animation = &"new_animation"

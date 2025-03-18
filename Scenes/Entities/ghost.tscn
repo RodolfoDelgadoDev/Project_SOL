@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5du1q1o0k332"]
+[gd_scene load_steps=23 format=3 uid="uid://c5du1q1o0k332"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_0g4jc"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_71swj"]
@@ -112,6 +112,15 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
+[sub_resource type="Gradient" id="Gradient_hqwyv"]
+offsets = PackedFloat32Array(0, 0.653465)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cjvfk"]
+gradient = SubResource("Gradient_hqwyv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Ghost" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_0g4jc")
@@ -150,6 +159,11 @@ shape = SubResource("RectangleShape2D_a4f3a")
 libraries = {
 "": SubResource("AnimationLibrary_h47lw")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+color = Color(0, 0.657654, 0.564062, 1)
+texture = SubResource("GradientTexture2D_cjvfk")
+texture_scale = 2.94
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

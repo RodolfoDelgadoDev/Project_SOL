@@ -62,3 +62,7 @@ func wait_seconds(seconds: float) -> void:
 func stop_timer() -> void:
 	print("time has stopped!")
 	timer.stop()
+	
+func start_timer() -> void:
+	print("time has resumed!")
+	timer.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cutxnt43fhgry"]
+[gd_scene load_steps=32 format=4 uid="uid://cutxnt43fhgry"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_ya4p3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_ktjj2"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_cwi5v"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_4qr2m"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_ahpc5"]
-[ext_resource type="PackedScene" uid="uid://bycucsigj5vo4" path="res://Scenes/Entities/badDog.tscn" id="11_m4gxc"]
+[ext_resource type="PackedScene" uid="uid://bycucsigj5vo4" path="res://Scenes/Entities/badDog(deprecated).tscn" id="11_m4gxc"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_hllyb"]
+[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="13_c4mh2"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_ftta1"]
 [ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="14_16i04"]
 
@@ -367,18 +368,6 @@ texture_region_size = Vector2i(32, 32)
 1:10/0 = 0
 1:11/0 = 0
 18:2/0 = 0
-3:13/0 = 0
-3:12/0 = 0
-0:13/0 = 0
-4:13/0 = 0
-4:12/0 = 0
-5:13/0 = 0
-5:12/0 = 0
-8:13/0 = 0
-8:12/0 = 0
-3:8/0 = 0
-13:13/0 = 0
-13:12/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yil1h"]
 tile_size = Vector2i(32, 32)
@@ -468,6 +457,34 @@ animations = [{
 default_font = ExtResource("12_hllyb")
 default_font_size = 15
 
+[sub_resource type="Gradient" id="Gradient_plbjv"]
+offsets = PackedFloat32Array(0, 0.70297, 1)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jln66"]
+gradient = SubResource("Gradient_plbjv")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_fuimk"]
+offsets = PackedFloat32Array(0, 0.70297, 1)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ni45e"]
+gradient = SubResource("Gradient_fuimk")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Main2" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -478,93 +495,21 @@ rendering_quadrant_size = 32
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAANAPX/AgAKAAAAAAANAPb/AgAKAAEAAAAEAPX/AgAFAAwAAAAEAPb/AgAFAA0AAAAFAPX/AgAIAAwAAAAFAPb/AgAIAA0AAAAGAPX/AgAEAAwAAAAGAPb/AgAEAA0AAAAHAPX/AgAEAAwAAAAHAPb/AgAEAA0AAAAIAPX/AgAEAAwAAAAIAPb/AgAEAA0AAAAJAPX/AgAEAAwAAAAJAPb/AgAEAA0AAAAKAPX/AgAEAAwAAAAKAPb/AgAEAA0AAAALAPX/AgAEAAwAAAALAPb/AgAEAA0AAAAMAPX/AgAEAAwAAAAMAPb/AgAEAA0AAAD3//X/AgAEAAwAAAD3//b/AgAEAA0AAAD4//X/AgAEAAwAAAD4//b/AgAEAA0AAAD5//X/AgAEAAwAAAD5//b/AgAEAA0AAAD6//X/AgAEAAwAAAD6//b/AgAEAA0AAAD7//X/AgAEAAwAAAD7//b/AgAEAA0AAAD8//X/AgAFAAwAAAD8//b/AgAFAA0AAAD9//X/AgAIAAwAAAD9//b/AgAIAA0AAAD+//X/AgAEAAwAAAD+//b/AgAEAA0AAAD///X/AgAEAAwAAAD///b/AgAEAA0AAAAAAPX/AgAEAAwAAAAAAPb/AgAEAA0AAAABAPX/AgAEAAwAAAABAPb/AgAEAA0AAAACAPX/AgAEAAwAAAACAPb/AgAEAA0AAAADAPX/AgAEAAwAAAADAPb/AgAEAA0AAAD1//X/AgAEAAwAAAD1//b/AgAEAA0AAAD2//X/AgAEAAwAAAD2//b/AgAEAA0AAAD0//X/AgAEAAwAAAD0//b/AgAEAA0AAAADAPn/AgAFAAAAAAADAPr/AgAPAAEAAAAEAPn/AgACAAAAAAAEAPr/AgAPAAEAAAAFAPn/AgACAAAAAAAFAPr/AgAPAAEAAAAGAPn/AgACAAAAAAAGAPr/AgAPAAEAAAAHAPn/AgACAAAAAAAHAPr/AgAPAAEAAAAIAPn/AgAGAAYAAAAIAPr/AgAGAAAAAAAJAPn/AgACAAAAAAAJAPr/AgAPAAEAAAAKAPn/AgACAAAAAAAKAPr/AgAPAAEAAAALAPn/AgACAAAAAAALAPr/AgAPAAEAAAAMAPn/AgACAAAAAAAMAPr/AgAPAAEAAAANAPn/AgAEAAAAAAANAPr/AgAPAAEAAAD0//n/AgAFAAQAAAD1//n/AgAFAAQAAAD2//n/AgACAAAAAAD3//n/AgAEAAAAAAD0//r/AgAFAAQAAAD0//v/AgACAAAAAAD0//z/AgAPAAEAAAD1//r/AgAGAAQAAAD1//v/AgAEAAAAAAD1//z/AgAPAAEAAAACAP//AgACAAAAAAADAP//AgACAAAAAAAEAP//AgACAAAAAAAFAP//AgACAAAAAAAGAP//AgACAAAAAAAHAP//AgACAAAAAAAIAP//AgACAAAAAAAIAP3/AgAFAAYAAAAIAP7/AgAHAAYAAAAIAPv/AgAPAAEAAAAJAP//AgAPAAAAAAAKAP//AgAFAAYAAAALAP//AgAQAAAAAAANAP//AgAOAAAAAAAKAAAAAgAGAAAAAAAKAAEAAgAPAAEAAAAHAAIAAgAFAAYAAAAHAAMAAgAHAAYAAAABAAAAAgAFAAQAAAABAAEAAgAPAAAAAAABAAIAAgAPAAEAAAD2////AgAFAAAAAAD3////AgACAAAAAAD4////AgACAAAAAAD5////AgACAAAAAAALAAAAAgAPAAEAAAANAAAAAgAPAAEAAAACAAAAAgAPAAEAAAADAAAAAgAPAAEAAAAEAAAAAgAPAAEAAAAFAAAAAgAPAAEAAAAGAAAAAgAPAAEAAAAHAAAAAgAPAAEAAAAIAAAAAgAPAAEAAAAJAAAAAgAPAAEAAAD2/wAAAgAPAAEAAAD3/wAAAgAPAAEAAAD4/wAAAgAPAAEAAAD5/wAAAgAPAAEAAAD6/wAAAgAPAAEAAAD7/wAAAgAPAAEAAAD8/wAAAgAPAAEAAAD9/wAAAgAPAAEAAAD+/wAAAgAPAAEAAAD//wAAAgAPAAEAAAAAAAAAAgAKAAEAAAD2//r/AgAPAAEAAAD3//r/AgAPAAEAAAD6////AgACAAAAAAD7////AgACAAAAAAD8////AgACAAAAAAD9////AgACAAAAAAD+////AgACAAAAAAD/////AgACAAAAAAAAAP//AgAKAAAAAAABAP//AgAFAAQAAAAIAAQAAgAFAAMAAAAJAAQAAgAFAAMAAAAKAAQAAgAFAAMAAAALAAQAAgAFAAMAAAAMAAQAAgAFAAMAAAANAAQAAgAFAAMAAAD5//j/AgAKAAYAAAD8//T/AgAGAAQAAAD8//P/AgAGAAQAAAD8//L/AgAGAAQAAAD9//T/AgAEAAQAAAD9//P/AgAEAAQAAAD9//L/AgAEAAQAAAAFAPT/AgAEAAQAAAAFAPP/AgAEAAQAAAAFAPL/AgAEAAQAAAAEAPT/AgAGAAQAAAAEAPP/AgAGAAQAAAAEAPL/AgAGAAQAAAA=")
+tile_map_data = PackedByteArray("AAANAPX/AgAKAAAAAAANAPb/AgAKAAEAAAAEAPX/AgALAAAAAAAEAPb/AgAJAAEAAAAFAPX/AgAIAAAAAAAFAPb/AgAJAAEAAAAGAPX/AgAJAAAAAAAGAPb/AgAJAAEAAAAHAPX/AgAKAAAAAAAHAPb/AgAKAAEAAAAIAPX/AgAJAAAAAAAIAPb/AgAJAAEAAAAJAPX/AgAJAAAAAAAJAPb/AgAJAAEAAAAKAPX/AgAJAAAAAAAKAPb/AgAJAAEAAAALAPX/AgAJAAAAAAALAPb/AgAJAAEAAAAMAPX/AgAJAAAAAAAMAPb/AgAJAAEAAAD3//X/AgAJAAAAAAD3//b/AgAJAAEAAAD4//X/AgAJAAAAAAD4//b/AgAJAAEAAAD5//X/AgAKAAAAAAD5//b/AgAKAAEAAAD6//X/AgAJAAAAAAD6//b/AgAJAAEAAAD7//X/AgAJAAAAAAD7//b/AgAJAAEAAAD8//X/AgALAAAAAAD8//b/AgAJAAEAAAD9//X/AgAIAAAAAAD9//b/AgAJAAEAAAD+//X/AgAJAAAAAAD+//b/AgAJAAEAAAD///X/AgAJAAAAAAD///b/AgAJAAEAAAAAAPX/AgAKAAAAAAAAAPb/AgAKAAEAAAABAPX/AgAJAAAAAAABAPb/AgAJAAEAAAACAPX/AgAJAAAAAAACAPb/AgAJAAEAAAADAPX/AgAJAAAAAAADAPb/AgAJAAEAAAD1//X/AgAJAAAAAAD1//b/AgAJAAEAAAD2//X/AgAJAAAAAAD2//b/AgAJAAEAAAD0//X/AgAJAAAAAAD0//b/AgAIAAEAAAADAPn/AgAFAAAAAAADAPr/AgAPAAEAAAAEAPn/AgACAAAAAAAEAPr/AgAPAAEAAAAFAPn/AgACAAAAAAAFAPr/AgAPAAEAAAAGAPn/AgACAAAAAAAGAPr/AgAPAAEAAAAHAPn/AgACAAAAAAAHAPr/AgAPAAEAAAAIAPn/AgAGAAYAAAAIAPr/AgAGAAAAAAAJAPn/AgACAAAAAAAJAPr/AgAPAAEAAAAKAPn/AgACAAAAAAAKAPr/AgAPAAEAAAALAPn/AgACAAAAAAALAPr/AgAPAAEAAAAMAPn/AgACAAAAAAAMAPr/AgAPAAEAAAANAPn/AgAEAAAAAAANAPr/AgAPAAEAAAD0//n/AgAFAAQAAAD1//n/AgAFAAQAAAD2//n/AgACAAAAAAD3//n/AgAEAAAAAAD0//r/AgAFAAQAAAD0//v/AgACAAAAAAD0//z/AgAPAAEAAAD1//r/AgAGAAQAAAD1//v/AgAEAAAAAAD1//z/AgAPAAEAAAACAP//AgACAAAAAAADAP//AgACAAAAAAAEAP//AgACAAAAAAAFAP//AgACAAAAAAAGAP//AgACAAAAAAAHAP//AgACAAAAAAAIAP//AgACAAAAAAAIAP3/AgAFAAYAAAAIAP7/AgAHAAYAAAAIAPv/AgAPAAEAAAAJAP//AgAPAAAAAAAKAP//AgAFAAYAAAALAP//AgAQAAAAAAANAP//AgAOAAAAAAAKAAAAAgAGAAAAAAAKAAEAAgAPAAEAAAAHAAIAAgAFAAYAAAAHAAMAAgAHAAYAAAABAAAAAgAFAAQAAAABAAEAAgAPAAAAAAABAAIAAgAPAAEAAAD2////AgAFAAAAAAD3////AgACAAAAAAD4////AgACAAAAAAD5////AgACAAAAAAALAAAAAgAPAAEAAAANAAAAAgAPAAEAAAACAAAAAgAPAAEAAAADAAAAAgAPAAEAAAAEAAAAAgAPAAEAAAAFAAAAAgAPAAEAAAAGAAAAAgAPAAEAAAAHAAAAAgAPAAEAAAAIAAAAAgAPAAEAAAAJAAAAAgAPAAEAAAD2/wAAAgAPAAEAAAD3/wAAAgAPAAEAAAD4/wAAAgAPAAEAAAD5/wAAAgAPAAEAAAD6/wAAAgAPAAEAAAD7/wAAAgAPAAEAAAD8/wAAAgAPAAEAAAD9/wAAAgAPAAEAAAD+/wAAAgAPAAEAAAD//wAAAgAPAAEAAAAAAAAAAgAKAAEAAAD2//r/AgAPAAEAAAD3//r/AgAPAAEAAAD6////AgACAAAAAAD7////AgACAAAAAAD8////AgACAAAAAAD9////AgACAAAAAAD+////AgACAAAAAAD/////AgACAAAAAAAAAP//AgAKAAAAAAABAP//AgAFAAQAAAAIAAQAAgAFAAMAAAAJAAQAAgAFAAMAAAAKAAQAAgAFAAMAAAALAAQAAgAFAAMAAAAMAAQAAgAFAAMAAAANAAQAAgAFAAMAAAD5//j/AgAKAAYAAAD8//T/AgAGAAQAAAD8//P/AgAGAAQAAAD8//L/AgAGAAQAAAD9//T/AgAEAAQAAAD9//P/AgAEAAQAAAD9//L/AgAEAAQAAAAFAPT/AgAEAAQAAAAFAPP/AgAEAAQAAAAFAPL/AgAEAAQAAAAEAPT/AgAGAAQAAAAEAPP/AgAGAAQAAAAEAPL/AgAGAAQAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAHAP//AgATAAAAAAAGAP//AgATAAAAAAAFAP//AgATAAAAAAAEAP//AgATAAAAAAADAP//AgATAAAAAAACAP//AgATAAAAAAABAP//AgAGAAYAAAABAAAAAgAHAAYAAAAIAP//AgASAAEAAAABAAEAAgAGAAAAAADz/wMAAgAFAAkAAADz/wIAAgAFAAgAAADz/wEAAgAFAAgAAADz/wAAAgAFAAgAAADz////AgAFAAgAAADz//7/AgAFAAgAAADz//3/AgAFAAgAAADz//z/AgAFAAgAAADz//v/AgAFAAgAAADz//r/AgAFAAgAAADz//n/AgAFAAgAAADz//j/AgAFAAgAAADz//f/AgAFAAgAAADz//b/AgAFAAgAAADz//X/AgAFAAcAAAAOAPX/AgAEAAcAAAAOAPb/AgAEAAgAAAAOAPf/AgAEAAgAAAAOAPj/AgAEAAgAAAAOAPn/AgAEAAgAAAAOAPr/AgAEAAgAAAAOAPv/AgAEAAgAAAAOAPz/AgAEAAgAAAAOAP3/AgAEAAgAAAAOAP7/AgAEAAgAAAAOAP//AgAEAAgAAAAOAAAAAgAEAAgAAAAOAAEAAgAEAAgAAAAOAAIAAgAEAAgAAAAOAAMAAgAEAAkAAAD0/wQAAgAGAAcAAAD1/wQAAgAHAAcAAAD2/wQAAgAHAAcAAAD3/wQAAgAHAAcAAAD4/wQAAgAHAAcAAAD5/wQAAgAHAAcAAAD6/wQAAgAHAAcAAAD7/wQAAgAHAAcAAAD8/wQAAgAHAAcAAAD9/wQAAgAHAAcAAAD+/wQAAgAHAAcAAAD//wQAAgAHAAcAAAAAAAQAAgAHAAcAAAABAAQAAgAHAAcAAAACAAQAAgAHAAcAAAADAAQAAgAHAAcAAAAEAAQAAgAHAAcAAAAFAAQAAgAHAAcAAAAGAAQAAgAIAAcAAAAIAAQAAgAGAAcAAAAJAAQAAgAHAAcAAAAKAAQAAgAHAAcAAAALAAQAAgAHAAcAAAAMAAQAAgAHAAcAAAANAAQAAgAIAAcAAADz/wQAAgAGAAwAAAAOAAQAAgAHAAwAAAD2////AgATAAEAAAD3////AgATAAAAAAD4////AgATAAAAAAD5////AgATAAAAAAD6////AgASAAEAAAD2//n/AgATAAAAAAD1//n/AgAFAAMAAAD0//n/AgAFAAMAAAD3//n/AgATAAcAAAAIAPn/AgATAAAAAAADAPn/AgATAAEAAAANAPn/AgATAAcAAAAMAPn/AgATAAAAAAALAPn/AgATAAAAAAAKAPn/AgATAAAAAAAJAPn/AgATAAAAAAAHAPn/AgATAAAAAAAGAPn/AgATAAAAAAAFAPn/AgATAAAAAAAEAPn/AgATAAAAAAABAPX/AgADAAcAAAABAPb/AgADAAgAAAD6//X/AgANAAwAAAD6//b/AgANAA0AAAA=")
+tile_map_data = PackedByteArray("AAAHAP//AgATAAAAAAAGAP//AgATAAAAAAAFAP//AgATAAAAAAAEAP//AgATAAAAAAADAP//AgATAAAAAAACAP//AgATAAAAAAABAP//AgAGAAYAAAABAAAAAgAHAAYAAAAIAP//AgASAAEAAAABAAEAAgAGAAAAAADz/wMAAgAFAAkAAADz/wIAAgAFAAgAAADz/wEAAgAFAAgAAADz/wAAAgAFAAgAAADz////AgAFAAgAAADz//7/AgAFAAgAAADz//3/AgAFAAgAAADz//z/AgAFAAgAAADz//v/AgAFAAgAAADz//r/AgAFAAgAAADz//n/AgAFAAgAAADz//j/AgAFAAgAAADz//f/AgAFAAgAAADz//b/AgAFAAgAAADz//X/AgAFAAcAAAAOAPX/AgAEAAcAAAAOAPb/AgAEAAgAAAAOAPf/AgAEAAgAAAAOAPj/AgAEAAgAAAAOAPn/AgAEAAgAAAAOAPr/AgAEAAgAAAAOAPv/AgAEAAgAAAAOAPz/AgAEAAgAAAAOAP3/AgAEAAgAAAAOAP7/AgAEAAgAAAAOAP//AgAEAAgAAAAOAAAAAgAEAAgAAAAOAAEAAgAEAAgAAAAOAAIAAgAEAAgAAAAOAAMAAgAEAAkAAAD0/wQAAgAGAAcAAAD1/wQAAgAHAAcAAAD2/wQAAgAHAAcAAAD3/wQAAgAHAAcAAAD4/wQAAgAHAAcAAAD5/wQAAgAHAAcAAAD6/wQAAgAHAAcAAAD7/wQAAgAHAAcAAAD8/wQAAgAHAAcAAAD9/wQAAgAHAAcAAAD+/wQAAgAHAAcAAAD//wQAAgAHAAcAAAAAAAQAAgAHAAcAAAABAAQAAgAHAAcAAAACAAQAAgAHAAcAAAADAAQAAgAHAAcAAAAEAAQAAgAHAAcAAAAFAAQAAgAHAAcAAAAGAAQAAgAIAAcAAAAIAAQAAgAGAAcAAAAJAAQAAgAHAAcAAAAKAAQAAgAHAAcAAAALAAQAAgAHAAcAAAAMAAQAAgAHAAcAAAANAAQAAgAIAAcAAADz/wQAAgAGAAwAAAAOAAQAAgAHAAwAAAD2////AgATAAEAAAD3////AgATAAAAAAD4////AgATAAAAAAD5////AgATAAAAAAD6////AgASAAEAAAD2//n/AgATAAAAAAD1//n/AgAFAAMAAAD0//n/AgAFAAMAAAD3//n/AgATAAcAAAAIAPn/AgATAAAAAAADAPn/AgATAAEAAAANAPn/AgATAAcAAAAMAPn/AgATAAAAAAALAPn/AgATAAAAAAAKAPn/AgATAAAAAAAJAPn/AgATAAAAAAAHAPn/AgATAAAAAAAGAPn/AgATAAAAAAAFAPn/AgATAAAAAAAEAPn/AgATAAAAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="ObstaculosArriba" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAIAPX/AgADAAUAAAAIAPb/AgADAAYAAAAJAPb/AgAPAAUAAAAJAPf/AgAPAAYAAAABAPj/AgABAAUAAAD4//b/AgABAAMAAAD4//f/AgABAAQAAAAAAPj/AgACAAQAAAD2//z/AgAMAAYAAAD2//3/AgAMAAcAAAD1////AgAOAAYAAAD0/wEAAgAOAAYAAAD5/wEAAgABAAYAAAD3/wIAAgABAAYAAAD1/wMAAgAAAAMAAAD7/wIAAgAAAAQAAAD6/wMAAgADAAQAAAAAAAIAAgABAAYAAAD//wIAAgABAAYAAAD9/wEAAgABAAYAAAAEAPv/AgAAAAQAAAAFAPz/AgAAAAQAAAAGAPz/AgAAAAQAAAAGAP3/AgAAAAQAAAACAP7/AgADAAQAAAADAP7/AgADAAQAAAALAP7/AgACAAQAAAAKAP7/AgACAAQAAAALAP3/AgACAAQAAAAKAP3/AgACAAQAAAAJAP7/AgACAAQAAAADAPn/AgATAAEAAAABAP//AgASAAIAAAAHAAQAAgATAAAAAAAIAP//AgASAAIAAAD1//n/AgATAAgAAAD5//X/AgADAAwAAAD5//b/AgADAA0AAAAAAPX/AgADAAwAAAAAAPb/AgADAA0AAAAHAPX/AgADAAwAAAAHAPb/AgADAA0AAAANAPX/AgADAAwAAAANAPb/AgADAA0AAAA=")
+tile_map_data = PackedByteArray("AAAIAPX/AgADAAUAAAAIAPb/AgADAAYAAAAJAPb/AgAPAAUAAAAJAPf/AgAPAAYAAAABAPj/AgABAAUAAAD4//b/AgABAAMAAAD4//f/AgABAAQAAAAAAPj/AgACAAQAAAD2//z/AgAMAAYAAAD2//3/AgAMAAcAAAD1////AgAOAAYAAAD0/wEAAgAOAAYAAAD5/wEAAgABAAYAAAD3/wIAAgABAAYAAAD1/wMAAgAAAAMAAAD7/wIAAgAAAAQAAAD6/wMAAgADAAQAAAAAAAIAAgABAAYAAAD//wIAAgABAAYAAAD9/wEAAgABAAYAAAAEAPv/AgAAAAQAAAAFAPz/AgAAAAQAAAAGAPz/AgAAAAQAAAAGAP3/AgAAAAQAAAACAP7/AgADAAQAAAADAP7/AgADAAQAAAALAP7/AgACAAQAAAAKAP7/AgACAAQAAAALAP3/AgACAAQAAAAKAP3/AgACAAQAAAAJAP7/AgACAAQAAAADAPn/AgATAAEAAAABAP//AgASAAIAAAAHAAQAAgATAAAAAAAIAP//AgASAAIAAAD1//n/AgATAAgAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
-
-[node name="Perrito" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-168, -136)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito2" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-152, -136)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito3" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-168, -120)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito4" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-152, -120)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito5" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-184, -40)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito6" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(120, -72)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito7" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(216, -24)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito8" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(152, 24)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
-
-[node name="Perrito9" parent="." instance=ExtResource("11_m4gxc")]
-position = Vector2(-120, 56)
-scale = Vector2(0.25, 0.25)
-wait_time = 1.0
-damage = 3
-health = 20
-player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_ktjj2")]
 position = Vector2(216, -120)
@@ -606,6 +551,56 @@ scale = Vector2(0.5, 0.5)
 [node name="Coin8" parent="Scene Manager" instance=ExtResource("6_ivrbb")]
 position = Vector2(-184, -136)
 scale = Vector2(0.5, 0.5)
+
+[node name="Perrito" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-168, -120)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito2" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-168, -136)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito3" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-152, -136)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito4" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-152, -120)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito5" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-184, -40)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito6" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(-120, 56)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito7" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(40, 24)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito8" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(136, 56)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito9" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(120, -72)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito10" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+position = Vector2(40, -40)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../../Player")
 
 [node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_cwi5v")]
 position = Vector2(8, 24)
@@ -674,6 +669,66 @@ rendering_quadrant_size = 32
 stream = ExtResource("14_16i04")
 autoplay = true
 playback_type = 1
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(168, -152)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(24, -155)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-90, -157)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-102, -24)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-123, 67)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-28, 71)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(64, 75)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(186, 75)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(37, -23)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_jln66")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(184, -56)
+scale = Vector2(0.335938, 0.484375)
+color = Color(0.359035, 0.413681, 0.193498, 1)
+energy = 2.54
+texture = SubResource("GradientTexture2D_ni45e")
+script = ExtResource("13_c4mh2")
+blink_interval_min = 0.01
+blink_interval_max = 0.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.893438, 0.736424, 0.725922, 1)
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

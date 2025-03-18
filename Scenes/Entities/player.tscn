@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene load_steps=94 format=3 uid="uid://cmax2vhkuipx5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
 [ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
@@ -17,6 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://50fecn6hw4c2" path="res://animations/Idle 2 - Godot.png" id="7_g636s"]
 [ext_resource type="Texture2D" uid="uid://w77ud3qj8n1u" path="res://animations/Walk/Walking R - Godot.png" id="7_qvsfw"]
 [ext_resource type="Texture2D" uid="uid://dlndcpt3npdeg" path="res://animations/Walk/Walking L - Godot.png" id="8_8pnt4"]
+
+[sub_resource type="Gradient" id="Gradient_uvd42"]
+offsets = PackedFloat32Array(0, 0.658416)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xj6sn"]
+gradient = SubResource("Gradient_uvd42")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1pnp"]
 atlas = ExtResource("2_uf1an")
@@ -582,6 +591,11 @@ movementSFX = Array[AudioStream]([ExtResource("4_ac0vv"), ExtResource("5_q7u33")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 collision_mask = 6
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+scale = Vector2(1.597, 1.5)
+energy = 0.2
+texture = SubResource("GradientTexture2D_xj6sn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(1.875, 1.875)

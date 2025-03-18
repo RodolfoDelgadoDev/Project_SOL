@@ -1,19 +1,19 @@
-[gd_scene load_steps=30 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=32 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_8md0o"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_asp4p"]
 [ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/Entities/plant.tscn" id="3_g8f0l"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_e4ge1"]
+[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="4_oh58i"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_qtx0x"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_q161q"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_fmbuq"]
-[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_7lmb3"]
 [ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="8_xd45n"]
-[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="9_2dhdg"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_j62gm"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_83hny"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_v1avn"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_s0fef"]
+[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="14_bomoy"]
 [ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="14_chluq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
@@ -455,6 +455,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_3gmg3"]
+offsets = PackedFloat32Array(0, 0.70297, 1)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6gwau"]
+gradient = SubResource("Gradient_3gmg3")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [sub_resource type="Theme" id="Theme_6rhx5"]
 default_font = ExtResource("12_v1avn")
 default_font_size = 15
@@ -507,11 +521,17 @@ patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Ve
 [node name="Plant" parent="." instance=ExtResource("3_g8f0l")]
 position = Vector2(-56, -24)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+hurtSFX = ExtResource("4_oh58i")
 player_node_path = NodePath("../Player")
 
 [node name="Plant2" parent="." instance=ExtResource("3_g8f0l")]
 position = Vector2(-136, -72)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+hurtSFX = ExtResource("4_oh58i")
 player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_e4ge1")]
@@ -567,10 +587,55 @@ position = Vector2(-16, -34)
 sprite_frames = SubResource("SpriteFrames_lccc0")
 animation = &"Open"
 
-[node name="Test NPC" parent="Scene Manager" instance=ExtResource("8_7lmb3")]
-position = Vector2(168, -104)
-scale = Vector2(0.5, 0.5)
-npc_portrait = ExtResource("9_2dhdg")
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(264, -121)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(88, -55)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-71, -102)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-104, -24)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-153, 85)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-168, -137)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(168, -121)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-72, 60)
+scale = Vector2(0.335938, 0.484375)
+color = Color(0.64938, 0.881798, 0.837948, 1)
+energy = 2.66
+texture = SubResource("GradientTexture2D_6gwau")
+script = ExtResource("14_bomoy")
+blink_interval_min = 0.01
+blink_interval_max = 0.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.629136, 0.602353, 0.556556, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var quieto : bool = false
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Seconds to complete the move
 @export var wait_time = 0.5      # Seconds to wait before trying the next move
@@ -35,7 +36,7 @@ func _ready():
 	start_moving()
 
 func _process(delta):
-	if alive() && GameManager.goal == false:
+	if alive() && GameManager.goal == false && quieto == false:
 		if moving:
 			var remaining_time = move_duration - move_timer
 			# Move smoothly toward the target velocity.
@@ -60,6 +61,9 @@ func _process(delta):
 			wait_timer += delta
 			if wait_timer >= wait_time:
 				start_moving()
+	if health <= 0:
+		await audio_player.finished
+		queue_free()
 
 # Calculate the primary move direction (the axis with the larger distance to the player).
 func start_moving():
@@ -137,13 +141,15 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 			audio_player.stream = hurtSFX
 			audio_player.play()
 			takeDamage()
+			print (health)
 
 func alive() -> bool:
 	return health > 0
 
 func takeDamage():
 	if health <= 0:
-		return
+		await audio_player.finished
+		queue_free()
 	else:
 		health -= GameManager.playerDamage
 		animator.play("takeDamage")
