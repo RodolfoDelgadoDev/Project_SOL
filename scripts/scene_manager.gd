@@ -117,3 +117,6 @@ func _on_TransitionAnimation_finished(animation_name: String):
 func stop_timer():
 	timer.stop_timer()
 	
+func start_timer():
+	timer.start_timer()
+	

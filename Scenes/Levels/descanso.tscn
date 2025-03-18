@@ -1,4 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://dsnc5g1q2d0th"]
+
+[gd_scene load_steps=16 format=4 uid="uid://dsnc5g1q2d0th"]
+
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
@@ -288,6 +290,20 @@ sources/1 = SubResource("TileSetAtlasSource_g4ntp")
 default_font = ExtResource("10_5xc08")
 default_font_size = 15
 
+[sub_resource type="Gradient" id="Gradient_130j3"]
+offsets = PackedFloat32Array(0, 0.70297, 1)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
+gradient = SubResource("Gradient_130j3")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -394,6 +410,120 @@ expand_mode = 1
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_fscxu")]
 visible = false
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(24, -80.25)
+scale = Vector2(0.664063, 0.816406)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-135, -93)
+scale = Vector2(0.664063, 0.816406)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-60, -68)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-24, -67)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-9, 26)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-224, -76)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-137, 19)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-231, 42)
+scale = Vector2(0.402344, 0.398793)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-137, 89)
+scale = Vector2(0.429688, 0.425896)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(47, 96)
+scale = Vector2(0.59375, 0.588511)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-230, 12)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.774845, 0, 0.170183, 1)
+energy = 2.07
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-237, 9)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0, 0.507529, 0.442577, 1)
+energy = 5.57
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-224, 14)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.366059, 0.300933, 0.946981, 1)
+energy = 2.37
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-216, 15)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.699516, 0.00440098, 0.728627, 1)
+energy = 2.37
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-208, 14)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.75682, 0.600821, 0.0659497, 1)
+energy = 2.37
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-202, 11)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.00578989, 0.350986, 0.435948, 1)
+energy = 6.04
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-194, 8)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.564894, 0.118233, 0.178105, 1)
+energy = 2.25
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.812689, 0.681546, 0.612906, 1)
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
