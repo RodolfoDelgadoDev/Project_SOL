@@ -755,7 +755,7 @@ sources/0 = SubResource("TileSetAtlasSource_h7q0p")
 default_font = ExtResource("12_bnjuu")
 default_font_size = 15
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2(0, -1)
 
 [node name="Piso" type="TileMapLayer" parent="."]

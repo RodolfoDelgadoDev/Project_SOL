@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=19 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_2oea8"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_2oea8"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="5_kytd0"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_aup4q"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_5xc08"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
+[ext_resource type="Script" path="res://Scenes/Levels/color_lights.gd" id="13_b1wqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_jbt40")
@@ -201,6 +202,7 @@ texture_region_size = Vector2i(32, 32)
 19:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:3/0 = 0
 7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:4/0 = 0
 12:2/0 = 0
 12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -216,6 +218,7 @@ texture_region_size = Vector2i(32, 32)
 9:2/0 = 0
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 5.5, 16, 5, 16, 16, -16, 16)
 8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
@@ -298,8 +301,8 @@ default_font = ExtResource("10_5xc08")
 default_font_size = 15
 
 [sub_resource type="Gradient" id="Gradient_130j3"]
-offsets = PackedFloat32Array(0, 0.70297, 1)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
 gradient = SubResource("Gradient_130j3")
@@ -441,7 +444,7 @@ texture = SubResource("GradientTexture2D_otg58")
 [node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-135, -93)
 scale = Vector2(0.664063, 0.816406)
-color = Color(0.957812, 0.838904, 0.762339, 1)
+color = Color(0.702884, 0.239312, 0.396022, 1)
 texture = SubResource("GradientTexture2D_otg58")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
@@ -492,12 +495,25 @@ scale = Vector2(0.59375, 0.588511)
 color = Color(0.957812, 0.838904, 0.762339, 1)
 texture = SubResource("GradientTexture2D_otg58")
 
+[node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-87, -69)
+scale = Vector2(0.15625, 0.154871)
+color = Color(0.82746, 0, 0.0770657, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-183, -71)
+scale = Vector2(0.15625, 0.154871)
+color = Color(0.82746, 0, 0.0770657, 1)
+texture = SubResource("GradientTexture2D_otg58")
+
 [node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-230, 12)
 scale = Vector2(0.136719, 0.135512)
 color = Color(0.774845, 0, 0.170183, 1)
 energy = 2.07
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-237, 9)
@@ -505,6 +521,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0, 0.507529, 0.442577, 1)
 energy = 5.57
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-224, 14)
@@ -512,6 +529,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0.366059, 0.300933, 0.946981, 1)
 energy = 2.37
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-216, 15)
@@ -519,6 +537,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0.699516, 0.00440098, 0.728627, 1)
 energy = 2.37
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-208, 14)
@@ -526,6 +545,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0.75682, 0.600821, 0.0659497, 1)
 energy = 2.37
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-202, 11)
@@ -533,6 +553,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0.00578989, 0.350986, 0.435948, 1)
 energy = 6.04
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-194, 8)
@@ -540,6 +561,7 @@ scale = Vector2(0.136719, 0.135512)
 color = Color(0.564894, 0.118233, 0.178105, 1)
 energy = 2.25
 texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.812689, 0.681546, 0.612906, 1)
