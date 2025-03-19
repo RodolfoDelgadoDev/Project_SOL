@@ -121,7 +121,7 @@ func basicAttack(dir):
 		if !GameManager.descanso:
 			animaton.play(directions[dir][1])
 		else:
-			animaton.play(directions[dir][2])
+			animaton.play(directions[dir][3])
 		audio_player.play()  # Play attack sound
 			
 		attack_sprite.visible = true
