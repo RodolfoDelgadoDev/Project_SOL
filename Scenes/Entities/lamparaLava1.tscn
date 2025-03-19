@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://daucbvf8lcq2w"]
+
+[ext_resource type="Texture2D" uid="uid://ugl4qbnrcv44" path="res://art/Lava Light rouge.png" id="1_ljk75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfldm"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6hfg"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(32, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1pj2"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(64, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puhji"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(96, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac1dy"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(128, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p7ho"]
+atlas = ExtResource("1_ljk75")
+region = Rect2(160, 0, 32, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onal8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfldm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6hfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1pj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puhji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac1dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p7ho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LamparaLava1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.34375, 0.310976)
+sprite_frames = SubResource("SpriteFrames_onal8")
+autoplay = "default"
+frame_progress = 0.32238
