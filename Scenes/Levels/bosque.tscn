@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byepw2ujntrg7" path="res://art/Tilemap-Bosque.png" id="1_h0w56"]
 [ext_resource type="PackedScene" uid="uid://d0eunisgmhv6q" path="res://Scenes/Entities/trap2.tscn" id="2_ejg6t"]
-
 [ext_resource type="PackedScene" uid="uid://b4j3qwi8wm7u4" path="res://Scenes/Entities/miniCascada.tscn" id="2_exi4d"]
-
 [ext_resource type="PackedScene" uid="uid://bgmhkt4ahxc8s" path="res://Scenes/Entities/trap3.tscn" id="3_xr3he"]
 [ext_resource type="PackedScene" uid="uid://gjthakfeqm2m" path="res://Scenes/Entities/plant2.tscn" id="4_4frhq"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_62k27"]

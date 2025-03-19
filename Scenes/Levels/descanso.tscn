@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=16 format=4 uid="uid://dsnc5g1q2d0th"]
-
+[gd_scene load_steps=17 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
