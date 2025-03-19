@@ -5,6 +5,7 @@ var playerDamage = 10
 var currentLevel
 var plasticoin : int = 0 ##moneda que te dan por completar un nivel con todas las botellas
 var goal: bool = false
+var descanso: bool = false
 
 func takeDamage(damage):
 	Segundos -= damage

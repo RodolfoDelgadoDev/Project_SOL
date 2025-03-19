@@ -29,6 +29,7 @@ var cursor_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.descanso = descanso
 	var current_scene = get_tree().current_scene.scene_file_path
 	GameManager.currentLevel = current_scene
 	print(current_scene)
@@ -40,7 +41,6 @@ func _ready() -> void:
 	if descanso:
 		timer.stop_timer()
 		timer.visible = false
-	
 	# Initialize cursor timer
 	cursor_timer = Timer.new()
 	cursor_timer.wait_time = cursor_blink_delay

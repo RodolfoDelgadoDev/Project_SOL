@@ -1,10 +1,10 @@
 extends Node2D
 
 var directions = {
-	"UP": [Vector2.UP, "AttackUp", "WalkUp"],
-	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown"],
-	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft"],
-	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight"]
+	"UP": [Vector2.UP, "AttackUp", "WalkUp", "HiUp"],
+	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown", "HiDown"],
+	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft", "HiLeft"],
+	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight", "HiRight"]
 }
 
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/Area2D/AttackSprite
@@ -112,14 +112,18 @@ func play_random_movement_sound():
 func basicAttack(dir):
 	if can_attack == true:
 		can_attack = false
-		audio_player.stream = attackSFX
-		audio_player.play()  # Play attack sound
 		attack_area.disabled = false
 		# Set the position of the attack sprite
 		var direction_vector = directions[dir][0]
 		attack_sprite.position = direction_vector * GRID_SIZE  # Adjust position based on direction
 		# Show the attack sprite
-		animaton.play(directions[dir][1])
+		audio_player.stream = attackSFX
+		if !GameManager.descanso:
+			animaton.play(directions[dir][1])
+		else:
+			animaton.play(directions[dir][2])
+		audio_player.play()  # Play attack sound
+			
 		attack_sprite.visible = true
 		# Optional: Add a timer to hide the attack sprite after a short delay
 		attack_timer.start()  # Start the timer to prevent infinite attacking
