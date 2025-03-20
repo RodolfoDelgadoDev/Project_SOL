@@ -126,6 +126,8 @@ texture = SubResource("AtlasTexture_nu3nv")
 shape = SubResource("RectangleShape2D_s6hlb")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 shape = SubResource("RectangleShape2D_a4f3a")

@@ -1,15 +1,15 @@
 extends Node2D
 
-@export var quieto : bool = false
+@export var quieto : bool = true  # Enemies start stationary
 @export var GRID_SIZE = 64
 @export var move_duration = 0.1  # Seconds to complete the move
 @export var wait_time = 0.5      # Seconds to wait before trying the next move
 @export var damage: int
 @export var health: int
-# Change AudioEffect to AudioStream for playback
 @export var attackSFX: AudioStream
 @export var moveSFX: AudioStream
 @export var hurtSFX: AudioStream
+@export var detection_range: int = 5  # Default detection range in grid spaces
 
 var character_body: CharacterBody2D
 var target_velocity: Vector2 = Vector2.ZERO
@@ -32,38 +32,59 @@ var tried_alternative: bool = false
 func _ready():
 	# Reference our own CharacterBody2D node.
 	character_body = $CharacterBody2D
-	# Start chasing the player.
-	start_moving()
+	# Start in a stationary state.
+	quieto = true
+
 
 func _process(delta):
-	if alive() && GameManager.goal == false && quieto == false:
-		if moving:
-			var remaining_time = move_duration - move_timer
-			# Move smoothly toward the target velocity.
-			character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-			character_body.move_and_slide()
-			move_timer += delta
+	if alive() && GameManager.goal == false:
+		# Check player distance and update `quieto` if necessary.
+		player_distance()
 
-			if move_timer >= move_duration:
-				# Snap the enemy to the grid.
-				character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-				moving = false
-				move_timer = 0.0
+		if not quieto:
+			if moving:
+				var remaining_time = move_duration - move_timer
+				# Move smoothly toward the target velocity.
+				character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
+				character_body.move_and_slide()
+				move_timer += delta
 
-				# If no movement occurred and we haven't tried the alternative axis yet...
-				if character_body.position == initial_position and not tried_alternative:
-					tried_alternative = true
-					try_alternative_move()
-				else:
-					wait_timer = 0.0
-		else:
-			# Wait until it's time to move again.
-			wait_timer += delta
-			if wait_timer >= wait_time:
-				start_moving()
-	if health <= 0:
-		await audio_player.finished
-		queue_free()
+				if move_timer >= move_duration:
+					# Snap the enemy to the grid.
+					character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+					moving = false
+					move_timer = 0.0
+
+					# If no movement occurred and we haven't tried the alternative axis yet...
+					if character_body.position == initial_position and not tried_alternative:
+						tried_alternative = true
+						try_alternative_move()
+					else:
+						wait_timer = 0.0
+			else:
+				# Wait until it's time to move again.
+				wait_timer += delta
+				if wait_timer >= wait_time:
+					start_moving()
+
+
+# Check if the player is within the detection range.
+func player_distance():
+	if not player_body:
+		print("Player not found!")
+		return
+
+	var player_position = player_body.global_position
+	var enemy_position = character_body.global_position
+	var distance = (player_position - enemy_position).length()  # Distance in pixels
+
+	# Convert detection range from grid spaces to pixels.
+	var detection_range_pixels = detection_range * GRID_SIZE
+
+	# If the player is within range, set `quieto` to false.
+	if distance <= detection_range_pixels:
+		quieto = false
+
 
 # Calculate the primary move direction (the axis with the larger distance to the player).
 func start_moving():
@@ -101,6 +122,7 @@ func start_moving():
 	moving = true
 	move_timer = 0.0
 
+
 # Try moving along the other axis.
 func try_alternative_move():
 	# If primary axis was horizontal, alternative is vertical, and vice versa.
@@ -118,17 +140,18 @@ func try_alternative_move():
 		else:
 			target_velocity = Vector2.LEFT * (GRID_SIZE / move_duration)
 			updateFlip(false)
-			
 	
 	# Attempt the alternative move immediately.
 	initial_position = character_body.position
 	moving = true
 	move_timer = 0.0
 
+
 func _physics_process(_delta):
 	if alive():
 		if not moving:
 			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if alive() && GameManager.Segundos > 0:
@@ -143,19 +166,24 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 			takeDamage()
 			print (health)
 
+
 func alive() -> bool:
 	return health > 0
 
+
 func takeDamage():
 	if health <= 0:
-		await audio_player.finished
+		if audio_player.playing:
+			await audio_player.finished
 		queue_free()
 	else:
 		health -= GameManager.playerDamage
 		animator.play("takeDamage")
 		if health <= 0:
-			await audio_player.finished
+			if audio_player.playing:
+				await audio_player.finished
 			queue_free()
+
 
 func updateFlip(dir: bool):
 	if dir == false:

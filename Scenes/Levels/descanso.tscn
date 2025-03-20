@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_aup4q"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_5xc08"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
-[ext_resource type="Script" path="res://Scenes/Levels/color_lights.gd" id="13_b1wqv"]
+[ext_resource type="Script" path="res://scripts/color_lights.gd" id="13_b1wqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_jbt40")

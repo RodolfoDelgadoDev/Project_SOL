@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_ya4p3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_ktjj2"]
+[ext_resource type="PackedScene" uid="uid://dhrh7rux0lbbi" path="res://Scenes/Entities/black_dog.tscn" id="5_a1h0w"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_nkril"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_ivrbb"]
 [ext_resource type="Texture2D" uid="uid://cvm5f3ur3c051" path="res://animations/Doors/Edificio2/Level 2.png" id="7_cvcqm"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_cwi5v"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_4qr2m"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_ahpc5"]
-[ext_resource type="PackedScene" uid="uid://bycucsigj5vo4" path="res://Scenes/Entities/badDog(deprecated).tscn" id="11_m4gxc"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_hllyb"]
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="13_c4mh2"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_ftta1"]
@@ -369,26 +369,63 @@ texture_region_size = Vector2i(32, 32)
 1:11/0 = 0
 18:2/0 = 0
 3:13/0 = 0
+3:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:12/0 = 0
+3:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:12/0 = 0
+4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:12/0 = 0
+5:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:12/0 = 0
+8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:13/0 = 0
+8:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:13/0 = 0
 6:13/0 = 0
 5:13/0 = 0
+5:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:13/0 = 0
+4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:13/0 = 0
 1:13/0 = 0
 0:13/0 = 0
 3:8/0 = 0
 2:15/0 = 0
+2:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:14/0 = 0
+2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:14/0 = 0
+1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:14/0 = 0
+0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:15/0 = 0
+1:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:15/0 = 0
+0:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+17:13/0 = 0
+17:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+17:12/0 = 0
+17:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+18:12/0 = 0
+18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+18:13/0 = 0
+18:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+19:13/0 = 0
+19:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+19:12/0 = 0
+19:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:13/0 = 0
+16:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+19:14/0 = 0
+19:15/0 = 0
+13:13/0 = 0
+13:12/0 = 0
+14:13/0 = 0
+14:12/0 = 0
+3:10/0 = 0
+3:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yil1h"]
 tile_size = Vector2i(32, 32)
@@ -573,54 +610,84 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-184, -136)
 scale = Vector2(0.5, 0.5)
 
-[node name="Perrito" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(-168, -120)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../../Player")
-
-[node name="Perrito2" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+[node name="Perrito" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-168, -136)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
 player_node_path = NodePath("../../Player")
 
-[node name="Perrito3" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(-152, -136)
+[node name="Perrito2" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(-168, -120)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
 player_node_path = NodePath("../../Player")
 
-[node name="Perrito4" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+[node name="Perrito3" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-152, -120)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
 player_node_path = NodePath("../../Player")
 
-[node name="Perrito5" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(-184, -40)
+[node name="Perrito4" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(-152, -136)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
 player_node_path = NodePath("../../Player")
 
-[node name="Perrito6" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(-120, 56)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../../Player")
-
-[node name="Perrito7" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(40, 24)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../../Player")
-
-[node name="Perrito8" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(136, 56)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../../Player")
-
-[node name="Perrito9" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
-position = Vector2(120, -72)
-scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../../Player")
-
-[node name="Perrito10" parent="Scene Manager" instance=ExtResource("11_m4gxc")]
+[node name="Perrito5" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(40, -40)
 scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito6" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(88, -72)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito7" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(136, 56)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito8" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(-72, 56)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito9" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(-120, 24)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
+player_node_path = NodePath("../../Player")
+
+[node name="Perrito10" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
+position = Vector2(-184, -40)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 20
+detection_range = 1
 player_node_path = NodePath("../../Player")
 
 [node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_cwi5v")]
@@ -689,7 +756,6 @@ rendering_quadrant_size = 32
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
 stream = ExtResource("14_16i04")
-autoplay = true
 playback_type = 1
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
