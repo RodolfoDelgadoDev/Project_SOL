@@ -763,46 +763,55 @@ playback_type = 1
 [node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(168, -152)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(24, -155)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-90, -157)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-102, -24)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-123, 67)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-28, 71)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(64, 75)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(186, 75)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(37, -23)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_jln66")
 
 [node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
@@ -810,6 +819,7 @@ position = Vector2(184, -56)
 scale = Vector2(0.335938, 0.484375)
 color = Color(0.359035, 0.413681, 0.193498, 1)
 energy = 2.54
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_ni45e")
 script = ExtResource("13_c4mh2")
 blink_interval_min = 0.01

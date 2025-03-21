@@ -455,12 +455,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_ebjte"]
-offsets = PackedFloat32Array(0, 0.70297, 1)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_nehqx"]
+offsets = PackedFloat32Array(0, 0.668831)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6gwau"]
-gradient = SubResource("Gradient_ebjte")
+gradient = SubResource("Gradient_nehqx")
 width = 128
 height = 128
 use_hdr = true
@@ -524,6 +524,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 30
 hurtSFX = ExtResource("4_oh58i")
+detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Plant2" parent="." instance=ExtResource("3_g8f0l")]
@@ -532,6 +533,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 30
 hurtSFX = ExtResource("4_oh58i")
+detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("4_e4ge1")]
@@ -592,43 +594,58 @@ animation = &"Open"
 [node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(264, -121)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(88, -55)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-71, -102)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-104, -24)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-153, 85)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-168, -137)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(168, -121)
 color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6gwau")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(57, -9)
+scale = Vector2(0.621094, 0.621094)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-72, 60)
 scale = Vector2(0.335938, 0.484375)
 color = Color(0.64938, 0.881798, 0.837948, 1)
-energy = 2.66
+energy = 1.44
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
 script = ExtResource("14_bomoy")
 blink_interval_min = 0.01

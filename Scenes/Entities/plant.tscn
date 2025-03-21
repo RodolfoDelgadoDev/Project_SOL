@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://k5qb53ajcrce"]
+[gd_scene load_steps=20 format=3 uid="uid://k5qb53ajcrce"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_y1v5c"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="2_a3c56"]
@@ -116,6 +116,9 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w26u2"]
+polygon = PackedVector2Array(8, -20, -12, -20, -12, 20, 8, 20)
+
 [node name="Plant" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1v5c")
@@ -148,6 +151,9 @@ shape = SubResource("RectangleShape2D_a4f3a")
 libraries = {
 "": SubResource("AnimationLibrary_h47lw")
 }
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
+occluder = SubResource("OccluderPolygon2D_w26u2")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

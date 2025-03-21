@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene load_steps=114 format=3 uid="uid://cmax2vhkuipx5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
 [ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
@@ -22,12 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://dox3143fscxx3" path="res://animations/Hi/HiRigh.png" id="14_kxu04"]
 [ext_resource type="Texture2D" uid="uid://b3sb4ja8ty1oh" path="res://animations/Hi/HiUp.png" id="15_ckqt7"]
 
-[sub_resource type="Gradient" id="Gradient_uvd42"]
+[sub_resource type="Gradient" id="Gradient_cdvmv"]
 offsets = PackedFloat32Array(0, 0.658416)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xj6sn"]
-gradient = SubResource("Gradient_uvd42")
+gradient = SubResource("Gradient_cdvmv")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -712,6 +712,9 @@ size = Vector2(60, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwrfp"]
 size = Vector2(62, 62)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qh4pc"]
+polygon = PackedVector2Array(-14, -23, 11, -23, 11, 27, -14, 27)
+
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dlx5r")
 attackSFX = ExtResource("2_k1amx")
@@ -722,6 +725,7 @@ movementSFX = Array[AudioStream]([ExtResource("4_ac0vv"), ExtResource("5_q7u33")
 collision_mask = 6
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+visible = false
 scale = Vector2(1.597, 1.5)
 energy = 0.2
 texture = SubResource("GradientTexture2D_xj6sn")
@@ -754,6 +758,9 @@ scale = Vector2(0.5, 0.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D/AttackSprite/Attack_area" groups=["weapon"]]
 shape = SubResource("RectangleShape2D_s6hlb")
 debug_color = Color(0.908467, 0.000113781, 0.736625, 0.42)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
+occluder = SubResource("OccluderPolygon2D_qh4pc")
 
 [node name="attack_timer" type="Timer" parent="."]
 wait_time = 0.3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://re7fm7hr7pod"]
+[gd_scene load_steps=21 format=4 uid="uid://re7fm7hr7pod"]
 
 [ext_resource type="Texture2D" uid="uid://dnml7ans72uk2" path="res://art/Tilemap-Tutorial.png" id="1_y16f4"]
 [ext_resource type="PackedScene" uid="uid://b8muovwc81is3" path="res://Scenes/Entities/lavamanos.tscn" id="2_3odr5"]
@@ -186,6 +186,20 @@ sources/0 = SubResource("TileSetAtlasSource_jjgcv")
 default_font = ExtResource("9_8y1lq")
 default_font_size = 15
 
+[sub_resource type="Gradient" id="Gradient_ebjte"]
+offsets = PackedFloat32Array(0, 0.688312)
+colors = PackedColorArray(0.578536, 0.744, 0.798908, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgsj6"]
+gradient = SubResource("Gradient_ebjte")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -308,6 +322,16 @@ expand_mode = 1
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("10_vwhm2")]
 visible = false
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-95, -21)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+texture = SubResource("GradientTexture2D_fgsj6")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.872258, 0.904291, 0.889854, 1)
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
