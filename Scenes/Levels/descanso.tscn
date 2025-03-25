@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_2oea8"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_2oea8"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="3_l55s0"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="4_b2h4n"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
@@ -945,7 +945,13 @@ movementSFX = Array[AudioStream]([])
 
 [node name="ObstaculosTopFeo" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4AAAD2/wIAAQAGAAMAAAD8/wMAAQAGAAMAAAD9/wMAAQAFAAMAAAABAAMAAQAHAAIAAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAADx//3/AQAQAAgAAAA=")
+tile_map_data = PackedByteArray("AADx/wIAAQAIAA4AAAD2/wIAAQAGAAMAAAD8/wMAAQAGAAMAAAD9/wMAAQAFAAMAAAABAAMAAQAHAAIAAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAADx//3/AQAQAAgAAAA=")
+tile_set = SubResource("TileSet_yil1h")
+rendering_quadrant_size = 32
+
+[node name="OcultarSeccion4" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4AAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -980,6 +986,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="SeccionTop5" type="Node2D" parent="."]
+visible = false
 
 [node name="Piso2" type="TileMapLayer" parent="SeccionTop5"]
 scale = Vector2(0.5, 0.5)
