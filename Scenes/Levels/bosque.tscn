@@ -1324,10 +1324,7 @@ position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("5_cqmo4")
 segundos = 200
-
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_8i3an")]
-position = Vector2(848, 1102)
-scale = Vector2(0.5, 0.5)
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
@@ -1375,7 +1372,6 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_76117")]
-visible = false
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 
@@ -1452,6 +1448,12 @@ scale = Vector2(2.14225, 2.01213)
 color = Color(0.952198, 0.541686, 0.364554, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ahch8")
+
+[node name="Goal" parent="Scene Manager" instance=ExtResource("7_8i3an")]
+position = Vector2(848, 1102)
+scale = Vector2(2, 2)
+has_npc = false
+animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

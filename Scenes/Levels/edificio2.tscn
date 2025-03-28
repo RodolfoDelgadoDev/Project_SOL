@@ -576,7 +576,7 @@ scale = Vector2(0.25, 0.25)
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_nkril")
 segundos = 60
-next_level = NodePath("res://Scenes/Levels/descanso.tscn")
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_ivrbb")]
 position = Vector2(72, -56)

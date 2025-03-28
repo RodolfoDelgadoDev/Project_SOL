@@ -719,14 +719,9 @@ cursor_blink_delay = 0.25
 position = Vector2(359, -331)
 scale = Vector2(0.5, 0.5)
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_c74ar")]
-position = Vector2(-23, -377)
-scale = Vector2(0.5, 0.5)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("8_gyqse")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -771,6 +766,10 @@ expand_mode = 1
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_r0nti")]
 visible = false
+
+[node name="Goal" parent="Scene Manager" instance=ExtResource("7_c74ar")]
+position = Vector2(-24, -378)
+animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

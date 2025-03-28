@@ -549,7 +549,7 @@ rendering_quadrant_size = 32
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_qtx0x")
 segundos = 30
-next_level = NodePath("res://Scenes/Levels/descanso.tscn")
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_q161q")]
 position = Vector2(-88, 72)

@@ -874,15 +874,23 @@ position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("8_snc06")
 segundos = 200
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("10_7q5l0")]
-position = Vector2(848, 1102)
-scale = Vector2(0.5, 0.5)
+position = Vector2(656, 270)
+scale = Vector2(2, 2)
+has_npc = false
+animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Goal2" parent="Scene Manager" instance=ExtResource("10_7q5l0")]
+position = Vector2(688, 270)
+scale = Vector2(2, 2)
+has_npc = false
+animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("11_abnm3")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -926,7 +934,6 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("14_6nnvt")]
-visible = false
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 

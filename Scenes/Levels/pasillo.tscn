@@ -264,20 +264,16 @@ scale = Vector2(0.5, 0.5)
 [node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("3_x207l")
-segundos = 100
+segundos = 500
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("4_arjuw")]
 position = Vector2(168, 13)
 scale = Vector2(0.5, 0.5)
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("4_ejx0k")]
-position = Vector2(376, 38)
-scale = Vector2(0.5, 0.5)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("7_w31nn")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -321,7 +317,6 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("10_vwhm2")]
-visible = false
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 
@@ -332,6 +327,10 @@ texture = SubResource("GradientTexture2D_fgsj6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.872258, 0.904291, 0.889854, 1)
+
+[node name="Goal" parent="Scene Manager" instance=ExtResource("4_ejx0k")]
+position = Vector2(376, 38)
+has_npc = false
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
