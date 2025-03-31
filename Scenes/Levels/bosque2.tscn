@@ -759,8 +759,8 @@ default_font = ExtResource("13_01kxf")
 default_font_size = 15
 
 [sub_resource type="Gradient" id="Gradient_sgmji"]
-offsets = PackedFloat32Array(0, 0.668831)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
+offsets = PackedFloat32Array(0, 0.337662)
+colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_so1k2"]
 gradient = SubResource("Gradient_sgmji")
@@ -1084,7 +1084,7 @@ blink_interval_max = 0.5
 [node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-282, -36)
 color = Color(0.773592, 0.66626, 0.203995, 1)
-energy = 1.58
+energy = 1.6
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_so1k2")
 script = ExtResource("13_xr4jb")

@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3s22my3nwvfq"]
+
+[ext_resource type="Script" path="res://scripts/Enemies/spitter.gd" id="1_hpbxh"]
+[ext_resource type="Texture2D" uid="uid://jfn3p0d2mr6o" path="res://art/Bat B&W animation.png" id="4_y5toq"]
+[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_7q4yd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ror"]
+atlas = ExtResource("4_y5toq")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcsyw"]
+atlas = ExtResource("4_y5toq")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57t8y"]
+atlas = ExtResource("4_y5toq")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_027c8"]
+atlas = ExtResource("4_y5toq")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecxyt"]
+atlas = ExtResource("4_y5toq")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkuue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ror")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcsyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57t8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_027c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecxyt")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6hlb"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
+size = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_2q3t7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7cwl3"]
+resource_name = "takeDamage"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.05, 0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
+_data = {
+"RESET": SubResource("Animation_2q3t7"),
+"takeDamage": SubResource("Animation_7cwl3")
+}
+
+[node name="Spitter" type="Node2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_hpbxh")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_bkuue")
+animation = &"Flying"
+autoplay = "Flying"
+frame_progress = 0.445503
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("5_7q4yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_s6hlb")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_a4f3a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_h47lw")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]
