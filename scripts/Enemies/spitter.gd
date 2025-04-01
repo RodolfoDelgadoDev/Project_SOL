@@ -13,6 +13,7 @@ extends Node2D
 
 var current_direction_index := 0
 var fireball_scene = preload("res://Scenes/Entities/fireball.tscn")
+var animations: Array[String] = ["Attack"]
 
 func _ready() -> void:
 	start_direction_cycle()
@@ -26,6 +27,7 @@ func start_direction_cycle() -> void:
 			current_direction_index = (current_direction_index + 1) % directions.size()
 
 func fireball(direction: String) -> void:
+	sprite.play((animations[0]))
 	var fireball_instance = fireball_scene.instantiate()
 	get_parent().add_child(fireball_instance)
 	fireball_instance.global_position = global_position
