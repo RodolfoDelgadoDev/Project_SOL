@@ -1,12 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://cbsh0wl72o2kl"]
+[gd_scene load_steps=19 format=4 uid="uid://cbsh0wl72o2kl"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_117de"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="3_bma7x"]
+[ext_resource type="PackedScene" uid="uid://cp8h2tftclb1y" path="res://Scenes/Entities/trap1.tscn" id="3_su13o"]
 [ext_resource type="PackedScene" uid="uid://cn2xmgjwdsl2f" path="res://Scenes/Entities/trap4.tscn" id="3_uxtny"]
 [ext_resource type="PackedScene" uid="uid://dtt3stb4e27la" path="res://Scenes/Entities/trap5.tscn" id="4_a0jm3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
+[ext_resource type="PackedScene" uid="uid://5onfll5fy2k2" path="res://Scenes/Entities/robot.tscn" id="5_5xvhq"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="5_g17nj"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
+[ext_resource type="PackedScene" uid="uid://c14k0mfstxlia" path="res://Scenes/Entities/esqueleto.tscn" id="6_uaewf"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="6_vwn07"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="9_wsi7r"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_wcqlv"]
@@ -684,6 +687,30 @@ tile_map_data = PackedByteArray("AAD3/wcAAAAKAAAAAAD3/wgAAAAKAAEAAAD5/wcAAAAAAAc
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
+[node name="Trap1" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(88, 72)
+
+[node name="Trap2" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(72, 72)
+
+[node name="Trap3" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-216, 153)
+
+[node name="Trap12" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-232, 153)
+
+[node name="Trap13" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-232, 137)
+
+[node name="Trap14" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-216, 137)
+
+[node name="Trap15" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-248, 137)
+
+[node name="Trap16" parent="." instance=ExtResource("3_su13o")]
+position = Vector2(-248, 153)
+
 [node name="Trap4" parent="." instance=ExtResource("3_uxtny")]
 position = Vector2(-184, -103)
 
@@ -707,6 +734,13 @@ position = Vector2(142, -136)
 
 [node name="Trap11" parent="." instance=ExtResource("4_a0jm3")]
 position = Vector2(174, -136)
+
+[node name="Robot" parent="." instance=ExtResource("5_5xvhq")]
+position = Vector2(24, -88)
+
+[node name="Esqueleto" parent="." instance=ExtResource("6_uaewf")]
+position = Vector2(344, -41)
+player_node_path = NodePath("../Player")
 
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -733,6 +767,26 @@ cursor_blink_delay = 0.25
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("5_g17nj")]
 position = Vector2(-232, 70)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(24, 150)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(328, 9)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(262, -172)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(355, -211)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(136, 133)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
