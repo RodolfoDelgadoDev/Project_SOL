@@ -114,13 +114,15 @@ libraries = {
 autoplay = "credits"
 
 [node name="BlackBox" type="ColorRect" parent="."]
-offset_left = 57.0
+offset_left = -109.0
 offset_top = -3.0
-offset_right = 240.0
+offset_right = 74.0
 offset_bottom = 180.0
+scale = Vector2(3, 1)
 color = Color(0.00784314, 0.00784314, 0.00784314, 0)
 
 [node name="ExitButton" type="Button" parent="."]
+z_index = 4
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
