@@ -83,13 +83,10 @@ func start_moving():
 		move_timer = 0.0
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	print("Fireball collided with: ", area.name)
 	if area.is_in_group("player"):
-		print("Hit player - dealing damage")
-		GameManager.Segundos -= damage
-	
-	print("Fireball destroyed by area collision")
-	queue_free()
+		GameManager.takeDamage(damage)
+		explode()
+	pass
 	
 func explode():
 	#reproducir animacion bola de fuego

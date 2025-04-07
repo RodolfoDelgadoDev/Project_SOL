@@ -162,7 +162,7 @@ func direction_to_string(direction: Vector2) -> String:
 		return "RIGHT"
 	return ""
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("enemy"):
 		# Start the camera shake
 		shake_intensity = 5.0  # Adjust intensity as needed

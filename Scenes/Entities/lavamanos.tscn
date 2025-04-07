@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8muovwc81is3"]
+[gd_scene load_steps=10 format=3 uid="uid://b8muovwc81is3"]
 
-[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_xlqi5"]
 [ext_resource type="Texture2D" uid="uid://bpucru7psn58f" path="res://art/Cocina Animada.png" id="2_a6bc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4vbc"]
@@ -57,7 +56,6 @@ animations = [{
 }]
 
 [node name="platoslava" type="Node2D"]
-script = ExtResource("1_xlqi5")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

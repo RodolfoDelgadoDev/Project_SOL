@@ -187,11 +187,8 @@ texture_region_size = Vector2i(32, 32)
 7:11/0 = 0
 7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16, 16, -16)
 7:12/0 = 0
-7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16, 16, -16)
 6:12/0 = 0
-6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16, 16, -16)
 9:12/0 = 0
-9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:11/0 = 0
 9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:10/0 = 0
@@ -221,7 +218,6 @@ texture_region_size = Vector2i(32, 32)
 10:11/0 = 0
 10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 10:12/0 = 0
-10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 12:12/0 = 0
 12:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 12:13/0 = 0
@@ -532,6 +528,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_daqb4")
 offset_left = -266.0
 offset_top = -262.0
@@ -548,13 +545,26 @@ rendering_quadrant_size = 32
 
 [node name="ObstaculosArriba" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAQAAMAAgAKABAAAAAJAAUAAgAKABAAAAAFAAMAAgAKABAAAAAIAAEAAgAKABAAAAAQAAQAAgALABAAAAAGAAUAAgALABAAAAAOAAEAAgALABAAAAATAAEAAgALABAAAAATAAYAAgALABAAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Boss" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_m7lbr")]
 material = SubResource("ShaderMaterial_7qcg1")
 position = Vector2(78, 28)
+scale = Vector2(0.8, 0.8)
 move_speed = 50.0
+chase_duration = 4.0
+attack_damage = 50.0
+player_node = NodePath("../Player")
+
+[node name="Boss2" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_m7lbr")]
+material = SubResource("ShaderMaterial_7qcg1")
+position = Vector2(290, 80)
+scale = Vector2(0.8, 0.8)
+move_speed = 80.0
+chase_duration = 1.5
+attack_duration = 2.0
 attack_damage = 50.0
 player_node = NodePath("../Player")
 

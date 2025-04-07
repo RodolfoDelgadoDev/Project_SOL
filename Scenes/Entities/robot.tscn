@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5onfll5fy2k2"]
+[gd_scene load_steps=22 format=3 uid="uid://d2kgu6mlym0vy"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_ftw0r"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_ve4up"]

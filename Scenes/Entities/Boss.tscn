@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvfn5t1ti8w87"]
 
-[ext_resource type="Script" path="res://Scenes/Entities/boss_attack.gd" id="2_axsa3"]
+[ext_resource type="Script" path="res://scripts/Enemies/boss_attack.gd" id="2_axsa3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p322"]
 size = Vector2(44, 42)

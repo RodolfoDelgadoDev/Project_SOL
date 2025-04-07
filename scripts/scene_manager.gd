@@ -36,7 +36,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child.is_in_group("pickup"):
 			bottleTotal += 1
-		print("Total bottles found: ", bottleTotal)
+	print("Total bottles found: ", bottleTotal)
 	if descanso:
 		timer.stop_timer()
 		timer.visible = false

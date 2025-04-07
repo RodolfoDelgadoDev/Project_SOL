@@ -1,7 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://c14k0mfstxlia"]
+[gd_scene load_steps=21 format=3 uid="uid://dpgcl368ghg7q"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_kd8g7"]
+[ext_resource type="Shader" path="res://ghost.gdshader" id="2_aj6cw"]
 [ext_resource type="Texture2D" uid="uid://h7s2kwwsuev5" path="res://art/Skullboy.png" id="2_hu7rx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3tgja"]
+shader = ExtResource("2_aj6cw")
+shader_parameter/wave_amplitude = 0.5
+shader_parameter/wave_frequency = 0.0
+shader_parameter/wave_speed = 10.0
+shader_parameter/transparency = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbli4"]
 atlas = ExtResource("2_hu7rx")
@@ -106,6 +114,7 @@ collision_layer = 4
 collision_mask = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+material = SubResource("ShaderMaterial_3tgja")
 position = Vector2(9.53674e-07, 9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_ddob7")
 autoplay = "default"

@@ -29,7 +29,8 @@ window/stretch/scale_mode="integer"
 [editor]
 
 movie_writer/mjpeg_quality=0.1
-movie_writer/movie_file="F:/SOL_Movies/1.avi"
+movie_writer/movie_file="F:/boss_test.avi"
+movie_writer/disable_vsync=true
 
 [global_group]
 
