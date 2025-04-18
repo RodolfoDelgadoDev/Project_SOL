@@ -600,7 +600,6 @@ patrol_path = Array[Vector2]([Vector2(-1, 0), Vector2(1, 0)])
 visible = false
 position = Vector2(-265, 168)
 scale = Vector2(0.25, 0.25)
-quieto = true
 health = 99999
 attackSFX = ExtResource("4_01ite")
 moveSFX = ExtResource("5_8kv5a")
@@ -811,7 +810,6 @@ scale = Vector2(0.25, 0.25)
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("4_b4syn")
 segundos = 60
-next_level = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("5_h46wn")]
 position = Vector2(72, -56)

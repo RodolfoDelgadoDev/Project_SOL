@@ -766,6 +766,7 @@ occluder = SubResource("OccluderPolygon2D_qh4pc")
 wait_time = 0.3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+panning_strength = 0.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]

@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=4 uid="uid://brjrgjayo5ot1"]
+[gd_scene load_steps=23 format=4 uid="uid://brjrgjayo5ot1"]
 
 [ext_resource type="Texture2D" uid="uid://byepw2ujntrg7" path="res://art/Tilemap-Bosque.png" id="1_o3450"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_sy5xa"]
 [ext_resource type="PackedScene" uid="uid://bi0qsrfo6dmii" path="res://Scenes/Levels/cascada.tscn" id="2_3q0lj"]
 [ext_resource type="PackedScene" uid="uid://bilwqgc62s12q" path="res://Scenes/Entities/trap6.tscn" id="2_36jt7"]
-[ext_resource type="PackedScene" uid="uid://dpgcl368ghg7q" path="res://Scenes/Entities/esqueleto.tscn" id="4_ctwc0"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_p45r0"]
 [ext_resource type="PackedScene" uid="uid://ws2r321rq3lf" path="res://Scenes/Entities/fireflies.tscn" id="4_uoacn"]
+[ext_resource type="PackedScene" uid="uid://segsacufkmxa" path="res://Scenes/Entities/esqleto.tscn" id="6_0twix"]
 [ext_resource type="PackedScene" uid="uid://d3s22my3nwvfq" path="res://Scenes/Entities/Spitter.tscn" id="7_3jqmy"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="8_snc06"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="10_7q5l0"]
+[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="10_gjn0r"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="11_abnm3"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="12_t44ub"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="13_01kxf"]
@@ -838,7 +839,7 @@ position = Vector2(328, 232)
 
 [node name="ObstaculosArriba2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAAAGAAAAAAD2/wEAAAAUAAAAAAD+////AAAEAAsAAAD/////AAAFAAsAAAAAAP//AAAFAAsAAAABAP//AAAFAAsAAAACAP//AAAFAAsAAAADAP//AAAFAAsAAAAEAP//AAAFAAsAAAAFAP//AAAFAAsAAAAGAP//AAAGAAsAAAAGAAAAAAAEAAsAAFAGAAEAAAAFAAsAAFAGAAIAAAAGAAsAAFD+/woAAAAEAAsAAAD//woAAAAFAAsAAAAAAAoAAAAFAAsAAAABAAoAAAAFAAsAAAACAAoAAAAFAAsAAAADAAoAAAAGAAsAAAANABEAAAAGAAsAAAALABEAAAAGAAsAADAMABEAAAAFAAsAAAARABEAAAAFAAsAAAAQABEAAAAFAAsAAAASABEAAAAGAAsAAAAPABEAAAAGAAsAADAHAA8AAAAEAAsAAGAHAA4AAAAFAAsAAGAHAA0AAAAFAAsAAGAHAAwAAAAEAAsAAFAHAAUAAAAEAAsAAFAHAAYAAAAFAAsAAGAHAAcAAAAFAAsAAGAHAAgAAAAGAAsAAFAVAAIAAAAwAAgAAAAUAAoAAAAEAAsAAFAUAAsAAAAFAAsAAFAUAAwAAAAFAAsAAFAUAA0AAAAGAAsAAFAaAAgAAAAGAAsAAAAXAAgAAAAGAAsAADAYAAgAAAAFAAsAAAAZAAgAAAAFAAsAAADy//3/AAApAAMAAADy//7/AAApAAQAAADx//3/AAApAAMAAADx//7/AAApAAQAAADw//3/AAApAAMAAADw//7/AAApAAQAAAALAAgAAAAuAAUAAAAMAAgAAAAvAAUAAADz/wAAAAAPAAAAAAD4/wMAAAAPAAAAAAAEAAIAAAAPAAAAAAAJAAQAAAAPAAAAAAAIAAgAAAAPAAAAAAAKAAsAAAAPAAAAAAAFABAAAAAPAAAAAAALAA8AAAAPAAAAAAASAA8AAAAPAAAAAAAWABAAAAAPAAAAAAD+/w0AAAAPAAAAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAAAGAAAAAAD2/wEAAAAUAAAAAAD+////AAAEAAsAAAD/////AAAFAAsAAAAAAP//AAAFAAsAAAABAP//AAAFAAsAAAACAP//AAAFAAsAAAADAP//AAAFAAsAAAAEAP//AAAFAAsAAAAFAP//AAAFAAsAAAAGAP//AAAGAAsAAAAGAAAAAAAEAAsAAFAGAAEAAAAFAAsAAFAGAAIAAAAGAAsAAFD+/woAAAAEAAsAAAD//woAAAAFAAsAAAAAAAoAAAAFAAsAAAABAAoAAAAFAAsAAAACAAoAAAAFAAsAAAADAAoAAAAGAAsAAAANABEAAAAGAAsAAAALABEAAAAGAAsAADAMABEAAAAFAAsAAAARABEAAAAFAAsAAAAQABEAAAAFAAsAAAASABEAAAAGAAsAAAAPABEAAAAGAAsAADAHAA8AAAAEAAsAAGAHAA4AAAAFAAsAAGAHAA0AAAAFAAsAAGAHAAwAAAAEAAsAAFAHAAUAAAAEAAsAAFAHAAYAAAAFAAsAAGAHAAcAAAAFAAsAAGAHAAgAAAAGAAsAAFAVAAIAAAAwAAgAAAAUAAoAAAAEAAsAAFAUAAsAAAAFAAsAAFAUAAwAAAAFAAsAAFAUAA0AAAAGAAsAAFAaAAgAAAAGAAsAAAAXAAgAAAAGAAsAADAYAAgAAAAFAAsAAAAZAAgAAAAwAAUAAADy//3/AAApAAMAAADy//7/AAApAAQAAADx//3/AAApAAMAAADx//7/AAApAAQAAADw//3/AAApAAMAAADw//7/AAApAAQAAAALAAgAAAAuAAUAAAAMAAgAAAAvAAUAAADz/wAAAAAPAAAAAAD4/wMAAAAPAAAAAAAEAAIAAAAPAAAAAAAJAAQAAAAPAAAAAAAIAAgAAAAPAAAAAAAKAAsAAAAPAAAAAAAFABAAAAAPAAAAAAALAA8AAAAPAAAAAAASAA8AAAAPAAAAAAAWABAAAAAPAAAAAAD+/w0AAAAPAAAAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -879,67 +880,83 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-76, 145)
 scale = Vector2(0.5, 0.5)
 
-[node name="Esqueleto" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(-184, 88)
-damage = 6
-health = 50
-detection_range = 3
-player_node_path = NodePath("../Player")
-
-[node name="Esqueleto2" parent="." instance=ExtResource("4_ctwc0")]
+[node name="Esqueleto" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(-24, 72)
-damage = 6
-health = 50
-detection_range = 3
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto3" parent="." instance=ExtResource("4_ctwc0")]
+[node name="Esqueleto2" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(-24, 8)
-damage = 6
-health = 50
-detection_range = 1
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto4" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(104, -8)
-damage = 6
-health = 50
-detection_range = 1
+[node name="Esqueleto4" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(184, 56)
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto5" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(168, 56)
-damage = 6
-health = 50
-detection_range = 1
+[node name="Esqueleto5" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(200, 136)
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto6" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(120, 152)
-damage = 6
-health = 50
-detection_range = 1
+[node name="Esqueleto6" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(-72, 216)
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto7" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(-40, 152)
-damage = 6
-health = 50
-detection_range = 1
+[node name="Esqueleto7" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(56, 280)
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Esqueleto8" parent="." instance=ExtResource("4_ctwc0")]
-position = Vector2(168, 280)
-damage = 6
-health = 50
-detection_range = 1
+[node name="Esqueleto8" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(248, 248)
+scale = Vector2(0.25, 0.25)
 player_node_path = NodePath("../Player")
 
-[node name="Spitter" parent="Esqueleto8" instance=ExtResource("7_3jqmy")]
-position = Vector2(-416, -416)
-scale = Vector2(0.5, 0.5)
+[node name="Esqueleto9" parent="." instance=ExtResource("6_0twix")]
+position = Vector2(328, 216)
+scale = Vector2(0.25, 0.25)
+player_node_path = NodePath("../Player")
+
+[node name="Spitter" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(-40, 72)
 damage = 3
 directions = Array[String](["up", "left"])
+fireball_length = 6
+
+[node name="Spitter2" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(104, -8)
+damage = 3
+directions = Array[String](["left"])
+fireball_length = 6
+
+[node name="Spitter3" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(120, 152)
+damage = 3
+directions = Array[String](["up"])
+fireball_length = 6
+
+[node name="Spitter4" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(56, 136)
+damage = 3
+fireball_length = 6
+
+[node name="Spitter5" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(-72, 168)
+damage = 3
+fireball_length = 6
+
+[node name="Spitter6" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(56, 248)
+damage = 3
+fireball_length = 6
+
+[node name="Spitter7" parent="." instance=ExtResource("7_3jqmy")]
+position = Vector2(296, 280)
+damage = 3
+directions = Array[String](["left"])
 fireball_length = 6
 
 [node name="Player" parent="." instance=ExtResource("4_p45r0")]
@@ -958,6 +975,34 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("8_snc06")
 segundos = 200
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Coin" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(-208, 46)
+recuperacion = 10
+
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(-48, 174)
+recuperacion = 10
+
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(368, 78)
+recuperacion = 10
+
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(432, 270)
+recuperacion = 10
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(-80, 430)
+recuperacion = 10
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(176, 558)
+recuperacion = 10
+
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("10_gjn0r")]
+position = Vector2(752, 462)
+recuperacion = 10
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("10_7q5l0")]
 position = Vector2(656, 270)
