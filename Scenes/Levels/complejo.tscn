@@ -1,20 +1,21 @@
-[gd_scene load_steps=19 format=4 uid="uid://cbsh0wl72o2kl"]
+[gd_scene load_steps=23 format=4 uid="uid://cbsh0wl72o2kl"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_117de"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="3_bma7x"]
 [ext_resource type="PackedScene" uid="uid://cp8h2tftclb1y" path="res://Scenes/Entities/trap1.tscn" id="3_su13o"]
 [ext_resource type="PackedScene" uid="uid://cn2xmgjwdsl2f" path="res://Scenes/Entities/trap4.tscn" id="3_uxtny"]
-[ext_resource type="PackedScene" uid="uid://dtt3stb4e27la" path="res://Scenes/Entities/trap5.tscn" id="4_a0jm3"]
+[ext_resource type="PackedScene" uid="uid://segsacufkmxa" path="res://Scenes/Entities/esqleto.tscn" id="4_cuu7a"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
-[ext_resource type="PackedScene" uid="uid://5onfll5fy2k2" path="res://Scenes/Entities/robot.tscn" id="5_5xvhq"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="5_g17nj"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
-[ext_resource type="PackedScene" uid="uid://c14k0mfstxlia" path="res://Scenes/Entities/esqueleto.tscn" id="6_uaewf"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="6_vwn07"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="9_wsi7r"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_wcqlv"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="11_j3irb"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="12_metrk"]
+[ext_resource type="PackedScene" uid="uid://c6oy8cryt40b0" path="res://Scenes/Entities/robot2.tscn" id="15_frlsg"]
+[ext_resource type="Shader" path="res://ghost.gdshader" id="15_tliqj"]
+[ext_resource type="Texture2D" uid="uid://cwmhyg6krbr26" path="res://art/fogtexture.png" id="16_ld6yd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
 texture = ExtResource("1_117de")
@@ -511,15 +512,11 @@ texture_region_size = Vector2i(32, 32)
 20:15/0 = 0
 20:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 20:14/0 = 0
-20:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, -16, 16)
 19:14/0 = 0
-19:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, -16, 16)
 21:15/0 = 0
 21:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 21:14/0 = 0
-21:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, -16, 16)
 22:14/0 = 0
-22:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, -16, 16)
 22:15/0 = 0
 22:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 19:18/0 = 0
@@ -656,6 +653,27 @@ sources/0 = SubResource("TileSetAtlasSource_8oxwa")
 default_font = ExtResource("11_j3irb")
 default_font_size = 15
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cog1y"]
+shader = ExtResource("15_tliqj")
+shader_parameter/wave_amplitude = 6.799
+shader_parameter/wave_frequency = 5.757
+shader_parameter/wave_speed = 1.79
+shader_parameter/transparency = 0.341
+
+[sub_resource type="Gradient" id="Gradient_nehqx"]
+offsets = PackedFloat32Array(0, 0.61039)
+colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tmn42"]
+gradient = SubResource("Gradient_nehqx")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(53, 191)
 
@@ -687,66 +705,273 @@ tile_map_data = PackedByteArray("AAD3/wcAAAAKAAAAAAD3/wgAAAAKAAEAAAD5/wcAAAAAAAc
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Trap1" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(88, 72)
-
-[node name="Trap2" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(72, 72)
-
-[node name="Trap3" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-216, 153)
-
-[node name="Trap12" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-232, 153)
-
-[node name="Trap13" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-232, 137)
-
-[node name="Trap14" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-216, 137)
-
-[node name="Trap15" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-248, 137)
-
-[node name="Trap16" parent="." instance=ExtResource("3_su13o")]
-position = Vector2(-248, 153)
-
-[node name="Trap4" parent="." instance=ExtResource("3_uxtny")]
-position = Vector2(-184, -103)
-
-[node name="Trap5" parent="." instance=ExtResource("3_uxtny")]
-position = Vector2(-184, -87)
-
-[node name="Trap6" parent="." instance=ExtResource("3_uxtny")]
-position = Vector2(232, 168)
-
-[node name="Trap7" parent="." instance=ExtResource("3_uxtny")]
-position = Vector2(232, 184)
-
-[node name="Trap8" parent="." instance=ExtResource("4_a0jm3")]
-position = Vector2(126, -136)
-
-[node name="Trap9" parent="." instance=ExtResource("4_a0jm3")]
-position = Vector2(158, -136)
-
-[node name="Trap10" parent="." instance=ExtResource("4_a0jm3")]
-position = Vector2(142, -136)
-
-[node name="Trap11" parent="." instance=ExtResource("4_a0jm3")]
-position = Vector2(174, -136)
-
-[node name="Robot" parent="." instance=ExtResource("5_5xvhq")]
-position = Vector2(24, -88)
-
-[node name="Esqueleto" parent="." instance=ExtResource("6_uaewf")]
-position = Vector2(344, -41)
-player_node_path = NodePath("../Player")
-
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD2//P/AAAAAAUAAAD3//P/AAABAAUAAAD4//P/AAABAAUAAAD5//P/AAABAAUAAAD6//P/AAABAAUAAAD7//P/AAACAAUAAAD3//X/AAAAAAwAAAD3//b/AAAAAA0AAAD4//X/AAABAAwAAAD4//b/AAABAA0AAAD6//X/AAACAAwAAAD6//b/AAACAA0AAAAAAPX/AAAQAAwAAAAAAPb/AAAQAA0AAAABAPX/AAARAAwAAAABAPb/AAARAA0AAAABAOf/AAASAAMAAAD0/+f/AAASAAMAAAD1/+f/AAASAAMAAAACAOf/AAASAAMAAAADAOf/AAASAAMAAAACAOD/AAAMAAwAAAACAOH/AAAMAA0AAAADAOD/AAANAAwAAAADAOH/AAANAA0AAAACAN//AAAMAAsAAAADAN//AAANAAsAAAABAOX/AAAEAA0AAAACAOP/AAAEAA0AAAD1/+H/AAAEAA0AAAD1/+b/AAAEAA0AAADr//H/AAAAAAwAAADr//L/AAAAAA0AAADs//H/AAABAAwAAADs//L/AAABAA0AAADq/+7/AAAAAAwAAADq/+//AAAAAA0AAADr/+7/AAABAAwAAADr/+//AAABAA0AAADo/+z/AAAAAAwAAADo/+3/AAAAAA0AAADp/+z/AAABAAwAAADp/+3/AAABAA0AAADo/+b/AAALAAMAAADo/+f/AAALAAQAAADo/+j/AAALAAUAAADp/+b/AAAMAAMAAADp/+f/AAAMAAQAAADp/+j/AAAMAAUAAADq/+b/AAANAAMAAADq/+f/AAANAAQAAADq/+j/AAANAAUAAAAeAPf/AAALAAAAAAAeAPj/AAALAAEAAAAfAPf/AAALAAAAAAAfAPj/AAALAAEAAAAgAPf/AAALAAAAAAAgAPj/AAALAAEAAAAhAPf/AAALAAAAAAAhAPj/AAALAAEAAAAiAPf/AAALAAAAAAAiAPj/AAALAAEAAAAjAPf/AAALAAAAAAAjAPj/AAALAAEAAADs//T/AAAMAAsAAADt//T/AAANAAsAAAAMAP7/AAAGAAwAAAAMAP//AAAGAA0AAAANAP7/AAAHAAwAAAANAP//AAAHAA0AAAASAAcAAAAAAAwAAAASAAgAAAAAAA0AAAATAAcAAAABAAwAAAATAAgAAAABAA0AAAAKANn/AAAGAAwAAAAKANr/AAAGAA0AAAALANn/AAAHAAwAAAALANr/AAAHAA0AAAALAOX/AAADAAsAAAALAOb/AAADAAwAAAALAOf/AAADAAwAAAALAOj/AAADAAwAAAALAOn/AAADAA0AAAATANb/AAAGAAwAAAATANf/AAAGAA0AAAAUANb/AAAHAAwAAAAUANf/AAAHAA0AAAAXANn/AAAGAAwAAAAXANr/AAAGAA0AAAAYANn/AAAHAAwAAAAYANr/AAAHAA0AAAAYAOX/AAADAAsAAAAYAOb/AAADAAwAAAAYAOf/AAADAAwAAAAYAOj/AAADAAwAAAAYAOn/AAADAA0AAAAKANb/AAAAAAwAAAAKANf/AAAAAA0AAAALANb/AAABAAwAAAALANf/AAABAA0AAAAYANX/AAAAAAwAAAAYANb/AAAAAA0AAAAZANX/AAABAAwAAAAZANb/AAABAA0AAAD7/wgAAAASABAAAAD7/wkAAAASABEAAAD8/wgAAAATABAAAAD8/wkAAAATABEAAAAhAPT/AAAKAAAAAAAhAPX/AAAKAAEAAAAjAPT/AAAKAAAAAAAjAPX/AAAKAAEAAAAiAO7/AAAEAA0AAAAmAOz/AAAEAA0AAAAmAPD/AAAEAA0AAAAIAPz/AAADAA0AAAAWAPb/AAASAA0AAAAXAPb/AAATAA0AAAD2/+D/AAAMAA0AAAD3/+D/AAANAA0AAAARAPD/AAAUAAgAAAARAPH/AAAUAAkAAAASAPD/AAAVAAgAAAASAPH/AAAVAAkAAAATAPD/AAAWAAgAAAATAPH/AAAWAAkAAAAUAO3/AAAUAAsAAAAVAO3/AAAVAAsAAAAWAO3/AAAWAAsAAAAOAO3/AAAUAAkAAAAPAO3/AAAVAAkAAAAQAO3/AAAWAAkAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
+
+[node name="Robot" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(24, -8)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot2" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(104, 40)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(0, -1), Vector2(0, -1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(1, 0), Vector2(1, 0)])
+
+[node name="Robot3" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-248, 56)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot4" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-248, 88)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot5" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-248, 24)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot6" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-248, -8)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot7" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-200, -120)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(0, -1), Vector2(0, -1), Vector2(0, -1)])
+
+[node name="Robot8" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(360, 24)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)])
+
+[node name="Robot9" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(248, -104)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0)])
+
+[node name="Robot10" parent="." instance=ExtResource("15_frlsg")]
+position = Vector2(-88, -104)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.2
+damage = 2
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0)])
+
+[node name="Esqueleto" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(-200, 152)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto2" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(-200, 152)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto3" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(-232, -56)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto4" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(-24, -120)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto5" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(264, -216)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto6" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(344, -216)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto7" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(296, -168)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto8" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(472, -120)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto9" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(328, -8)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto10" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(280, 104)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="Esqueleto11" parent="." instance=ExtResource("4_cuu7a")]
+position = Vector2(344, 152)
+scale = Vector2(0.25, 0.25)
+detection_range = 3
+player_node_path = NodePath("../Player")
+
+[node name="traps" type="Node" parent="."]
+
+[node name="Trap1" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(125, 327)
+damage = 3
+
+[node name="Trap2" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(109, 327)
+damage = 3
+
+[node name="Trap3" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(269, 327)
+damage = 3
+
+[node name="Trap4" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(365, 359)
+damage = 3
+
+[node name="Trap25" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(381, 247)
+damage = 3
+
+[node name="Trap26" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(397, 231)
+damage = 3
+
+[node name="Trap27" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(381, 231)
+damage = 3
+
+[node name="Trap28" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(381, 215)
+damage = 3
+
+[node name="Trap29" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(397, 215)
+damage = 3
+
+[node name="Trap30" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(349, 39)
+damage = 3
+
+[node name="Trap31" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(269, 23)
+damage = 3
+
+[node name="Trap32" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(253, -25)
+damage = 3
+
+[node name="Trap33" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(61, 71)
+damage = 3
+
+[node name="Trap34" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(61, 71)
+damage = 3
+
+[node name="Trap35" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(-35, 103)
+damage = 3
+
+[node name="Trap36" parent="traps" instance=ExtResource("3_su13o")]
+position = Vector2(-51, 87)
+damage = 3
+
+[node name="Trap5" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(109, 231)
+
+[node name="Trap6" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(109, 199)
+
+[node name="Trap7" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(141, 199)
+
+[node name="Trap8" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(93, 167)
+
+[node name="Trap9" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(141, 247)
+
+[node name="Trap10" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-179, 263)
+
+[node name="Trap11" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-163, 263)
+
+[node name="Trap12" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-163, 231)
+
+[node name="Trap13" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-195, 231)
+
+[node name="Trap14" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-195, 199)
+
+[node name="Trap15" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-179, 199)
+
+[node name="Trap16" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-163, 167)
+
+[node name="Trap17" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-179, 167)
+
+[node name="Trap18" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-131, 103)
+
+[node name="Trap19" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(-131, 87)
+
+[node name="Trap20" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(477, 87)
+
+[node name="Trap21" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(493, 103)
+
+[node name="Trap22" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(285, 375)
+
+[node name="Trap23" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(285, 359)
+
+[node name="Trap24" parent="traps" instance=ExtResource("3_uxtny")]
+position = Vector2(285, 359)
 
 [node name="Player" parent="." instance=ExtResource("4_oigfh")]
 position = Vector2(56, 168)
@@ -762,41 +987,88 @@ rendering_quadrant_size = 32
 position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
 segundos = 45
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(-232, 70)
+position = Vector2(104, 166)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin2" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(24, 150)
+position = Vector2(8, 166)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin3" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(328, 9)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin5" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(262, -172)
-scale = Vector2(0.5, 0.5)
-
-[node name="Coin6" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(355, -211)
+position = Vector2(-136, 150)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin4" parent="Scene Manager" instance=ExtResource("5_g17nj")]
-position = Vector2(136, 133)
+position = Vector2(-232, 38)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(-216, -10)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(-168, -122)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(56, -122)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin8" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(72, -122)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin9" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(136, -218)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin10" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(152, -218)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin11" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(360, -218)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin12" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(472, -106)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin13" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(472, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin14" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(360, -58)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin15" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(376, 22)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin16" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(328, 118)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin17" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(264, 102)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin18" parent="Scene Manager" instance=ExtResource("5_g17nj")]
+position = Vector2(248, 166)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("9_wsi7r")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
-visible = false
 
 [node name="ColorRect" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
 offset_left = 65.0
@@ -836,12 +1108,126 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("12_metrk")]
-visible = false
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("6_vwn07")]
 position = Vector2(-24, -154)
 has_npc = false
-animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.806414, 1, 0.745527, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Scene Manager/Luces"]
+material = SubResource("ShaderMaterial_cog1y")
+offset_left = -744.0
+offset_top = -931.0
+offset_right = 770.0
+offset_bottom = 518.0
+texture = ExtResource("16_ld6yd")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(136, 56)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+energy = 3.59
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(295, 40)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+energy = 2.58
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(328, -200)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+energy = 2.52
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(231, -201)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-7, -186)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+energy = 3.59
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-119, -186)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+energy = 3.59
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-24, 119)
+color = Color(0.710726, 0.938092, 0.929175, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-81, 122)
+color = Color(0.710726, 0.938092, 0.929175, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-144, 73)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-144, 42)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-112, 43)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-112, 72)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-137, 126)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-40, -239)
+scale = Vector2(0.371094, 0.371094)
+color = Color(0.882039, 0.885409, 0.807139, 1)
+energy = 1.43
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tmn42")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

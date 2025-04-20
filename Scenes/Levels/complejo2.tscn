@@ -682,15 +682,19 @@ rendering_quadrant_size = 32
 
 [node name="Trap4" parent="." instance=ExtResource("3_kokj1")]
 position = Vector2(136, -120)
+damage = 0
 
 [node name="Trap5" parent="." instance=ExtResource("3_kokj1")]
 position = Vector2(136, -102)
+damage = 0
 
 [node name="Trap6" parent="." instance=ExtResource("3_kokj1")]
 position = Vector2(-120, -536)
+damage = 0
 
 [node name="Trap7" parent="." instance=ExtResource("3_kokj1")]
 position = Vector2(-104, -536)
+damage = 0
 
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -712,6 +716,7 @@ rendering_quadrant_size = 32
 position = Vector2(0, 2)
 script = ExtResource("5_xsktw")
 segundos = 45
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25
 
@@ -769,7 +774,6 @@ visible = false
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_c74ar")]
 position = Vector2(-24, -378)
-animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

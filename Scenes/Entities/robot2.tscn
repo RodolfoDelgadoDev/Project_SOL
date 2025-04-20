@@ -1,46 +1,48 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2kgu6mlym0vy"]
+[gd_scene load_steps=22 format=3 uid="uid://c6oy8cryt40b0"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_ftw0r"]
-[ext_resource type="Texture2D" uid="uid://x6hbr3koxa2a" path="res://art/Robot enemy.png" id="4_qr6q5"]
-[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_dbp7j"]
+[ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_wsj4y"]
+[ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_tqkcg"]
+[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_5h3u7"]
+[ext_resource type="Texture2D" uid="uid://x6hbr3koxa2a" path="res://art/Robot enemy.png" id="4_f4y7q"]
+[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_rmbyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tp3ty"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(0, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n6dcg"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(32, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lren4"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(64, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74wmm"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(96, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2emgh"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(128, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cepa3"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(160, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cv46s"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(192, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itsbb"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(224, 0, 32, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6h8g8"]
-atlas = ExtResource("4_qr6q5")
+atlas = ExtResource("4_f4y7q")
 region = Rect2(256, 0, 32, 33)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bkuue"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_efsv1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -119,37 +121,37 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_561k1"]
-polygon = PackedVector2Array(12, -20, 8, -40, -20, -36, -32, -16, -32, 12, 4, 12, 20, 10, 20, -16)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x5j2b"]
+polygon = PackedVector2Array(28, -24, 24, -56, -32, -56, -36, -24, -56, -12, -52, 36, 36, 36, 40, -16)
 
 [node name="Robot" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_ftw0r")
-damage = 5
+script = ExtResource("1_wsj4y")
+attackSFX = ExtResource("2_tqkcg")
+hurtSFX = ExtResource("3_5h3u7")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
 collision_mask = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-sprite_frames = SubResource("SpriteFrames_bkuue")
+position = Vector2(-1.90735e-06, 1.90735e-06)
+scale = Vector2(1.875, 1.81818)
+sprite_frames = SubResource("SpriteFrames_efsv1")
 animation = &"Flying"
 autoplay = "Flying"
-frame_progress = 0.687993
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 visible = false
 scale = Vector2(1.875, 1.875)
-texture = ExtResource("5_dbp7j")
+texture = ExtResource("5_rmbyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_s6hlb")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_a4f3a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
@@ -160,7 +162,7 @@ libraries = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
 position = Vector2(4, 8)
 scale = Vector2(0.5, 0.5)
-occluder = SubResource("OccluderPolygon2D_561k1")
+occluder = SubResource("OccluderPolygon2D_x5j2b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 

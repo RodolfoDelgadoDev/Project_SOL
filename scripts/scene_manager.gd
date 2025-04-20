@@ -11,6 +11,14 @@ extends Node2D
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
 
+@export var sec1: Node2D
+@export var sec2: Node2D
+@export var sec3: Node2D
+@export var sec4: Node2D
+@export var sec5: Node2D
+@export var sec6: Node2D
+@export var hide_visuals: Node2D
+
 var bottleNum: int = 0
 var bottleTotal: int
 var allBottles: bool = false
@@ -40,6 +48,7 @@ func _ready() -> void:
 	if descanso:
 		timer.stop_timer()
 		timer.visible = false
+		reciclaje()
 	# Initialize cursor timer
 	cursor_timer = Timer.new()
 	cursor_timer.wait_time = cursor_blink_delay
@@ -104,6 +113,7 @@ func change_scene():
 	if descanso == true:
 		chooseTargetScene()
 	if not animation_player.is_connected("animation_finished", _on_TransitionAnimation_finished):
+		GameManager.plasticoin += bottleNum
 		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)  # Connect the signal only if not already connected
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
 
@@ -141,4 +151,23 @@ func stop_timer():
 	
 func start_timer():
 	timer.start_timer()
+	
+func reciclaje():
+	print("plasticoin totales...")
+	print(GameManager.plasticoin)
+	if GameManager.plasticoin > 1:
+		sec1.visible = true
+		hide_visuals.visible = false
+		if GameManager.plasticoin > 2:
+			sec2.visible = true
+			if GameManager.plasticoin > 3:
+				sec3.visible = true
+				if GameManager.plasticoin > 4:
+					sec4.visible = true
+					if GameManager.plasticoin > 5:
+						sec5.visible = true
+						if GameManager.plasticoin > 6:
+							sec6.visible = true
+		
+				
 	

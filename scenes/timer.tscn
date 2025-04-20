@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dr17f502lsjeq"]
+[gd_scene load_steps=16 format=3 uid="uid://dr17f502lsjeq"]
 
 [ext_resource type="Script" path="res://scripts/timer.gd" id="1_bv3en"]
+[ext_resource type="Shader" path="res://ghost.gdshader" id="1_ks8lr"]
 [ext_resource type="Texture2D" uid="uid://cfhh8024l7x36" path="res://art/UI/HP_Bar_Border.png" id="2_s23re"]
 [ext_resource type="Texture2D" uid="uid://6ivimr8m5j34" path="res://art/UI/HP_Full.png" id="2_xf826"]
 [ext_resource type="Texture2D" uid="uid://den3wwt6ke36" path="res://art/UI/HP_Bar_Fill.png" id="3_kin4v"]
@@ -11,6 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://cy4mhavrpvrky" path="res://art/UI/HP_20.png" id="6_l70ip"]
 [ext_resource type="Texture2D" uid="uid://0h5piw6san2b" path="res://art/UI/HP_DEAD.png" id="7_0wj7n"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="8_3km0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1ie"]
+shader = ExtResource("1_ks8lr")
+shader_parameter/wave_amplitude = 0.5
+shader_parameter/wave_frequency = 0.64
+shader_parameter/wave_speed = 9.865
+shader_parameter/transparency = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06ppk"]
+shader = ExtResource("1_ks8lr")
+shader_parameter/wave_amplitude = 0.5
+shader_parameter/wave_frequency = 3.0
+shader_parameter/wave_speed = 9.865
+shader_parameter/transparency = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwagf"]
 atlas = ExtResource("4_hqg48")
@@ -28,12 +43,8 @@ hp_dead = ExtResource("7_0wj7n")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="botella" type="Sprite2D" parent="."]
-position = Vector2(69, 20)
-scale = Vector2(0.625, 0.625)
-texture = SubResource("AtlasTexture_fwagf")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+material = SubResource("ShaderMaterial_vr1ie")
 offset_left = 36.0
 offset_top = 10.0
 offset_right = 74.0
@@ -43,6 +54,12 @@ theme_override_font_sizes/normal_font_size = 22
 text = "X 88"
 scroll_active = false
 tab_size = 0
+
+[node name="botella" type="Sprite2D" parent="RichTextLabel"]
+material = SubResource("ShaderMaterial_06ppk")
+position = Vector2(33, 10)
+scale = Vector2(0.625, 0.625)
+texture = SubResource("AtlasTexture_fwagf")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = 36.0

@@ -153,7 +153,7 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
-[node name="Bat" type="Node2D" groups=["enemy"]]
+[node name="Fireball" type="Node2D" groups=["enemy"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_k6qjm")
 wait_time = 0.2
@@ -161,7 +161,6 @@ damage = 10
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
-collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-9.53674e-07, 0)

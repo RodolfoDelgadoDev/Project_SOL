@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=31 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_8md0o"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_asp4p"]
@@ -14,7 +14,6 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_v1avn"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_s0fef"]
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="14_bomoy"]
-[ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="14_chluq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_8md0o")
@@ -455,12 +454,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_nehqx"]
+[sub_resource type="Gradient" id="Gradient_2rs26"]
 offsets = PackedFloat32Array(0, 0.668831)
 colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6gwau"]
-gradient = SubResource("Gradient_nehqx")
+gradient = SubResource("Gradient_2rs26")
 width = 128
 height = 128
 use_hdr = true
@@ -702,7 +701,6 @@ expand_mode = 1
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("13_s0fef")]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
-stream = ExtResource("14_chluq")
 autoplay = true
 playback_type = 1
 

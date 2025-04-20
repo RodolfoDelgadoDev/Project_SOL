@@ -28,3 +28,4 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 				GameManager.takeDamage(damage)
 				await audio_player.finished
 				queue_free()
+pass

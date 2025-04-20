@@ -39,4 +39,3 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 			else:
 				SceneManager.start_typewriter("Te faltaron algunas botellas!", npc_portrait)
 		reached_goal = true
-	

@@ -35,10 +35,10 @@ func _on_timer_timeout() -> void:
 
 func updateBar() -> void:
 	var SceneManager = get_parent().get_parent()
-	botellaCounter.text = ("X " + str(SceneManager.bottleNum))
+	botellaCounter.text = ("X " + str(SceneManager.bottleTotal - SceneManager.bottleNum))
 	if SceneManager.allBottles == true:
 		botellaCounter.push_color(Color("yellow"))
-		botellaCounter.text = ("X " + str(SceneManager.bottleNum))
+		botellaCounter.text = ("X " + str(SceneManager.bottleTotal - SceneManager.bottleNum) + "!")
 	barra.value = GameManager.Segundos
 
 	var porcentaje = (GameManager.Segundos / float(barra.max_value)) * 100

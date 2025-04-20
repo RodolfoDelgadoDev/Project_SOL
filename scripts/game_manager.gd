@@ -4,7 +4,7 @@ var Segundos : int
 var playerDamage = 10
 var currentLevel : String
 var levelNumber : int = 0
-var plasticoin : int = 0 ##moneda que te dan por completar un nivel con todas las botellas
+var plasticoin : int = 0 
 var goal: bool = false
 var descanso: bool = false
 

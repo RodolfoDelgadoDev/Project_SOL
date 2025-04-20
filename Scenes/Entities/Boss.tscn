@@ -1,6 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvfn5t1ti8w87"]
+[gd_scene load_steps=11 format=3 uid="uid://dvfn5t1ti8w87"]
 
+[ext_resource type="Texture2D" uid="uid://jxkwrg5r6b4x" path="res://animations/Enemies/Final boss/Final boss.png" id="2_5y8xu"]
 [ext_resource type="Script" path="res://scripts/Enemies/boss_attack.gd" id="2_axsa3"]
+[ext_resource type="Texture2D" uid="uid://dnb6iop44b60w" path="res://art/shadow.png" id="2_w8nyk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0lxi"]
+atlas = ExtResource("2_5y8xu")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecvj6"]
+atlas = ExtResource("2_5y8xu")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trixr"]
+atlas = ExtResource("2_5y8xu")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47p63"]
+atlas = ExtResource("2_5y8xu")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wns3g"]
+atlas = ExtResource("2_5y8xu")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iktgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0lxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecvj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trixr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47p63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wns3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p322"]
 size = Vector2(44, 42)
@@ -9,6 +54,18 @@ size = Vector2(44, 42)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_axsa3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.780392)
+position = Vector2(1.19209e-07, 6)
+scale = Vector2(0.275, 0.1875)
+texture = ExtResource("2_w8nyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.90735e-06, -16)
+scale = Vector2(0.458333, 0.458333)
+sprite_frames = SubResource("SpriteFrames_iktgq")
+frame_progress = 0.398999
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6p322")

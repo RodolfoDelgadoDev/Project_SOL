@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://cw2y1sefvjp4c"]
+[gd_scene load_steps=15 format=3 uid="uid://cw2y1sefvjp4c"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_xiscu"]
 [ext_resource type="Texture2D" uid="uid://ctef5dfwl7msw" path="res://art/bumbalooo.png" id="2_l23kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
@@ -93,9 +92,10 @@ animations = [{
 
 [node name="baloonboy" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_xiscu")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -8)
