@@ -221,7 +221,6 @@ texture_region_size = Vector2i(32, 32)
 13:3/0 = 0
 8:2/0 = 0
 9:2/0 = 0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 5.5, 16, 5, 16, 16, -16, 16)
 8:8/0 = 0
 8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:8/0 = 0
@@ -246,7 +245,6 @@ texture_region_size = Vector2i(32, 32)
 12:12/0 = 0
 12:11/0 = 0
 10:2/0 = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 5.5, 16, 5, 16, 16, -16, 16)
 7:4/0 = 0
 19:9/0 = 0
 19:8/0 = 0
@@ -295,25 +293,39 @@ texture_region_size = Vector2i(32, 32)
 11:4/0 = 0
 11:3/0 = 0
 0:14/0 = 0
+0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:14/0 = 0
+1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:15/0 = 0
+1:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:16/0 = 0
 0:16/0 = 0
 0:15/0 = 0
+0:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:15/0 = 0
+2:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:16/0 = 0
 2:14/0 = 0
+2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:15/0 = 0
+3:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:16/0 = 0
 4:16/0 = 0
 4:15/0 = 0
+4:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:14/0 = 0
+4:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:14/0 = 0
+5:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:15/0 = 0
+5:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:16/0 = 0
 6:15/0 = 0
+6:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:15/0 = 0
+7:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:14/0 = 0
 6:14/0 = 0
 8:15/0 = 0
@@ -321,6 +333,7 @@ texture_region_size = Vector2i(32, 32)
 9:15/0 = 0
 9:14/0 = 0
 11:15/0 = 0
+11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 11:14/0 = 0
 12:14/0 = 0
 12:15/0 = 0
@@ -357,14 +370,20 @@ texture_region_size = Vector2i(32, 32)
 19:10/0 = 0
 16:8/0 = 0
 0:18/0 = 0
+0:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:18/0 = 0
+1:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:17/0 = 0
 0:17/0 = 0
 2:17/0 = 0
+2:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:17/0 = 0
+3:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:17/0 = 0
+4:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:17/0 = 0
 5:18/0 = 0
+5:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:18/0 = 0
 3:18/0 = 0
 2:18/0 = 0
@@ -389,29 +408,37 @@ texture_region_size = Vector2i(32, 32)
 13:18/0 = 0
 10:17/0 = 0
 8:19/0 = 0
+8:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:19/0 = 0
 9:19/0 = 0
+9:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:18/0 = 0
 9:18/0 = 0
 10:19/0 = 0
+10:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 10:18/0 = 0
 11:18/0 = 0
 12:18/0 = 0
 12:19/0 = 0
+12:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 11:19/0 = 0
 16:19/0 = 0
 17:19/0 = 0
+17:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 18:19/0 = 0
 19:19/0 = 0
+19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:18/0 = 0
 17:18/0 = 0
 18:18/0 = 0
 19:18/0 = 0
 18:17/0 = 0
 19:17/0 = 0
+19:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 19:16/0 = 0
 18:16/0 = 0
 4:13/0 = 0
+4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:12/0 = 0
 5:12/0 = 0
 5:13/0 = 0
@@ -424,6 +451,20 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/1 = SubResource("TileSetAtlasSource_g4ntp")
+
+[sub_resource type="Gradient" id="Gradient_hvs2q"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
+gradient = SubResource("Gradient_hvs2q")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oukus"]
 atlas = ExtResource("2_hxsjq")
@@ -715,20 +756,6 @@ animations = [{
 default_font = ExtResource("10_5xc08")
 default_font_size = 15
 
-[sub_resource type="Gradient" id="Gradient_hvs2q"]
-offsets = PackedFloat32Array(0, 0.681818)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
-gradient = SubResource("Gradient_hvs2q")
-width = 128
-height = 128
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 1)
-metadata/_snap_enabled = true
-
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -743,66 +770,6 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAAAAPn/AQAFAAgAAAAAAPr/AQAGAAgAAADw//z/AQABAAoAAADw//v/AQABAAoAAADw//r/AQABAAoAAADw//n/AQABAAkAAADw////AQABAAoAAADw/wAAAQABAAoAAADw/wEAAQABAAoAAADw/wIAAQABAAoAAADw/wMAAQABAAoAAADw/wQAAQABAAoAAADx////AQAAAAYAAADx/wEAAQAEAA8AAADx/wMAAQAIAA8AAADy////AQABAAYAAADy/wAAAQADAA4AAADy/wEAAQADAA8AAADz////AQACAAYAAADz/wEAAQAFAA8AAAD2/wIAAQABAAcAAAD2/wMAAQABAAcAAAD2/wQAAQABAAcAAAD3/wIAAQABAAYAAAD4/wIAAQABAAYAAAD5/wIAAQACAAYAAAD//wMAAQAFAAgAAAD//wQAAQAGAAgAAAAFAAIAAQAEAAgAAADw/wUAAQABAAsAAADw/wYAAQACAA0AAADx/wAAAQAEAA4AAADy/wMAAQASAA8AAADz/wAAAQAFAA4AAADz/wMAAQATAA8AAAD1/wUAAQAQAAIAAAD2/wUAAQABAAgAAAD2/wYAAQACAAgAAAD3/wMAAQAAAA4AAAD3/wQAAQAAAA8AAAD3/wcAAQACAAkAAAD4/wMAAQAAAA4AAAD4/wQAAQAAAA8AAAD4/wcAAQADAAkAAAD5/wMAAQACAA4AAAD5/wQAAQACAA8AAAD5/wcAAQADAAkAAAD6/wcAAQADAAkAAAD7/wcAAQADAAkAAAD8/wMAAQABAA4AAAD8/wQAAQABAA8AAAD8/wcAAQADAAkAAAD9/wMAAQAAAA4AAAD9/wQAAQAAAA8AAAD9/wcAAQADAAkAAAD+/wMAAQAAAA4AAAD+/wQAAQAAAA8AAAD+/wcAAQAEAAkAAAD//wUAAQAGAAgAAAD//wYAAQAGAAgAAAAAAAMAAQAAAA4AAAAAAAQAAQAAAA8AAAAAAAcAAQACAAkAAAABAAMAAQAAAA4AAAABAAQAAQAAAA8AAAABAAcAAQADAAkAAAACAAMAAQACAA4AAAACAAQAAQACAA8AAAACAAcAAQADAAkAAAADAAcAAQADAAkAAAAEAAcAAQADAAkAAAAFAAMAAQAMAA4AAAAFAAcAAQAEAAkAAADw//7/AQABAAoAAADw//3/AQABAAoAAAD9////AQALAA4AAAD9/wAAAQALAA8AAAD+//7/AQADAA4AAAD+////AQADAA8AAAD///7/AQADAA4AAAD/////AQADAA8AAAAAAP7/AQADAA4AAAAAAP//AQADAA8AAAABAP//AQALAA4AAAABAAAAAQALAA8AAAAGAPn/AQAAAAkAAAAGAPr/AQAAAAoAAAAGAPv/AQAAAAoAAAAGAPz/AQAAAAoAAAAGAP3/AQAAAAoAAAAGAAMAAQAAAAoAAAAGAAIAAQAAAAoAAAAGAAEAAQAAAAoAAAAGAAAAAQAAAAoAAAAGAP//AQAAAAoAAAAGAP7/AQAFAAQAAAAGAAQAAQAAAAoAAAAGAAUAAQAAAAoAAAAGAAYAAQAAAAsAAAAGAAcAAQADAA0AAAD7//3/AQAIAAIAAAABAP7/AQAIAAgAAADx/wQAAQAOAAcAAADx/wUAAQARAAcAAADy/wQAAQAPAAcAAADy/wUAAQASAAcAAAD1/wQAAQAQAAIAAAD7//r/AQANAA4AAAD7//v/AQANAA8AAAD8//r/AQAOAA4AAAD8//v/AQAOAA8AAAD9//r/AQAPAA4AAAD9//v/AQAPAA8AAAD+//r/AQAQAA4AAAD+//v/AQAQAA8AAAD///r/AQARAA4AAAD///v/AQARAA8AAAADAPr/AQAQAAgAAAADAPv/AQAQAAkAAAABAPn/AQAJAA4AAAABAPr/AQAJAA8AAADx//7/AQAQAAkAAAAFAPr/AQAIABAAAADz//r/AQAIABAAAAAFAAQAAQAQAAgAAAAFAAUAAQAQAAkAAAD3/wUAAQARAAkAAAD+/wUAAQARAAkAAAAAAAUAAQARAAkAAAD0//r/AQAJABAAAAD2//r/AQACABEAAAD2//v/AQACABIAAAD3//r/AQADABEAAAD3//v/AQADABIAAAD4//r/AQAEABEAAAD4//v/AQAEABIAAAD6//r/AQAFABIAAAD6//v/AQAFABMAAAD7//z/AQANABAAAAD8//z/AQAOABAAAAD9//z/AQAPABAAAAD+//z/AQAQABAAAAD///z/AQARABAAAADx//v/AQAKABAAAADy//v/AQALABAAAAD2////AQAMABAAAAD5////AQAMABAAAAD2/wEAAQAMABAAAAD5/wEAAQAMABAAAAABAPv/AQAKAA8AAAACAPv/AQAKAA8AAAD4/wUAAQAKAA8AAAD9/wUAAQAKAA8AAAABAAUAAQAKAA8AAADz/wUAAQAKAA8AAADx//z/AQAKAA8AAAD+/wAAAQAKAA8AAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
-
-[node name="Obstaculos2" type="TileMapLayer" parent="."]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAAD0//r/AQAAABEAAAAEAPr/AQAJABAAAAD0//v/AQAAABIAAAD1//r/AQABABEAAAD1//v/AQABABIAAAD2//z/AQAEABMAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//r/AQAFABMAAAD6//v/AQAHABIAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAAD0//z/AQACABMAAAD1//z/AQADABMAAAD4//z/AQACABMAAAD5//z/AQADABMAAAD6//z/AQAEABMAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD+//7/AQANABEAAAD+////AQANABIAAAD///7/AQAOABEAAAD/////AQAOABIAAAAAAP7/AQAPABEAAAAAAP//AQAPABIAAAD9//v/AQAKABEAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAFAP//AQATABAAAAAEAP//AQASABAAAAAFAAAAAQATABEAAAAEAAAAAQASABEAAAA=")
-tile_set = SubResource("TileSet_yil1h")
-rendering_quadrant_size = 32
-
-[node name="Obstaculos3" type="TileMapLayer" parent="."]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADx//n/AQAGAA4AAADx//r/AQAGAA8AAADy//n/AQAHAA4AAADy//r/AQAHAA8AAAAAAAYAAQAIABAAABD2//z/AQAMABIAAAD3//z/AQAQAAIAAAD6//n/AQAFABIAAAD6//r/AQAHABEAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//v/AQAHABIAAAAEAPv/AQAQAAIAAAAFAPv/AQAQAAIAAAD2/wIAAQAGAAMAAAD+/wYAAQAIABAAAAD3/wYAAQAIABAAABABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD0//z/AQAKABIAAAD0//3/AQAKABMAAAD1//z/AQALABIAAAD1//3/AQALABMAAAD2//3/AQAMABMAAAD4//z/AQARABIAAAD4//3/AQARABMAAAD5//z/AQASABIAAAD5//3/AQASABMAAAD6//z/AQATABIAAAD6//3/AQATABMAAAA=")
-tile_set = SubResource("TileSet_yil1h")
-rendering_quadrant_size = 32
-
-[node name="lavaAzul" type="AnimatedSprite2D" parent="."]
-position = Vector2(-87, -65)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_7myk7")
-autoplay = "default"
-frame_progress = 0.313439
-
-[node name="lavaAzul2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-187, -66)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_7myk7")
-autoplay = "default"
-frame_progress = 0.693114
-
-[node name="Araña" type="AnimatedSprite2D" parent="."]
-position = Vector2(-193, -90)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_psn1t")
-autoplay = "default"
-
-[node name="Araña2" type="AnimatedSprite2D" parent="."]
-position = Vector2(72, -89)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_psn1t")
-autoplay = "default"
-frame_progress = 0.60195
-
-[node name="Araña3" type="AnimatedSprite2D" parent="."]
-position = Vector2(7, 109)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_tc1so")
-autoplay = "default"
-frame_progress = 0.270356
-
-[node name="Araña4" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 97)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_p8nii")
-autoplay = "default"
-frame_progress = 0.569962
-
-[node name="Araña5" type="AnimatedSprite2D" parent="."]
-position = Vector2(-141, 111)
-scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_p8nii")
-autoplay = "default"
-frame_progress = 0.335095
 
 [node name="Seccion1" type="Node2D" parent="."]
 visible = false
@@ -850,7 +817,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="Seccion2"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAEAPn/AQARAAMAAAAEAPr/AQARAAQAAAAEAPv/AQARAAUAAAAFAPn/AQASAAMAAAAFAPr/AQASAAQAAAAFAPv/AQASAAUAAAABAPn/AQANAAAAAAABAPr/AQANAAEAAAADAPr/AQATAAMAAAADAPv/AQATAAQAAAD8//z/AQAJAAIAAAD9//z/AQAKAAIAAAD+//z/AQAKAAIAAAD///z/AQAKAAIAAAD///r/AQALAAMAAAD///v/AQALAAQAAAD8//r/AQAQAAAAAAD8//v/AQAQAAEAAAD9//v/AQARAAEAAAAAAPv/AQATAAUAAAAAAPz/AQATAAYAAAA=")
+tile_map_data = PackedByteArray("AAAEAPn/AQARAAMAAAAEAPr/AQARAAQAAAAEAPv/AQARAAUAAAAFAPn/AQASAAMAAAAFAPr/AQASAAQAAAAFAPv/AQASAAUAAAABAPn/AQANAAAAAAABAPr/AQANAAEAAAADAPr/AQATAAMAAAADAPv/AQATAAQAAAD///r/AQALAAMAAAD///v/AQALAAQAAAD8//r/AQAQAAAAAAD8//v/AQAQAAEAAAD9//v/AQARAAEAAAAAAPv/AQATAAUAAAAAAPz/AQATAAYAAAD8//3/AQAJAAIAAAD9//3/AQAKAAIAAAD+//3/AQAKAAIAAAD///3/AQAKAAIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -915,6 +882,69 @@ tile_map_data = PackedByteArray("AADx/wIAAQASAAAAAADy/wIAAQAOAAAAAADz/wIAAQAPAAA
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
+[node name="PointLight2D10" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-230, 12)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.774845, 0, 0.170183, 1)
+energy = 2.07
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-237, 9)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0, 0.507529, 0.442577, 1)
+energy = 5.57
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-224, 14)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.366059, 0.300933, 0.946981, 1)
+energy = 2.37
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-216, 15)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.699516, 0.00440098, 0.728627, 1)
+energy = 2.37
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-208, 14)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.75682, 0.600821, 0.0659497, 1)
+energy = 2.37
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-202, 11)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.00578989, 0.350986, 0.435948, 1)
+energy = 6.04
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Seccion4"]
+position = Vector2(-194, 8)
+scale = Vector2(0.136719, 0.135512)
+color = Color(0.564894, 0.118233, 0.178105, 1)
+energy = 2.25
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+script = ExtResource("13_b1wqv")
+
 [node name="Seccion5" type="Node2D" parent="."]
 visible = false
 
@@ -978,9 +1008,77 @@ tile_map_data = PackedByteArray("AAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAI
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
+[node name="Player" parent="." instance=ExtResource("4_oigfh")]
+position = Vector2(88, -24)
+scale = Vector2(0.25, 0.25)
+attackSFX = null
+hurtSFX = null
+movementSFX = Array[AudioStream]([])
+
+[node name="Obstaculos2" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAAD0//r/AQAAABEAAAAEAPr/AQAJABAAAAD0//v/AQAAABIAAAD1//r/AQABABEAAAD1//v/AQABABIAAAD2//z/AQAEABMAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//r/AQAFABMAAAD6//v/AQAHABIAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAAD0//z/AQACABMAAAD1//z/AQADABMAAAD4//z/AQACABMAAAD5//z/AQADABMAAAD6//z/AQAEABMAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD+//7/AQANABEAAAD+////AQANABIAAAD///7/AQAOABEAAAD/////AQAOABIAAAAAAP7/AQAPABEAAAAAAP//AQAPABIAAAD9//v/AQAKABEAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
+tile_set = SubResource("TileSet_yil1h")
+rendering_quadrant_size = 32
+
+[node name="Obstaculos3" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AADx//n/AQAGAA4AAADx//r/AQAGAA8AAADy//n/AQAHAA4AAADy//r/AQAHAA8AAAAAAAYAAQAIABAAABD2//z/AQAMABIAAAD3//z/AQAQAAIAAAD6//n/AQAFABIAAAD6//r/AQAHABEAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//v/AQAHABIAAAAEAPv/AQAQAAIAAAAFAPv/AQAQAAIAAAD2/wIAAQAGAAMAAAD+/wYAAQAIABAAAAD3/wYAAQAIABAAABABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD0//z/AQAEAAwAAAD0//3/AQAEAA0AAAD1//z/AQALABIAAAD2//3/AQAMABMAAAD4//z/AQARABIAAAD4//3/AQARABMAAAD5//z/AQASABIAAAD5//3/AQASABMAAAD6//z/AQATABIAAAD6//3/AQATABMAAAA=")
+tile_set = SubResource("TileSet_yil1h")
+rendering_quadrant_size = 32
+
+[node name="lavaAzul" type="AnimatedSprite2D" parent="."]
+position = Vector2(-87, -65)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_7myk7")
+autoplay = "default"
+frame_progress = 0.313439
+
+[node name="lavaAzul2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-187, -66)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_7myk7")
+autoplay = "default"
+frame_progress = 0.693114
+
+[node name="Araña" type="AnimatedSprite2D" parent="."]
+position = Vector2(-193, -90)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_psn1t")
+autoplay = "default"
+
+[node name="Araña2" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, -89)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_psn1t")
+autoplay = "default"
+frame_progress = 0.60195
+
+[node name="Araña3" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, 109)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_tc1so")
+autoplay = "default"
+frame_progress = 0.270356
+
+[node name="Araña4" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 97)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_p8nii")
+autoplay = "default"
+frame_progress = 0.569962
+
+[node name="Araña5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-115, 58)
+scale = Vector2(0.34375, 0.329268)
+sprite_frames = SubResource("SpriteFrames_p8nii")
+autoplay = "default"
+frame_progress = 0.782229
+
 [node name="Ocultar" type="Node2D" parent="."]
 
 [node name="ObstaculosTopFeo" type="TileMapLayer" parent="Ocultar"]
+visible = false
 position = Vector2(21, 124)
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx/wIAAQAIAA4AAAD2/wIAAQAGAAMAAAD8/wMAAQAGAAMAAAD9/wMAAQAFAAMAAAABAAMAAQAHAAIAAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAADx//3/AQAQAAgAAAA=")
@@ -988,18 +1086,12 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="OcultarSeccion4" type="TileMapLayer" parent="Ocultar"]
+visible = false
 position = Vector2(21, 124)
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4AAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
-
-[node name="Player" parent="." instance=ExtResource("4_oigfh")]
-position = Vector2(88, -24)
-scale = Vector2(0.25, 0.25)
-attackSFX = null
-hurtSFX = null
-movementSFX = Array[AudioStream]([])
 
 [node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "hide_visuals")]
 position = Vector2(0, 2)
@@ -1022,7 +1114,6 @@ scale = Vector2(0.5, 0.5)
 has_npc = false
 
 [node name="Olga" parent="Scene Manager" instance=ExtResource("8_lg3p3")]
-visible = false
 position = Vector2(40, -74)
 scale = Vector2(0.5, 0.5)
 npc_portrait = ExtResource("7_kn43e")
@@ -1035,9 +1126,9 @@ visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
+visible = false
 
 [node name="ColorRect" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
-visible = false
 offset_left = 65.0
 offset_top = 119.0
 offset_right = 240.0
@@ -1166,69 +1257,6 @@ scale = Vector2(0.15625, 0.154871)
 color = Color(0.82746, 0, 0.0770657, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-230, 12)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.774845, 0, 0.170183, 1)
-energy = 2.07
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-237, 9)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0, 0.507529, 0.442577, 1)
-energy = 5.57
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-224, 14)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.366059, 0.300933, 0.946981, 1)
-energy = 2.37
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-216, 15)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.699516, 0.00440098, 0.728627, 1)
-energy = 2.37
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-208, 14)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.75682, 0.600821, 0.0659497, 1)
-energy = 2.37
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-202, 11)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.00578989, 0.350986, 0.435948, 1)
-energy = 6.04
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
-
-[node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-194, 8)
-scale = Vector2(0.136719, 0.135512)
-color = Color(0.564894, 0.118233, 0.178105, 1)
-energy = 2.25
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.812689, 0.681546, 0.612906, 1)

@@ -120,6 +120,7 @@ func change_scene():
 # Function to handle the scene change after the animation finishes
 func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
+		chooseTargetScene()
 		print(targetScene)
 		get_tree().change_scene_to_file(targetScene)  # Change to the new scene
 		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)  # Disconnect the signal to avoid multiple calls
