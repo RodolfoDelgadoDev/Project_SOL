@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cbsh0wl72o2kl"]
+[gd_scene load_steps=24 format=4 uid="uid://cbsh0wl72o2kl"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_117de"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="3_bma7x"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c6oy8cryt40b0" path="res://Scenes/Entities/robot2.tscn" id="15_frlsg"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="15_tliqj"]
 [ext_resource type="Texture2D" uid="uid://cwmhyg6krbr26" path="res://art/fogtexture.png" id="16_ld6yd"]
+[ext_resource type="AudioStream" uid="uid://dtbdite5osk0b" path="res://Music/complex1.mp3" id="17_mbbar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
 texture = ExtResource("1_117de")
@@ -784,66 +785,77 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vecto
 [node name="Esqueleto" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(-200, 152)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto2" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(-200, 152)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto3" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(-232, -56)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto4" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(-24, -120)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto5" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(264, -216)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto6" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(344, -216)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto7" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(296, -168)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto8" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(472, -120)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto9" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(328, -8)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto10" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(280, 104)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
 [node name="Esqueleto11" parent="." instance=ExtResource("4_cuu7a")]
 position = Vector2(344, 152)
 scale = Vector2(0.25, 0.25)
+damage = 2
 detection_range = 3
 player_node_path = NodePath("../Player")
 
@@ -1228,6 +1240,12 @@ color = Color(0.882039, 0.885409, 0.807139, 1)
 energy = 1.43
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_tmn42")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("17_mbbar")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cutxnt43fhgry"]
+[gd_scene load_steps=33 format=4 uid="uid://cutxnt43fhgry"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_ya4p3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_ktjj2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="13_c4mh2"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_ftta1"]
 [ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="14_16i04"]
+[ext_resource type="AudioStream" uid="uid://b43efjj33yxm" path="res://Music/house2.mp3" id="14_xfq35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_ya4p3")
@@ -703,7 +704,6 @@ animation = &"Open"
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("10_4qr2m")]
-visible = false
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -827,6 +827,12 @@ blink_interval_max = 0.5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.893438, 0.736424, 0.725922, 1)
+
+[node name="BGM2" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("14_xfq35")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://brjrgjayo5ot1"]
+[gd_scene load_steps=24 format=4 uid="uid://brjrgjayo5ot1"]
 
 [ext_resource type="Texture2D" uid="uid://byepw2ujntrg7" path="res://art/Tilemap-Bosque.png" id="1_o3450"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_sy5xa"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="13_01kxf"]
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="13_xr4jb"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_6nnvt"]
+[ext_resource type="AudioStream" uid="uid://bvvxtok2rwb4h" path="res://Music/forest2.mp3" id="17_wvt1x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdsq7"]
 shader = ExtResource("1_sy5xa")
@@ -1222,6 +1223,12 @@ blink_interval_max = 0.5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.438022, 0.708379, 0.762015, 1)
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("17_wvt1x")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

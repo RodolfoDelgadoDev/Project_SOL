@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dt06te87vkkei"]
+[gd_scene load_steps=23 format=4 uid="uid://dt06te87vkkei"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="2_1p1vl"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://df0vkkgwecxml" path="res://Scenes/Entities/generator.tscn" id="14_npar4"]
 [ext_resource type="AudioStream" uid="uid://myq4frqdbycc" path="res://SFX/trapAttack.mp3" id="15_4gw4y"]
 [ext_resource type="AudioStream" uid="uid://cbjo583xh5gix" path="res://SFX/trapDestroy.mp3" id="16_f6ndr"]
+[ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="17_jero0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_22v0b")
@@ -649,6 +650,12 @@ expand_mode = 1
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("9_7ws0j")]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("17_jero0")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

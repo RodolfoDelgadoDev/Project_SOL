@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=64 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
@@ -18,6 +18,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_5xc08"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="13_b1wqv"]
+[ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="19_40yf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_jbt40")
@@ -1260,6 +1261,12 @@ texture = SubResource("GradientTexture2D_otg58")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
 color = Color(0.812689, 0.681546, 0.612906, 1)
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("19_40yf6")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

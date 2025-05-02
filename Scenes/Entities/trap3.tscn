@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgmhkt4ahxc8s"]
+[gd_scene load_steps=13 format=3 uid="uid://bgmhkt4ahxc8s"]
 
 [ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_hhdrn"]
+[ext_resource type="AudioStream" uid="uid://myq4frqdbycc" path="res://SFX/trapAttack.mp3" id="2_6d7qj"]
 [ext_resource type="Texture2D" uid="uid://d0tvnrajdajqu" path="res://art/Bear trap.png" id="2_u308s"]
+[ext_resource type="AudioStream" uid="uid://cbjo583xh5gix" path="res://SFX/trapDestroy.mp3" id="3_75ykw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]
 size = Vector2(32, 32)
@@ -59,6 +61,8 @@ animations = [{
 [node name="Trap3" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_hhdrn")
+attackSFX = ExtResource("2_6d7qj")
+destroySFX = ExtResource("3_75ykw")
 
 [node name="Area2D" type="Area2D" parent="."]
 

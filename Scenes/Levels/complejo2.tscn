@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=16 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_ri16o"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_008vq"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_r0nti"]
+[ext_resource type="AudioStream" uid="uid://cpehqk8k1fvky" path="res://Music/complex2.mp3" id="12_hdcll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
 texture = ExtResource("1_ts6fr")
@@ -774,6 +775,12 @@ visible = false
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_c74ar")]
 position = Vector2(-24, -378)
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("12_hdcll")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

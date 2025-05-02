@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene load_steps=14 format=3 uid="uid://8sgjnqmx3clh"]
 
+[ext_resource type="Shader" path="res://ghost.gdshader" id="1_fh85g"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="2_3mkai"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="2_be2es"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]
 [ext_resource type="Texture2D" uid="uid://c2x105b3aifoa" path="res://art/GameOver/GameOver_bg.png" id="3_1dqx8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hetu"]
+shader = ExtResource("1_fh85g")
+shader_parameter/wave_amplitude = 0.506
+shader_parameter/wave_frequency = 6.665
+shader_parameter/wave_speed = 0.876
+shader_parameter/transparency = 1.0
 
 [sub_resource type="Animation" id="Animation_m6x5p"]
 resource_name = "Game Animation"
@@ -82,7 +90,15 @@ _data = {
 
 [node name="GameOver" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -176.0
+offset_top = -107.0
+offset_right = 172.0
+offset_bottom = 101.0
+color = Color(0, 0, 0, 1)
+
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_4hetu")
 offset_left = -155.0
 offset_top = -94.0
 offset_right = 133.0
@@ -109,9 +125,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
+offset_left = -110.0
 offset_top = -118.0
-offset_right = 68.0
+offset_right = 78.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -129,9 +145,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
+offset_left = -76.0
 offset_top = -118.0
-offset_right = 118.0
+offset_right = 112.0
 offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2

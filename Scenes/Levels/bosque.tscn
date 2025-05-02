@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=4 uid="uid://lve4n7ojftks"]
+[gd_scene load_steps=116 format=4 uid="uid://lve4n7ojftks"]
 
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_548vq"]
 [ext_resource type="Texture2D" uid="uid://byepw2ujntrg7" path="res://art/Tilemap-Bosque.png" id="1_h0w56"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_bnjuu"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="13_41d7j"]
 [ext_resource type="PackedScene" uid="uid://bilwqgc62s12q" path="res://Scenes/Entities/trap6.tscn" id="14_gqdpp"]
+[ext_resource type="AudioStream" uid="uid://dtx7ul8bticqr" path="res://Music/forest1.mp3" id="15_55bs2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wph2w"]
 shader = ExtResource("1_548vq")
@@ -1674,6 +1675,12 @@ scale = Vector2(2.14225, 2.01213)
 color = Color(0.952198, 0.541686, 0.364554, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ahch8")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("15_55bs2")
+autoplay = true
+panning_strength = 0.0
+playback_type = 1
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

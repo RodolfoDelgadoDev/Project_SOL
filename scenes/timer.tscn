@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr17f502lsjeq"]
+[gd_scene load_steps=17 format=3 uid="uid://dr17f502lsjeq"]
 
 [ext_resource type="Script" path="res://scripts/timer.gd" id="1_bv3en"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_ks8lr"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://6ivimr8m5j34" path="res://art/UI/HP_Full.png" id="2_xf826"]
 [ext_resource type="Texture2D" uid="uid://den3wwt6ke36" path="res://art/UI/HP_Bar_Fill.png" id="3_kin4v"]
 [ext_resource type="Texture2D" uid="uid://b1d2v54gccbcj" path="res://art/UI/HP_80.png" id="3_vdpys"]
-[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="4_hqg48"]
 [ext_resource type="Texture2D" uid="uid://ccij02g5o3q04" path="res://art/UI/HP_60.png" id="4_wk8mn"]
 [ext_resource type="Texture2D" uid="uid://coo4uvov45g7h" path="res://art/UI/HP_40.png" id="5_8826p"]
 [ext_resource type="Texture2D" uid="uid://cy4mhavrpvrky" path="res://art/UI/HP_20.png" id="6_l70ip"]
 [ext_resource type="Texture2D" uid="uid://0h5piw6san2b" path="res://art/UI/HP_DEAD.png" id="7_0wj7n"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="8_3km0l"]
+[ext_resource type="Shader" path="res://chromaShader.gdshader" id="12_024b7"]
+[ext_resource type="Texture2D" uid="uid://dvvkdjv557x1w" path="res://art/botella.png" id="13_b5ghj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1ie"]
 shader = ExtResource("1_ks8lr")
@@ -21,15 +22,24 @@ shader_parameter/wave_speed = 9.865
 shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_06ppk"]
-shader = ExtResource("1_ks8lr")
-shader_parameter/wave_amplitude = 0.5
-shader_parameter/wave_frequency = 3.0
-shader_parameter/wave_speed = 9.865
-shader_parameter/transparency = 1.0
+shader = ExtResource("12_024b7")
+shader_parameter/wave_amplitude = 1.0
+shader_parameter/wave_speed = 1.915
+shader_parameter/wave_frequency = 6.487
+shader_parameter/aberration_amount = 0.065
+shader_parameter/aberration_speed = 0.0
+shader_parameter/glitch_intensity = 0.0
+shader_parameter/glitch_speed = 3.202
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwagf"]
-atlas = ExtResource("4_hqg48")
-region = Rect2(0, 160, 32, 32)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q728"]
+shader = ExtResource("12_024b7")
+shader_parameter/wave_amplitude = 1.0
+shader_parameter/wave_speed = 0.1
+shader_parameter/wave_frequency = 8.298
+shader_parameter/aberration_amount = 0.066
+shader_parameter/aberration_speed = 0.0
+shader_parameter/glitch_intensity = 0.0
+shader_parameter/glitch_speed = 0.36
 
 [node name="Timer" type="Node2D"]
 script = ExtResource("1_bv3en")
@@ -46,20 +56,14 @@ autostart = true
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 material = SubResource("ShaderMaterial_vr1ie")
 offset_left = 36.0
-offset_top = 10.0
+offset_top = 9.0
 offset_right = 74.0
-offset_bottom = 38.0
+offset_bottom = 37.0
 theme_override_fonts/normal_font = ExtResource("8_3km0l")
 theme_override_font_sizes/normal_font_size = 22
 text = "X 88"
 scroll_active = false
 tab_size = 0
-
-[node name="botella" type="Sprite2D" parent="RichTextLabel"]
-material = SubResource("ShaderMaterial_06ppk")
-position = Vector2(33, 10)
-scale = Vector2(0.625, 0.625)
-texture = SubResource("AtlasTexture_fwagf")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = 36.0
@@ -70,7 +74,15 @@ value = 45.0
 texture_over = ExtResource("2_s23re")
 texture_progress = ExtResource("3_kin4v")
 
+[node name="botella" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_06ppk")
+position = Vector2(73, 21)
+rotation = 0.00634304
+scale = Vector2(0.589517, 0.589517)
+texture = ExtResource("13_b5ghj")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6q728")
 position = Vector2(15.9219, 16.9219)
 scale = Vector2(0.945772, 0.945772)
 texture = ExtResource("2_xf826")

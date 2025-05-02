@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://c6wvjvnf2l854"]
+[gd_scene load_steps=32 format=4 uid="uid://c6wvjvnf2l854"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_8md0o"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_asp4p"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_v1avn"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_s0fef"]
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="14_bomoy"]
+[ext_resource type="AudioStream" uid="uid://b43efjj33yxm" path="res://Music/house2.mp3" id="15_e5ke0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_8md0o")
@@ -701,7 +702,9 @@ expand_mode = 1
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("13_s0fef")]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
+stream = ExtResource("15_e5ke0")
 autoplay = true
+panning_strength = 0.0
 playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
