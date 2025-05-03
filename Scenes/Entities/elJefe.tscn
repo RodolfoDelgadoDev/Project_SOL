@@ -39,7 +39,7 @@ animations = [{
 script = ExtResource("1_mn7xx")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -48,11 +48,10 @@ shape = SubResource("RectangleShape2D_c4vbc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 process_mode = 3
-scale = Vector2(0.5, 0.5)
+scale = Vector2(-0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3dp2x")
 autoplay = "default"
-frame = 2
-frame_progress = 1.0
+frame_progress = 0.306155
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -61,3 +60,5 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c4vbc")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

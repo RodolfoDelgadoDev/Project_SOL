@@ -76,7 +76,7 @@ texture_progress = ExtResource("3_kin4v")
 
 [node name="botella" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_06ppk")
-position = Vector2(73, 21)
+position = Vector2(75, 21)
 rotation = 0.00634304
 scale = Vector2(0.589517, 0.589517)
 texture = ExtResource("13_b5ghj")
