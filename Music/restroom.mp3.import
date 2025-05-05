@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/restroom.mp3-ceb9c0c7e10b0c3cf6234e59db57fd46
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

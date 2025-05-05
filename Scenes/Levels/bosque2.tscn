@@ -1009,13 +1009,11 @@ recuperacion = 10
 position = Vector2(656, 270)
 scale = Vector2(2, 2)
 has_npc = false
-animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Goal2" parent="Scene Manager" instance=ExtResource("10_7q5l0")]
 position = Vector2(688, 270)
 scale = Vector2(2, 2)
 has_npc = false
-animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 

@@ -4,9 +4,9 @@ extends Node2D
 @export var segundos: int
 @export var descanso: bool # if true = indica que estás en la sala de descanso
 @export var targetScene: NodePath
-@onready var dialogue_image: TextureRect = $CanvasLayer/DialogueBox/ColorRect
-@onready var dialogue_text: Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
-@onready var npc_portrait: TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
+@onready var dialogue_box: TextureRect = $CanvasLayer/DialogueBox/ColorRect
+@onready var dialogue_label: Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
+@onready var portrait_texture: TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
 @onready var timer: Node2D = $CanvasLayer/Timer
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
@@ -22,6 +22,11 @@ extends Node2D
 var bottleNum: int = 0
 var bottleTotal: int
 var allBottles: bool = false
+
+var current_dialogue: String = ""
+var typing_speed: float = 0.05  # seconds per character
+var is_typing: bool = false
+var skip_requested: bool = false
 
 # Typewriter effect variables
 var typewriter_text: String = ""
@@ -49,56 +54,49 @@ func _ready() -> void:
 		timer.stop_timer()
 		timer.visible = false
 		reciclaje()
-	# Initialize cursor timer
-	cursor_timer = Timer.new()
-	cursor_timer.wait_time = cursor_blink_delay
-	cursor_timer.one_shot = false
-	cursor_timer.timeout.connect(_on_cursor_timer_timeout)
-	add_child(cursor_timer)
+	dialogue_box.visible = false  # Start with dialogue hidden
 
-# Start the typewriter effect
-func start_typewriter(text: String, portrait: Texture):
-	dialogue_image.visible = true
-	npc_portrait.texture = portrait  # Ensure this is a valid Texture
-	typewriter_text = text
-	typewriter_index = 0
-	dialogue_text.text = ""  # Clear the text initially
-	is_typewriter_active = true
-	# Start the timer for the typewriter effect
-	$CanvasLayer/DialogueBox/textTimer.wait_time = typewriter_delay
-	$CanvasLayer/DialogueBox/textTimer.start()
-
-# Stop the typewriter effect
-func stop_typewriter():
-	$CanvasLayer/DialogueBox/textTimer.stop()
-	# Start a 2-second delay before hiding the dialogue box
-	$CanvasLayer/DialogueBox/hideTimer.wait_time = 2.0  # 2 seconds
-	$CanvasLayer/DialogueBox/hideTimer.start()
-
-# Handle the timer timeout event for the typewriter effect
-func _on_text_timer_timeout() -> void:
-	if is_typewriter_active and typewriter_index < typewriter_text.length():
-		dialogue_text.text += typewriter_text[typewriter_index]
-		typewriter_index += 1
+func show_dialogue(text: String, portrait: Texture = null) -> void:
+	if is_typing:
+		skip_requested = true
+		return
+	
+	dialogue_box.visible = true
+	current_dialogue = text
+	dialogue_label.text = ""
+	
+	if portrait:
+		portrait_texture.texture = portrait
+		portrait_texture.visible = true
 	else:
-		stop_typewriter()  # Stop the effect when the text is fully displayed
-		# Start the cursor blinking
-		cursor_timer.start()
+		portrait_texture.visible = false
+	
+	is_typing = true
+	skip_requested = false
+	_start_typing()
+	
+func _start_typing() -> void:
+	var current_length = dialogue_label.text.length()
+	
+	if current_length >= current_dialogue.length() or skip_requested:
+		# Finished typing
+		dialogue_label.text = current_dialogue
+		is_typing = false
+		await get_tree().create_timer(2.0).timeout  # Wait 2 seconds before hiding
+		dialogue_box.visible = false
+		return
+	
+	# Add next character
+	dialogue_label.text = current_dialogue.substr(0, current_length + 1)
+	
+	# Schedule next character
+	await get_tree().create_timer(typing_speed).timeout
+	_start_typing()
 
-# Handle the timer timeout event for hiding the dialogue box
-func _on_hide_timer_timeout() -> void:
-	dialogue_image.visible = false  # Hide the dialogue box
-	$CanvasLayer/DialogueBox/hideTimer.stop()  # Stop the hide timer
-	cursor_timer.stop()  # Stop the cursor blinking
-	is_typewriter_active = false
-
-# Handle the cursor blinking effect
-func _on_cursor_timer_timeout() -> void:
-	cursor_visible = !cursor_visible  # Toggle cursor visibility
-	if cursor_visible:
-		dialogue_text.text += "•"  # Add cursor
-	else:
-		dialogue_text.text = dialogue_text.text.substr(0, dialogue_text.text.length() - 1)  # Remove cursor
+# Input handling to skip typing
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept") and is_typing:
+		skip_requested = true
 
 # Add a bottle and check if all bottles are collected
 func addBottle():

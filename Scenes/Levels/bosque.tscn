@@ -1490,7 +1490,6 @@ position = Vector2(328, 519)
 position = Vector2(848, 1102)
 scale = Vector2(2, 2)
 has_npc = false
-animated_sprite = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("13_41d7j")]
 position = Vector2(-496, 654)

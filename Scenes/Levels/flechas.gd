@@ -3,7 +3,7 @@ extends ColorRect
 # Animation Settings
 @export var bounce_height: float = 4.0  # Subtle bounce amount
 @export var bounce_speed: float = 1.5
-@export var enter_speed: float = 400.0  # Speed when entering
+@export var enter_speed: float = 800.0  # Speed when entering
 @export var exit_speed: float = 500.0   # Speed when exiting
 @export var showup: bool = false
 

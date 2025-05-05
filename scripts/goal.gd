@@ -35,7 +35,9 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		else:
 			# Get the parent node and check if allBottles is true
 			if SceneManager.has_method("get") and SceneManager.get("allBottles"):
-				SceneManager.start_typewriter("Encontraste todas las botellas!", npc_portrait)
+				pass
+				#SceneManager.start_typewriter("Encontraste todas las botellas!", npc_portrait)
 			else:
-				SceneManager.start_typewriter("Te faltaron algunas botellas!", npc_portrait)
+				pass
+				#SceneManager.start_typewriter("Te faltaron algunas botellas!", npc_portrait)
 		reached_goal = true

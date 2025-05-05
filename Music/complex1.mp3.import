@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/complex1.mp3-525dbde36d067eeff99767e12c5b8b90
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
