@@ -815,6 +815,7 @@ para moverte"
 vertical_alignment = 1
 
 [node name="barra" type="ColorRect" parent="Scene Manager/CanvasLayer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.733333)
 material = SubResource("ShaderMaterial_3o66n")
 offset_left = 65.0
@@ -845,6 +846,38 @@ text = "Usa la barra para
 interactuar"
 vertical_alignment = 1
 
+[node name="barra2" type="ColorRect" parent="Scene Manager/CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.733333)
+material = SubResource("ShaderMaterial_3o66n")
+offset_left = 65.0
+offset_top = 121.0
+offset_right = 222.0
+offset_bottom = 159.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("11_n5k16")
+
+[node name="TextureRect" type="TextureRect" parent="Scene Manager/CanvasLayer/barra2"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 26.0
+offset_right = 135.0
+offset_bottom = 37.0
+texture = ExtResource("14_2twqs")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Scene Manager/CanvasLayer/barra2"]
+material = SubResource("ShaderMaterial_emguv")
+layout_mode = 0
+offset_top = -2.0
+offset_right = 157.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("12_5s8cv")
+theme_override_font_sizes/font_size = 15
+text = "Usa la barra para
+atacar"
+vertical_alignment = 1
+
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("14_8qgl7")]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
@@ -863,6 +896,18 @@ barra = NodePath("../CanvasLayer/barra")
 position = Vector2(10, -105.5)
 shape = SubResource("RectangleShape2D_0vnjn")
 
+[node name="barra ataque" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("barra")]
+position = Vector2(4, 114)
+script = ExtResource("16_jmfc5")
+barra = NodePath("../CanvasLayer/barra2")
+
+[node name="Area2D" type="Area2D" parent="Scene Manager/barra ataque"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/barra ataque/Area2D"]
+position = Vector2(10, -105.5)
+shape = SubResource("RectangleShape2D_0vnjn")
+
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
 [connection signal="area_entered" from="Scene Manager/barra coso/Area2D" to="Scene Manager/barra coso" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Scene Manager/barra ataque/Area2D" to="Scene Manager/barra ataque" method="_on_area_2d_area_entered"]

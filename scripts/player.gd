@@ -118,7 +118,7 @@ func basicAttack(dir):
 		attack_sprite.position = direction_vector * GRID_SIZE  # Adjust position based on direction
 		# Show the attack sprite
 		audio_player.stream = attackSFX
-		if !GameManager.descanso:
+		if get_tree().current_scene.scene_file_path != "res://Scenes/Levels/descanso.tscn":
 			animaton.play(directions[dir][1])
 		else:
 			animaton.play(directions[dir][3])

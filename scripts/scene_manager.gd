@@ -54,9 +54,12 @@ func _ready() -> void:
 		timer.stop_timer()
 		timer.visible = false
 		reciclaje()
-	dialogue_box.visible = false  # Start with dialogue hidden
+	dialogue_box.visible = false
+	# Start with dialogue hidden
 
 func show_dialogue(text: String, portrait: Texture = null) -> void:
+	if dialogue_box.visible == true:
+		return
 	if is_typing:
 		skip_requested = true
 		return
