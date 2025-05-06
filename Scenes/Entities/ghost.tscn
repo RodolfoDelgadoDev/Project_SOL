@@ -94,7 +94,7 @@ attackSFX = ExtResource("2_71swj")
 hurtSFX = ExtResource("3_1r7ir")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
-collision_layer = 4
+collision_layer = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 material = SubResource("ShaderMaterial_6epyd")

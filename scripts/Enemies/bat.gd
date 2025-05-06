@@ -37,7 +37,7 @@ func _ready():
 	initialized = true
 	SceneManager = get_parent()
 
-func _process(delta):
+func _physics_process(delta):
 	if not initialized:
 		return
 	if alive() && !GameManager.goal:
@@ -86,12 +86,6 @@ func start_moving():
 func alive() -> bool:
 	return health > 0
 	
-# Ensure the enemy is always aligned with the grid
-func _physics_process(_delta):
-	if alive():
-		if not moving:
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-
 
 func update_flip():
 	if patrol_path[current_patrol_index].x == 1:

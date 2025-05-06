@@ -36,7 +36,7 @@ func _ready():
 	quieto = true
 
 
-func _process(delta):
+func _physics_process(delta: float):
 	if alive() && GameManager.goal == false:
 		# Check player distance and update `quieto` if necessary.
 		player_distance()
@@ -145,12 +145,7 @@ func try_alternative_move():
 	initial_position = character_body.position
 	moving = true
 	move_timer = 0.0
-
-
-func _physics_process(_delta):
-	if alive():
-		if not moving:
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
+	
 
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:

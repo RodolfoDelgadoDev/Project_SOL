@@ -46,7 +46,7 @@ func _ready():
 	attack_sprite.visible = false
 	attack_area.disabled = true
 
-func _process(delta):
+func _physics_process(delta: float):
 	if alive():
 		if Input.is_action_just_pressed("attack"):
 			basicAttack(lastDir)
