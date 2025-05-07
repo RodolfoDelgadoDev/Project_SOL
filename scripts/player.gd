@@ -34,6 +34,8 @@ var target_velocity: Vector2 = Vector2.ZERO
 var moving: bool = false
 var move_timer: float = 0.0
 var can_attack: bool = true
+# Variable que chequea si esta en un lugar para atacar o un lugar para saludar
+var current_status: int = 1
 
 # Camera shake variables
 @export var shake_intensity: float = 0.0
@@ -45,6 +47,11 @@ func _ready():
 	character_body = $CharacterBody2D
 	attack_sprite.visible = false
 	attack_area.disabled = true
+	# Condicional donde se setea el valor de la animacion
+	# El valor 1 es que puede saludar
+	# El valor 0 es que ataca 
+	if get_tree().current_scene.scene_file_path != "res://Scenes/Levels/descanso.tscn":
+		current_status = 0
 
 func _physics_process(delta: float):
 	if alive():
@@ -118,8 +125,10 @@ func basicAttack(dir):
 		attack_sprite.position = direction_vector * GRID_SIZE  # Adjust position based on direction
 		# Show the attack sprite
 		audio_player.stream = attackSFX
-		if get_tree().current_scene.scene_file_path != "res://Scenes/Levels/descanso.tscn":
+		# Condicional para atacar
+		if current_status == 0:
 			animaton.play(directions[dir][1])
+		# Si no deberia saludar como una tipaza que es
 		else:
 			animaton.play(directions[dir][3])
 		audio_player.play()  # Play attack sound
