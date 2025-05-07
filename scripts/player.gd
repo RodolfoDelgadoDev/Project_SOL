@@ -35,7 +35,7 @@ var moving: bool = false
 var move_timer: float = 0.0
 var can_attack: bool = true
 # Variable que chequea si esta en un lugar para atacar o un lugar para saludar
-var current_status: int = 1
+@onready var current_status: int = 1
 
 # Camera shake variables
 @export var shake_intensity: float = 0.0

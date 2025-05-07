@@ -896,18 +896,18 @@ barra = NodePath("../CanvasLayer/barra")
 position = Vector2(10, -105.5)
 shape = SubResource("RectangleShape2D_0vnjn")
 
-[node name="barra ataque" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("barra")]
+[node name="tuto ataque" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("barra")]
 position = Vector2(4, 114)
 script = ExtResource("16_jmfc5")
 barra = NodePath("../CanvasLayer/barra2")
 
-[node name="Area2D" type="Area2D" parent="Scene Manager/barra ataque"]
+[node name="Area2D" type="Area2D" parent="Scene Manager/tuto ataque"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/barra ataque/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/tuto ataque/Area2D"]
 position = Vector2(10, -105.5)
 shape = SubResource("RectangleShape2D_0vnjn")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
 [connection signal="area_entered" from="Scene Manager/barra coso/Area2D" to="Scene Manager/barra coso" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="Scene Manager/barra ataque/Area2D" to="Scene Manager/barra ataque" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Scene Manager/tuto ataque/Area2D" to="Scene Manager/tuto ataque" method="_on_area_2d_area_entered"]
