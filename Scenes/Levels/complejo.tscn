@@ -686,7 +686,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos4" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD1/+H/AAAMAAsAAAD1/+L/AAAMAAwAAAD1/+P/AAAMAA0AAAD2/+H/AAANAAsAAAD2/+L/AAANAAwAAAD2/+P/AAANAA0AAAD//+D/AAAMAAsAAAD//+H/AAAMAAwAAAD//+L/AAAMAA0AAAAAAOD/AAANAAsAAAAAAOH/AAANAAwAAAAAAOL/AAANAA0AAAATAPH/AAAEAA0AAAAAAOX/AAALABcAAAAAAOb/AAALABgAAAAOAAwAAAAWABIAAAAOAAkAAAAWABIAAAABAA0AAAANABMAAAABAA4AAAANABQAAAACAA0AAAAOABMAAAACAA4AAAAOABQAAAADAA0AAAAPABMAAAADAA4AAAAPABQAAAAWAO//AAAEAA0AAAAPAO//AAAEAA0AAAAKAO7/AAAEAA0AAAA=")
+tile_map_data = PackedByteArray("AAD1/+H/AAAMAAsAAAD1/+L/AAAMAAwAAAD1/+P/AAAMAA0AAAD2/+H/AAANAAsAAAD2/+L/AAANAAwAAAD2/+P/AAANAA0AAAD//+D/AAAMAAsAAAD//+H/AAAMAAwAAAD//+L/AAAMAA0AAAAAAOD/AAANAAsAAAAAAOH/AAANAAwAAAAAAOL/AAANAA0AAAATAPH/AAAEAA0AAAAAAOX/AAALABcAAAAAAOb/AAALABgAAAAOAAwAAAAWABIAAAAOAAkAAAAWABIAAAABAA0AAAANABMAAAABAA4AAAANABQAAAACAA0AAAAOABMAAAACAA4AAAAOABQAAAADAA0AAAAPABMAAAADAA4AAAAPABQAAAAWAO//AAAEAA0AAAAPAO//AAAEAA0AAAAKAO7/AAAEAA0AAAAHAPf/AAAEAA0AAAAHAPb/AAAEAA0AAAAIAPf/AAAEAA0AAAAIAPb/AAAEAA0AAAAIAPX/AAAEAA0AAAAJAPX/AAAEAA0AAAAHAPX/AAAEAA0AAAAHAPT/AAAEAA0AAAAIAPT/AAAEAA0AAAAHAPP/AAAEAA0AAAAHAPD/AAAEAA0AAAAJAPD/AAAEAA0AAAAHAO//AAAEAA0AAAAIAO//AAAEAA0AAAAJAO//AAAEAA0AAAAHAO7/AAAEAA0AAAAZAPf/AAAEAA0AAAAZAPb/AAAEAA0AAAAYAPb/AAAEAA0AAAAZAPX/AAAEAA0AAAAXAPb/AAAEAA0AAAAXAPX/AAAEAA0AAAAYAPX/AAAEAA0AAAAUAPD/AAAEAA0AAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -715,6 +715,7 @@ rendering_quadrant_size = 32
 [node name="Robot" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(24, -8)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
@@ -722,6 +723,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vecto
 [node name="Robot2" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(104, 40)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(0, -1), Vector2(0, -1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(1, 0), Vector2(1, 0)])
@@ -729,6 +731,7 @@ patrol_path = Array[Vector2]([Vector2(0, -1), Vector2(0, -1), Vector2(-1, 0), Ve
 [node name="Robot3" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-248, 56)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
@@ -736,6 +739,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vecto
 [node name="Robot4" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-248, 88)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
@@ -743,6 +747,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vecto
 [node name="Robot5" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-248, 24)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
@@ -750,6 +755,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vecto
 [node name="Robot6" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-248, -8)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
@@ -757,6 +763,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(0, 1), Vecto
 [node name="Robot7" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-200, -120)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(0, -1), Vector2(0, -1), Vector2(0, -1)])
@@ -764,6 +771,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vecto
 [node name="Robot8" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(360, 24)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)])
@@ -771,6 +779,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vect
 [node name="Robot9" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(248, -104)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0)])
@@ -778,6 +787,7 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vecto
 [node name="Robot10" parent="." instance=ExtResource("15_frlsg")]
 position = Vector2(-88, -104)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.8
 wait_time = 0.2
 damage = 2
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0), Vector2(-1, 0)])
@@ -998,7 +1008,7 @@ rendering_quadrant_size = 32
 [node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
-segundos = 45
+segundos = 60
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 typewriter_delay = 0.06
 cursor_blink_delay = 0.25

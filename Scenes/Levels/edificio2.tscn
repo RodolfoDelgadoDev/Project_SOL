@@ -570,14 +570,14 @@ tile_map_data = PackedByteArray("AAAIAPX/AgADAAcAAAAIAPb/AgADAAgAAAAJAPb/AgAPAAU
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Player" parent="." instance=ExtResource("4_ktjj2")]
-position = Vector2(216, -120)
-scale = Vector2(0.25, 0.25)
-
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_nkril")
 segundos = 60
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Player" parent="Scene Manager" instance=ExtResource("4_ktjj2")]
+position = Vector2(216, -120)
+scale = Vector2(0.25, 0.25)
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_ivrbb")]
 position = Vector2(72, -56)
@@ -617,7 +617,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito2" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-168, -120)
@@ -625,7 +625,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito3" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-152, -120)
@@ -633,7 +633,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito4" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-152, -136)
@@ -641,7 +641,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito5" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(40, -40)
@@ -649,7 +649,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito6" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(88, -72)
@@ -657,7 +657,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito7" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(136, 56)
@@ -665,7 +665,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito8" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-72, 56)
@@ -673,7 +673,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito9" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-120, 24)
@@ -681,7 +681,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Perrito10" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-184, -40)
@@ -689,7 +689,7 @@ scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Player")
+player_node_path = NodePath("../Player")
 
 [node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_cwi5v")]
 position = Vector2(8, 24)

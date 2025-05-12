@@ -8,9 +8,9 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 	if area.is_in_group("weapon"):
 		var parent = get_parent()
 		if dialNum < dialogue_lines.size():  # Check if there are more dialogue lines
-			parent.start_typewriter(dialogue_lines[dialNum], npc_portrait)
+			parent.show_dialogue(dialogue_lines[dialNum])
 			dialNum += 1
 		else:
 			# If all dialogue lines are exhausted, reset to first line
 			dialNum = 0  # Reset dialogue counter (optional)
-			parent.start_typewriter(dialogue_lines[dialNum], npc_portrait)
+			parent.show_dialogue(dialogue_lines[dialNum])

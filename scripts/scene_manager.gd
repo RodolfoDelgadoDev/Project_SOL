@@ -52,7 +52,7 @@ func _ready() -> void:
 	print("Total bottles found: ", bottleTotal)
 	if descanso:
 		timer.stop_timer()
-		timer.visible = false
+		toggle_timer()
 		reciclaje()
 	dialogue_box.visible = false
 	# Start with dialogue hidden
@@ -170,6 +170,9 @@ func reciclaje():
 						sec5.visible = true
 						if GameManager.plasticoin > 6:
 							sec6.visible = true
-		
-				
-	
+					
+func toggle_timer():
+	if timer.visible == false:
+		timer.visible = true
+	else:
+		timer.visible = false

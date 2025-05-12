@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cje475neioddk"]
+[gd_scene load_steps=9 format=3 uid="uid://cje475neioddk"]
 
 [ext_resource type="Script" path="res://Scenes/Entities/el_jefe.gd" id="1_5autu"]
 [ext_resource type="Texture2D" uid="uid://px7so7s5sa08" path="res://art/Jefe.png" id="2_v16df"]
@@ -35,6 +35,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxabq"]
+polygon = PackedVector2Array(7, -3, 7, -8, -4, -8, -3, 0, -7, -1, -6, 3, -2, 5, -2, 8, 4, 8, 6, 5, 5, 2, 7, 0)
+
 [node name="TheBoss" type="Node2D"]
 script = ExtResource("1_5autu")
 
@@ -60,5 +63,8 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c4vbc")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_gxabq")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

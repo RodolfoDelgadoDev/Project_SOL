@@ -50,7 +50,7 @@ func _ready():
 	# Condicional donde se setea el valor de la animacion
 	# El valor 1 es que puede saludar
 	# El valor 0 es que ataca 
-	if get_tree().current_scene.scene_file_path != "res://Scenes/Levels/descanso.tscn":
+	if get_parent().descanso != true:
 		current_status = 0
 
 func _physics_process(delta: float):
@@ -117,6 +117,8 @@ func play_random_movement_sound():
 		audio_player.play()  # Play the selected sound
 
 func basicAttack(dir):
+	if get_parent().descanso != true:
+		current_status = 0
 	if can_attack == true:
 		can_attack = false
 		attack_area.disabled = false

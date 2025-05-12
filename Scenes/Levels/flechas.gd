@@ -85,7 +85,7 @@ func await_input():
 		if Input.is_anything_pressed():
 			var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 			if input_vector != Vector2.ZERO:
-				await get_tree().create_timer(1.2).timeout
+				await get_tree().create_timer(0.8).timeout
 				disappear()
 				break
 		await get_tree().process_frame

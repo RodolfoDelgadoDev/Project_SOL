@@ -884,42 +884,42 @@ scale = Vector2(0.5, 0.5)
 [node name="Esqueleto" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(-24, 72)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto2" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(-24, 8)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto4" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(184, 56)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto5" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(200, 136)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto6" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(-72, 216)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto7" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(56, 280)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto8" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(248, 248)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Esqueleto9" parent="." instance=ExtResource("6_0twix")]
 position = Vector2(328, 216)
 scale = Vector2(0.25, 0.25)
-player_node_path = NodePath("../Player")
+player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Spitter" parent="." instance=ExtResource("7_3jqmy")]
 position = Vector2(-40, 72)
@@ -959,16 +959,6 @@ position = Vector2(296, 280)
 damage = 3
 directions = Array[String](["left"])
 fireball_length = 6
-
-[node name="Player" parent="." instance=ExtResource("4_p45r0")]
-position = Vector2(-200, -8)
-scale = Vector2(0.25, 0.25)
-
-[node name="Obstaculos top layer" type="TileMapLayer" parent="."]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADo//3/AAAaAAUAAADo//7/AAAaAAYAAADp//3/AAAbAAUAAADp//7/AAAbAAYAAADq//3/AAAcAAUAAADq//7/AAAcAAYAAADr//3/AAAdAAUAAADr//7/AAAdAAYAAADs//3/AAAeAAUAAADs//7/AAAeAAYAAADt//3/AAAfAAUAAADt//7/AAAfAAYAAADu//3/AAAgAAUAAADu//7/AAAgAAYAAADv//3/AAAhAAUAAADv//7/AAAhAAYAAADw//3/AAAiAAUAAADw//7/AAAiAAYAAADx//3/AAAjAAUAAADx//7/AAAjAAYAAAADABEAAAAAAAYAAAAEABEAAAABAAYAAAD7/w0AAAAAAAYAAAD8/w0AAAABAAYAAAAFAAoAAAAAAAYAAAAGAAoAAAABAAYAAAAKAAkAAAAAAAYAAAALAAkAAAABAAYAAAAKABEAAAAAAAYAAAALABEAAAABAAYAAAAWABEAAAAAAAYAAAAXABEAAAABAAYAAAASABEAAAAAAAYAAAATABEAAAABAAYAAAADAAIAAAAGAAMAAAADAAMAAAAGAAQAAAAEAAIAAAAHAAMAAAAEAAMAAAAHAAQAAAAKAAIAAAAGAAMAAAAKAAMAAAAGAAQAAAALAAIAAAAHAAMAAAALAAMAAAAHAAQAAAD8/wAAAAAdAAQAAAD7/wAAAAAcAAQAAAD9/wAAAAAeAAQAAAD+/wAAAAAfAAQAAAD5/wQAAAAdAAQAAAD8/wUAAAAdAAQAAAD0/wUAAAAdAAQAAAD0/wQAAAAcAAQAAAD4/wQAAAAcAAQAAAD7/wUAAAAcAAQAAAA=")
-tile_set = SubResource("TileSet_yil1h")
-rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -1227,6 +1217,16 @@ stream = ExtResource("17_wvt1x")
 autoplay = true
 panning_strength = 0.0
 playback_type = 1
+
+[node name="Player" parent="Scene Manager" instance=ExtResource("4_p45r0")]
+position = Vector2(-400, -18)
+scale = Vector2(0.5, 0.5)
+
+[node name="Obstaculos top layer" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AADo//3/AAAaAAUAAADo//7/AAAaAAYAAADp//3/AAAbAAUAAADp//7/AAAbAAYAAADq//3/AAAcAAUAAADq//7/AAAcAAYAAADr//3/AAAdAAUAAADr//7/AAAdAAYAAADs//3/AAAeAAUAAADs//7/AAAeAAYAAADt//3/AAAfAAUAAADt//7/AAAfAAYAAADu//3/AAAgAAUAAADu//7/AAAgAAYAAADv//3/AAAhAAUAAADv//7/AAAhAAYAAADw//3/AAAiAAUAAADw//7/AAAiAAYAAADx//3/AAAjAAUAAADx//7/AAAjAAYAAAADABEAAAAAAAYAAAAEABEAAAABAAYAAAD7/w0AAAAAAAYAAAD8/w0AAAABAAYAAAAFAAoAAAAAAAYAAAAGAAoAAAABAAYAAAAKAAkAAAAAAAYAAAALAAkAAAABAAYAAAAKABEAAAAAAAYAAAALABEAAAABAAYAAAAWABEAAAAAAAYAAAAXABEAAAABAAYAAAASABEAAAAAAAYAAAATABEAAAABAAYAAAADAAIAAAAGAAMAAAADAAMAAAAGAAQAAAAEAAIAAAAHAAMAAAAEAAMAAAAHAAQAAAAKAAIAAAAGAAMAAAAKAAMAAAAGAAQAAAALAAIAAAAHAAMAAAALAAMAAAAHAAQAAAD8/wAAAAAdAAQAAAD7/wAAAAAcAAQAAAD9/wAAAAAeAAQAAAD+/wAAAAAfAAQAAAD5/wQAAAAdAAQAAAD8/wUAAAAdAAQAAAD0/wUAAAAdAAQAAAD0/wQAAAAcAAQAAAD4/wQAAAAcAAQAAAD7/wUAAAAcAAQAAAA=")
+tile_set = SubResource("TileSet_yil1h")
+rendering_quadrant_size = 32
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
