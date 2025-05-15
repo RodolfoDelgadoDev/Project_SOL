@@ -1,8 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://k5qb53ajcrce"]
+[gd_scene load_steps=23 format=3 uid="uid://k5qb53ajcrce"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_y1v5c"]
+[ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_3of4l"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="2_a3c56"]
+[ext_resource type="AudioStream" uid="uid://5jy1urk55diu" path="res://SFX/enemyStep1.mp3" id="3_taj1x"]
 [ext_resource type="Texture2D" uid="uid://de8lrhjcjq761" path="res://animations/Enemies/Plant/Planta Animation.png" id="4_d5c6p"]
+[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="4_y8vgc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcede"]
 atlas = ExtResource("4_d5c6p")
@@ -122,6 +125,9 @@ polygon = PackedVector2Array(8, -20, -12, -20, -12, 20, 8, 20)
 [node name="Plant" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1v5c")
+attackSFX = ExtResource("2_3of4l")
+moveSFX = ExtResource("3_taj1x")
+hurtSFX = ExtResource("4_y8vgc")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4

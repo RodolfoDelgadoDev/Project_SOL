@@ -75,6 +75,8 @@ func start_moving():
 			moving = true
 			update_flip()
 			move_timer = 0.0
+			audio_player.stream = moveSFX
+			audio_player.play()
 			
 
 

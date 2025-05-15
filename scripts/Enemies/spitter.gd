@@ -15,6 +15,8 @@ var current_direction_index := 0
 var fireball_scene = preload("res://Scenes/Entities/fireball.tscn")
 var animations: Array[String] = ["Attack"]
 
+var dying : bool = false
+
 func _ready() -> void:
 	start_direction_cycle()
 
@@ -32,18 +34,28 @@ func fireball(direction: String) -> void:
 	get_parent().add_child(fireball_instance)
 	fireball_instance.global_position = global_position
 	fireball_instance.setup(direction)  # This initializes the movement
+	audio_player.stream = attackSFX
+	audio_player.play()
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("weapon"):
-		health -= GameManager.playerDamage
+		if dying:
+			return
 		audio_player.stream = destroySFX
 		audio_player.play()
-		if health <= 0:
-			if audio_player.playing:
-				await audio_player.finished
-			queue_free()
+		takeDamage()
 		
 	if area.is_in_group("player"):
 		audio_player.stream = attackSFX
 		audio_player.play()
 		GameManager.takeDamage(damage)
+
+func takeDamage():
+	if dying:
+		return
+	health -= GameManager.playerDamage
+	if health <= 0:
+		dying = true
+		if audio_player.playing:
+			await audio_player.finished
+		queue_free()

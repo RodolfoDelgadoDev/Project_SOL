@@ -1,11 +1,10 @@
-[gd_scene load_steps=42 format=4 uid="uid://dw8872c3cjxdn"]
+[gd_scene load_steps=43 format=4 uid="uid://dw8872c3cjxdn"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_bf2kt"]
 [ext_resource type="Texture2D" uid="uid://dnml7ans72uk2" path="res://art/Tilemap-Tutorial.png" id="1_mo38p"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="4_w3y3m"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="5_5rhkn"]
 [ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/Entities/plant.tscn" id="5_etpm0"]
-[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="6_prs8w"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="6_xa10r"]
 [ext_resource type="PackedScene" uid="uid://cje475neioddk" path="res://Scenes/Entities/elJefe.tscn" id="7_2pvst"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="8_2tiyy"]
@@ -20,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_8qgl7"]
 [ext_resource type="Script" path="res://Scenes/Levels/barra_coso.gd" id="16_jmfc5"]
 [ext_resource type="PackedScene" uid="uid://dtt3stb4e27la" path="res://Scenes/Entities/trap5.tscn" id="20_she10"]
+[ext_resource type="AudioStream" uid="uid://sh5a1iwt3kmb" path="res://SFX/trapVidrio1.mp3" id="21_f13fh"]
+[ext_resource type="AudioStream" uid="uid://cfrqx5c8kwqsi" path="res://SFX/trapVidrio2.mp3" id="22_xmqis"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58nlt"]
 texture = ExtResource("1_mo38p")
@@ -511,6 +512,18 @@ physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 sources/0 = SubResource("TileSetAtlasSource_58nlt")
 
+[sub_resource type="Gradient" id="Gradient_dpc0a"]
+offsets = PackedFloat32Array(0, 0.61039)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tt2wg"]
+gradient = SubResource("Gradient_dpc0a")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7di88"]
+polygon = PackedVector2Array(13, -7, 14, 8, -15, 10, -17, 40, -18, -12)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdo8t"]
 atlas = ExtResource("9_unayy")
 region = Rect2(0, 0, 64, 54)
@@ -600,18 +613,6 @@ default_font_size = 15
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vnjn"]
 size = Vector2(46, 59)
 
-[sub_resource type="Gradient" id="Gradient_dpc0a"]
-offsets = PackedFloat32Array(0, 0.61039)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tt2wg"]
-gradient = SubResource("Gradient_dpc0a")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7di88"]
-polygon = PackedVector2Array(13, -7, 14, 8, 14, 40, -19, 40, -18, -12)
-
 [node name="Main" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -634,25 +635,123 @@ rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("6_xa10r")
-segundos = 60
+segundos = 90
 descanso = true
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.651218, 0.703456, 0.828296, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-108, -144)
+scale = Vector2(1.90625, 2.28906)
+color = Color(0.906265, 0.48584, 0.297715, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-50, -149)
+scale = Vector2(1.90625, 2.28906)
+color = Color(0.906265, 0.48584, 0.297715, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(54, -150)
+scale = Vector2(1.90625, 2.28906)
+color = Color(0.906265, 0.48584, 0.297715, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(157, -154)
+scale = Vector2(1.90625, 2.28906)
+color = Color(0.906265, 0.48584, 0.297715, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(138, 67)
+scale = Vector2(2.57813, 2.7808)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-3, 3.99999)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-159, -20)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-198, 152)
+scale = Vector2(1.57813, 1.53437)
+color = Color(0.933333, 0.729412, 1, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-23, 128)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(116, 128)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(74, 199)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(221, 179)
+scale = Vector2(2.21875, 2.15723)
+color = Color(0.703856, 0.970119, 0.933009, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(249, -26)
+scale = Vector2(2.21875, 3.32837)
+color = Color(0.780392, 0.556863, 0.160784, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_tt2wg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Scene Manager/Luces"]
+position = Vector2(114, -8)
+occluder = SubResource("OccluderPolygon2D_7di88")
 
 [node name="Plant" parent="Scene Manager" instance=ExtResource("5_etpm0")]
 position = Vector2(-216, 56)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 30
-hurtSFX = ExtResource("6_prs8w")
 detection_range = 2
 player_node_path = NodePath("../Player")
 
 [node name="Plant2" parent="Scene Manager" instance=ExtResource("5_etpm0")]
-position = Vector2(152, 168)
+position = Vector2(88, 200)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 30
-hurtSFX = ExtResource("6_prs8w")
 detection_range = 2
 player_node_path = NodePath("../Player")
 
@@ -667,6 +766,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vecto
 [node name="Bat2" parent="Scene Manager" instance=ExtResource("4_w3y3m")]
 position = Vector2(-136, 8)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.4
 wait_time = 1.0
 damage = 3
 health = 10
@@ -899,130 +999,44 @@ scale = Vector2(0.25, 0.25)
 [node name="Trap4" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(-184, 168)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap5" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(-88, 152)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap6" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(-56, 152)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap7" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(24, 152)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap8" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(136, 120)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap9" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(232, 152)
 damage = 3
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Trap10" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(264, 136)
 damage = 3
-
-[node name="Luces" type="Node2D" parent="Scene Manager"]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
-color = Color(0.651218, 0.703456, 0.828296, 1)
-
-[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-108, -144)
-scale = Vector2(1.90625, 2.28906)
-color = Color(0.971297, 0.883583, 0.894596, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-50, -149)
-scale = Vector2(1.90625, 2.28906)
-color = Color(0.971297, 0.883583, 0.894596, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(54, -150)
-scale = Vector2(1.90625, 2.28906)
-color = Color(0.971297, 0.883583, 0.894596, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(157, -154)
-scale = Vector2(1.90625, 2.28906)
-color = Color(0.971297, 0.883583, 0.894596, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(138, 35)
-scale = Vector2(2, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-3, 3.99999)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-159, -20)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-196, 166)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-23, 128)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(116, 128)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(74, 199)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(221, 179)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(248, 14)
-scale = Vector2(2.21875, 2.15723)
-color = Color(0.703856, 0.970119, 0.933009, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_tt2wg")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Scene Manager/Luces"]
-position = Vector2(114, -8)
-occluder = SubResource("OccluderPolygon2D_7di88")
+attackSFX = ExtResource("22_xmqis")
+destroySFX = ExtResource("21_f13fh")
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

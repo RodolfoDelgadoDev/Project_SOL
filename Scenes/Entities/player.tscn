@@ -713,7 +713,7 @@ size = Vector2(60, 60)
 size = Vector2(62, 62)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qh4pc"]
-polygon = PackedVector2Array(-14, -23, 11, -23, 11, 27, -14, 27)
+polygon = PackedVector2Array(-20, -18, -8, -27, 8, -27, 18, -18, 18, -2, 12, 4, 24, 15, 24, 19, 11, 27, -14, 27, -27, 20, -27, 16, -14, 5, -20, -2)
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dlx5r")

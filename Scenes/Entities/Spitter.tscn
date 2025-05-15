@@ -1,8 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://d3s22my3nwvfq"]
+[gd_scene load_steps=31 format=3 uid="uid://d3s22my3nwvfq"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/spitter.gd" id="1_hpbxh"]
 [ext_resource type="Texture2D" uid="uid://bax3i3665jlyj" path="res://animations/Enemies/Spitter/Chupacabras solo.png" id="2_4blmb"]
+[ext_resource type="AudioStream" uid="uid://cg4kby43bidio" path="res://SFX/fireball.mp3" id="2_tj5wb"]
 [ext_resource type="Texture2D" uid="uid://c1tbatgf70tkw" path="res://animations/Enemies/Spitter/Idle-Chupacabras-Spitter.png" id="3_b1g2m"]
+[ext_resource type="AudioStream" uid="uid://d4cvg6wqlj857" path="res://SFX/animal growl.mp3" id="3_clegp"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_7q4yd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5hu4"]
@@ -191,6 +193,8 @@ _data = {
 [node name="Spitter" type="Node2D"]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_hpbxh")
+attackSFX = ExtResource("2_tj5wb")
+destroySFX = ExtResource("3_clegp")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
@@ -224,5 +228,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_distance = 200.0
 
 [connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]

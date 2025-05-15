@@ -121,6 +121,9 @@ func start_moving():
 	initial_position = character_body.position
 	moving = true
 	move_timer = 0.0
+	move_timer = 0.0
+	audio_player.stream = moveSFX
+	audio_player.play()
 
 
 # Try moving along the other axis.

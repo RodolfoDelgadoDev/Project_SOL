@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4cvg6wqlj857"
+path="res://.godot/imported/animal growl.mp3-a275268f6a7cdc15db1cb0124e08856f.mp3str"
+
+[deps]
+
+source_file="res://SFX/animal growl.mp3"
+dest_files=["res://.godot/imported/animal growl.mp3-a275268f6a7cdc15db1cb0124e08856f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
