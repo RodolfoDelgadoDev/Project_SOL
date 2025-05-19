@@ -1,11 +1,16 @@
-[gd_scene load_steps=16 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=21 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
+[ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/Entities/plant.tscn" id="3_cpl7h"]
 [ext_resource type="PackedScene" uid="uid://cn2xmgjwdsl2f" path="res://Scenes/Entities/trap4.tscn" id="3_kokj1"]
+[ext_resource type="PackedScene" uid="uid://dhrh7rux0lbbi" path="res://Scenes/Entities/black_dog.tscn" id="3_md0mu"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_by454"]
+[ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="4_k5mgx"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_xsktw"]
+[ext_resource type="AudioStream" uid="uid://5jy1urk55diu" path="res://SFX/enemyStep1.mp3" id="5_ykctp"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_6fulg"]
+[ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="6_hamnn"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_c74ar"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_gyqse"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_ri16o"]
@@ -681,6 +686,67 @@ tile_map_data = PackedByteArray("AAD3/wcAAAAKAAAAAAD3/wgAAAAKAAEAAAD5/wcAAAAAAAc
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
+[node name="Plant5" parent="." instance=ExtResource("3_md0mu")]
+position = Vector2(328, -184)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.3
+damage = 5
+health = 10
+attackSFX = ExtResource("4_k5mgx")
+moveSFX = ExtResource("5_ykctp")
+hurtSFX = ExtResource("6_hamnn")
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant7" parent="." instance=ExtResource("3_md0mu")]
+position = Vector2(-72, -360)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.3
+damage = 5
+health = 10
+attackSFX = ExtResource("4_k5mgx")
+moveSFX = ExtResource("5_ykctp")
+hurtSFX = ExtResource("6_hamnn")
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant6" parent="." instance=ExtResource("3_md0mu")]
+position = Vector2(376, -72)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.3
+damage = 5
+health = 10
+attackSFX = ExtResource("4_k5mgx")
+moveSFX = ExtResource("5_ykctp")
+hurtSFX = ExtResource("6_hamnn")
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant" parent="." instance=ExtResource("3_cpl7h")]
+position = Vector2(424, -248)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant2" parent="." instance=ExtResource("3_cpl7h")]
+position = Vector2(72, -328)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant3" parent="." instance=ExtResource("3_cpl7h")]
+position = Vector2(328, -328)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+player_node_path = NodePath("../Scene Manager/Player")
+
+[node name="Plant4" parent="." instance=ExtResource("3_cpl7h")]
+position = Vector2(-232, -472)
+scale = Vector2(0.25, 0.25)
+damage = 3
+health = 30
+player_node_path = NodePath("../Scene Manager/Player")
+
 [node name="Trap4" parent="." instance=ExtResource("3_kokj1")]
 position = Vector2(136, -120)
 damage = 0
@@ -708,12 +774,46 @@ position = Vector2(0, 2)
 script = ExtResource("5_xsktw")
 segundos = 45
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
-typewriter_delay = 0.06
-cursor_blink_delay = 0.25
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_6fulg")]
 position = Vector2(359, -331)
 scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(488, -698)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(71, -715)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(391, -331)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(471, -107)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(215, -139)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(392, -202)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
+
+[node name="Coin8" parent="Scene Manager" instance=ExtResource("6_6fulg")]
+position = Vector2(-24, -330)
+scale = Vector2(0.5, 0.5)
+recuperacion = 8
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 

@@ -1,9 +1,10 @@
 extends Control
 
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
-@onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer 
+@onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer
 @onready var RestartButton: Button = $RestartButton
 @onready var ExitButton: Button = $ExitButton
+
 
 func _ready():
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
@@ -13,6 +14,7 @@ func _ready():
 	RestartButton.visible = true
 	await get_tree().create_timer(0.5).timeout
 	$ExitButton.visible = true
+	grab_focus()
 	pass
 	
 
