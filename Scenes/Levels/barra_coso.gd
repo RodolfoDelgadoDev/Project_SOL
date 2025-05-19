@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var barra: ColorRect
+
+#Funciona para hacer que cambie de ataque
 @export var modo_ataque: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
