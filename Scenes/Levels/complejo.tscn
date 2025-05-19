@@ -1000,8 +1000,6 @@ position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
 segundos = 60
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
-typewriter_delay = 0.06
-cursor_blink_delay = 0.25
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_oigfh")]
 position = Vector2(56, 166)

@@ -799,7 +799,6 @@ animation = &"Open"
 position = Vector2(4, 4)
 
 [node name="DialogueBox" parent="Scene Manager/CanvasLayer" instance=ExtResource("10_nebsq")]
-visible = false
 
 [node name="flechas" type="ColorRect" parent="Scene Manager/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.733333)

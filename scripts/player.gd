@@ -1,10 +1,10 @@
 extends Node2D
 
 var directions = {
-	"UP": [Vector2.UP, "AttackUp", "WalkUp", "HiUp"],
-	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown", "HiDown"],
-	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft", "HiLeft"],
-	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight", "HiRight"]
+	"UP": [Vector2.UP, "AttackUp", "WalkUp", "HiUp", "DamageUp"],
+	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown", "HiDown", "DamageDown"],
+	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft", "HiLeft", "DamageLeft"],
+	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight", "HiRight", "DamageRight"]
 }
 
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/Area2D/AttackSprite
@@ -130,10 +130,10 @@ func basicAttack(dir):
 		# Condicional para atacar
 		if current_status == 0:
 			animaton.play(directions[dir][1])
+			audio_player.play()  # Play attack sound
 		# Si no deberia saludar como una tipaza que es
 		else:
 			animaton.play(directions[dir][3])
-		audio_player.play()  # Play attack sound
 			
 		attack_sprite.visible = true
 		# Optional: Add a timer to hide the attack sprite after a short delay
@@ -175,6 +175,7 @@ func direction_to_string(direction: Vector2) -> String:
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("enemy"):
+		animaton.play("DamageDown")
 		# Start the camera shake
 		shake_intensity = 5.0  # Adjust intensity as needed
 		shake_duration = 0.3    # Adjust duration as needed
