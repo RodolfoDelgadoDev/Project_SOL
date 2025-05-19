@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 				animated_sprite.play("Open")
 				goalAnimacion = false
 		var SceneManager = get_parent()
-		if SceneManager.is_typewriter_active == false && finish_goal == false:
+		if finish_goal == false:
 			finish_goal = true
 			GameManager.reachedGoal(false)
 			if SceneManager.descanso == false:

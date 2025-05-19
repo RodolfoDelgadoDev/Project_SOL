@@ -12,8 +12,6 @@ func takeDamage(damage):
 	Segundos -= damage
 	if Segundos <= 0:
 		Segundos = 0
-		var enemies = get_tree().get_nodes_in_group("enemy")
-		print(enemies)
 		
 func reachedGoal(win):
 	goal = win

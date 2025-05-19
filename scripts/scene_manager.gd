@@ -4,12 +4,10 @@ extends Node2D
 @export var segundos: int
 @export var descanso: bool # if true = indica que estás en la sala de descanso
 @export var targetScene: NodePath
-@onready var dialogue_box: TextureRect = $CanvasLayer/DialogueBox/ColorRect
-@onready var dialogue_label: Label = $CanvasLayer/DialogueBox/ColorRect/TextEdit
-@onready var portrait_texture: TextureRect = $CanvasLayer/DialogueBox/ColorRect/Portrait
 @onready var timer: Node2D = $CanvasLayer/Timer
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
+@onready var DialogueBox: Node2D = $CanvasLayer/DialogueBox
 
 @export var sec1: Node2D
 @export var sec2: Node2D
@@ -22,22 +20,6 @@ extends Node2D
 var bottleNum: int = 0
 var bottleTotal: int
 var allBottles: bool = false
-
-var current_dialogue: String = ""
-var typing_speed: float = 0.05  # seconds per character
-var is_typing: bool = false
-var skip_requested: bool = false
-
-# Typewriter effect variables
-var typewriter_text: String = ""
-var typewriter_index: int = 0
-@export var typewriter_delay: float = 0.05  # Delay between each letter
-var is_typewriter_active: bool = false
-
-# Cursor variables
-var cursor_visible: bool = false
-@export var cursor_blink_delay: float = 0.5  # Delay for cursor blinking
-var cursor_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -54,52 +36,6 @@ func _ready() -> void:
 		timer.stop_timer()
 		toggle_timer()
 		reciclaje()
-	dialogue_box.visible = false
-	# Start with dialogue hidden
-
-func show_dialogue(text: String, portrait: Texture = null) -> void:
-	if dialogue_box.visible == true:
-		return
-	if is_typing:
-		skip_requested = true
-		return
-	
-	dialogue_box.visible = true
-	current_dialogue = text
-	dialogue_label.text = ""
-	
-	if portrait:
-		portrait_texture.texture = portrait
-		portrait_texture.visible = true
-	else:
-		portrait_texture.visible = false
-	
-	is_typing = true
-	skip_requested = false
-	_start_typing()
-	
-func _start_typing() -> void:
-	var current_length = dialogue_label.text.length()
-	
-	if current_length >= current_dialogue.length() or skip_requested:
-		# Finished typing
-		dialogue_label.text = current_dialogue
-		is_typing = false
-		await get_tree().create_timer(2.0).timeout  # Wait 2 seconds before hiding
-		dialogue_box.visible = false
-		return
-	
-	# Add next character
-	dialogue_label.text = current_dialogue.substr(0, current_length + 1)
-	
-	# Schedule next character
-	await get_tree().create_timer(typing_speed).timeout
-	_start_typing()
-
-# Input handling to skip typing
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") and is_typing:
-		skip_requested = true
 
 # Add a bottle and check if all bottles are collected
 func addBottle():

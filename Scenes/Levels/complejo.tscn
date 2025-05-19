@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cbsh0wl72o2kl"]
+[gd_scene load_steps=24 format=4 uid="uid://cbsh0wl72o2kl"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_117de"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="3_bma7x"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cn2xmgjwdsl2f" path="res://Scenes/Entities/trap4.tscn" id="3_uxtny"]
 [ext_resource type="PackedScene" uid="uid://segsacufkmxa" path="res://Scenes/Entities/esqleto.tscn" id="4_cuu7a"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
-[ext_resource type="AudioStream" uid="uid://5jy1urk55diu" path="res://SFX/enemyStep1.mp3" id="5_7ldi2"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="5_g17nj"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="6_vwn07"]
@@ -797,7 +796,6 @@ patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(1, 0), Vector2(1, 0), Vecto
 position = Vector2(-200, 152)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -805,7 +803,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(-200, 152)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -813,7 +810,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(-232, -56)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -821,7 +817,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(-24, -120)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -829,7 +824,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(264, -216)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -837,7 +831,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(344, -216)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -845,7 +838,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(296, -168)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -853,7 +845,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(472, -120)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -861,7 +852,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(328, -8)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -869,7 +859,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(280, 104)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 
@@ -877,7 +866,6 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(344, 152)
 scale = Vector2(0.25, 0.25)
 damage = 2
-moveSFX = ExtResource("5_7ldi2")
 detection_range = 3
 player_node_path = NodePath("../Scene Manager/Player")
 

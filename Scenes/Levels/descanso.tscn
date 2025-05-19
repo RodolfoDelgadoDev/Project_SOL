@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=62 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
@@ -14,10 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_rjq4s"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_6rfye"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_lg3p3"]
-[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_aup4q"]
-[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_5xc08"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="13_b1wqv"]
+[ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="15_wh50p"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="19_40yf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
@@ -753,10 +752,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Theme" id="Theme_b25ds"]
-default_font = ExtResource("10_5xc08")
-default_font_size = 15
-
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -1087,66 +1082,25 @@ sec4 = NodePath("../Seccion4")
 sec5 = NodePath("../Seccion5")
 sec6 = NodePath("../Seccion6")
 hide_visuals = NodePath("../Ocultar")
-typewriter_delay = 0.06
-cursor_blink_delay = 0.25
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
 position = Vector2(-216, -74)
 scale = Vector2(0.5, 0.5)
 has_npc = false
 
-[node name="Olga" parent="Scene Manager" instance=ExtResource("8_lg3p3")]
+[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
 position = Vector2(40, -74)
 scale = Vector2(0.5, 0.5)
+dialogue_lines = Array[String](["hola!", "soy olga"])
 npc_portrait = ExtResource("7_kn43e")
-dialogue_lines = ["hola!", "soy olga"]
+dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("8_6rfye")]
 position = Vector2(4, 4)
 
-[node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
-visible = false
-
-[node name="ColorRect" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox"]
-offset_left = 65.0
-offset_top = 119.0
-offset_right = 240.0
-offset_bottom = 154.0
-texture = ExtResource("9_aup4q")
-expand_mode = 1
-
-[node name="TextEdit" type="Label" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = 3.0
-offset_right = -18.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_b25ds")
-theme_override_colors/font_color = Color(0.294118, 0.219608, 0.192157, 1)
-theme_override_font_sizes/font_size = 10
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-justification_flags = 131
-
-[node name="Portrait" type="TextureRect" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 3.0
-offset_right = 51.0
-offset_bottom = 32.0
-expand_mode = 1
-
-[node name="textTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
-
-[node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
+[node name="DialogueBox" parent="Scene Manager/CanvasLayer" instance=ExtResource("15_wh50p")]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_fscxu")]
 
@@ -1266,6 +1220,3 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx//n/AQAGAA4AAADx//r/AQAGAA8AAADy//n/AQAHAA4AAADy//r/AQAHAA8AAAAAAAYAAQAIABAAABD2//z/AQAMABIAAAD3//z/AQAQAAIAAAD6//n/AQAFABIAAAD6//r/AQAHABEAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//v/AQAHABIAAAAEAPv/AQAQAAIAAAAFAPv/AQAQAAIAAAD2/wIAAQAGAAMAAAD+/wYAAQAIABAAAAD3/wYAAQAIABAAABABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD0//z/AQAEAAwAAAD0//3/AQAEAA0AAAD1//z/AQALABIAAAD2//3/AQAMABMAAAD4//z/AQARABIAAAD4//3/AQARABMAAAD5//z/AQASABIAAAD5//3/AQASABMAAAD6//z/AQATABIAAAD6//3/AQATABMAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
-
-[connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
-[connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

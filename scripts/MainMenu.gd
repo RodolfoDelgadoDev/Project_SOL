@@ -25,7 +25,7 @@ func _on_Exitbutton_pressed():
 func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
 		if Tutorial == true:
-			get_tree().change_scene_to_file("res://Scenes/Levels/pasillo.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
 		else:
 			GameManager.levelNumber +=1
 			print(GameManager.currentLevel)
