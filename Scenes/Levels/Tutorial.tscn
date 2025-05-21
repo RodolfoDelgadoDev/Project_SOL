@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="10_nebsq"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="11_8rrdm"]
 [ext_resource type="Texture2D" uid="uid://dbgt2gn6vwfj7" path="res://art/keyboard.png" id="11_lrvp7"]
-[ext_resource type="Script" path="res://Scenes/Levels/flechas.gd" id="11_n5k16"]
+[ext_resource type="Script" path="res://scripts/flechas.gd" id="11_n5k16"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="12_5s8cv"]
 [ext_resource type="Texture2D" uid="uid://72molumf43rx" path="res://art/barra.png" id="14_2twqs"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_8qgl7"]
-[ext_resource type="Script" path="res://Scenes/Levels/barra_coso.gd" id="16_jmfc5"]
+[ext_resource type="Script" path="res://scripts/barra_coso.gd" id="16_jmfc5"]
 [ext_resource type="AudioStream" uid="uid://h4fw8bn8b7cf" path="res://Music/totorial.mp3" id="17_5tnc2"]
 [ext_resource type="PackedScene" uid="uid://dtt3stb4e27la" path="res://Scenes/Entities/trap5.tscn" id="20_she10"]
 [ext_resource type="AudioStream" uid="uid://sh5a1iwt3kmb" path="res://SFX/trapVidrio1.mp3" id="21_f13fh"]
@@ -671,7 +671,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_tt2wg")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(138, 67)
+position = Vector2(119, 48)
 scale = Vector2(2.57813, 2.7808)
 color = Color(0.703856, 0.970119, 0.933009, 1)
 shadow_enabled = true
@@ -692,7 +692,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_tt2wg")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-198, 152)
+position = Vector2(-198, 151)
 scale = Vector2(1.57813, 1.53437)
 color = Color(0.933333, 0.729412, 1, 1)
 shadow_enabled = true
@@ -713,7 +713,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_tt2wg")
 
 [node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(74, 199)
+position = Vector2(74, 212)
 scale = Vector2(2.21875, 2.15723)
 color = Color(0.703856, 0.970119, 0.933009, 1)
 shadow_enabled = true
@@ -753,9 +753,10 @@ health = 30
 detection_range = 2
 player_node_path = NodePath("../Player")
 
-[node name="Bat" parent="Scene Manager" instance=ExtResource("4_w3y3m")]
-position = Vector2(24, -9)
+[node name="Bat3" parent="Scene Manager" instance=ExtResource("4_w3y3m")]
+position = Vector2(24, -8)
 scale = Vector2(0.25, 0.25)
+initial_wait_time = 0.4
 wait_time = 1.0
 damage = 3
 health = 10
@@ -772,13 +773,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vect
 
 [node name="TheBoss" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("7_2pvst")]
 position = Vector2(56, -121)
-dialogue_lines = Array[String](["¿Tarde en tu primer día?", "Solo voy a explicarlo una vez..."])
-npc_portrait = ExtResource("7_j8owc")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-
-[node name="TheBoss2" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("7_2pvst")]
-position = Vector2(24, -121)
-dialogue_lines = Array[String](["Esto es una prueba", "Esto es la segunda prueba"])
+dialogue_lines = Array[String](["¿Tarde en tu primer día?", "Solo voy a explicarlo una vez...", "Tu tarea es simple, llevar el paquete hasta el cliente.", "Cada segundo que pasa, cada herida que te haces...", "Influirá sobre el estado del paquete.", "Por suerte, las botellas de energía te ayudarán a recuperar un poco.", "Intenta llegar rápido, y no te demores peleando.", "A veces, es mejor esquivar que luchar.", "Vamos, que se enfría el paquete!"])
 npc_portrait = ExtResource("7_j8owc")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 
@@ -971,12 +966,6 @@ damage = 3
 attackSFX = ExtResource("22_xmqis")
 destroySFX = ExtResource("21_f13fh")
 
-[node name="Trap5" parent="Scene Manager" instance=ExtResource("20_she10")]
-position = Vector2(-88, 152)
-damage = 3
-attackSFX = ExtResource("22_xmqis")
-destroySFX = ExtResource("21_f13fh")
-
 [node name="Trap6" parent="Scene Manager" instance=ExtResource("20_she10")]
 position = Vector2(-56, 152)
 damage = 3
@@ -1012,7 +1001,7 @@ position = Vector2(-152, -8)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin2" parent="Scene Manager" instance=ExtResource("22_iegd5")]
-position = Vector2(152, -104)
+position = Vector2(152, -51)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin3" parent="Scene Manager" instance=ExtResource("22_iegd5")]

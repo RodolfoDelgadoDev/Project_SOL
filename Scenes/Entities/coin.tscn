@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8lilq4owyygk"]
+[gd_scene load_steps=6 format=3 uid="uid://c8lilq4owyygk"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_w2tqq"]
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="2_6lhk3"]
+[ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="2_f2fom"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vm1y"]
 atlas = ExtResource("2_6lhk3")
@@ -12,6 +13,7 @@ size = Vector2(32, 32)
 
 [node name="Coin" type="Node2D" groups=["pickup"]]
 script = ExtResource("1_w2tqq")
+grabSFX = ExtResource("2_f2fom")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.07288e-06, 0)
@@ -22,5 +24,7 @@ texture = SubResource("AtlasTexture_4vm1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_n8cco")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

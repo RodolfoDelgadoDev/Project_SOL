@@ -560,7 +560,7 @@ rendering_quadrant_size = 32
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAHAP//AgATAAAAAAAGAP//AgATAAAAAAAFAP//AgATAAAAAAAEAP//AgATAAAAAAADAP//AgATAAAAAAACAP//AgATAAAAAAABAP//AgAGAAYAAAABAAAAAgAHAAYAAAAIAP//AgASAAEAAAABAAEAAgADAA4AAADz/wMAAgAFAAkAAADz/wIAAgAFAAgAAADz/wEAAgAFAAgAAADz/wAAAgAFAAgAAADz////AgAFAAgAAADz//7/AgAFAAgAAADz//3/AgAFAAgAAADz//z/AgAFAAgAAADz//v/AgAFAAgAAADz//r/AgAFAAgAAADz//n/AgAFAAgAAADz//j/AgAFAAgAAADz//f/AgAFAAgAAADz//b/AgAFAAgAAADz//X/AgAFAAcAAAAOAPX/AgAEAAcAAAAOAPb/AgAEAAgAAAAOAPf/AgAEAAgAAAAOAPj/AgAEAAgAAAAOAPn/AgAEAAgAAAAOAPr/AgAEAAgAAAAOAPv/AgAEAAgAAAAOAPz/AgAEAAgAAAAOAP3/AgAEAAgAAAAOAP7/AgAEAAgAAAAOAP//AgAEAAgAAAAOAAAAAgAEAAgAAAAOAAEAAgAEAAgAAAAOAAIAAgAEAAgAAAAOAAMAAgAEAAkAAAD0/wQAAgAGAAcAAAD1/wQAAgAHAAcAAAD2/wQAAgAHAAcAAAD3/wQAAgAHAAcAAAD4/wQAAgAHAAcAAAD5/wQAAgAHAAcAAAD6/wQAAgAHAAcAAAD7/wQAAgAHAAcAAAD8/wQAAgAHAAcAAAD9/wQAAgAHAAcAAAD+/wQAAgAHAAcAAAD//wQAAgAHAAcAAAAAAAQAAgAHAAcAAAABAAQAAgAHAAcAAAACAAQAAgAHAAcAAAADAAQAAgAHAAcAAAAEAAQAAgAHAAcAAAAFAAQAAgAHAAcAAAAGAAQAAgAIAAcAAAAIAAQAAgAGAAcAAAAJAAQAAgAHAAcAAAAKAAQAAgAHAAcAAAALAAQAAgAHAAcAAAAMAAQAAgAHAAcAAAANAAQAAgAIAAcAAADz/wQAAgAGAAwAAAAOAAQAAgAHAAwAAAD2////AgATAAEAAAD3////AgATAAAAAAD4////AgATAAAAAAD5////AgATAAAAAAD6////AgASAAEAAAD2//n/AgATAAAAAAD1//n/AgAFAAMAAAD0//n/AgAFAAMAAAD3//n/AgATAAcAAAAIAPn/AgATAAAAAAADAPn/AgATAAEAAAANAPn/AgATAAcAAAAMAPn/AgATAAAAAAALAPn/AgATAAAAAAAKAPn/AgATAAAAAAAJAPn/AgATAAAAAAAHAPn/AgATAAAAAAAGAPn/AgATAAAAAAAFAPn/AgATAAAAAAAEAPn/AgATAAAAAAD5//X/AgADAAwAAAD5//b/AgADAA0AAAABAPX/AgADAAwAAAABAPb/AgADAA0AAAAJAPX/AgADAAwAAAAJAPb/AgADAA0AAAALAP//AgATAAcAAAAJAP//AgATAAAAAAAJAP7/AgATAAAAAAANAP//AgATAAEAAAA=")
+tile_map_data = PackedByteArray("AAAHAP//AgATAAAAAAAGAP//AgATAAAAAAAFAP//AgATAAAAAAAEAP//AgATAAAAAAADAP//AgATAAAAAAACAP//AgATAAAAAAABAP//AgAGAAYAAAABAAAAAgAHAAYAAAAIAP//AgASAAEAAAABAAEAAgADAA4AAADz/wMAAgAFAAkAAADz/wIAAgAFAAgAAADz/wEAAgAFAAgAAADz/wAAAgAFAAgAAADz////AgAFAAgAAADz//7/AgAFAAgAAADz//3/AgAFAAgAAADz//z/AgAFAAgAAADz//v/AgAFAAgAAADz//r/AgAFAAgAAADz//n/AgAFAAgAAADz//j/AgAFAAgAAADz//f/AgAFAAgAAADz//b/AgAFAAgAAADz//X/AgAFAAcAAAAOAPX/AgAEAAcAAAAOAPb/AgAEAAgAAAAOAPf/AgAEAAgAAAAOAPj/AgAEAAgAAAAOAPn/AgAEAAgAAAAOAPr/AgAEAAgAAAAOAPv/AgAEAAgAAAAOAPz/AgAEAAgAAAAOAP3/AgAEAAgAAAAOAP7/AgAEAAgAAAAOAP//AgAEAAgAAAAOAAAAAgAEAAgAAAAOAAEAAgAEAAgAAAAOAAIAAgAEAAgAAAAOAAMAAgAEAAkAAAD0/wQAAgAGAAcAAAD1/wQAAgAHAAcAAAD2/wQAAgAHAAcAAAD3/wQAAgAHAAcAAAD4/wQAAgAHAAcAAAD5/wQAAgAHAAcAAAD6/wQAAgAHAAcAAAD7/wQAAgAHAAcAAAD8/wQAAgAHAAcAAAD9/wQAAgAHAAcAAAD+/wQAAgAHAAcAAAD//wQAAgAHAAcAAAAAAAQAAgAHAAcAAAABAAQAAgAHAAcAAAACAAQAAgAHAAcAAAADAAQAAgAHAAcAAAAEAAQAAgAHAAcAAAAFAAQAAgAHAAcAAAAGAAQAAgAIAAcAAAAIAAQAAgAGAAcAAAAJAAQAAgAHAAcAAAAKAAQAAgAHAAcAAAALAAQAAgAHAAcAAAAMAAQAAgAHAAcAAAANAAQAAgAIAAcAAADz/wQAAgAGAAwAAAAOAAQAAgAHAAwAAAD2////AgATAAEAAAD3////AgATAAAAAAD4////AgATAAAAAAD5////AgATAAAAAAD6////AgASAAEAAAD2//n/AgATAAAAAAD1//n/AgAFAAMAAAD0//n/AgAFAAMAAAD3//n/AgATAAcAAAAIAPn/AgATAAAAAAADAPn/AgATAAEAAAANAPn/AgATAAcAAAAMAPn/AgATAAAAAAALAPn/AgATAAAAAAAKAPn/AgATAAAAAAAJAPn/AgATAAAAAAAHAPn/AgATAAAAAAAGAPn/AgATAAAAAAAFAPn/AgATAAAAAAAEAPn/AgATAAAAAAD5//X/AgADAAwAAAD5//b/AgADAA0AAAABAPX/AgADAAwAAAABAPb/AgADAA0AAAAJAPX/AgADAAwAAAAJAPb/AgADAA0AAAALAP//AgATAAcAAAAJAP//AgATAAAAAAAJAP7/AgATAAAAAAANAP//AgATAAEAAAAAAAEAAgAIAAIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -614,6 +614,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Perrito" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-168, -136)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -622,6 +623,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito2" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-168, -120)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -630,6 +632,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito3" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-152, -120)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -638,6 +641,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito4" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-152, -136)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -646,6 +650,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito5" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(40, -40)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -654,6 +659,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito6" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(88, -72)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -662,6 +668,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito7" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(136, 56)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -670,6 +677,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito8" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-72, 56)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -678,6 +686,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito9" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-120, 24)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1
@@ -686,6 +695,7 @@ player_node_path = NodePath("../Player")
 [node name="Perrito10" parent="Scene Manager" instance=ExtResource("5_a1h0w")]
 position = Vector2(-184, -40)
 scale = Vector2(0.25, 0.25)
+wait_time = 0.2
 damage = 3
 health = 20
 detection_range = 1

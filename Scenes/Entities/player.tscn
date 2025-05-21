@@ -870,7 +870,7 @@ size = Vector2(60, 60)
 size = Vector2(62, 62)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qh4pc"]
-polygon = PackedVector2Array(-20, -18, -8, -27, 8, -27, 18, -18, 18, -2, 12, 4, 24, 15, 24, 19, 11, 27, -14, 27, -27, 20, -27, 16, -14, 5, -20, -2)
+polygon = PackedVector2Array(-18, -17, -7, -25, 7, -25, 14, -16, 16, -2, 12, 4, 15, 15, 11, 21, -8, 23, -18, 14, -14, 5, -18, -3)
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_dlx5r")
@@ -890,7 +890,7 @@ texture = SubResource("GradientTexture2D_xj6sn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
-animation = &"DamageUp"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -917,6 +917,7 @@ shape = SubResource("RectangleShape2D_s6hlb")
 debug_color = Color(0.908467, 0.000113781, 0.736625, 0.42)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
+position = Vector2(6, 0)
 occluder = SubResource("OccluderPolygon2D_qh4pc")
 
 [node name="attack_timer" type="Timer" parent="."]

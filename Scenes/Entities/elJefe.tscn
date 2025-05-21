@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cje475neioddk"]
 
-[ext_resource type="Script" path="res://Scenes/Entities/el_jefe.gd" id="1_5autu"]
+[ext_resource type="Script" path="res://scripts/el_jefe.gd" id="1_5autu"]
 [ext_resource type="Texture2D" uid="uid://px7so7s5sa08" path="res://art/Jefe.png" id="2_v16df"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4vbc"]
