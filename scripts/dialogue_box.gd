@@ -31,24 +31,30 @@ func _ready() -> void:
 	voice_timer.timeout.connect(_play_voice_sound)
 
 func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, voice_res: AudioStream = null) -> void:
-	# Different NPC or new dialogue - reset everything
-	if current_npc != npc || current_line_index >= current_lines.size():
+	# If different NPC, completely reset dialogue
+	if current_npc != npc:
 		current_npc = npc
 		current_lines = lines
 		current_line_index = 0
 		portrait.texture = portrait_texture
 		current_voice = voice_res
-		show_dialogue()
-	# Same NPC continuing dialogue
-	elif is_visible:
-		# If at last line, hide and reset
-		if current_line_index >= current_lines.size() - 1:
-			hide_dialogue()
-			current_line_index = 0
-			return
-		# Otherwise advance line
+		show_dialogue()  # This will animate in
+	# Same NPC interactions
+	else:
+		if is_visible:
+			# If showing last line, hide and reset
+			if current_line_index >= current_lines.size() - 1:
+				hide_dialogue()
+				current_line_index = 0
+				return
+			# Otherwise advance to next line
+			else:
+				current_line_index += 1
 		else:
-			current_line_index += 1
+			# If starting new dialogue with same NPC (after completion)
+			if current_line_index >= current_lines.size():
+				current_line_index = 0  # Reset if we had completed before
+			show_dialogue()  # This will animate in
 	
 	_display_current_line()
 
@@ -88,7 +94,7 @@ func _display_current_line() -> void:
 	typewriter_tween.tween_callback(voice_timer.stop)
 
 func _play_voice_sound() -> void:
-	if current_voice and not voice_player.playing:
+	if current_voice:
 		voice_player.pitch_scale = randf_range(0.95, 1.05)  # Slight variation
 		voice_player.play()
 

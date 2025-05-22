@@ -610,7 +610,7 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_emguv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vnjn"]
-size = Vector2(46, 59)
+size = Vector2(46, 48.5)
 
 [node name="Main" type="Node2D"]
 
@@ -944,7 +944,7 @@ modo_ataque = true
 [node name="Area2D" type="Area2D" parent="Scene Manager/tuto ataque"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/tuto ataque/Area2D"]
-position = Vector2(148, -144)
+position = Vector2(148, -169.25)
 shape = SubResource("RectangleShape2D_0vnjn")
 
 [node name="tuto trampas" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("barra")]
@@ -1003,7 +1003,7 @@ position = Vector2(-152, -8)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin2" parent="Scene Manager" instance=ExtResource("22_iegd5")]
-position = Vector2(152, -51)
+position = Vector2(152, 14)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin3" parent="Scene Manager" instance=ExtResource("22_iegd5")]

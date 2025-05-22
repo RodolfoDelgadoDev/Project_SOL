@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=63 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
@@ -10,13 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="5_olo4i"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
 [ext_resource type="Texture2D" uid="uid://d36bffp7indiu" path="res://art/Spider 3.png" id="6_2eihm"]
-[ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="7_kn43e"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_rjq4s"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_6rfye"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_lg3p3"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="13_b1wqv"]
+[ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="14_rrjgk"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="15_wh50p"]
+[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_icvvk"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="19_40yf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
@@ -1088,13 +1089,6 @@ position = Vector2(-216, -74)
 scale = Vector2(0.5, 0.5)
 has_npc = false
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
-position = Vector2(40, -74)
-scale = Vector2(0.5, 0.5)
-dialogue_lines = Array[String](["hola!", "soy olga"])
-npc_portrait = ExtResource("7_kn43e")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("8_6rfye")]
@@ -1208,6 +1202,15 @@ scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
 movementSFX = Array[AudioStream]([])
+
+[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
+position = Vector2(40, -74)
+scale = Vector2(0.5, 0.5)
+dialogue_lines = Array[String](["¡Hola! Soy Olga.", "Esto es la sala de descanso."])
+npc_portrait = ExtResource("18_icvvk")
+dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("14_rrjgk")
+sprite = ExtResource("18_icvvk")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

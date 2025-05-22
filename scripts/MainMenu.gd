@@ -3,6 +3,8 @@ extends Control
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer 
 var Tutorial = false
+var current_focused_button: Button = null
+var bounce_tween: Tween = null
 
 func _ready():
 	# Connect the button signals
@@ -10,6 +12,34 @@ func _ready():
 	$ExitButton.pressed.connect(_on_Exitbutton_pressed)
 	$TutorialButton.pressed.connect(_on_TutorialButton_pressed)
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
+	# Connect focus signals
+	$RestartButton.focus_entered.connect(_on_button_focused.bind($RestartButton))
+	$ExitButton.focus_entered.connect(_on_button_focused.bind($ExitButton))
+	$TutorialButton.focus_entered.connect(_on_button_focused.bind($TutorialButton))
+	$TutorialButton.grab_focus()
+
+func _on_button_focused(button: Button):
+	# Stop any existing bounce animation
+	if bounce_tween:
+		bounce_tween.kill()
+	
+	current_focused_button = button
+	_start_bounce_animation()
+
+func _start_bounce_animation():
+	if not current_focused_button:
+		return
+	
+	# Store original position
+	var original_y = current_focused_button.position.y
+	
+	# Create bounce effect
+	bounce_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y - 1, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y + 1, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
+	
 
 func _on_Restartbutton_pressed():
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
