@@ -63,6 +63,8 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)  # Disconnect the signal to avoid multiple calls
 
 func game_over():
+	bottleNum = 0
+	allBottles = false
 	targetScene = "res://Scenes/GameOverUpdate.tscn"
 	change_scene()
 
