@@ -944,7 +944,6 @@ visible = false
 
 [node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_c74ar")]
 position = Vector2(-24, -378)
-has_npc = false
 animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene Manager/Goal"]
