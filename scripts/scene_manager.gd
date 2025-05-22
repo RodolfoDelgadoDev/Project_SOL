@@ -23,7 +23,6 @@ var allBottles: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#GameManager.descanso = descanso
 	var current_scene = get_tree().current_scene.scene_file_path
 	GameManager.currentLevel = current_scene
 	print(current_scene)
@@ -32,8 +31,9 @@ func _ready() -> void:
 		if child.is_in_group("pickup"):
 			bottleTotal += 1
 	print("Total bottles found: ", bottleTotal)
-	if descanso:
-		timer.stop_timer()
+	if descanso == true:
+		print("modo descanso activado")
+		stop_timer()
 		toggle_timer()
 		reciclaje()
 
@@ -45,46 +45,62 @@ func addBottle():
 		print("bien ahi")
 		allBottles = true
 
-# Change scene with transition
 func change_scene():
 	if descanso == true:
-		chooseTargetScene()
+		chooseTargetScene()  # Set the targetScene first
+		print("Changing to: ", targetScene)
+	
 	if not animation_player.is_connected("animation_finished", _on_TransitionAnimation_finished):
 		GameManager.plasticoin += bottleNum
-		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)  # Connect the signal only if not already connected
-	animation_player.play("Scene_Transition_in")  # Start the transition animation
+		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)    
+	animation_player.play("Scene_Transition_in")
 
-# Function to handle the scene change after the animation finishes
 func _on_TransitionAnimation_finished(animation_name: String):
-	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
-		chooseTargetScene()
-		print(targetScene)
-		get_tree().change_scene_to_file(targetScene)  # Change to the new scene
-		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)  # Disconnect the signal to avoid multiple calls
-
-func game_over():
-	bottleNum = 0
-	allBottles = false
-	targetScene = "res://Scenes/GameOverUpdate.tscn"
-	change_scene()
+	if animation_name == "Scene_Transition_in":
+		print("Transition finished, loading: ", targetScene)
+		# Verify the scene exists before loading
+		if ResourceLoader.exists(targetScene):
+			get_tree().change_scene_to_file(targetScene)
+		else:
+			printerr("Scene not found: ", targetScene)
+			# Fallback to a default scene if needed
+			targetScene = "res://Scenes/Levels/edificio.tscn"
+			get_tree().change_scene_to_file(targetScene)
+		
+		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)
 
 func chooseTargetScene():
-	if descanso == true:
-		print(GameManager.currentLevel)
-		if GameManager.levelNumber == 1:
+	if not descanso:
+		return
+		
+	print("Current level number: ", GameManager.levelNumber)
+	
+	match GameManager.levelNumber:
+		1:
 			targetScene = "res://Scenes/Levels/edificio.tscn"
-		if GameManager.levelNumber == 2:
-			targetScene = ("res://Scenes/Levels/edificio2.tscn")
-		if GameManager.levelNumber == 3:
-			targetScene = ("res://Scenes/Levels/edificio3.tscn")
-		if GameManager.levelNumber == 4:
-			targetScene = ("res://Scenes/Levels/complejo.tscn")
-		if GameManager.levelNumber == 5:
-			targetScene = ("res://Scenes/Levels/complejo2.tscn")
-		if GameManager.levelNumber == 6:
-			targetScene = ("res://Scenes/Levels/bosque.tscn")
-		if GameManager.levelNumber == 7:
-			targetScene = ("res://Scenes/Levels/bosque2.tscn")
+		2:
+			targetScene = "res://Scenes/Levels/edificio2.tscn"
+		3:
+			targetScene = "res://Scenes/Levels/edificio3.tscn"
+		4:
+			targetScene = "res://Scenes/Levels/complejo.tscn"
+		5:
+			targetScene = "res://Scenes/Levels/complejo2.tscn"
+		6:
+			targetScene = "res://Scenes/Levels/bosque.tscn"
+		7:
+			targetScene = "res://Scenes/Levels/bosque2.tscn"
+		_:
+			targetScene = "res://Scenes/Levels/edificio.tscn"
+			printerr("Unexpected level number, defaulting to level 1")
+	
+	print("Selected target scene: ", targetScene)
+
+func game_over():
+	targetScene = "res://Scenes/GameOverUpdate.tscn"
+	bottleNum = 0
+	allBottles = false
+	change_scene()
 
 func stop_timer():
 	timer.stop_timer()

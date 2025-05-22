@@ -5,28 +5,52 @@ extends Control
 @onready var RestartButton: Button = $RestartButton
 @onready var ExitButton: Button = $ExitButton
 
+var current_focused_button: Button = null
+var bounce_tween: Tween = null
 
 func _ready():
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
 	RestartButton.visible = false
-	$ExitButton.visible = false
+	ExitButton.visible = false
+	
+	# Connect focus signals
+	RestartButton.focus_entered.connect(_on_button_focused.bind(RestartButton))
+	ExitButton.focus_entered.connect(_on_button_focused.bind(ExitButton))
+	
 	await get_tree().create_timer(5.1).timeout
 	RestartButton.visible = true
 	await get_tree().create_timer(0.5).timeout
-	$ExitButton.visible = true
-	grab_focus()
-	pass
-	
+	ExitButton.visible = true
+	RestartButton.grab_focus()
 
-# Function to handle the scene change after the animation finishes
+func _on_button_focused(button: Button):
+	# Stop any existing bounce animation
+	if bounce_tween:
+		bounce_tween.kill()
+	
+	current_focused_button = button
+	_start_bounce_animation()
+
+func _start_bounce_animation():
+	if not current_focused_button:
+		return
+	
+	# Store original position
+	var original_y = current_focused_button.position.y
+	
+	# Create bounce effect
+	bounce_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y - 3, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y + 3, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
+
 func _on_TransitionAnimation_finished(animation_name: String):
-	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
+	if animation_name == "Scene_Transition_in":
 		get_tree().change_scene_to_file(GameManager.currentLevel)
 
-
 func _on_restart_button_pressed() -> void:
-	animation_player.play("Scene_Transition_in")  # Start the transition animation
-
+	animation_player.play("Scene_Transition_in")
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

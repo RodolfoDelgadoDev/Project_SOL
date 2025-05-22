@@ -44,3 +44,6 @@ offset_top = 3.0
 offset_right = 51.0
 offset_bottom = 32.0
 expand_mode = 1
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 0.2
