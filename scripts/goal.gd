@@ -36,5 +36,7 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		if SceneManager.descanso == true:
 			pass
 		else:
-			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso" + plasticoinstr + ".tscn")
+			var next_scene = "res://Scenes/Levels/Descansos/descanso" + plasticoinstr + ".tscn"
+			SceneManager.targetScene = next_scene
+			SceneManager.change_scene()
 		reached_goal = true

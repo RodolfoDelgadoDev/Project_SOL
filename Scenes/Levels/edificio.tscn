@@ -535,7 +535,7 @@ player_node_path = NodePath("../Scene Manager/Player")
 
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("5_qtx0x")
-segundos = 30
+segundos = 45
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_q161q")]

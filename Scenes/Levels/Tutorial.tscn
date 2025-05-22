@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/Entities/plant.tscn" id="5_etpm0"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="6_xa10r"]
 [ext_resource type="PackedScene" uid="uid://cje475neioddk" path="res://Scenes/Entities/elJefe.tscn" id="7_2pvst"]
-[ext_resource type="Texture2D" uid="uid://cd5geq33umk5k" path="res://art/PUNK-NPCs estáticos.png" id="7_j8owc"]
+[ext_resource type="Texture2D" uid="uid://bbjvisr6wp4c6" path="res://art/NPCs Portraits/Jefe-Portrait.png" id="7_mgrnj"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="8_2tiyy"]
 [ext_resource type="AudioStream" uid="uid://bw21okrgei63t" path="res://SFX/NPC_Voice1.mp3" id="8_sfxib"]
 [ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="9_unayy"]
@@ -775,7 +775,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vect
 [node name="TheBoss" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("7_2pvst")]
 position = Vector2(56, -121)
 dialogue_lines = Array[String](["¿Tarde en tu primer día?", "Solo voy a explicarlo una vez...", "Tu tarea es simple, llevar el paquete hasta el cliente.", "Cada segundo que pasa, cada herida que te haces...", "Influirá sobre el estado del paquete.", "Por suerte, las botellas de energía te ayudarán a recuperar un poco.", "Intenta llegar rápido, y no te demores peleando.", "A veces, es mejor esquivar que luchar.", "Vamos, que se enfría el paquete!"])
-npc_portrait = ExtResource("7_j8owc")
+npc_portrait = ExtResource("7_mgrnj")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("8_sfxib")
 

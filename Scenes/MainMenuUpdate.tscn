@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://tclvsxpekcfx"]
+[gd_scene load_steps=28 format=3 uid="uid://tclvsxpekcfx"]
 
+[ext_resource type="Shader" path="res://ghost.gdshader" id="1_g58c7"]
 [ext_resource type="Texture2D" uid="uid://b5bah30osjq1n" path="res://art/Transition/Pseudo cielo.png" id="1_mlxmx"]
 [ext_resource type="Texture2D" uid="uid://bvp43boalei7x" path="res://art/Transition/Sunshine.png" id="2_d0mjm"]
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_spgu8"]
@@ -10,6 +11,13 @@
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="6_d4kqs"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="7_lvm8q"]
 [ext_resource type="Texture2D" uid="uid://b83q57xkhuhvu" path="res://animations/Moto - Godot.png" id="8_4uypq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_th5li"]
+shader = ExtResource("1_g58c7")
+shader_parameter/wave_amplitude = 1.404
+shader_parameter/wave_frequency = 8.056
+shader_parameter/wave_speed = 1.439
+shader_parameter/transparency = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44hu4"]
 atlas = ExtResource("8_4uypq")
@@ -165,6 +173,7 @@ _data = {
 [node name="Main Menu" type="Node2D"]
 
 [node name="Sun" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_th5li")
 position = Vector2(-57, -26)
 texture = ExtResource("2_d0mjm")
 
@@ -257,9 +266,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 39.0
-offset_top = -11.0
+offset_top = -2.0
 offset_right = 134.0
-offset_bottom = 20.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.76, 0.76)
@@ -322,6 +331,7 @@ position = Vector2(-73, 47)
 sprite_frames = SubResource("SpriteFrames_mrdk0")
 animation = &"ride"
 autoplay = "ride"
+frame_progress = 0.429556
 
 [node name="AnimacionPalmeras" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimacionBackground")

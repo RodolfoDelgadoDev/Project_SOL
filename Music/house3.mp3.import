@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/house3.mp3-b4124921d122b3606c1ae5370eeb7d16.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
