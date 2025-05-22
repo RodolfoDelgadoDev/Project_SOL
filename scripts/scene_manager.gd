@@ -51,7 +51,6 @@ func change_scene():
 		print("Changing to: ", targetScene)
 	
 	if not animation_player.is_connected("animation_finished", _on_TransitionAnimation_finished):
-		GameManager.plasticoin += bottleNum
 		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)    
 	animation_player.play("Scene_Transition_in")
 
@@ -124,7 +123,7 @@ func reciclaje():
 						sec5.visible = true
 						if GameManager.plasticoin > 6:
 							sec6.visible = true
-					
+
 func toggle_timer():
 	if timer.visible == false:
 		timer.visible = true

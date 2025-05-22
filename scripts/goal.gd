@@ -29,15 +29,12 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 	if area.is_in_group("player") and goalAnimacion == true:
 		GameManager.reachedGoal(true)
 		var SceneManager = get_parent()
+		if SceneManager.allBottles:
+			GameManager.plasticoin += 1
 		SceneManager.stop_timer()
+		var plasticoinstr = str(GameManager.plasticoin)
 		if SceneManager.descanso == true:
 			pass
 		else:
-			# Get the parent node and check if allBottles is true
-			if SceneManager.has_method("get") and SceneManager.get("allBottles"):
-				pass
-				#SceneManager.start_typewriter("Encontraste todas las botellas!", npc_portrait)
-			else:
-				pass
-				#SceneManager.start_typewriter("Te faltaron algunas botellas!", npc_portrait)
+			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso" + plasticoinstr + ".tscn")
 		reached_goal = true

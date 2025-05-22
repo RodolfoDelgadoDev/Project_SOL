@@ -59,4 +59,4 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		else:
 			GameManager.levelNumber +=1
 			print(GameManager.currentLevel)
-			get_tree().change_scene_to_file("res://Scenes/Levels/descanso.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso0.tscn")

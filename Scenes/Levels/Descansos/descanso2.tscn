@@ -1,27 +1,27 @@
-[gd_scene load_steps=63 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=63 format=4 uid="uid://mb6v2konbssl"]
 
-[ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
-[ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_2oea8"]
-[ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="3_l55s0"]
-[ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="4_b2h4n"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_oigfh"]
-[ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="5_kytd0"]
-[ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="5_olo4i"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_rkmo0"]
-[ext_resource type="Texture2D" uid="uid://d36bffp7indiu" path="res://art/Spider 3.png" id="6_2eihm"]
-[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_rjq4s"]
-[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_6rfye"]
-[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_lg3p3"]
-[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
-[ext_resource type="Script" path="res://scripts/color_lights.gd" id="13_b1wqv"]
-[ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="14_rrjgk"]
-[ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="15_wh50p"]
-[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_icvvk"]
-[ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="19_40yf6"]
+[ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_1ymjq"]
+[ext_resource type="Script" path="res://scripts/color_lights.gd" id="4_8qyeb"]
+[ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_yei23"]
+[ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_qt8cy"]
+[ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_f7e24"]
+[ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="8_lbgr8"]
+[ext_resource type="Texture2D" uid="uid://d36bffp7indiu" path="res://art/Spider 3.png" id="9_l4wde"]
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="10_8ch1l"]
+[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="11_wdepr"]
+[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="12_ox0eq"]
+[ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="13_rqwvj"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_g2r1f"]
+[ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_i2526"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_qp7tk"]
+[ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_088kn"]
+[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_mefub"]
+[ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_owwac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
-texture = ExtResource("1_jbt40")
+texture = ExtResource("1_1rfgy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -468,7 +468,7 @@ fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oukus"]
-atlas = ExtResource("2_hxsjq")
+atlas = ExtResource("5_yei23")
 region = Rect2(160, 0, 32, 41)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7myk7"]
@@ -483,19 +483,19 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auy3r"]
-atlas = ExtResource("3_l55s0")
+atlas = ExtResource("6_qt8cy")
 region = Rect2(0, 0, 13, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pf0b"]
-atlas = ExtResource("3_l55s0")
+atlas = ExtResource("6_qt8cy")
 region = Rect2(13, 0, 13, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu0yt"]
-atlas = ExtResource("3_l55s0")
+atlas = ExtResource("6_qt8cy")
 region = Rect2(26, 0, 13, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_86odw"]
-atlas = ExtResource("3_l55s0")
+atlas = ExtResource("6_qt8cy")
 region = Rect2(39, 0, 13, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psn1t"]
@@ -528,83 +528,83 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(0, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64die"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(37, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbk2w"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(74, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fbu3"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(111, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nncg"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(148, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyodb"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(185, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ax6m4"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(222, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snfhf"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(259, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifnyp"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(296, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtxcj"]
-atlas = ExtResource("4_b2h4n")
+atlas = ExtResource("7_f7e24")
 region = Rect2(333, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mk3no"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(333, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p8tjh"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(296, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7li6v"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(259, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6vwd"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(222, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny4ui"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(185, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbt7x"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(148, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ale50"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(111, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2r7mj"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(74, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5y1e"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(37, 0, 37, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5m58"]
-atlas = ExtResource("5_olo4i")
+atlas = ExtResource("8_lbgr8")
 region = Rect2(0, 0, 37, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc1so"]
@@ -676,43 +676,43 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5p7p5"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(0, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7tqm"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(14, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cte3l"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(28, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x44cd"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(42, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sskgg"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(56, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_socdo"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(70, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ulk"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(84, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1hx8"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(98, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brwq3"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(112, 0, 14, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eho2o"]
-atlas = ExtResource("6_2eihm")
+atlas = ExtResource("9_l4wde")
 region = Rect2(126, 0, 14, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8nii"]
@@ -783,10 +783,10 @@ tile_map_data = PackedByteArray("AAD1//v/AQATAAIAAAD1//n/AQATAAAAAAD1//r/AQATAAE
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="LamparaLava1" parent="Seccion1" instance=ExtResource("3_2oea8")]
+[node name="LamparaLava1" parent="Seccion1" instance=ExtResource("2_spciu")]
 position = Vector2(-183, -69)
 
-[node name="LamparaLava2" parent="Seccion1" instance=ExtResource("3_2oea8")]
+[node name="LamparaLava2" parent="Seccion1" instance=ExtResource("2_spciu")]
 position = Vector2(-87, -68)
 
 [node name="SeccionTop1" type="Node2D" parent="Seccion1"]
@@ -839,7 +839,7 @@ tile_map_data = PackedByteArray("AAD1/wEAAQAQAAwAAAD2/wAAAQAQAA0AAAD4/wAAAQATAAw
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="PunkGirl" parent="Seccion3" instance=ExtResource("5_kytd0")]
+[node name="PunkGirl" parent="Seccion3" instance=ExtResource("3_1ymjq")]
 visible = false
 position = Vector2(-104, 21)
 scale = Vector2(0.5, 0.5)
@@ -886,7 +886,7 @@ color = Color(0.774845, 0, 0.170183, 1)
 energy = 2.07
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D11" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-237, 9)
@@ -895,7 +895,7 @@ color = Color(0, 0.507529, 0.442577, 1)
 energy = 5.57
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D12" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-224, 14)
@@ -904,7 +904,7 @@ color = Color(0.366059, 0.300933, 0.946981, 1)
 energy = 2.37
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D13" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-216, 15)
@@ -913,7 +913,7 @@ color = Color(0.699516, 0.00440098, 0.728627, 1)
 energy = 2.37
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D14" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-208, 14)
@@ -922,7 +922,7 @@ color = Color(0.75682, 0.600821, 0.0659497, 1)
 energy = 2.37
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D15" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-202, 11)
@@ -931,7 +931,7 @@ color = Color(0.00578989, 0.350986, 0.435948, 1)
 energy = 6.04
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="PointLight2D16" type="PointLight2D" parent="Seccion4"]
 position = Vector2(-194, 8)
@@ -940,7 +940,7 @@ color = Color(0.564894, 0.118233, 0.178105, 1)
 energy = 2.25
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
-script = ExtResource("13_b1wqv")
+script = ExtResource("4_8qyeb")
 
 [node name="Seccion5" type="Node2D" parent="."]
 visible = false
@@ -1073,7 +1073,7 @@ rendering_quadrant_size = 32
 
 [node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "hide_visuals")]
 position = Vector2(0, 2)
-script = ExtResource("5_rkmo0")
+script = ExtResource("10_8ch1l")
 segundos = 45
 descanso = true
 sec1 = NodePath("../Seccion1")
@@ -1084,19 +1084,19 @@ sec5 = NodePath("../Seccion5")
 sec6 = NodePath("../Seccion6")
 hide_visuals = NodePath("../Ocultar")
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
+[node name="Goal" parent="Scene Manager" instance=ExtResource("11_wdepr")]
 position = Vector2(-216, -74)
 scale = Vector2(0.5, 0.5)
 has_npc = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
-[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("8_6rfye")]
+[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("12_ox0eq")]
 position = Vector2(4, 4)
 
-[node name="DialogueBox" parent="Scene Manager/CanvasLayer" instance=ExtResource("15_wh50p")]
+[node name="DialogueBox" parent="Scene Manager/CanvasLayer" instance=ExtResource("13_rqwvj")]
 
-[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_fscxu")]
+[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("14_g2r1f")]
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 
@@ -1191,26 +1191,26 @@ texture = SubResource("GradientTexture2D_otg58")
 color = Color(0.812689, 0.681546, 0.612906, 1)
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
-stream = ExtResource("19_40yf6")
+stream = ExtResource("15_i2526")
 autoplay = true
 panning_strength = 0.0
 playback_type = 1
 
-[node name="Player" parent="Scene Manager" instance=ExtResource("4_oigfh")]
+[node name="Player" parent="Scene Manager" instance=ExtResource("16_qp7tk")]
 position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
 movementSFX = Array[AudioStream]([])
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
+[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(40, -74)
 scale = Vector2(0.5, 0.5)
 dialogue_lines = Array[String](["¡Hola! Soy Olga.", "Esto es la sala de descanso."])
-npc_portrait = ExtResource("18_icvvk")
+npc_portrait = ExtResource("18_mefub")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("14_rrjgk")
-sprite = ExtResource("18_icvvk")
+voice_sound = ExtResource("19_owwac")
+sprite = ExtResource("18_mefub")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
