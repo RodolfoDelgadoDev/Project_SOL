@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://despcl5wghpmr"]
+
+[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_hyaq5"]
+[ext_resource type="Texture2D" uid="uid://diiv8bdl2c7th" path="res://art/NPCs/Nicky/Nicky-NPCs estáticos.png" id="2_nicwa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvcfv"]
+atlas = ExtResource("2_nicwa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyvy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvcfv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Nicky" type="Node2D"]
+script = ExtResource("1_hyaq5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oyvy0")
+autoplay = "default"
+frame_progress = 0.323385

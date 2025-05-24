@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4gkrjplyfaeg"]
+
+[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_v8bav"]
+[ext_resource type="Texture2D" uid="uid://dn5fd2fnxe8ph" path="res://art/NPCs/Sleepy head/NPC - Sleepy head.png" id="2_uld3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi03t"]
+atlas = ExtResource("2_uld3l")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyiuj"]
+atlas = ExtResource("2_uld3l")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sncun"]
+atlas = ExtResource("2_uld3l")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5okyi"]
+atlas = ExtResource("2_uld3l")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyvy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi03t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyiuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sncun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5okyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="dormilona" type="Node2D"]
+script = ExtResource("1_v8bav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oyvy0")
+autoplay = "default"
+frame_progress = 0.797503

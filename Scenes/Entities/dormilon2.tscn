@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuwxpjgb2addv"]
+
+[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_12xq5"]
+[ext_resource type="Texture2D" uid="uid://dyem5v0btnkoe" path="res://art/NPCs/Sleepy head 2/NPC - Sleepy head 2.png" id="2_xwxq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8mav"]
+atlas = ExtResource("2_xwxq7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kppcp"]
+atlas = ExtResource("2_xwxq7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyvy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8mav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kppcp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="dormilon" type="Node2D"]
+script = ExtResource("1_12xq5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oyvy0")
+autoplay = "default"
+frame_progress = 0.757226
