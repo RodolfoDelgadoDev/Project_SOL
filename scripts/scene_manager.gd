@@ -34,8 +34,7 @@ func _ready() -> void:
 	if descanso == true:
 		print("modo descanso activado")
 		stop_timer()
-		toggle_timer()
-		reciclaje()
+		toggle_timer() #deja invisible el timer
 
 # Add a bottle and check if all bottles are collected
 func addBottle():
@@ -69,30 +68,45 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		animation_player.animation_finished.disconnect(_on_TransitionAnimation_finished)
 
 func chooseTargetScene():
+	if descanso:
+		match GameManager.levelNumber:
+			1:
+				targetScene = "res://Scenes/Levels/edificio.tscn"
+			2:
+				targetScene = "res://Scenes/Levels/edificio2.tscn"
+			3:
+				targetScene = "res://Scenes/Levels/edificio3.tscn"
+			4:
+				targetScene = "res://Scenes/Levels/complejo.tscn"
+			5:
+				targetScene = "res://Scenes/Levels/complejo2.tscn"
+			6:
+				targetScene = "res://Scenes/Levels/bosque.tscn"
+			7:
+				targetScene = "res://Scenes/Levels/bosque2.tscn"
+			_:
+				targetScene = "res://Scenes/Levels/edificio.tscn"
+				printerr("Unexpected level number, defaulting to level 1")
+		print("Current level number: ", GameManager.levelNumber)
 	if not descanso:
-		return
-		
-	print("Current level number: ", GameManager.levelNumber)
-	
-	match GameManager.levelNumber:
-		1:
-			targetScene = "res://Scenes/Levels/edificio.tscn"
-		2:
-			targetScene = "res://Scenes/Levels/edificio2.tscn"
-		3:
-			targetScene = "res://Scenes/Levels/edificio3.tscn"
-		4:
-			targetScene = "res://Scenes/Levels/complejo.tscn"
-		5:
-			targetScene = "res://Scenes/Levels/complejo2.tscn"
-		6:
-			targetScene = "res://Scenes/Levels/bosque.tscn"
-		7:
-			targetScene = "res://Scenes/Levels/bosque2.tscn"
-		_:
-			targetScene = "res://Scenes/Levels/edificio.tscn"
-			printerr("Unexpected level number, defaulting to level 1")
-	
+		match GameManager.plasticoin:
+			0:
+				targetScene = "res://Scenes/Levels/Descansos/descanso0.tscn"
+			1:
+				targetScene = "res://Scenes/Levels/Descansos/descanso1.tscn"
+			2:
+				targetScene = "res://Scenes/Levels/Descansos/descanso2.tscn"
+			3:
+				targetScene = "res://Scenes/Levels/Descansos/descanso3.tscn"
+			4:
+				targetScene = "res://Scenes/Levels/Descansos/descanso4.tscn"
+			5:
+				targetScene = "res://Scenes/Levels/Descansos/descanso5.tscn"
+			6:
+				targetScene = "res://Scenes/Levels/Descansos/descanso6.tscn"
+			7:
+				targetScene = "res://Scenes/Levels/Descansos/descanso7.tscn"
+
 	print("Selected target scene: ", targetScene)
 
 func game_over():
@@ -106,23 +120,6 @@ func stop_timer():
 	
 func start_timer():
 	timer.start_timer()
-	
-func reciclaje():
-	print("plasticoin totales...")
-	print(GameManager.plasticoin)
-	if GameManager.plasticoin > 1:
-		sec1.visible = true
-		hide_visuals.visible = false
-		if GameManager.plasticoin > 2:
-			sec2.visible = true
-			if GameManager.plasticoin > 3:
-				sec3.visible = true
-				if GameManager.plasticoin > 4:
-					sec4.visible = true
-					if GameManager.plasticoin > 5:
-						sec5.visible = true
-						if GameManager.plasticoin > 6:
-							sec6.visible = true
 
 func toggle_timer():
 	if timer.visible == false:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_1ymjq"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="4_8qyeb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_yei23"]
@@ -1206,7 +1206,7 @@ movementSFX = Array[AudioStream]([])
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(40, -74)
 scale = Vector2(0.5, 0.5)
-dialogue_lines = Array[String](["¡Hola! Soy Olga.", "Esto es la sala de descanso."])
+dialogue_lines = Array[String](["Descanso 3", "Esto es la sala de descanso."])
 npc_portrait = ExtResource("18_mefub")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")

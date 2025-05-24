@@ -57,6 +57,7 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		if Tutorial == true:
 			get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
 		else:
-			GameManager.levelNumber +=1
+			GameManager.levelNumber = 1
+			GameManager.plasticoin +=1
 			print(GameManager.currentLevel)
-			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso0.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso1.tscn")
