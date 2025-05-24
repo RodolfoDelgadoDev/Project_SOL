@@ -1121,7 +1121,6 @@ scale = Vector2(0.5, 0.5)
 [node name="Olga" parent="Scene Manager" instance=ExtResource("17_c2srg")]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
-dialogue_lines = Array[String](["¡Hola! Soy Olga.", "Esto es la sala de descanso."])
 npc_portrait = ExtResource("18_5vca1")
 voice_sound = ExtResource("19_obdyb")
 sprite = ExtResource("18_5vca1")
@@ -1134,7 +1133,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAGAAMAAAABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAQAGAAMAAAABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 

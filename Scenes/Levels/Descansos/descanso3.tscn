@@ -928,7 +928,6 @@ scale = Vector2(0.5, 0.5)
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_bdgrb")]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
-dialogue_lines = Array[String](["¡Hola! Soy Olga.", "Esto es la sala de descanso."])
 npc_portrait = ExtResource("18_aj6cx")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_t0mes")

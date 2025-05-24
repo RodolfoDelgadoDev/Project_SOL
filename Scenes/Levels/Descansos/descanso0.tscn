@@ -784,17 +784,11 @@ tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "hide_visuals")]
+[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("hide_visuals")]
 position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
 segundos = 45
 descanso = true
-sec1 = NodePath("")
-sec2 = NodePath("")
-sec3 = NodePath("")
-sec4 = NodePath("")
-sec5 = NodePath("")
-sec6 = NodePath("")
 hide_visuals = NodePath("../Ocultar")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
@@ -917,7 +911,7 @@ hurtSFX = null
 movementSFX = Array[AudioStream]([])
 
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
-position = Vector2(40, -74)
+position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
 dialogue_lines1 = Array[String](["El siguiente nivel es el nivel 1!"])
 dialogue_lines2 = Array[String](["El siguiente nivel es el nivel 2!"])
