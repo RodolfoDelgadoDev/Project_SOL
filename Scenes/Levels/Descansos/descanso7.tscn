@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://bthnee7teg28i"]
+[gd_scene load_steps=65 format=4 uid="uid://bthnee7teg28i"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_d1x5t"]
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_73hre"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_cm5sb"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_j6jlu"]
+[ext_resource type="PackedScene" uid="uid://c5ghp0ks8s7do" path="res://Scenes/Entities/cat.tscn" id="17_fn6wd"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_qbucu"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_eiu76"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_n4614"]
@@ -1230,6 +1231,10 @@ scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
 movementSFX = Array[AudioStream]([])
+
+[node name="SeñorGato" parent="Scene Manager" instance=ExtResource("17_fn6wd")]
+position = Vector2(-329, -76)
+scale = Vector2(0.27, 0.27)
 
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(-200, -74)
