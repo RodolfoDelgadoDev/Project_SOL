@@ -17,11 +17,11 @@ void fragment() {
     // Base UV with time-based wobble
     vec2 uv = UV;
     float time = TIME * wave_speed;
-    
+
     // Wobble effect (sinusoidal distortion)
     uv.x += sin(uv.y * wave_frequency + time) * 0.01 * wave_amplitude;
     uv.y += cos(uv.x * wave_frequency + time * 0.7) * 0.01 * wave_amplitude;
-    
+
     // Chromatic aberration (RGB split)
     float aberration_offset = aberration_amount * sin(time * aberration_speed);
     vec4 color;
@@ -29,7 +29,7 @@ void fragment() {
     color.g = texture(TEXTURE, uv).g;
     color.b = texture(TEXTURE, vec2(uv.x - aberration_offset, uv.y)).b;
     color.a = texture(TEXTURE, uv).a;
-    
+
     // Random glitch effect
     float glitch_threshold = 1.0 - glitch_intensity;
     if (fract(time * glitch_speed * 10.0) > glitch_threshold) {
@@ -39,6 +39,6 @@ void fragment() {
         ) * glitch_intensity;
         color = texture(TEXTURE, uv + glitch_offset);
     }
-    
+
     COLOR = color;
 }

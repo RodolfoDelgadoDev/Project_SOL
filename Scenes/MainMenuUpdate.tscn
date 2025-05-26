@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://tclvsxpekcfx"]
+[gd_scene load_steps=30 format=3 uid="uid://tclvsxpekcfx"]
 
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_g58c7"]
 [ext_resource type="Texture2D" uid="uid://b5bah30osjq1n" path="res://art/Transition/Pseudo cielo.png" id="1_mlxmx"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bsmj2qhirpu55" path="res://art/Transition/Rejillas.png" id="4_udwr0"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="6_d4kqs"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="7_lvm8q"]
+[ext_resource type="AudioStream" uid="uid://cutx24v6upa6s" path="res://SFX/button_change.mp3" id="8_3etqm"]
 [ext_resource type="Texture2D" uid="uid://b83q57xkhuhvu" path="res://animations/Moto - Godot.png" id="8_4uypq"]
+[ext_resource type="AudioStream" uid="uid://3gsb4hayxrbx" path="res://SFX/button_ok.mp3" id="10_eq08b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_th5li"]
 shader = ExtResource("1_g58c7")
@@ -209,6 +211,8 @@ grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "ASDASDDSASDSADSDA"
 script = ExtResource("2_spgu8")
+button_ok = ExtResource("10_eq08b")
+button_change = ExtResource("8_3etqm")
 
 [node name="Gameovertext" type="Label" parent="Control"]
 light_mask = 0
@@ -317,6 +321,10 @@ theme_override_fonts/font = ExtResource("7_lvm8q")
 text = "EXIT"
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("3_q4hgc")]
+
+[node name="audiobutton" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("10_eq08b")
+panning_strength = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

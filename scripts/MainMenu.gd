@@ -2,9 +2,13 @@ extends Control
 
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer 
+@onready var audiobutton: AudioStreamPlayer2D = $audiobutton
+@export var button_ok: Resource
+@export var button_change: Resource
 var Tutorial = false
 var current_focused_button: Button = null
 var bounce_tween: Tween = null
+var first_focus : bool = true
 
 func _ready():
 	# Connect the button signals
@@ -25,6 +29,11 @@ func _on_button_focused(button: Button):
 	
 	current_focused_button = button
 	_start_bounce_animation()
+	if first_focus == true:
+		first_focus = false
+		return
+	audiobutton.stream = button_change
+	audiobutton.play()
 
 func _start_bounce_animation():
 	if not current_focused_button:
@@ -43,12 +52,19 @@ func _start_bounce_animation():
 
 func _on_Restartbutton_pressed():
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
+	audiobutton.stream = button_ok
+	audiobutton.play()
 
 func _on_TutorialButton_pressed():
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
 	Tutorial = true
+	audiobutton.stream = button_ok
+	audiobutton.play()
 
 func _on_Exitbutton_pressed():
+	audiobutton.stream = button_ok
+	audiobutton.play()
+	await audiobutton.finished
 	get_tree().quit()
 
 # Function to handle the scene change after the animation finishes

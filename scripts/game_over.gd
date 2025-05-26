@@ -4,9 +4,13 @@ extends Control
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer
 @onready var RestartButton: Button = $RestartButton
 @onready var ExitButton: Button = $ExitButton
+@onready var audiobutton: AudioStreamPlayer2D = $audiobutton
+@export var button_ok: Resource
+@export var button_change: Resource
 
 var current_focused_button: Button = null
 var bounce_tween: Tween = null
+var first_focus : bool = true
 
 func _ready():
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
@@ -30,6 +34,11 @@ func _on_button_focused(button: Button):
 	
 	current_focused_button = button
 	_start_bounce_animation()
+	if first_focus == true:
+		first_focus = false
+		return
+	audiobutton.stream = button_change
+	audiobutton.play()
 
 func _start_bounce_animation():
 	if not current_focused_button:
@@ -50,7 +59,12 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		get_tree().change_scene_to_file(GameManager.currentLevel)
 
 func _on_restart_button_pressed() -> void:
+	audiobutton.stream = button_ok
+	audiobutton.play()
 	animation_player.play("Scene_Transition_in")
 
 func _on_exit_button_pressed() -> void:
+	audiobutton.stream = button_ok
+	audiobutton.play()
+	await audiobutton.finished
 	get_tree().quit()

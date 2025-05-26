@@ -1,7 +1,7 @@
-[gd_scene load_steps=59 format=4 uid="uid://6v64rv8tjie4"]
+[gd_scene load_steps=60 format=4 uid="uid://6v64rv8tjie4"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_68x20"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_bxtyo"]
 [ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="8_xtcmg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="12_kmiwu"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="13_f5481"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_ak1fy"]
+[ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="14_lkewv"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_yk36g"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_r8hod"]
 [ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="17_ccajw"]
@@ -935,6 +936,13 @@ rendering_quadrant_size = 32
 [node name="Wanda" parent="." instance=ExtResource("17_ccajw")]
 position = Vector2(-136, -14)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
+position = Vector2(0, 12)
+dialogue_lines1 = Array[String](["hola"])
+npc_portrait = ExtResource("14_lkewv")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_0f7ib")
 
 [node name="SeccionTop1" type="Node2D" parent="."]
 

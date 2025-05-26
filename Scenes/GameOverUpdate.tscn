@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene load_steps=17 format=3 uid="uid://8sgjnqmx3clh"]
 
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_fh85g"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="2_be2es"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]
 [ext_resource type="Texture2D" uid="uid://c2x105b3aifoa" path="res://art/GameOver/GameOver_bg.png" id="3_1dqx8"]
+[ext_resource type="AudioStream" uid="uid://3gsb4hayxrbx" path="res://SFX/button_ok.mp3" id="4_q3h3t"]
+[ext_resource type="AudioStream" uid="uid://cutx24v6upa6s" path="res://SFX/button_change.mp3" id="5_dp34f"]
+[ext_resource type="AudioStream" uid="uid://dywbix5bpsyff" path="res://SFX/game_over.mp3" id="7_pvcag"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4hetu"]
 shader = ExtResource("1_fh85g")
@@ -116,6 +119,8 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 script = ExtResource("1_w1bok")
+button_ok = ExtResource("4_q3h3t")
+button_change = ExtResource("5_dp34f")
 
 [node name="GameText" type="Label" parent="Control"]
 light_mask = 0
@@ -217,6 +222,13 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="Control"]
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("2_be2es")]
+
+[node name="music" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("7_pvcag")
+autoplay = true
+
+[node name="audiobutton" type="AudioStreamPlayer2D" parent="Control"]
+panning_strength = 0.0
 
 [node name="Game" type="AnimationPlayer" parent="."]
 libraries = {

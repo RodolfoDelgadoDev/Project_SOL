@@ -7,7 +7,7 @@ extends Node2D
 
 var current_lines: Array[String] = []
 var current_line_index: int = 0
-var is_visible: bool = false
+var es_visible: bool = false
 var current_npc: Node = null
 var tween: Tween
 var original_y: float
@@ -102,7 +102,7 @@ func show_dialogue() -> void:
 	if tween:
 		tween.kill()
 	
-	is_visible = true
+	es_visible = true
 	visible = true
 	set_process_input(true)
 	
@@ -117,7 +117,7 @@ func hide_dialogue() -> void:
 	if tween:
 		tween.kill()
 	
-	is_visible = false
+	es_visible = false
 	set_process_input(false)
 	voice_timer.stop()
 	

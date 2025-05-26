@@ -704,6 +704,7 @@ texture = SubResource("GradientTexture2D_tt2wg")
 position = Vector2(119, 48)
 scale = Vector2(2.57813, 2.7808)
 color = Color(0.703856, 0.970119, 0.933009, 1)
+energy = 0.8
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_tt2wg")
 
@@ -770,27 +771,31 @@ occluder = SubResource("OccluderPolygon2D_7di88")
 [node name="Plant3" parent="Scene Manager" instance=ExtResource("5_oxrd2")]
 position = Vector2(-216, 56)
 scale = Vector2(0.25, 0.25)
-damage = 3
-health = 30
+damage = 2
+health = 20
 detection_range = 2
 player_node_path = NodePath("../Player")
 
 [node name="Plant4" parent="Scene Manager" instance=ExtResource("5_oxrd2")]
 position = Vector2(88, 200)
 scale = Vector2(0.25, 0.25)
-damage = 3
-health = 30
+damage = 2
+health = 20
 detection_range = 2
 player_node_path = NodePath("../Player")
 
 [node name="Bat" parent="Scene Manager" instance=ExtResource("6_ucs68")]
 position = Vector2(-136, 8)
 scale = Vector2(0.25, 0.25)
+damage = 2
+health = 10
 patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)])
 
 [node name="Bat2" parent="Scene Manager" instance=ExtResource("6_ucs68")]
 position = Vector2(24, -8)
 scale = Vector2(0.25, 0.25)
+damage = 2
+health = 10
 patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(0, -1), Vector2(0, -1), Vector2(0, -1)])
 
 [node name="TheBoss" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("7_2pvst")]
