@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=66 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_6rfye"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="8_lg3p3"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_fscxu"]
+[ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="13_ayqkd"]
+[ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="14_eb3le"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="14_rrjgk"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="15_wh50p"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_icvvk"]
@@ -464,6 +466,28 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5kti"]
+atlas = ExtResource("13_ayqkd")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arpj0"]
+atlas = ExtResource("13_ayqkd")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lu474"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5kti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arpj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auy3r"]
 atlas = ExtResource("3_l55s0")
@@ -926,9 +950,22 @@ tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAg
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
+[node name="Dreadlocks" type="AnimatedSprite2D" parent="."]
+position = Vector2(-136, -70)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lu474")
+autoplay = "default"
+
+[node name="NPC" parent="Dreadlocks" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
+position = Vector2(0, 28)
+dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
+npc_portrait = ExtResource("14_eb3le")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("14_rrjgk")
+
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADx//n/AQAGAA4AAADx//r/AQAGAA8AAADy//n/AQAHAA4AAADy//r/AQAHAA8AAAAAAAYAAQAIABAAABD2//z/AQAMABIAAAD3//z/AQAQAAIAAAD6//n/AQAFABIAAAD6//r/AQAHABEAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//v/AQAHABIAAAAEAPv/AQAQAAIAAAAFAPv/AQAQAAIAAAD2/wIAAQAGAAMAAAD+/wYAAQAIABAAAAD3/wYAAQAIABAAABABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD0//z/AQAEAAwAAAD0//3/AQAEAA0AAAD1//z/AQALABIAAAD2//3/AQAMABMAAAD4//z/AQARABIAAAD4//3/AQARABMAAAD5//z/AQASABIAAAD5//3/AQASABMAAAD6//z/AQATABIAAAD6//3/AQATABMAAADx//3/AQAQAAgAAAAFAAQAAQAQAAgAAADx/wIAAQAIAA4AAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAA=")
+tile_map_data = PackedByteArray("AADx//n/AQAGAA4AAADx//r/AQAGAA8AAADy//n/AQAHAA4AAADy//r/AQAHAA8AAAAAAAYAAQAIABAAABD3//z/AQAQAAIAAAD6//n/AQAFABIAAAD6//r/AQAHABEAAAD5//r/AQAGABEAAAD5//v/AQAGABIAAAD6//v/AQAHABIAAAAEAPv/AQAQAAIAAAAFAPv/AQAQAAIAAAD2/wIAAQAGAAMAAAD+/wYAAQAIABAAAAD3/wYAAQAIABAAABABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD0//z/AQAEAAwAAAD0//3/AQAEAA0AAAD1//z/AQALABIAAAD4//z/AQARABIAAAD4//3/AQARABMAAAD5//z/AQASABIAAAD5//3/AQASABMAAAD6//z/AQATABIAAAD6//3/AQATABMAAADx//3/AQAQAAgAAAAFAAQAAQAQAAgAAADx/wIAAQAIAA4AAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAD2//3/AQAMABMAAAD2//z/AQAMABIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 

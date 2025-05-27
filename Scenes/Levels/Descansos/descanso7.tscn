@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_d1x5t"]
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_a10bd"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="4_gictb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_r0lr3"]
@@ -1252,7 +1252,7 @@ position = Vector2(-104, 17)
 scale = Vector2(0.5, 0.5)
 
 [node name="ComputerGirl" parent="Scene Manager" instance=ExtResource("20_f8270")]
-position = Vector2(-121, 3)
+position = Vector2(-173, 70)
 scale = Vector2(0.5, 0.5)
 
 [node name="Nicky" parent="Scene Manager" instance=ExtResource("21_x4gxf")]
