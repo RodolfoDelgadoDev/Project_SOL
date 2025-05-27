@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvfn5t1ti8w87"]
+[gd_scene load_steps=15 format=3 uid="uid://dvfn5t1ti8w87"]
 
 [ext_resource type="Texture2D" uid="uid://jxkwrg5r6b4x" path="res://animations/Enemies/Final boss/Final boss.png" id="2_5y8xu"]
 [ext_resource type="Script" path="res://scripts/Enemies/boss_attack.gd" id="2_axsa3"]
 [ext_resource type="Texture2D" uid="uid://dnb6iop44b60w" path="res://art/shadow.png" id="2_w8nyk"]
+[ext_resource type="Shader" path="res://Scenes/Shaders/Bossshader.gdshader" id="4_jj6a2"]
+[ext_resource type="Texture2D" uid="uid://dxqq4jstvb3ij" path="res://Scenes/Shaders/a.png" id="5_disw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0lxi"]
 atlas = ExtResource("2_5y8xu")
@@ -47,6 +49,15 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n86vd"]
+shader = ExtResource("4_jj6a2")
+shader_parameter/wave_amplitude = 0.04
+shader_parameter/wave_frequency = 3.0
+shader_parameter/wave_speed = 6.583
+shader_parameter/transparency = 0.164
+
+[sub_resource type="SphereMesh" id="SphereMesh_wq5nf"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p322"]
 size = Vector2(44, 42)
 
@@ -66,6 +77,13 @@ position = Vector2(1.90735e-06, -16)
 scale = Vector2(0.458333, 0.458333)
 sprite_frames = SubResource("SpriteFrames_iktgq")
 frame_progress = 0.398999
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_n86vd")
+position = Vector2(1.90735e-06, -21)
+scale = Vector2(37.1854, 37.1854)
+mesh = SubResource("SphereMesh_wq5nf")
+texture = ExtResource("5_disw0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6p322")
