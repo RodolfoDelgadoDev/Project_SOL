@@ -1,6 +1,6 @@
 extends Node2D
 
-var segundos = GameManager.Segundos
+var segundos = GameManager.Segundos + GameManager.extra_time
 @export var hp_full: Texture
 @export var hp_80: Texture
 @export var hp_60: Texture

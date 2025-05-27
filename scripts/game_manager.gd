@@ -7,6 +7,8 @@ var levelNumber : int = 0
 var plasticoin : int = 0 
 var goal: bool = false
 var descanso: bool = false
+var extra_time : int = 0
+var music_on : bool = true
 
 func takeDamage(damage):
 	Segundos -= damage

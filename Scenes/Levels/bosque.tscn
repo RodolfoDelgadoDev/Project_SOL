@@ -1675,6 +1675,7 @@ texture = SubResource("GradientTexture2D_ahch8")
 stream = ExtResource("15_55bs2")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_62k27")]

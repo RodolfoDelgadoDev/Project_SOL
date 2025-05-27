@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cutxnt43fhgry"]
+[gd_scene load_steps=32 format=4 uid="uid://cutxnt43fhgry"]
 
 [ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_ya4p3"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_ktjj2"]
@@ -12,7 +12,6 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_hllyb"]
 [ext_resource type="Script" path="res://scripts/blinking_light.gd" id="13_c4mh2"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_ftta1"]
-[ext_resource type="AudioStream" uid="uid://b1ews1nht476f" path="res://Music/house1.mp3" id="14_16i04"]
 [ext_resource type="AudioStream" uid="uid://b43efjj33yxm" path="res://Music/house2.mp3" id="14_xfq35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
@@ -764,10 +763,6 @@ tile_map_data = PackedByteArray("AAAAAPf/AgACAAMAAAALAPz/AgACAAMAAAAKAP3/AgACAAM
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
-stream = ExtResource("14_16i04")
-playback_type = 1
-
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
@@ -842,6 +837,7 @@ blink_interval_max = 0.5
 stream = ExtResource("14_xfq35")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]

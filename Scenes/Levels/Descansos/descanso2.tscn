@@ -870,14 +870,11 @@ tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "sec2", "hide_visuals")]
+[node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("10_8ch1l")
 segundos = 45
 descanso = true
-sec1 = NodePath("../Seccion1")
-sec2 = NodePath("../Seccion2")
-hide_visuals = NodePath("../Ocultar")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("11_wdepr")]
 position = Vector2(-216, -74)
@@ -989,6 +986,7 @@ color = Color(0.812689, 0.681546, 0.612906, 1)
 stream = ExtResource("15_i2526")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]

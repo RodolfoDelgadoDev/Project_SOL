@@ -42,6 +42,8 @@ var can_attack: bool = true
 @export var shake_duration: float = 0.0
 @export var shake_decay: float = 5.0
 
+var can_move: bool = true
+
 func _ready():
 	# Reference the CharacterBody2D node
 	character_body = $CharacterBody2D
@@ -56,6 +58,8 @@ func _ready():
 func _physics_process(delta: float):
 	if alive():
 		if Input.is_action_just_pressed("attack"):
+			if can_move == false:
+				return #para que no ataque durante el menú de pausa
 			basicAttack(lastDir)
 		if not moving:
 			# Check for input and set the direction
@@ -100,6 +104,8 @@ func _physics_process(delta: float):
 
 # Function to handle movement
 func move(direction: Vector2):
+	if can_move == false:
+		return
 	target_velocity = direction * (GRID_SIZE / move_duration)
 	moving = true
 	lastDir = direction_to_string(direction)
@@ -179,3 +185,9 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		# Start the camera shake
 		shake_intensity = 5.0  # Adjust intensity as needed
 		shake_duration = 0.3    # Adjust duration as needed
+		
+func stop_movement():
+	can_move = false
+	
+func resume_movement():
+	can_move = true

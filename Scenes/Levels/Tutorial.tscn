@@ -948,6 +948,7 @@ vertical_alignment = 1
 stream = ExtResource("17_5tnc2")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="tuto hablar" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("barra")]

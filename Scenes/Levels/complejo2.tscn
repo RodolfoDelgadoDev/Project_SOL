@@ -956,6 +956,7 @@ animation = &"Open"
 stream = ExtResource("12_hdcll")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_by454")]

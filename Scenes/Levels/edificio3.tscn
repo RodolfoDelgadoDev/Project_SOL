@@ -877,6 +877,7 @@ expand_mode = 1
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
 stream = ExtResource("11_lbovv")
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Ghost_trap" type="Node2D" parent="Scene Manager" node_paths=PackedStringArray("lights", "BGM", "enemy")]

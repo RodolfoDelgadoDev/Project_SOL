@@ -1206,6 +1206,7 @@ color = Color(0.438022, 0.708379, 0.762015, 1)
 stream = ExtResource("17_wvt1x")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_p45r0")]

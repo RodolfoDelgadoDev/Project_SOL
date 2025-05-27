@@ -1025,6 +1025,7 @@ color = Color(0.812689, 0.681546, 0.612906, 1)
 stream = ExtResource("15_yk36g")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]

@@ -8,6 +8,7 @@ extends Node2D
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
 @onready var DialogueBox: Node2D = $CanvasLayer/DialogueBox
+@onready var Player: Node2D = $Player
 
 var pause_scene_path: String = "res://Scenes/GameOverUpdate.tscn"
 
@@ -23,7 +24,8 @@ func _ready() -> void:
 	var current_scene = get_tree().current_scene.scene_file_path
 	GameManager.currentLevel = current_scene
 	print(current_scene)
-	GameManager.Segundos = segundos
+	GameManager.Segundos = segundos + GameManager.extra_time
+	print(segundos + GameManager.extra_time)
 	for child in get_children():
 		if child.is_in_group("pickup"):
 			bottleTotal += 1
@@ -33,6 +35,7 @@ func _ready() -> void:
 		stop_timer()
 		toggle_timer() #deja invisible el timer
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	add_to_group("scene_manager")
 
 # Add a bottle and check if all bottles are collected
 func addBottle():
@@ -144,6 +147,7 @@ func pause_game():
 	get_tree().paused = true
 	if not descanso:
 		stop_timer()
+	Player.stop_movement()
 	
 	# Load and instance the pause scene
 	var pause_scene = load(pause_scene_path)
@@ -184,6 +188,7 @@ func unpause_game():
 	get_tree().paused = false
 	if not descanso:
 		start_timer()
+	Player.resume_movement()
 
 func _remove_pause_scene():
 	if pause_scene_instance:

@@ -1216,6 +1216,7 @@ position = Vector2(4, 4)
 stream = ExtResource("15_cm5sb")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("16_j6jlu")]

@@ -1247,6 +1247,7 @@ texture = SubResource("GradientTexture2D_tmn42")
 stream = ExtResource("17_mbbar")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]

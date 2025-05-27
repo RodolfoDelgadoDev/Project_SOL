@@ -692,6 +692,7 @@ expand_mode = 1
 stream = ExtResource("14_6ly0s")
 autoplay = true
 panning_strength = 0.0
+bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_e4ge1")]
