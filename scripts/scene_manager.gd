@@ -9,14 +9,11 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer  # Assuming you have an AnimationPlayer
 @onready var DialogueBox: Node2D = $CanvasLayer/DialogueBox
 
-@export var sec1: Node2D
-@export var sec2: Node2D
-@export var sec3: Node2D
-@export var sec4: Node2D
-@export var sec5: Node2D
-@export var sec6: Node2D
-@export var hide_visuals: Node2D
+var pause_scene_path: String = "res://Scenes/GameOverUpdate.tscn"
 
+var pause_scene_instance: Control = null
+var is_paused: bool = false
+var tween: Tween = null
 var bottleNum: int = 0
 var bottleTotal: int
 var allBottles: bool = false
@@ -35,6 +32,7 @@ func _ready() -> void:
 		print("modo descanso activado")
 		stop_timer()
 		toggle_timer() #deja invisible el timer
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 # Add a bottle and check if all bottles are collected
 func addBottle():
@@ -110,7 +108,7 @@ func chooseTargetScene():
 	print("Selected target scene: ", targetScene)
 
 func game_over():
-	targetScene = "res://Scenes/GameOverUpdate.tscn"
+	targetScene = GameManager.currentLevel
 	bottleNum = 0
 	allBottles = false
 	change_scene()
@@ -126,3 +124,68 @@ func toggle_timer():
 		timer.visible = true
 	else:
 		timer.visible = false
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause"):
+		if pause_scene_path.is_empty():
+			printerr("No pause scene path set!")
+			return
+			
+		if is_paused:
+			unpause_game()
+		else:
+			pause_game()
+
+func pause_game():
+	if is_paused or pause_scene_path.is_empty():
+		return
+		
+	is_paused = true
+	get_tree().paused = true
+	if not descanso:
+		stop_timer()
+	
+	# Load and instance the pause scene
+	var pause_scene = load(pause_scene_path)
+	if pause_scene:
+		pause_scene_instance = pause_scene.instantiate()
+		$CanvasLayer.add_child(pause_scene_instance)
+		
+		# Set initial state for animation
+		pause_scene_instance.modulate.a = 0
+		pause_scene_instance.scale = Vector2(0.9, 0.9)
+		
+		# Create tween animation
+		if tween:
+			tween.kill()
+		tween = create_tween()
+		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(pause_scene_instance, "modulate:a", 1.0, 0.1)
+		tween.parallel().tween_property(pause_scene_instance, "scale", Vector2(1.0, 1.0), 0.1)
+	else:
+		printerr("Failed to load pause scene at path: ", pause_scene_path)
+		is_paused = false
+		get_tree().paused = false
+
+func unpause_game():
+	if not is_paused or not pause_scene_instance:
+		return
+		
+	# Animate out
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(pause_scene_instance, "modulate:a", 0.0, 0.1)
+	tween.parallel().tween_property(pause_scene_instance, "scale", Vector2(0.9, 0.9), 0.1)
+	tween.tween_callback(_remove_pause_scene)
+	
+	is_paused = false
+	get_tree().paused = false
+	if not descanso:
+		start_timer()
+
+func _remove_pause_scene():
+	if pause_scene_instance:
+		pause_scene_instance.queue_free()
+		pause_scene_instance = null

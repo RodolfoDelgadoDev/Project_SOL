@@ -1,7 +1,7 @@
 [gd_scene load_steps=78 format=4 uid="uid://6v64rv8tjie4"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="2_jyekh"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="4_sb6gh"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_68x20"]
@@ -909,17 +909,15 @@ tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "hide_visuals")]
+[node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("10_cdgg1")
 segundos = 45
 descanso = true
-sec1 = NodePath("../Seccion1")
-hide_visuals = NodePath("../Ocultar")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("11_42mji")]
-position = Vector2(-216, -74)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-224, -74)
+scale = Vector2(1.74816, 0.935542)
 has_npc = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
@@ -1029,13 +1027,6 @@ autoplay = true
 panning_strength = 0.0
 playback_type = 1
 
-[node name="Player" parent="Scene Manager" instance=ExtResource("16_r8hod")]
-position = Vector2(88, -26)
-scale = Vector2(0.25, 0.25)
-attackSFX = null
-hurtSFX = null
-movementSFX = Array[AudioStream]([])
-
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
@@ -1045,6 +1036,12 @@ npc_portrait = ExtResource("18_4qqdx")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
 sprite = ExtResource("18_4qqdx")
+
+[node name="Player" parent="Scene Manager" instance=ExtResource("16_r8hod")]
+position = Vector2(88, -26)
+scale = Vector2(0.25, 0.25)
+attackSFX = null
+hurtSFX = null
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

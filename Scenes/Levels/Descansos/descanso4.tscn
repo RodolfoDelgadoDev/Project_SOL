@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=4 uid="uid://xv65nci4wovg"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_4agvk"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_tt5t2"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="4_rgodk"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_g88ge"]
@@ -869,20 +869,15 @@ tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("sec1", "sec2", "sec3", "sec4", "hide_visuals")]
+[node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("10_o7njg")
 segundos = 45
 descanso = true
-sec1 = NodePath("../Seccion1")
-sec2 = NodePath("../Seccion2")
-sec3 = NodePath("../Seccion3")
-sec4 = NodePath("../Seccion4")
-hide_visuals = NodePath("../Ocultar")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("11_s4fw4")]
-position = Vector2(-216, -74)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-224, -74)
+scale = Vector2(1.85069, 0.873656)
 has_npc = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
@@ -997,7 +992,6 @@ position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
-movementSFX = Array[AudioStream]([])
 
 [node name="Olivia" parent="Scene Manager" instance=ExtResource("12_xxfdf")]
 position = Vector2(42, -79)

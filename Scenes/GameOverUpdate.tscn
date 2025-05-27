@@ -1,14 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene load_steps=9 format=3 uid="uid://8sgjnqmx3clh"]
 
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_fh85g"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="2_3mkai"]
-[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="2_be2es"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]
 [ext_resource type="Texture2D" uid="uid://c2x105b3aifoa" path="res://art/GameOver/GameOver_bg.png" id="3_1dqx8"]
 [ext_resource type="AudioStream" uid="uid://3gsb4hayxrbx" path="res://SFX/button_ok.mp3" id="4_q3h3t"]
 [ext_resource type="AudioStream" uid="uid://cutx24v6upa6s" path="res://SFX/button_change.mp3" id="5_dp34f"]
-[ext_resource type="AudioStream" uid="uid://dywbix5bpsyff" path="res://SFX/game_over.mp3" id="7_pvcag"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4hetu"]
 shader = ExtResource("1_fh85g")
@@ -17,88 +15,22 @@ shader_parameter/wave_frequency = 6.665
 shader_parameter/wave_speed = 0.876
 shader_parameter/transparency = 1.0
 
-[sub_resource type="Animation" id="Animation_m6x5p"]
-resource_name = "Game Animation"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/GameText:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.7, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-110, -118), Vector2(-110, -35)]
-}
-
-[sub_resource type="Animation" id="Animation_83asm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/GameText:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-120, -118)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fl6fk"]
-_data = {
-"Game Animation": SubResource("Animation_m6x5p"),
-"RESET": SubResource("Animation_83asm")
-}
-
-[sub_resource type="Animation" id="Animation_qwhx1"]
-resource_name = "Over Animation"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Overtext:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 3.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-76, -118), Vector2(-76, -35)]
-}
-
-[sub_resource type="Animation" id="Animation_dwyv7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Overtext:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-70, -118)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4r2gc"]
-_data = {
-"Over Animation": SubResource("Animation_qwhx1"),
-"RESET": SubResource("Animation_dwyv7")
-}
-
-[node name="GameOver" type="Node2D"]
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -176.0
 offset_top = -107.0
 offset_right = 172.0
 offset_bottom = 101.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.541176)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_4hetu")
@@ -111,10 +43,12 @@ texture = ExtResource("3_1dqx8")
 
 [node name="Control" type="Control" parent="."]
 z_index = 2
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
@@ -130,32 +64,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -118.0
-offset_right = 78.0
-offset_bottom = -95.0
+offset_left = -91.0
+offset_top = -34.0
+offset_right = 97.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_3mkai")
-text = "GAME
-"
+theme_override_font_sizes/font_size = 30
+text = "PAUSA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartButton" type="Button" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -12.0
-offset_right = 21.0
-offset_bottom = 19.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_right = 111.0
+offset_bottom = 28.0
 grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
+grow_vertical = 2
+
+[node name="OptionsButton" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0.63438, 0.231125, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/font_hover_color = Color(0, 0.635294, 0.231373, 1)
@@ -169,22 +103,29 @@ theme_override_colors/icon_hover_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_fonts/font = ExtResource("2_qdyew")
-text = "NEW GAME"
+text = "OPCIONES"
+flat = true
 
-[node name="ExitButton" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -12.0
-offset_right = 99.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
+[node name="ContinueButton" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0.63438, 0.231125, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_hover_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_outline_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_normal_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_focus_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_fonts/font = ExtResource("2_qdyew")
+text = "VOLVER"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.905882, 0, 0, 1)
@@ -198,49 +139,14 @@ theme_override_colors/icon_hover_color = Color(0.905882, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.905882, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0.905882, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qdyew")
-text = "EXIT"
-
-[node name="Overtext" type="Label" parent="Control"]
-light_mask = 0
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -118.0
-offset_right = 112.0
-offset_bottom = -95.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_3mkai")
-text = "OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "SALIR"
+flat = true
 
 [node name="Camera2D" type="Camera2D" parent="Control"]
-
-[node name="Scene_Transition" parent="Control" instance=ExtResource("2_be2es")]
-
-[node name="music" type="AudioStreamPlayer2D" parent="Control"]
-stream = ExtResource("7_pvcag")
-autoplay = true
 
 [node name="audiobutton" type="AudioStreamPlayer2D" parent="Control"]
 panning_strength = 0.0
 
-[node name="Game" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_fl6fk")
-}
-autoplay = "Game Animation"
-
-[node name="Over" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_4r2gc")
-}
-autoplay = "Over Animation"
-
-[connection signal="pressed" from="Control/RestartButton" to="Control" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Control/ExitButton" to="Control" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/OptionsButton" to="Control" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/ContinueButton" to="Control" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/ExitButton" to="Control" method="_on_exit_button_pressed"]

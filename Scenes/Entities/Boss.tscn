@@ -51,10 +51,10 @@ animations = [{
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n86vd"]
 shader = ExtResource("4_jj6a2")
-shader_parameter/wave_amplitude = 0.04
-shader_parameter/wave_frequency = 3.0
-shader_parameter/wave_speed = 6.583
-shader_parameter/transparency = 0.164
+shader_parameter/wave_amplitude = 0.03
+shader_parameter/wave_frequency = 4.3
+shader_parameter/wave_speed = 5.0
+shader_parameter/transparency = 0.15
 
 [sub_resource type="SphereMesh" id="SphereMesh_wq5nf"]
 

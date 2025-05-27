@@ -1,7 +1,7 @@
 [gd_scene load_steps=70 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_pqvia"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_y3pda"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_0qmb8"]
@@ -992,13 +992,12 @@ panning_strength = 0.0
 playback_type = 1
 
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
-position = Vector2(3, -4)
+position = Vector2(8, -5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_81d44")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
-position = Vector2(10, -12)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 npc_portrait = ExtResource("23_e44ld")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
@@ -1009,7 +1008,6 @@ position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
-movementSFX = Array[AudioStream]([])
 
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(-200, -74)

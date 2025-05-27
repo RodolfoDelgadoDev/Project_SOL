@@ -340,19 +340,29 @@ texture_region_size = Vector2i(32, 32)
 12:15/0 = 0
 13:14/0 = 0
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:14/0 = 0
 14:15/0 = 0
+14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:16/0 = 0
+14:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:14/0 = 0
 15:15/0 = 0
+15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:16/0 = 0
+15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:14/0 = 0
 16:15/0 = 0
+16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:16/0 = 0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:14/0 = 0
 17:15/0 = 0
+17:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:16/0 = 0
+17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 18:15/0 = 0
 19:15/0 = 0
 19:14/0 = 0
@@ -808,16 +818,15 @@ tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("hide_visuals")]
+[node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("5_rkmo0")
 segundos = 45
 descanso = true
-hide_visuals = NodePath("../Ocultar")
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("7_rjq4s")]
-position = Vector2(-216, -74)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-224, -74)
+scale = Vector2(1.78795, 0.981656)
 has_npc = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
@@ -932,7 +941,6 @@ position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
-movementSFX = Array[AudioStream]([])
 
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
 position = Vector2(-200, -74)
