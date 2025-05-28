@@ -1303,7 +1303,7 @@ position = Vector2(-342, -78)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_euxu1")
 autoplay = "default"
-frame_progress = 0.15182
+frame_progress = 0.452845
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

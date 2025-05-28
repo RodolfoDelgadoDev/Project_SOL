@@ -1154,6 +1154,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="SeccionTop5"]
+position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD3/wUAAQATAAgAAAD8/wMAAQAJAAMAAAD8/wQAAQAJAAQAAAD9/wMAAQAKAAMAAAD9/wQAAQAKAAQAAAA=")
 tile_set = SubResource("TileSet_yil1h")
