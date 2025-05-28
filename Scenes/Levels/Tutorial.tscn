@@ -1030,7 +1030,7 @@ position = Vector2(-152, -8)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin2" parent="Scene Manager" instance=ExtResource("22_iegd5")]
-position = Vector2(152, 14)
+position = Vector2(73, 41)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin3" parent="Scene Manager" instance=ExtResource("22_iegd5")]

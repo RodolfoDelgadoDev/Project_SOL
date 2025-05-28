@@ -1,13 +1,14 @@
 extends Control
 
-@onready var OptionsButton: Button = $HBoxContainer/OptionsButton
-@onready var ContinueButton: Button = $HBoxContainer/ContinueButton
-@onready var ExitButton: Button = $HBoxContainer/ExitButton
+@onready var OptionsButton: Button = $PauseContainer/OptionsButton
+@onready var ContinueButton: Button = $PauseContainer/ContinueButton
+@onready var ExitButton: Button = $PauseContainer/ExitButton
 @onready var audiobutton: AudioStreamPlayer2D = $audiobutton
-@onready var OptionPanel: Panel = $Panel
-@onready var OptionsBack: Button = $Panel/VBoxContainer/BackButton
-@onready var OptionsDiff: Button = $Panel/VBoxContainer/DifficultyButton
-@onready var OptionsMusica: Button = $Panel/VBoxContainer/MusicButton
+@onready var OptionPanel: HBoxContainer = $OptionsContainer
+@onready var OptionsBack: Button = $OptionsContainer/BackButton
+@onready var OptionsDiff: Button = $OptionsContainer/DifficultyButton
+@onready var OptionsMusica: Button = $OptionsContainer/MusicButton
+@onready var ColorFade: ColorRect = $ColorRect
 @export var button_ok: Resource
 @export var button_change: Resource
 
@@ -64,8 +65,21 @@ func _on_TransitionAnimation_finished(animation_name: String):
 func _on_exit_button_pressed() -> void:
 	audiobutton.stream = button_ok
 	audiobutton.play()
-	await audiobutton.finished
-	get_tree().quit()
+	
+	# Make sure ColorFade is at the top and ready
+	ColorFade.color = Color.BLACK
+	#ColorFade.size = get_viewport_rect().size
+	ColorFade.modulate.a = 0
+	ColorFade.visible = true
+	#move_child(ColorFade, get_child_count() - 1)  # Move to front
+	
+	# Create fade animation
+	var fade_tween = create_tween()
+	fade_tween.tween_property(ColorFade, "modulate:a", 1, 0.5)
+	fade_tween.tween_property(ColorFade, "modulate:a", 1.0, 1.5)
+	fade_tween.tween_callback(func(): 
+		get_tree().quit()  # Quit after fade completes
+	)
 	
 func _grab_focus():
 	ContinueButton.grab_focus()
@@ -112,8 +126,8 @@ func _on_options_button_pressed() -> void:
 	
 	# Hide main buttons with fade
 	var hide_tween = create_tween()
-	hide_tween.tween_property($HBoxContainer, "modulate:a", 0.0, 0.1)
-	hide_tween.tween_callback(func(): $HBoxContainer.visible = false)
+	hide_tween.tween_property($PauseContainer, "modulate:a", 0.0, 0.1)
+	hide_tween.tween_callback(func(): $PauseContainer.visible = false)
 	
 	OptionsBack.grab_focus()
 	is_options_open = true
@@ -122,26 +136,27 @@ func _on_back_button_pressed() -> void:
 	audiobutton.stream = button_ok
 	audiobutton.play()
 	
-	# First make sure HBoxContainer is visible but transparent
-	$HBoxContainer.visible = true
-	$HBoxContainer.modulate.a = 0
-	$HBoxContainer.scale = Vector2(0.9, 0.9)
+	# First make sure PauseContainer is visible but transparent
+	$PauseContainer.visible = true
+	$PauseContainer.modulate.a = 0
+	$PauseContainer.scale = Vector2(0.9, 0.9)
 	
 	# Hide options panel with fade
 	var hide_tween = create_tween()
-	hide_tween.tween_property(OptionPanel, "modulate:a", 0.0, 0.1)
-	hide_tween.parallel().tween_property(OptionPanel, "scale", Vector2(0.9, 0.9), 0.1)
-	# Don't set visible=false here - just let it stay hidden via alpha
+	hide_tween.tween_property($OptionsContainer, "modulate:a", 0.0, 0.15)
+	hide_tween.parallel().tween_property($OptionsContainer, "scale", Vector2(0.9, 0.9), 0.15)
 	
 	# Show pause menu buttons with pop-in effect
 	var show_tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	show_tween.tween_property($HBoxContainer, "modulate:a", 1.0, 0.15)
-	show_tween.parallel().tween_property($HBoxContainer, "scale", Vector2(1.0, 1.0), 0.15)
+	show_tween.tween_property($PauseContainer, "modulate:a", 1.0, 0.15)
+	show_tween.parallel().tween_property($PauseContainer, "scale", Vector2(1.0, 1.0), 0.15)
 	
 	first_focus = true
 	# Set focus back to OptionsButton after animation
-	show_tween.tween_callback(func(): OptionsButton.grab_focus())
-	is_options_open = false
+	show_tween.tween_callback(func(): 
+		OptionsButton.grab_focus()
+		is_options_open = false
+	)
 
 
 func _on_difficulty_button_pressed() -> void:
