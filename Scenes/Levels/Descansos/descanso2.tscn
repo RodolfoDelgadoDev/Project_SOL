@@ -1,7 +1,7 @@
-[gd_scene load_steps=70 format=4 uid="uid://mb6v2konbssl"]
+[gd_scene load_steps=96 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_pqvia"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_y3pda"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_0qmb8"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="10_8ch1l"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="11_wdepr"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="12_ox0eq"]
-[ext_resource type="PackedScene" uid="uid://hr65q2b5wtkk" path="res://Scenes/Entities/olivia.tscn" id="13_5hhbs"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="13_rqwvj"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_g2r1f"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_i2526"]
@@ -20,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_088kn"]
 [ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="17_uciwg"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_mefub"]
+[ext_resource type="Texture2D" uid="uid://c4s3uwb8t20d" path="res://art/NPCs/Olivia/NPC - Olivia - March.png" id="19_fsqsj"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_owwac"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="22_v5urr"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="23_e44ld"]
@@ -544,6 +544,189 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhmi"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2kqk"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eco6a"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b3hc"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3qfc"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaf2u"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd1je"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ktf"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j3di"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj77x"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(864, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbh3t"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(960, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q372u"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1056, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ser7r"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1152, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjo3"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1248, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gmd"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1344, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up624"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1440, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ljk"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1536, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmkpr"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1632, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y8rh"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1728, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ojd"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1824, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i66gq"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(1920, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_606a1"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(2016, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivfox"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(2112, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxth6"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(2208, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cvx0"]
+atlas = ExtResource("19_fsqsj")
+region = Rect2(2304, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4hhqi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2kqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eco6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b3hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3qfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaf2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd1je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ktf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j3di")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj77x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbh3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q372u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ser7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up624")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8ljk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmkpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y8rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8ojd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i66gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_606a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivfox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxth6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cvx0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
 atlas = ExtResource("7_f7e24")
 region = Rect2(0, 0, 37, 17)
@@ -770,7 +953,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 position = Vector2(21, 124)
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -842,7 +1025,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="Seccion2"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAEAPn/AQARAAMAAAAEAPr/AQARAAQAAAAEAPv/AQARAAUAAAAFAPn/AQASAAMAAAAFAPr/AQASAAQAAAAFAPv/AQASAAUAAAABAPn/AQANAAAAAAABAPr/AQANAAEAAAADAPr/AQATAAMAAAADAPv/AQATAAQAAAD///r/AQALAAMAAAD///v/AQALAAQAAAD8//r/AQAQAAAAAAD8//v/AQAQAAEAAAD9//v/AQARAAEAAAAAAPv/AQATAAUAAAAAAPz/AQATAAYAAAD8//3/AQAJAAIAAAD9//3/AQAKAAIAAAD+//3/AQAKAAIAAAD///3/AQAKAAIAAAD1//z/AQANAAIAAAD5//z/AQANAAIAAAD4//z/AQANAAIAAAA=")
+tile_map_data = PackedByteArray("AAAEAPn/AQARAAMAAAAEAPr/AQARAAQAAAAEAPv/AQARAAUAAAAFAPn/AQASAAMAAAAFAPr/AQASAAQAAAAFAPv/AQASAAUAAAABAPn/AQANAAAAAAABAPr/AQANAAEAAAD///r/AQALAAMAAAD///v/AQALAAQAAAD8//r/AQAQAAAAAAD8//v/AQAQAAEAAAD9//v/AQARAAEAAAAAAPv/AQATAAUAAAAAAPz/AQATAAYAAAD8//3/AQAJAAIAAAD9//3/AQAKAAIAAAD+//3/AQAKAAIAAAD///3/AQAKAAIAAAD1//z/AQANAAIAAAD5//z/AQANAAIAAAD4//z/AQANAAIAAAACAPr/AQATAAMAAAACAPv/AQATAAQAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1015,9 +1198,12 @@ dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
 sprite = ExtResource("18_mefub")
 
-[node name="Olivia" parent="Scene Manager" instance=ExtResource("13_5hhbs")]
-position = Vector2(40, -74)
+[node name="Olivia" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(40, -67)
 scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4hhqi")
+autoplay = "default"
+frame_progress = 0.085468
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

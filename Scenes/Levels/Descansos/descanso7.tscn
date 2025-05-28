@@ -1,8 +1,8 @@
-[gd_scene load_steps=65 format=4 uid="uid://bthnee7teg28i"]
+[gd_scene load_steps=71 format=4 uid="uid://bthnee7teg28i"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_d1x5t"]
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_a10bd"]
 [ext_resource type="Script" path="res://scripts/color_lights.gd" id="4_gictb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_r0lr3"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://despcl5wghpmr" path="res://Scenes/Entities/chica-empanada.tscn" id="21_x4gxf"]
 [ext_resource type="PackedScene" uid="uid://c4gkrjplyfaeg" path="res://Scenes/Entities/dormilon1.tscn" id="22_k266c"]
 [ext_resource type="PackedScene" uid="uid://cuwxpjgb2addv" path="res://Scenes/Entities/dormilon2.tscn" id="23_b8gip"]
+[ext_resource type="Texture2D" uid="uid://dc3c0nnqxyy1l" path="res://art/NPCs/Chico Cat/NPC-Chico cat.png" id="26_ma2an"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7g7c"]
 texture = ExtResource("1_eywyh")
@@ -750,6 +751,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqvxa"]
+atlas = ExtResource("26_ma2an")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8775"]
+atlas = ExtResource("26_ma2an")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjus6"]
+atlas = ExtResource("26_ma2an")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntrni"]
+atlas = ExtResource("26_ma2an")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_euxu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqvxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8775")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjus6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntrni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -950,7 +987,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos3" type="TileMapLayer" parent="Seccion6"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAD9////AQANAAAAAAD9/wAAAQANAAEAAAABAP//AQANAAAAAAABAAAAAQANAAEAAAADAP7/AQASABAAABADAP//AQASABEAABDo/wAAAQARAAwAAADo////AQAQAAwAAADp/wAAAQATAAwAAADo//r/AQATABAAAADo//v/AQATABEAAAA=")
+tile_map_data = PackedByteArray("AAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAD9////AQANAAAAAAD9/wAAAQANAAEAAAABAP//AQANAAAAAAABAAAAAQANAAEAAAADAP7/AQASABAAABADAP//AQASABEAABDo/wAAAQARAAwAAADo////AQAQAAwAAADp/wAAAQATAAwAAADo//r/AQATABAAAADo//v/AQATABEAAAAAAAYAAQAQAAIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1261,6 +1298,13 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(8, 86)
 scale = Vector2(0.5, 0.5)
 
+[node name="chicoCat" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-342, -78)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_euxu1")
+autoplay = "default"
+frame_progress = 0.15182
+
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD9/wQAAQAFAAIAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAADx/wQAAQARAAYAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAP//AQASABAAAAAEAAAAAQASABEAAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD2/wQAAQAGAAgAAAD2/wMAAQAGAAgAAAD2/wIAAQAAAAcAAAA=")
@@ -1311,6 +1355,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="SeccionTop5"]
+position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD3/wUAAQATAAgAAAD8/wMAAQAJAAMAAAD8/wQAAQAJAAQAAAD9/wMAAQAKAAMAAAD9/wQAAQAKAAQAAADw//v/AQAQABIAAADw//3/AQAQABIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
