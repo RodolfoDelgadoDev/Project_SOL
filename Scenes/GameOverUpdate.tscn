@@ -26,6 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -176.0
 offset_top = -107.0
 offset_right = 172.0
@@ -34,6 +35,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_4hetu")
+layout_mode = 0
 offset_left = -155.0
 offset_top = -94.0
 offset_right = 133.0
@@ -146,6 +148,7 @@ flat = true
 panning_strength = 0.0
 
 [node name="Panel" type="Panel" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -190,6 +193,7 @@ theme_override_colors/font_focus_color = Color(0.890196, 0.603922, 0.592157, 1)
 theme_override_fonts/font = ExtResource("2_qdyew")
 theme_override_font_sizes/font_size = 10
 text = "SIN ASISTENCIA"
+flat = true
 
 [node name="MusicButton" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
@@ -198,6 +202,7 @@ theme_override_colors/font_pressed_color = Color(0.890196, 0.603922, 0.592157, 1
 theme_override_colors/font_focus_color = Color(0.890196, 0.603922, 0.592157, 1)
 theme_override_fonts/font = ExtResource("2_qdyew")
 text = "MUSICA ON"
+flat = true
 
 [connection signal="pressed" from="Control/HBoxContainer/OptionsButton" to="Control" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/ContinueButton" to="Control" method="_on_continue_button_pressed"]

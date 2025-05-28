@@ -1,8 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhrh7rux0lbbi"]
+[gd_scene load_steps=21 format=3 uid="uid://dhrh7rux0lbbi"]
 
 [ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_3ty5e"]
 [ext_resource type="Texture2D" uid="uid://dckyb8ts0ugwo" path="res://animations/Enemies/BadDog/Dog terror.png" id="2_trg1a"]
+[ext_resource type="AudioStream" uid="uid://bfupq07qht80j" path="res://SFX/dog_attack.mp3" id="2_ynyek"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="3_3ubsk"]
+[ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="3_jpdch"]
+[ext_resource type="AudioStream" uid="uid://deqvmk1i5jc78" path="res://SFX/dog_hurt.mp3" id="4_60ha5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqjfs"]
 atlas = ExtResource("2_trg1a")
@@ -108,6 +111,9 @@ polygon = PackedVector2Array(0, 0, -10, 0, -10, 16, 0, 16, 24, 16, 24, 0)
 [node name="Plant" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_3ty5e")
+attackSFX = ExtResource("2_ynyek")
+moveSFX = ExtResource("3_jpdch")
+hurtSFX = ExtResource("4_60ha5")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
