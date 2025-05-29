@@ -1,7 +1,7 @@
-[gd_scene load_steps=96 format=4 uid="uid://mb6v2konbssl"]
+[gd_scene load_steps=97 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_pqvia"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_y3pda"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_0qmb8"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_qp7tk"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_088kn"]
 [ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="17_uciwg"]
-[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_mefub"]
+[ext_resource type="Texture2D" uid="uid://b2jxkejya7doh" path="res://art/NPCs Portraits/Olivia-Portrait.png" id="19_cddvg"]
 [ext_resource type="Texture2D" uid="uid://c4s3uwb8t20d" path="res://art/NPCs/Olivia/NPC - Olivia - March.png" id="19_fsqsj"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_owwac"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="22_v5urr"]
@@ -727,6 +727,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txru4"]
+size = Vector2(96, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
 atlas = ExtResource("7_f7e24")
 region = Rect2(0, 0, 37, 17)
@@ -1190,20 +1193,28 @@ scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
-position = Vector2(-200, -74)
-scale = Vector2(0.5, 0.5)
-npc_portrait = ExtResource("18_mefub")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_owwac")
-sprite = ExtResource("18_mefub")
-
 [node name="Olivia" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(40, -67)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_4hhqi")
 autoplay = "default"
 frame_progress = 0.085468
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Scene Manager/Olivia"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/Olivia/CharacterBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_txru4")
+
+[node name="Olga" parent="Scene Manager/Olivia" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+position = Vector2(4, 2)
+scale = Vector2(2, 2)
+dialogue_lines1 = Array[String](["Olivia"])
+npc_portrait = ExtResource("19_cddvg")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_owwac")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

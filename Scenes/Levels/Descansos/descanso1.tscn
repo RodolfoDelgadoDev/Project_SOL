@@ -1,7 +1,7 @@
-[gd_scene load_steps=78 format=4 uid="uid://6v64rv8tjie4"]
+[gd_scene load_steps=76 format=4 uid="uid://6v64rv8tjie4"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="2_jyekh"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="4_sb6gh"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_68x20"]
@@ -17,12 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="12_kmiwu"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="13_f5481"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_ak1fy"]
-[ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="14_lkewv"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="15_px4u1"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_yk36g"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="16_hv30d"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_r8hod"]
-[ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="17_ccajw"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_owhe0"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_4qqdx"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_0f7ib"]
@@ -1061,17 +1059,6 @@ frame_progress = 0.500856
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 npc_portrait = ExtResource("16_hv30d")
-dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_0f7ib")
-
-[node name="Wanda" parent="." instance=ExtResource("17_ccajw")]
-position = Vector2(-136, -14)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
-position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["hola"])
-npc_portrait = ExtResource("14_lkewv")
 dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
 

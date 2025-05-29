@@ -27,5 +27,6 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 				sprite.visible = false
 				GameManager.takeDamage(damage)
 				await audio_player.finished
+				#hacer la animacion de morder una vez
 				queue_free()
 pass
