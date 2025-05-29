@@ -32,8 +32,8 @@ theme_override_colors/default_color = Color(0.209333, 0.142129, 0.0917921, 1)
 theme_override_fonts/normal_font = ExtResource("3_67qng")
 theme_override_font_sizes/normal_font_size = 7
 bbcode_enabled = true
-text = "Este texto ha estado dando problemas desde que se creó el juego..."
-fit_content = true
+text = "Este texto ha estado dando problemas desde que se creó el juego hola hola hola hola"
+scroll_active = false
 scroll_following = true
 tab_size = 2
 
