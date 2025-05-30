@@ -234,6 +234,30 @@ text = "PROYECTO SOL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="DemoText" type="Label" parent="Control/Gameovertext"]
+light_mask = 0
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5807
+offset_top = 3.5
+offset_right = 121.419
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0681414
+scale = Vector2(1.00431, 0.809925)
+theme_override_colors/font_color = Color(0, 0.815686, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_d4kqs")
+text = "¡DEMO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RestartButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7

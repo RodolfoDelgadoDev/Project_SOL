@@ -3,6 +3,7 @@ extends Control
 @onready var SceneTransition: CanvasLayer = $Scene_Transition
 @onready var animation_player: AnimationPlayer = $Scene_Transition/AnimationPlayer 
 @onready var audiobutton: AudioStreamPlayer2D = $audiobutton
+@onready var DemoText: Label = $Gameovertext/DemoText
 @export var button_ok: Resource
 @export var button_change: Resource
 var Tutorial = false
@@ -21,6 +22,14 @@ func _ready():
 	$ExitButton.focus_entered.connect(_on_button_focused.bind($ExitButton))
 	$TutorialButton.focus_entered.connect(_on_button_focused.bind($TutorialButton))
 	$TutorialButton.grab_focus()
+	var original_y = DemoText.position.y
+	
+	# Create bounce effect
+	bounce_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	bounce_tween.tween_property(DemoText, "position:y", original_y - 2, 1)
+	bounce_tween.tween_property(DemoText, "position:y", original_y, 0.6)
+	bounce_tween.tween_property(DemoText, "position:y", original_y + 4, 1)
+	bounce_tween.tween_property(DemoText, "position:y", original_y, 0.6)
 
 func _on_button_focused(button: Button):
 	# Stop any existing bounce animation

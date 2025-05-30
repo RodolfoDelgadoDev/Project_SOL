@@ -13,7 +13,8 @@ config_version=5
 config/name="Proyect SOL"
 run/main_scene="res://Scenes/MainMenuUpdate.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://art/icon.svg"
+config/icon="res://art/Main Character 1 Final.png"
+config/windows_native_icon="res://Icono/Main Character 1 Final(1).ico"
 
 [autoload]
 

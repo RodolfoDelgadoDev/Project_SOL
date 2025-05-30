@@ -270,8 +270,6 @@ rendering_quadrant_size = 32
 [node name="Scene Manager" type="Node2D" parent="."]
 script = ExtResource("8_ffuuu")
 segundos = 1500
-typewriter_delay = 0.06
-cursor_blink_delay = 0.25
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("4_xx0oc")]
 position = Vector2(-88, 72)
