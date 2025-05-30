@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://6v64rv8tjie4"]
+[gd_scene load_steps=77 format=4 uid="uid://6v64rv8tjie4"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
 [ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="16_hv30d"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_r8hod"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_owhe0"]
+[ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="17_tg8ud"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_4qqdx"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_0f7ib"]
 
@@ -345,21 +346,33 @@ texture_region_size = Vector2i(32, 32)
 12:15/0 = 0
 13:14/0 = 0
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:14/0 = 0
 14:15/0 = 0
+14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:16/0 = 0
+14:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:14/0 = 0
 15:15/0 = 0
+15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:16/0 = 0
+15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:14/0 = 0
 16:15/0 = 0
+16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:16/0 = 0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:14/0 = 0
 17:15/0 = 0
+17:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:16/0 = 0
+17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 18:15/0 = 0
+18:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 19:15/0 = 0
+19:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 19:14/0 = 0
 18:14/0 = 0
 9:16/0 = 0
@@ -406,12 +419,19 @@ texture_region_size = Vector2i(32, 32)
 10:16/0 = 0
 11:16/0 = 0
 12:16/0 = 0
+12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:17/0 = 0
+13:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:17/0 = 0
+14:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:18/0 = 0
+14:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:18/0 = 0
+15:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:17/0 = 0
+15:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:18/0 = 0
+13:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 10:17/0 = 0
 8:19/0 = 0
 8:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -848,7 +868,9 @@ frame_progress = 0.681913
 
 [node name="NPC" parent="Seccion1/Dreadlocks" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
+dialogue_lines1 = Array[String](["¿Sabías que si usás la tecla ESCAPE podés pausar el tiempo?", "Es peligroso ser un delivery. La gente a la que le llevas sus entregas ha de estar muy agradecida.", "¿Las botellas? Si consigues todas en una zona, podemos reciclarlas para renovar este cuchitril."])
+dialogue_lines2 = Array[String](["¿Como estuvo tu travesía? Ahora gracias a ese trabajo puedo refrescar a la gente.", "Este lugar es un santuario para otros deliverys como vos.", "Desde que sucedió la gran catástrofe, la gente está aislada en sus hogares para evitar los monstruos.", "El combate es como un baile. Para evitar que te muerdan, es buena idea bailar alrededor de los enemigos.", "Intercambiar golpes no es la mejor estrategia, pronto encontrarás enemigos que golpean más fuerte que vos.", "A veces me quedo más de lo normal aquí, porque se me antoja un cuba libre o un fernet... Soy débil.", "Puede que precise un par de manos más cuando esto se vaya hacia arriba..."])
+dialogue_lines3 = Array[String](["Creo que hay una ventana abierta o rota, el polvo que vuela en la sala está ensuciando mi mostrador.", "Ahora si, reluciente como cabeza de pelado!", ".", ". .", ". . .", "Me faltó aquí."])
 npc_portrait = ExtResource("4_sb6gh")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
@@ -873,7 +895,9 @@ autoplay = "default"
 frame_progress = 0.188846
 
 [node name="NPC" parent="Seccion1/Juanito" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
-dialogue_lines1 = Array[String](["Bueno, hay mucho que limpiar"])
+dialogue_lines1 = Array[String](["¿Vos sos la persona que está reciclando todas esas botellas? ¿O solo te saltaste el tutorial?", "Mi idea es transformar este espacio. Construir lugares para descansar, limpiar, incluso sueño con una mesa de pool!", "No dejes de traer todas las botellas que veas. El material del que se hacen es muy valioso y útil."])
+dialogue_lines2 = Array[String](["Sueño con ver este lugar en su mejor estado.", "Me quiero tomar un buen fernet, alguien dice que si le pongo colet, queda bien.", "¿Cuál es tu bebida favorita? La mia es el whisky."])
+dialogue_lines3 = Array[String](["Este chico punk solo se la pasa en esa pared, ¿ no? Debería descansar.", "¿Volverás a traer botellas? Así como antes.", "Me gustaría poder trabajar en la barra algun día. Quién sabe cuantos brebajes puedo preparar."])
 npc_portrait = ExtResource("8_jphev")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
@@ -884,7 +908,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_esd8j")
 
 [node name="NPC" parent="Seccion1/ChicaCurly" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
-dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+dialogue_lines1 = Array[String](["¿Le tienes miedo a las arañas?", "Las arañas corretean por todo este lugar.", "Me gusta el color negro."])
+dialogue_lines2 = Array[String](["Holis, esta es la sala de descanso, se que ya lo sabes, pero por si acaso.", "Muchas arañas, AAAAAAAAA.", "Perdón, ya me calmo."])
+dialogue_lines3 = Array[String](["Arañas, Arañas, Arañaaaaaa...", "¿Cuál es la diferencia que existe entre yo y estas pequeñas y humildes criaturas?", "La araña teje su tela, yo tejo mi consciencia."])
 npc_portrait = ExtResource("10_wipvo")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
@@ -1029,9 +1055,10 @@ playback_type = 1
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
-dialogue_lines1 = Array[String](["El siguiente nivel es el 1!"])
-dialogue_lines2 = Array[String](["El siguiente nivel es el 2!"])
-npc_portrait = ExtResource("18_4qqdx")
+dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
+dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "A este lugar le haría muy bien una limpieza, ¿no?", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
+dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
+npc_portrait = ExtResource("17_tg8ud")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
 sprite = ExtResource("18_4qqdx")
@@ -1049,7 +1076,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Y" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -2)
+position = Vector2(8, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kkw8p")
 autoplay = "default"
@@ -1057,7 +1084,9 @@ frame_progress = 0.500856
 
 [node name="NPC" parent="Y" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
+dialogue_lines1 = Array[String](["Estamos trabajando para mejorar nuestro lugar.", "¿Quieres ayudarnos?", "Shh, dejame. Estoy inspirado."])
+dialogue_lines2 = Array[String](["La ciudad... Tantos murales que pintar y estoy acá encerrado...", "Shh, dejame. Estoy inspirado."])
+dialogue_lines3 = Array[String](["Un detalle acá... Y otro acá...", "¿Crees que pueda conseguir más pintura si esta se me acaba?", "Shh, dejame. Estoy inspirado."])
 npc_portrait = ExtResource("16_hv30d")
 dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
