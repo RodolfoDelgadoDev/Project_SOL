@@ -1144,7 +1144,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
-visible = false
 position = Vector2(-135, -93)
 scale = Vector2(0.664063, 0.816406)
 color = Color(0.702884, 0.239312, 0.396022, 1)
@@ -1322,12 +1321,12 @@ npc_portrait = ExtResource("26_nlsxi")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
-[node name="ChicaCurly" type="Sprite2D" parent="Scene Manager"]
+[node name="Ver" type="Sprite2D" parent="Scene Manager"]
 position = Vector2(74, 69)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_pl2pq")
 
-[node name="NPC" parent="Scene Manager/ChicaCurly" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
+[node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(-2, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("28_w4bgj")
