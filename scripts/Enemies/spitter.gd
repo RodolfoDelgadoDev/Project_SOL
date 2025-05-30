@@ -58,4 +58,12 @@ func takeDamage():
 		dying = true
 		if audio_player.playing:
 			await audio_player.finished
+		
+		var particle_scene = load("res://Scenes/Particles/confetti.tscn")
+		var particles_instance = particle_scene.instantiate()
+		var particles = particles_instance.get_node("GPUParticles2D")
+		particles.global_position = global_position
+		get_parent().add_child(particles_instance)
+		particles.emitting = true
+		particles.restart()
 		queue_free()

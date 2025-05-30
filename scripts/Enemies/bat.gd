@@ -77,6 +77,7 @@ func start_moving():
 			move_timer = 0.0
 			audio_player.stream = moveSFX
 			audio_player.play()
+
 			
 
 
@@ -114,5 +115,11 @@ func takeDamage():
 		health -= GameManager.playerDamage
 		animator.play("takeDamage")
 		if health <= 0:
-			await audio_player.finished
+			var particle_scene = load("res://Scenes/Particles/confetti.tscn")
+			var particles_instance = particle_scene.instantiate()
+			var particles = particles_instance.get_node("GPUParticles2D")
+			particles.global_position = character_body.global_position
+			get_parent().add_child(particles_instance)
+			particles.emitting = true
+			particles.restart()
 			queue_free()
