@@ -947,7 +947,7 @@ hurtSFX = null
 [node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
-dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer entrega, las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, a menos que completes la entrega, claro."])
+dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "- Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "- En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
 dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "¿A este lugar le haría muy bien una limpieza, no?", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
 dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
 npc_portrait = ExtResource("20_x82eb")

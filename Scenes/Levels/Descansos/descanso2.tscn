@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://mb6v2konbssl"]
+[gd_scene load_steps=100 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
 [ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
@@ -21,8 +21,25 @@
 [ext_resource type="Texture2D" uid="uid://b2jxkejya7doh" path="res://art/NPCs Portraits/Olivia-Portrait.png" id="19_cddvg"]
 [ext_resource type="Texture2D" uid="uid://c4s3uwb8t20d" path="res://art/NPCs/Olivia/NPC - Olivia - March.png" id="19_fsqsj"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_owwac"]
+[ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="20_63rre"]
+[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="21_acsc8"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="22_v5urr"]
+[ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="23_cosp4"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="23_e44ld"]
+
+[sub_resource type="Gradient" id="Gradient_hvs2q"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
+gradient = SubResource("Gradient_hvs2q")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_1rfgy")
@@ -344,19 +361,29 @@ texture_region_size = Vector2i(32, 32)
 12:15/0 = 0
 13:14/0 = 0
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:14/0 = 0
 14:15/0 = 0
+14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:16/0 = 0
+14:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:14/0 = 0
 15:15/0 = 0
+15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 15:16/0 = 0
+15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:14/0 = 0
 16:15/0 = 0
+16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 16:16/0 = 0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:14/0 = 0
 17:15/0 = 0
+17:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 17:16/0 = 0
+17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 18:15/0 = 0
 19:15/0 = 0
 19:14/0 = 0
@@ -405,6 +432,7 @@ texture_region_size = Vector2i(32, 32)
 10:16/0 = 0
 11:16/0 = 0
 12:16/0 = 0
+12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 13:17/0 = 0
 14:17/0 = 0
 14:18/0 = 0
@@ -507,20 +535,6 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
-
-[sub_resource type="Gradient" id="Gradient_hvs2q"]
-offsets = PackedFloat32Array(0, 0.681818)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_otg58"]
-gradient = SubResource("Gradient_hvs2q")
-width = 128
-height = 128
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 1)
-metadata/_snap_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et0de"]
 atlas = ExtResource("22_v5urr")
@@ -959,6 +973,99 @@ animations = [{
 [node name="Node2D3" type="Node2D"]
 position = Vector2(21, 124)
 
+[node name="Luces" type="Node2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="Luces"]
+position = Vector2(24.25, -91.375)
+scale = Vector2(0.660156, 0.837891)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Luces"]
+visible = false
+position = Vector2(-135, -93)
+scale = Vector2(0.664063, 0.816406)
+color = Color(0.702884, 0.239312, 0.396022, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Luces"]
+position = Vector2(-21, -85)
+scale = Vector2(0.730469, 0.724023)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+energy = 1.76
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Luces"]
+position = Vector2(-43, -92)
+scale = Vector2(0.664063, 0.727539)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+energy = 1.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Luces"]
+position = Vector2(-8, -1)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Luces"]
+position = Vector2(-238, -78)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Luces"]
+position = Vector2(-128, 24)
+scale = Vector2(0.664063, 0.658203)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Luces"]
+position = Vector2(-231, 42)
+scale = Vector2(0.402344, 0.398793)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Luces"]
+position = Vector2(-137, 89)
+scale = Vector2(0.429688, 0.425896)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Luces"]
+position = Vector2(47, 96)
+scale = Vector2(0.59375, 0.588511)
+color = Color(0.957812, 0.838904, 0.762339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D18" type="PointLight2D" parent="Luces"]
+position = Vector2(-87, -65)
+scale = Vector2(0.15625, 0.154871)
+color = Color(0.82746, 0, 0.0770657, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Luces"]
+position = Vector2(-185, -67)
+scale = Vector2(0.15625, 0.154871)
+color = Color(0.82746, 0, 0.0770657, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_otg58")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Luces"]
+color = Color(0.812689, 0.681546, 0.612906, 1)
+
 [node name="Piso" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADt//j/AQABAAcAAADt//n/AQABAAcAAADt//r/AQABAAcAAADt//v/AQABAAcAAADt//z/AQABAAcAAADt//3/AQABAAcAAADt//7/AQABAAcAAADt////AQABAAcAAADt/wAAAQABAAcAAADt/wEAAQABAAcAAADu//j/AQABAAcAAADu//n/AQABAAcAAADu//r/AQABAAcAAADu//v/AQABAAcAAADu//z/AQABAAcAAADu//3/AQABAAcAAADu//7/AQABAAcAAADu////AQABAAcAAADu/wAAAQABAAcAAADu/wEAAQABAAcAAADv//j/AQABAAcAAADv//n/AQABAAcAAADv//r/AQABAAcAAADw//j/AQABAAcAAADw//n/AQABAAcAAADw//r/AQABAAcAAADx//j/AQABAAcAAADx//n/AQAEAA4AAADx//r/AQAEAA8AAADy//j/AQABAAcAAADy//n/AQADAA4AAADy//r/AQADAA8AAADt/wIAAQABAAcAAADt/wMAAQABAAcAAADt/wQAAQABAAcAAADt/wUAAQABAAcAAADt/wYAAQABAAcAAADt/wcAAQABAAcAAADu/wIAAQABAAcAAADu/wMAAQABAAcAAADu/wQAAQABAAcAAADu/wUAAQABAAcAAADu/wYAAQABAAcAAADu/wcAAQABAAcAAADz//j/AQABAAcAAADz//n/AQADAA4AAADz//r/AQALAA8AAAD0//j/AQABAAcAAAD0//n/AQADAA4AAAD0//r/AQADAA8AAAD1//j/AQABAAcAAAD1//n/AQADAA4AAAD1//r/AQALAA8AAAD2//j/AQABAAcAAAD2//n/AQADAA4AAAD2//r/AQADAA8AAAD3//j/AQABAAcAAAD3//n/AQADAA4AAAD3//r/AQALAA8AAAD4//j/AQABAAcAAAD4//n/AQADAA4AAAD4//r/AQADAA8AAAD5//j/AQABAAcAAAD5//n/AQADAA4AAAD5//r/AQADAA8AAAD6//j/AQABAAcAAAD6//n/AQADAA4AAAD6//r/AQALAA8AAADv//v/AQABAAcAAADv//z/AQABAAcAAADv//3/AQABAAcAAADv//7/AQABAAcAAADv////AQABAAcAAADv/wAAAQABAAcAAADv/wEAAQABAAcAAADv/wIAAQABAAcAAADv/wMAAQABAAcAAADv/wQAAQABAAcAAADw//v/AQABAAcAAADw//z/AQABAAcAAADw//3/AQABAAcAAADw//7/AQABAAcAAADw////AQABAAcAAADw/wAAAQABAAcAAADw/wEAAQABAAcAAADw/wIAAQABAAcAAADw/wMAAQABAAcAAADw/wQAAQABAAcAAADx//v/AQACABAAAADx//z/AQAAABAAAADx//3/AQACABAAAADx//7/AQAAABAAAADx////AQACAAIAAADx/wAAAQACAAIAAADx/wEAAQACAAIAAADx/wIAAQAAABAAAADx/wMAAQAAABAAAADx/wQAAQAAABAAAADy//v/AQACABAAAADy//z/AQAAABAAAADy//3/AQACABAAAADy//7/AQAAABAAAADy////AQACAAIAAADy/wAAAQACAAIAAADy/wEAAQACAAIAAADy/wIAAQACABAAAADy/wMAAQAAABAAAADy/wQAAQAFABAAAADz//v/AQACABAAAADz//z/AQAAABAAAADz//3/AQACABAAAADz//7/AQABABAAAADz////AQACAAIAAADz/wAAAQACAAIAAADz/wEAAQACAAIAAADz/wIAAQAFABAAAADz/wMAAQAFABAAAADz/wQAAQAFABAAAAD0//v/AQACABAAAAD0//z/AQACABAAAAD0//3/AQACABAAAAD0//7/AQACABAAAAD0////AQACABAAAAD0/wMAAQAAABAAAAD0/wQAAQABABAAAAD1//v/AQACABAAAAD1//z/AQACABAAAAD1//3/AQAFABAAAAD1//7/AQABABAAAAD1////AQABABAAAAD1/wAAAQAAABAAAAD1/wIAAQAAABAAAAD1/wMAAQAAABAAAAD1/wQAAQAAABAAAAD2//v/AQACABAAAAD2//z/AQACABAAAAD2//3/AQAFABAAAAD2//7/AQAFABAAAAD2////AQACABAAAAD2/wAAAQAAABAAAAD2/wEAAQACABAAAAD2/wIAAQACAAIAAAD2/wMAAQACAAIAAAD2/wQAAQACAAIAAAD3//v/AQACABAAAAD3//z/AQAFABAAAAD3//3/AQAFABAAAAD3//7/AQAFABAAAAD3////AQAFABAAAAD3/wAAAQACABAAAAD3/wEAAQACABAAAAD3/wIAAQACABAAAAD3/wMAAQACABAAAAD3/wQAAQADABAAAAD4//v/AQACABAAAAD4//z/AQACABAAAAD4//3/AQAAABAAAAD4//7/AQAAABAAAAD4////AQACABAAAAD4/wAAAQACABAAAAD4/wEAAQABABAAAAD4/wIAAQACABAAAAD4/wMAAQACABAAAAD4/wQAAQADABAAAAD5//v/AQACABAAAAD5//z/AQACABAAAAD5//3/AQABABAAAAD5//7/AQAAABAAAAD5/wAAAQACABAAAAD5/wEAAQACABAAAAD5/wIAAQACABAAAAD5/wMAAQACABAAAAD5/wQAAQADABAAAAD6//v/AQACABAAAAD6//z/AQACABAAAAD6//3/AQACABAAAAD6//7/AQACABAAAAD6////AQAAABAAAAD6/wAAAQAFABAAAAD6/wEAAQACABAAAAD6/wIAAQACABAAAAD6/wMAAQABABAAAAD6/wQAAQADABAAAAD7//j/AQABAAcAAAD7//n/AQADAA4AAAD7//r/AQADAA8AAAD7//v/AQAGAAQAAAD7//z/AQAHAAQAAAD7//3/AQACAAIAAAD7//7/AQAAABAAAAD7////AQABABAAAAD7/wAAAQAFABAAAAD7/wEAAQAFABAAAAD7/wIAAQACABAAAAD7/wMAAQAAABAAAAD7/wQAAQADABAAAAD8//j/AQABAAcAAAD8//n/AQADAA4AAAD8//r/AQALAA8AAAD8//v/AQAGAAQAAAD8//z/AQAGAAQAAAD8//3/AQACABAAAAD8//7/AQAAABAAAAD8////AQAAABAAAAD8/wAAAQAFABAAAAD8/wEAAQAFABAAAAD8/wIAAQABABAAAAD8/wMAAQACABAAAAD8/wQAAQADABAAAAD9//j/AQABAAcAAAD9//n/AQADAA4AAAD9//r/AQADAA8AAAD9//v/AQAGAAQAAAD9//z/AQAGAAQAAAD9//3/AQACABAAAAD9//7/AQACAAIAAAD9////AQACAAIAAAD9/wAAAQACAAIAAAD9/wEAAQAFABAAAAD9/wIAAQAAABAAAAD9/wMAAQACABAAAAD9/wQAAQADABAAAAD+//j/AQABAAcAAAD+//n/AQADAA4AAAD+//r/AQALAA8AAAD+//v/AQAGAAQAAAD+//z/AQAGAAQAAAD+//3/AQACABAAAAD+//7/AQACAAIAAAD+////AQACAAIAAAD+/wAAAQAAABAAAAD+/wEAAQAAABAAAAD+/wIAAQAAABAAAAD+/wMAAQACABAAAAD+/wQAAQADABAAAAD///j/AQABAAcAAAD///n/AQADAA4AAAD///r/AQADAA8AAAD///v/AQAGAAQAAAD///z/AQAGAAQAAAD///3/AQAAABAAAAD///7/AQACAAIAAAD/////AQACAAIAAAD//wAAAQAAABAAAAD//wEAAQAAABAAAAD//wIAAQAAABAAAAD//wMAAQACABAAAAD//wQAAQABAAcAAAAAAPj/AQABAAcAAAAAAPn/AQADAA4AAAAAAPr/AQADAA8AAAAAAPv/AQALAA4AAAAAAPz/AQALAA8AAAAAAP3/AQAAABAAAAAAAP7/AQACAAIAAAAAAP//AQACAAIAAAAAAAAAAQAAABAAAAAAAAEAAQAAABAAAAAAAAIAAQAAABAAAAAAAAMAAQACABAAAAAAAAQAAQADABAAAAABAPj/AQABAAcAAAABAPn/AQADAA4AAAABAPr/AQALAA8AAAABAPv/AQACABAAAAABAPz/AQACABAAAAABAP3/AQAAABAAAAABAP7/AQACAAIAAAABAP//AQACAAIAAAABAAAAAQACAAIAAAABAAEAAQAAABAAAAABAAIAAQACABAAAAABAAMAAQACABAAAAABAAQAAQADABAAAAACAPj/AQABAAcAAAACAPn/AQADAA4AAAACAPr/AQADAA8AAAACAPv/AQACABAAAAACAPz/AQACABAAAAACAP3/AQACABAAAAACAP7/AQAAABAAAAACAP//AQABABAAAAACAAAAAQAAABAAAAACAAEAAQACABAAAAACAAIAAQABABAAAAACAAMAAQACABAAAAACAAQAAQADABAAAAADAPj/AQABAAcAAAADAPn/AQADAA4AAAADAPr/AQALAA8AAAADAPv/AQACABAAAAADAPz/AQAFABAAAAADAP3/AQABABAAAAADAP7/AQAAABAAAAADAP//AQACABAAAAADAAAAAQACABAAAAADAAEAAQACABAAAAADAAIAAQACABAAAAADAAMAAQABABAAAAADAAQAAQADABAAAAAEAPj/AQABAAcAAAAEAPn/AQADAA4AAAAEAPr/AQADAA8AAAAEAPv/AQACABAAAAAEAPz/AQAFABAAAAAEAP3/AQACABAAAAAEAP7/AQAAABAAAAAEAP//AQACABAAAAAEAAAAAQACABAAAAAEAAEAAQACABAAAAAEAAIAAQACABAAAAAEAAMAAQACABAAAAAEAAQAAQADABAAAAAFAPj/AQABAAcAAAAFAPr/AQAFAA8AAAAFAPv/AQACABAAAAAFAPz/AQACABAAAAAFAP3/AQAFABAAAAAFAP7/AQAAABAAAAAFAP//AQAAABAAAAAFAAAAAQACABAAAAAFAAEAAQACABAAAAAFAAIAAQACABAAAAAFAAMAAQACAAIAAAAFAAQAAQAMAA8AAAAGAPj/AQABAAcAAAAGAPv/AQABAAcAAAAGAPz/AQABAAcAAAAGAP3/AQABAAcAAAAGAP7/AQAFAAUAAAAGAP//AQABAAcAAAAGAAAAAQABAAcAAAAGAAEAAQABAAcAAAAGAAIAAQABAAcAAAAGAAMAAQABAAcAAAAGAAQAAQABAAcAAAAHAPj/AQABAAcAAAAHAPn/AQABAAcAAAAHAPr/AQABAAcAAAAHAPv/AQABAAcAAAAHAPz/AQABAAcAAAAHAP3/AQABAAcAAAAHAP7/AQABAAcAAAAHAP//AQABAAcAAAAHAAAAAQABAAcAAAAHAAEAAQABAAcAAAAHAAIAAQABAAcAAAAHAAMAAQABAAcAAAAHAAQAAQABAAcAAAAIAPj/AQABAAcAAAAIAPn/AQABAAcAAAAIAPr/AQABAAcAAAAIAPv/AQABAAcAAAAIAPz/AQABAAcAAAAIAP3/AQABAAcAAAAIAP7/AQABAAcAAAAIAP//AQABAAcAAAAIAAAAAQABAAcAAAAIAAEAAQABAAcAAAAIAAIAAQABAAcAAAAIAAMAAQABAAcAAAAIAAQAAQABAAcAAAAJAPj/AQABAAcAAAAJAPn/AQABAAcAAAAJAPr/AQABAAcAAAAJAPv/AQABAAcAAAAJAPz/AQABAAcAAAAJAP3/AQABAAcAAAAJAP7/AQABAAcAAAAJAP//AQABAAcAAAAJAAAAAQABAAcAAAAJAAEAAQABAAcAAAAJAAIAAQABAAcAAAAJAAMAAQABAAcAAAAJAAQAAQABAAcAAADv/wUAAQABAAcAAADv/wYAAQABAAcAAADv/wcAAQABAAcAAADw/wUAAQABAAcAAADw/wYAAQABAAcAAADw/wcAAQABAAcAAADx/wUAAQAAABAAAADx/wYAAQABAAcAAADx/wcAAQABAAcAAADy/wUAAQAFABAAAADy/wYAAQABAAcAAADy/wcAAQABAAcAAADz/wUAAQAFABAAAADz/wYAAQABAAcAAADz/wcAAQABAAcAAAD0/wUAAQACABAAAAD0/wYAAQABAAcAAAD0/wcAAQABAAcAAAD1/wUAAQACABAAAAD1/wYAAQABAAcAAAD1/wcAAQABAAcAAAD2/wUAAQACAAIAAAD2/wYAAQABAAcAAAD2/wcAAQABAAcAAAD3/wUAAQADABAAAAD3/wYAAQADABAAAAD3/wcAAQABAAcAAAD4/wUAAQAEABAAAAD4/wYAAQADABAAAAD4/wcAAQABAAcAAAD5/wUAAQAEABAAAAD5/wYAAQAEABAAAAD5/wcAAQABAAcAAAD6/wUAAQAEABAAAAD6/wYAAQAEABAAAAD6/wcAAQABAAcAAAD7/wUAAQAEABAAAAD7/wYAAQAEABAAAAD7/wcAAQABAAcAAAD8/wUAAQAEABAAAAD8/wYAAQAEABAAAAD8/wcAAQABAAcAAAD9/wUAAQADABAAAAD9/wYAAQAEABAAAAD9/wcAAQABAAcAAAD+/wUAAQADABAAAAD+/wYAAQADABAAAAD+/wcAAQABAAcAAAD//wUAAQABAAcAAAD//wYAAQABAAcAAAD//wcAAQABAAcAAAAAAAUAAQADABAAAAAAAAYAAQADABAAAAAAAAcAAQABAAcAAAABAAUAAQAEABAAAAABAAYAAQAEABAAAAABAAcAAQABAAcAAAACAAUAAQAEABAAAAACAAYAAQAEABAAAAACAAcAAQABAAcAAAADAAUAAQAEABAAAAADAAYAAQAEABAAAAADAAcAAQABAAcAAAAEAAUAAQAEABAAAAAEAAYAAQAEABAAAAAEAAcAAQABAAcAAAAFAAUAAQADABAAAAAFAAYAAQAEABAAAAAFAAcAAQABAAcAAAAGAAUAAQABAAcAAAAGAAYAAQABAAcAAAAGAAcAAQABAAcAAAAHAAUAAQABAAcAAAAHAAYAAQABAAcAAAAHAAcAAQABAAcAAAAIAAUAAQABAAcAAAAIAAYAAQABAAcAAAAIAAcAAQABAAcAAAAJAAUAAQABAAcAAAAJAAYAAQABAAcAAAAJAAcAAQABAAcAAADt//f/AQABAAcAAADu//f/AQABAAcAAADv//f/AQABAAcAAADw//f/AQABAAcAAADx//f/AQABAAcAAADy//f/AQABAAcAAADz//f/AQABAAcAAAD0//f/AQABAAcAAAD1//f/AQABAAcAAAD2//f/AQABAAcAAAD3//f/AQABAAcAAAD4//f/AQABAAcAAAD5//f/AQABAAcAAAD6//f/AQABAAcAAAD7//f/AQABAAcAAAD8//f/AQABAAcAAAD9//f/AQABAAcAAAD+//f/AQABAAcAAAD///f/AQABAAcAAAAAAPf/AQABAAcAAAABAPf/AQABAAcAAAACAPf/AQABAAcAAAADAPf/AQABAAcAAAAEAPf/AQABAAcAAAAFAPf/AQABAAcAAAAGAPf/AQABAAcAAAAHAPf/AQABAAcAAAAIAPf/AQABAAcAAAAJAPf/AQABAAcAAAAKAPf/AQABAAcAAAAKAPj/AQABAAcAAAAKAPn/AQABAAcAAAAKAPr/AQABAAcAAAAKAPv/AQABAAcAAAAKAPz/AQABAAcAAAAKAP3/AQABAAcAAAAKAP7/AQABAAcAAAAKAP//AQABAAcAAAAKAAAAAQABAAcAAAAKAAEAAQABAAcAAAAKAAIAAQABAAcAAAAKAAMAAQABAAcAAAAKAAQAAQABAAcAAAAKAAUAAQABAAcAAAAKAAYAAQABAAcAAAAKAAcAAQABAAcAAAD1/wEAAQAFABAAAAD0/wAAAQACABAAAAD0/wEAAQACABAAAAD0/wIAAQACABAAAAD5////AQAAABAAAADr//f/AQABAAcAAADs//j/AQABAAcAAADs//n/AQABAAcAAADs//r/AQABAAcAAADs//v/AQABAAcAAADs//z/AQABAAcAAADs//f/AQABAAcAAADr//j/AQABAAcAAADr//n/AQABAAcAAADr//z/AQABAAcAAADr//v/AQABAAcAAADr//r/AQABAAcAAADr//3/AQABAAcAAADr//7/AQABAAcAAADr////AQABAAcAAADs////AQABAAcAAADs//7/AQABAAcAAADs//3/AQABAAcAAADs/wcAAQABAAcAAADr/wcAAQABAAcAAADr/wYAAQABAAcAAADs/wYAAQABAAcAAADs/wUAAQABAAcAAADr/wUAAQABAAcAAADr/wQAAQABAAcAAADs/wQAAQABAAcAAADs/wMAAQABAAcAAADr/wMAAQABAAcAAADr/wIAAQABAAcAAADs/wIAAQABAAcAAADs/wEAAQABAAcAAADr/wEAAQABAAcAAADs/wAAAQABAAcAAADr/wAAAQABAAcAAAALAAcAAQABAAcAAAAMAAcAAQABAAcAAAALAAYAAQABAAcAAAAMAAYAAQABAAcAAAAMAAUAAQABAAcAAAALAAUAAQABAAcAAAALAAQAAQABAAcAAAAMAAQAAQABAAcAAAAMAAMAAQABAAcAAAALAAMAAQABAAcAAAALAAIAAQABAAcAAAALAAEAAQABAAcAAAAMAAIAAQABAAcAAAAMAAEAAQABAAcAAAAMAAAAAQABAAcAAAALAAAAAQABAAcAAAALAP//AQABAAcAAAAMAP//AQABAAcAAAAMAP7/AQABAAcAAAALAP7/AQABAAcAAAALAP3/AQABAAcAAAALAPz/AQABAAcAAAAMAP3/AQABAAcAAAAMAPz/AQABAAcAAAAMAPv/AQABAAcAAAAMAPr/AQABAAcAAAALAPr/AQABAAcAAAALAPv/AQABAAcAAAAMAPj/AQABAAcAAAAMAPn/AQABAAcAAAALAPj/AQABAAcAAAALAPf/AQABAAcAAAAMAPf/AQABAAcAAAALAPn/AQABAAcAAAAFAPn/AQAFAA4AAAAGAPn/AQABAAcAAAAGAPr/AQABAAcAAADr/wgAAQABAAcAAADr/wkAAQABAAcAAADs/wkAAQABAAcAAADs/woAAQABAAcAAADt/woAAQABAAcAAADu/woAAQABAAcAAADv/woAAQABAAcAAADw/woAAQABAAcAAADx/woAAQABAAcAAADy/woAAQABAAcAAADz/woAAQABAAcAAAD0/woAAQABAAcAAAD1/woAAQABAAcAAAD2/woAAQABAAcAAAD3/woAAQABAAcAAAD4/woAAQABAAcAAAD5/woAAQABAAcAAAD6/woAAQABAAcAAADr/woAAQABAAcAAADs/wgAAQABAAcAAADt/wgAAQABAAcAAADt/wkAAQABAAcAAADu/wgAAQABAAcAAADu/wkAAQABAAcAAADv/wgAAQABAAcAAADv/wkAAQABAAcAAADw/wgAAQABAAcAAADw/wkAAQABAAcAAADx/wgAAQABAAcAAADx/wkAAQABAAcAAADy/wgAAQABAAcAAADy/wkAAQABAAcAAADz/wgAAQABAAcAAADz/wkAAQABAAcAAAD0/wgAAQABAAcAAAD0/wkAAQABAAcAAAD1/wgAAQABAAcAAAD1/wkAAQABAAcAAAD2/wgAAQABAAcAAAD2/wkAAQABAAcAAAD3/wgAAQABAAcAAAD3/wkAAQABAAcAAAD4/wgAAQABAAcAAAD4/wkAAQABAAcAAAD5/wgAAQABAAcAAAD5/wkAAQABAAcAAAD6/wgAAQABAAcAAAD6/wkAAQABAAcAAAD7/wgAAQABAAcAAAD7/wkAAQABAAcAAAD7/woAAQABAAcAAAD8/wgAAQABAAcAAAD8/wkAAQABAAcAAAD8/woAAQABAAcAAAD9/wgAAQABAAcAAAD9/wkAAQABAAcAAAD9/woAAQABAAcAAAD+/wgAAQABAAcAAAD+/wkAAQABAAcAAAD+/woAAQABAAcAAAD//wgAAQABAAcAAAD//wkAAQABAAcAAAD//woAAQABAAcAAAAAAAgAAQABAAcAAAAAAAkAAQABAAcAAAAAAAoAAQABAAcAAAABAAgAAQABAAcAAAABAAkAAQABAAcAAAABAAoAAQABAAcAAAACAAgAAQABAAcAAAACAAkAAQABAAcAAAACAAoAAQABAAcAAAADAAgAAQABAAcAAAADAAkAAQABAAcAAAADAAoAAQABAAcAAAAEAAgAAQABAAcAAAAEAAkAAQABAAcAAAAEAAoAAQABAAcAAAAFAAgAAQABAAcAAAAFAAkAAQABAAcAAAAFAAoAAQABAAcAAAAGAAgAAQABAAcAAAAGAAkAAQABAAcAAAAGAAoAAQABAAcAAAAHAAgAAQABAAcAAAAHAAkAAQABAAcAAAAHAAoAAQABAAcAAAAIAAgAAQABAAcAAAAIAAkAAQABAAcAAAAIAAoAAQABAAcAAAAJAAgAAQABAAcAAAAJAAkAAQABAAcAAAAJAAoAAQABAAcAAAAKAAgAAQABAAcAAAAKAAkAAQABAAcAAAAKAAoAAQABAAcAAAALAAgAAQABAAcAAAALAAkAAQABAAcAAAALAAoAAQABAAcAAAAMAAgAAQABAAcAAAAMAAkAAQABAAcAAAAMAAoAAQABAAcAAADr//b/AQABAAcAAADs//b/AQABAAcAAADt//b/AQABAAcAAADu//b/AQABAAcAAADv//b/AQABAAcAAADw//b/AQABAAcAAADx//b/AQABAAcAAADy//b/AQABAAcAAADz//b/AQABAAcAAAD0//b/AQABAAcAAAD1//b/AQABAAcAAAD2//b/AQABAAcAAAD3//b/AQABAAcAAAD4//b/AQABAAcAAAD5//b/AQABAAcAAAD6//b/AQABAAcAAAD7//b/AQABAAcAAAD8//b/AQABAAcAAAD9//b/AQABAAcAAAD+//b/AQABAAcAAAD///b/AQABAAcAAAAAAPb/AQABAAcAAAABAPb/AQABAAcAAAACAPb/AQABAAcAAAADAPb/AQABAAcAAAAEAPb/AQABAAcAAAAFAPb/AQABAAcAAAAGAPb/AQABAAcAAAAHAPb/AQABAAcAAAAIAPb/AQABAAcAAAAJAPb/AQABAAcAAAAKAPb/AQABAAcAAAALAPb/AQABAAcAAAAMAPb/AQABAAcAAAA=")
@@ -999,7 +1106,8 @@ autoplay = "default"
 
 [node name="NPC" parent="Seccion1/Dreadlocks" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
+dialogue_lines2 = Array[String](["Invité a Juanito a la barra, precisaba un par de manos extra.", "A veces le pido mucho a Juanito, es buen pibe pero no se da cuenta de los errores pequeños.", "Esperemos que todo siga adelante, ¡tú sigue en busca de esas botellas para que las mejoras no se detengan!"])
+dialogue_lines3 = Array[String](["Podríamos tratar de seguir invirtiendo un poco mas de nuestro tiempo para poder mejorar nuestro lugar ¿sabes?", "Espero que no se las siga pisando Juanito, porque si no queda \"Juanmuertito\".", ".", "...", "...", "Mejor no me dedico a la comedia."])
 npc_portrait = ExtResource("5_y3pda")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
@@ -1014,6 +1122,8 @@ frame_progress = 0.392486
 [node name="NPC" parent="Seccion1/Juanito" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
+dialogue_lines2 = Array[String](["¿Quieres algo en especial?", "¿Qué por qué estoy molesto con D? Se durmió, no entregó el pedido ¡y me culparon a mí!", "¿Sabes? es complicado ver su cara. Si tengo que hacer horas extras, trabajaré de mozo."])
+dialogue_lines3 = Array[String](["Sigo molesto con D, el jefe esta enojado conmigo. Tengo miedo que me asciendan a cliente.", "De verdad no fue mi culpa :(", "Trabajar con los tragos es mi pasión, que no me alejen."])
 npc_portrait = ExtResource("8_0dmvg")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
@@ -1038,24 +1148,6 @@ tile_map_data = PackedByteArray("AAD9//r/AQAOAAwAAAD9//v/AQAOAA0AAAD/////AQAOABI
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Ocultar" type="Node2D" parent="."]
-
-[node name="ObstaculosTopFeo" type="TileMapLayer" parent="Ocultar"]
-visible = false
-position = Vector2(21, 124)
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADx/wIAAQAIAA4AAAD2/wIAAQAGAAMAAAD8/wMAAQAGAAMAAAD9/wMAAQAFAAMAAAABAAMAAQAHAAIAAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAADx//3/AQAQAAgAAAA=")
-tile_set = SubResource("TileSet_yil1h")
-rendering_quadrant_size = 32
-
-[node name="OcultarSeccion4" type="TileMapLayer" parent="Ocultar"]
-visible = false
-position = Vector2(21, 124)
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADy/wIAAQASAA4AAADz/wIAAQATAA4AAADx/wIAAQAIAA4AAAA=")
-tile_set = SubResource("TileSet_yil1h")
-rendering_quadrant_size = 32
-
 [node name="Scene Manager" type="Node2D" parent="."]
 position = Vector2(0, 2)
 script = ExtResource("10_8ch1l")
@@ -1063,8 +1155,8 @@ segundos = 45
 descanso = true
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("11_wdepr")]
-position = Vector2(-216, -74)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-224, -74)
+scale = Vector2(1.6631, 0.800559)
 has_npc = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
@@ -1075,98 +1167,6 @@ position = Vector2(4, 4)
 [node name="DialogueBox" parent="Scene Manager/CanvasLayer" instance=ExtResource("13_rqwvj")]
 
 [node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("14_g2r1f")]
-
-[node name="Luces" type="Node2D" parent="Scene Manager"]
-
-[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(24.25, -91.375)
-scale = Vector2(0.660156, 0.837891)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
-visible = false
-position = Vector2(-135, -93)
-scale = Vector2(0.664063, 0.816406)
-color = Color(0.702884, 0.239312, 0.396022, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-21, -85)
-scale = Vector2(0.730469, 0.724023)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-energy = 1.76
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-43, -92)
-scale = Vector2(0.664063, 0.727539)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-energy = 1.3
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-8, -1)
-scale = Vector2(0.664063, 0.658203)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-238, -78)
-scale = Vector2(0.664063, 0.658203)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-128, 24)
-scale = Vector2(0.664063, 0.658203)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D17" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-231, 42)
-scale = Vector2(0.402344, 0.398793)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-137, 89)
-scale = Vector2(0.429688, 0.425896)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(47, 96)
-scale = Vector2(0.59375, 0.588511)
-color = Color(0.957812, 0.838904, 0.762339, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-87, -65)
-scale = Vector2(0.15625, 0.154871)
-color = Color(0.82746, 0, 0.0770657, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-185, -67)
-scale = Vector2(0.15625, 0.154871)
-color = Color(0.82746, 0, 0.0770657, 1)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_otg58")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
-color = Color(0.812689, 0.681546, 0.612906, 1)
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
 stream = ExtResource("15_i2526")
@@ -1182,7 +1182,8 @@ sprite_frames = SubResource("SpriteFrames_81d44")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
-dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
+dialogue_lines2 = Array[String](["Poco a poco, va tomando forma.", "La ciudad... Tantos murales que pintar y estoy acá encerrado...", "Shh, dejame. Estoy inspirado."])
+dialogue_lines3 = Array[String](["Un detalle acá... Y otro acá...", "¿Crees que pueda conseguir más pintura si esta se me acaba?", "Shh, dejame. Estoy inspirado."])
 npc_portrait = ExtResource("23_e44ld")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
@@ -1208,13 +1209,25 @@ collision_mask = 7
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_txru4")
 
-[node name="Olga" parent="Scene Manager/Olivia" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+[node name="NPC" parent="Scene Manager/Olivia" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(4, 2)
 scale = Vector2(2, 2)
-dialogue_lines1 = Array[String](["Olivia"])
+dialogue_lines2 = Array[String](["Quiero comprar una chuchería, pero me faltan 50 pesos :c", "os demás me llaman Mackuin, pero mi verdadero nombre es Olivia", "Correr correr correr, fiummmm ... .."])
+dialogue_lines3 = Array[String](["Me rugen las tripas del hambre.", "Estoy haciendo piernas como loca, y hoy no es dia de piernas.", "Corro, corro y corro .. ... .."])
 npc_portrait = ExtResource("19_cddvg")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
+
+[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+position = Vector2(-200, -74)
+scale = Vector2(0.5, 0.5)
+dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
+dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "¡Wow dos seguida!, Este lugar esta tomando forma, gracias por ese aporte.", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
+dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
+npc_portrait = ExtResource("20_63rre")
+dialogue_manager = NodePath("")
+voice_sound = ExtResource("19_owwac")
+sprite = ExtResource("21_acsc8")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -1225,6 +1238,14 @@ rendering_quadrant_size = 32
 [node name="ComputerGirl" parent="." instance=ExtResource("17_uciwg")]
 position = Vector2(-137, -13)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="ComputerGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+position = Vector2(2, 10)
+dialogue_lines2 = Array[String](["Hey Colibri, ¿Cómo te va?", "Me encantan las manzanas verdes, pero esdifícil conseguirlas, espero que en el futurose consigan más.", "Aún falta mucho para sanar la tierra, peroal menos están actuando, ya tuvimos una pseudo apocalipsis hace muchos años, no creo que quieran otra."])
+dialogue_lines3 = Array[String](["Hey Colibri cómo van tus clases de cocina? Ese tipo es muy pesado contigo ¿Estás bien?", "Estar sentada mucho tiempo en esta silla me esta haciendo doler las pompis.", "¿Crees que en algún momento pare la tormenta?"])
+npc_portrait = ExtResource("23_cosp4")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_owwac")
 
 [node name="Obstaculos3" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
