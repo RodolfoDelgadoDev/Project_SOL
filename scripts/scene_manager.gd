@@ -194,3 +194,6 @@ func _remove_pause_scene():
 	if pause_scene_instance:
 		pause_scene_instance.queue_free()
 		pause_scene_instance = null
+
+func forced_change_scene():
+	get_tree().change_scene_to_file("res://Scenes/demo_mensaje.tscn")

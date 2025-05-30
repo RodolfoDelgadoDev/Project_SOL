@@ -1225,7 +1225,7 @@ dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás repo
 dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "¡Wow dos seguida!, Este lugar esta tomando forma, gracias por ese aporte.", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
 dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
 npc_portrait = ExtResource("20_63rre")
-dialogue_manager = NodePath("")
+dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
 sprite = ExtResource("21_acsc8")
 
