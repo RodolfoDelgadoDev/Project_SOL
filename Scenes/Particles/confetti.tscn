@@ -9,12 +9,11 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_ero8v")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8s4re"]
-lifetime_randomness = 0.36
+lifetime_randomness = 0.3
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
-spread = 60.0
-initial_velocity_min = 8.0
-initial_velocity_max = 10.0
+spread = 80.0
+initial_velocity_max = 50.41
 gravity = Vector3(0, 20, 0)
 scale_max = 2.0
 color = Color(1, 0.90195, 0.546157, 1)
@@ -31,4 +30,5 @@ process_material = SubResource("ParticleProcessMaterial_8s4re")
 texture = SubResource("AtlasTexture_0prsh")
 lifetime = 1.5
 one_shot = true
+speed_scale = 2.5
 explosiveness = 1.0
