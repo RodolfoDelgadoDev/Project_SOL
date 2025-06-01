@@ -11,6 +11,7 @@ extends Control
 @onready var ColorFade: ColorRect = $ColorRect
 @export var button_ok: Resource
 @export var button_change: Resource
+@export var pause: Resource
 
 var current_focused_button: Button = null
 var bounce_tween: Tween = null
@@ -18,6 +19,8 @@ var first_focus : bool = true
 var is_options_open: bool = false
 
 func _ready():
+	audiobutton.stream = pause
+	audiobutton.play()
 	# Connect focus signals
 	OptionsButton.focus_entered.connect(_on_button_focused.bind(OptionsButton))
 	ExitButton.focus_entered.connect(_on_button_focused.bind(ExitButton))
@@ -85,7 +88,7 @@ func _grab_focus():
 	ContinueButton.grab_focus()
 
 func _on_continue_button_pressed() -> void:
-	audiobutton.stream = button_ok
+	audiobutton.stream = pause
 	audiobutton.play()
 	var managers = get_tree().get_nodes_in_group("scene_manager")
 	if managers.size() > 0 and managers[0].has_method("unpause_game"):
@@ -189,3 +192,8 @@ func _on_music_button_pressed() -> void:
 		OptionsMusica.text = "MÚSICA ON"
 		AudioServer.set_bus_mute(1, false)
 		return
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Pause"):
+		audiobutton.stream = pause
+		audiobutton.play()
