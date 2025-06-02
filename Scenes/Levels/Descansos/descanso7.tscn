@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=4 uid="uid://bthnee7teg28i"]
+[gd_scene load_steps=141 format=4 uid="uid://bthnee7teg28i"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_d1x5t"]
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
@@ -31,12 +31,19 @@
 [ext_resource type="PackedScene" uid="uid://c4gkrjplyfaeg" path="res://Scenes/Entities/dormilon1.tscn" id="22_k266c"]
 [ext_resource type="PackedScene" uid="uid://cuwxpjgb2addv" path="res://Scenes/Entities/dormilon2.tscn" id="23_b8gip"]
 [ext_resource type="Texture2D" uid="uid://dc3c0nnqxyy1l" path="res://art/NPCs/Chico Cat/NPC-Chico cat.png" id="26_ma2an"]
+[ext_resource type="Texture2D" uid="uid://b2jxkejya7doh" path="res://art/NPCs Portraits/Olivia-Portrait.png" id="26_tvogv"]
 [ext_resource type="Texture2D" uid="uid://qtcyh7n8sidv" path="res://art/NPCs/Y/Y-NPC.png" id="27_dd2rm"]
+[ext_resource type="Texture2D" uid="uid://dui8457eewaf2" path="res://art/NPCs Portraits/Punkgurl-Portrait.png" id="28_c6tfu"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="28_q738t"]
+[ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="30_cor7d"]
+[ext_resource type="Texture2D" uid="uid://buqi0sv16g5hj" path="res://art/NPCs Portraits/Nicky-Portrait.png" id="32_blg1d"]
 [ext_resource type="Texture2D" uid="uid://kks3q16ywxfw" path="res://art/NPCs/Cry baby/NPC-Cry baby 2.png" id="34_7biem"]
+[ext_resource type="Texture2D" uid="uid://3auc8y5lc7or" path="res://art/NPCs Portraits/Sleepyhead-Portrait.png" id="34_fyr04"]
 [ext_resource type="Texture2D" uid="uid://wcycly2mwi6a" path="res://art/NPCs Portraits/CryBaby-Portrait.png" id="35_jbh6u"]
 [ext_resource type="Texture2D" uid="uid://dnmrmx62iqoi7" path="res://art/NPCs/Ver/NPC - Ver.png" id="36_8pldd"]
+[ext_resource type="Texture2D" uid="uid://djobe5y3qjdw0" path="res://art/NPCs Portraits/Sleepyhead2-Portrait.png" id="36_ds50k"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="37_tbqob"]
+[ext_resource type="Texture2D" uid="uid://ttcw68q0rw3f" path="res://art/NPCs Portraits/ChicoCat-Portrait.png" id="38_3k34o"]
 [ext_resource type="Texture2D" uid="uid://dpoh3q6oomtfu" path="res://art/NPCs/John Jairo/John Jairo.png" id="38_idsu1"]
 [ext_resource type="Texture2D" uid="uid://cksb003hg01wp" path="res://art/NPCs Portraits/JhonJairo-Portrait.png" id="39_le07k"]
 [ext_resource type="AudioStream" uid="uid://de7wj5gqp4rup" path="res://SFX/NPC_Voice4.mp3" id="40_oot1f"]
@@ -47,6 +54,8 @@
 [ext_resource type="Texture2D" uid="uid://dsu2pt8ti5bpu" path="res://art/NPCs Portraits/Jessica.png" id="45_crnk4"]
 [ext_resource type="Texture2D" uid="uid://nqtkf6tm5ydc" path="res://art/NPCs Portraits/Jaime.png" id="46_t7cpu"]
 [ext_resource type="AudioStream" uid="uid://ctksywh20comf" path="res://SFX/NPC_Voice6.mp3" id="47_mp4su"]
+[ext_resource type="Texture2D" uid="uid://csau7tgmrc0jb" path="res://art/NPCs Portraits/Pela.png" id="49_5aoix"]
+[ext_resource type="Texture2D" uid="uid://x0pavt1rs2ni" path="res://art/NPCs Portraits/Lety.png" id="51_xrfik"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7g7c"]
 texture = ExtResource("1_eywyh")
@@ -1615,28 +1624,69 @@ position = Vector2(-329, -76)
 scale = Vector2(0.27, 0.27)
 
 [node name="Olivia" parent="Scene Manager" instance=ExtResource("19_pm4l3")]
-position = Vector2(42, -79)
+position = Vector2(39, -74)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="Scene Manager/Olivia" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("26_tvogv")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="PunkGirl" parent="Scene Manager" instance=ExtResource("3_a10bd")]
 position = Vector2(-104, 17)
 scale = Vector2(0.5, 0.5)
 
-[node name="ComputerGirl" parent="Scene Manager" instance=ExtResource("20_f8270")]
+[node name="NPC" parent="Scene Manager/PunkGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(-2, 10)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("28_c6tfu")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
+
+[node name="Wanda" parent="Scene Manager" instance=ExtResource("20_f8270")]
 position = Vector2(-172, 75)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="Scene Manager/Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(8, 2)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("30_cor7d")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="Nicky" parent="Scene Manager" instance=ExtResource("21_x4gxf")]
 position = Vector2(-377, -13)
 scale = Vector2(0.5, 0.5)
 
+[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(2, 8)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("32_blg1d")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
+
 [node name="Sleepy" parent="Scene Manager" instance=ExtResource("22_k266c")]
 position = Vector2(-136, 86)
 scale = Vector2(0.5, 0.5)
 
+[node name="NPC" parent="Scene Manager/Sleepy" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(0, 2)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("34_fyr04")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
+
 [node name="dormilon" parent="Scene Manager" instance=ExtResource("23_b8gip")]
 position = Vector2(8, 86)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="Scene Manager/dormilon" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(0, 2)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("36_ds50k")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="Henrry" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-342, -78)
@@ -1644,6 +1694,13 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_euxu1")
 autoplay = "default"
 frame_progress = 0.452845
+
+[node name="NPC" parent="Scene Manager/Henrry" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(0, 2)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("38_3k34o")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(24, 20)
@@ -1704,12 +1761,26 @@ sprite_frames = SubResource("SpriteFrames_wbsf5")
 autoplay = "default"
 frame_progress = 0.544391
 
+[node name="NPC" parent="Scene Manager/elPela" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(0, 2)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("49_5aoix")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
+
 [node name="Lety" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-264, -10)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_015r0")
 autoplay = "default"
 frame_progress = 0.327942
+
+[node name="NPC" parent="Scene Manager/Lety" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(0, 2.86102e-06)
+dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo", "y que se"])
+npc_portrait = ExtResource("51_xrfik")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="JessicaJaime" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(81, -46)
