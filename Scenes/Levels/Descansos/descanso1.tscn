@@ -1,7 +1,8 @@
-[gd_scene load_steps=77 format=4 uid="uid://6v64rv8tjie4"]
+[gd_scene load_steps=79 format=4 uid="uid://6v64rv8tjie4"]
 
+[ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_ljidj"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_611xn"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="2_jyekh"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="4_sb6gh"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_68x20"]
@@ -25,6 +26,43 @@
 [ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="17_tg8ud"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_4qqdx"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_0f7ib"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lckut"]
+texture = ExtResource("1_ljidj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_rqaos")
@@ -477,6 +515,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/1 = SubResource("TileSetAtlasSource_g4ntp")
+sources/0 = SubResource("TileSetAtlasSource_lckut")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5kti"]
 atlas = ExtResource("2_jyekh")
@@ -902,12 +941,12 @@ npc_portrait = ExtResource("8_jphev")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
 
-[node name="ChicaCurly" type="Sprite2D" parent="Seccion1"]
+[node name="Ver" type="Sprite2D" parent="Seccion1"]
 position = Vector2(40, 24)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_esd8j")
 
-[node name="NPC" parent="Seccion1/ChicaCurly" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
+[node name="NPC" parent="Seccion1/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 dialogue_lines1 = Array[String](["¿Le tienes miedo a las arañas?", "Las arañas corretean por todo este lugar.", "Me gusta el color negro."])
 dialogue_lines2 = Array[String](["Holis, esta es la sala de descanso, se que ya lo sabes, pero por si acaso.", "Muchas arañas, AAAAAAAAA.", "Perdón, ya me calmo."])
 dialogue_lines3 = Array[String](["Arañas, Arañas, Arañaaaaaa...", "¿Cuál es la diferencia que existe entre yo y estas pequeñas y humildes criaturas?", "La araña teje su tela, yo tejo mi consciencia."])
@@ -1071,12 +1110,12 @@ hurtSFX = null
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAAAEAPr/AQAJABAAAAD6//v/AQAHABIAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD+//7/AQANABEAAAD+////AQANABIAAAD///7/AQAOABEAAAD/////AQAOABIAAAAAAP7/AQAPABEAAAAAAP//AQAPABIAAAD9//v/AQAKABEAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAD1//z/AQANAAIAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAAAEAPr/AQAJABAAAAD6//v/AQAHABIAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD9//v/AQAKABEAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAD1//z/AQANAAIAAAD+//7/AAADAAAAAAD+////AAADAAEAAAD///7/AAAEAAAAAAD/////AAAEAAEAAAAAAP7/AAAFAAAAAAAAAP//AAAFAAEAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Y" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 2)
+position = Vector2(-24, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kkw8p")
 autoplay = "default"

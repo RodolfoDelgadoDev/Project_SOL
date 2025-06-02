@@ -1,7 +1,8 @@
-[gd_scene load_steps=100 format=4 uid="uid://mb6v2konbssl"]
+[gd_scene load_steps=102 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
+[ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_ckvsa"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_spciu"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_pqvia"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_y3pda"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_0qmb8"]
@@ -40,6 +41,49 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y1oh"]
+texture = ExtResource("1_ckvsa")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_1rfgy")
@@ -484,6 +528,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/1 = SubResource("TileSetAtlasSource_g4ntp")
+sources/0 = SubResource("TileSetAtlasSource_8y1oh")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5kti"]
 atlas = ExtResource("3_pqvia")
@@ -1144,7 +1189,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos3" type="TileMapLayer" parent="Seccion2"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD9//r/AQAOAAwAAAD9//v/AQAOAA0AAAD/////AQAOABIAAAAAAP//AQAPABIAAAA=")
+tile_map_data = PackedByteArray("AAD9//r/AQAOAAwAAAD9//v/AQAOAA0AAAD+//7/AAAGAAAAAAD+////AAAGAAEAAAD///7/AAAHAAAAAAD/////AAAHAAEAAAAAAP7/AAAIAAAAAAAAAP//AAAIAAEAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1176,12 +1221,13 @@ bus = &"Musica"
 playback_type = 1
 
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
-position = Vector2(8, -5)
+position = Vector2(-8, -4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_81d44")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+position = Vector2(0, 20)
 dialogue_lines2 = Array[String](["Poco a poco, va tomando forma.", "La ciudad... Tantos murales que pintar y estoy acá encerrado...", "Shh, dejame. Estoy inspirado."])
 dialogue_lines3 = Array[String](["Un detalle acá... Y otro acá...", "¿Crees que pueda conseguir más pintura si esta se me acaba?", "Shh, dejame. Estoy inspirado."])
 npc_portrait = ExtResource("23_e44ld")
@@ -1230,15 +1276,15 @@ sprite = ExtResource("21_acsc8")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD+//7/AQANABEAAAD+////AQANABIAAAD///7/AQAOABEAAAAAAP7/AQAPABEAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD1/wUAAQAIABAAAADx/wAAAQAJAA4AAADx/wEAAQAJAA8AAADz/wAAAQAJAA4AAADz/wEAAQAJAA8AAAABAAQAAQAJABAAAADx/wQAAQARAAYAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD6/wAAAQAIABIAAAD6/wEAAQAIABMAAAD6//7/AQAIABIAAAD6////AQAIABMAAAD3/wAAAQAIABIAAAD3/wEAAQAIABMAAAD3//7/AQAIABIAAAD3////AQAIABMAAAD4/wAAAQAJABIAABD4/wEAAQAJABMAABD4//7/AQAJABIAABD4////AQAJABMAABD1//7/AQAJABIAABD1////AQAJABMAABD1/wAAAQAJABIAABD1/wEAAQAJABMAABD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="ComputerGirl" parent="." instance=ExtResource("17_uciwg")]
+[node name="Wanda" parent="." instance=ExtResource("17_uciwg")]
 position = Vector2(-137, -13)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPC" parent="ComputerGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+[node name="NPC" parent="Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 position = Vector2(2, 10)
 dialogue_lines2 = Array[String](["Hey Colibri, ¿Cómo te va?", "Me encantan las manzanas verdes, pero esdifícil conseguirlas, espero que en el futurose consigan más.", "Aún falta mucho para sanar la tierra, peroal menos están actuando, ya tuvimos una pseudo apocalipsis hace muchos años, no creo que quieran otra."])
 dialogue_lines3 = Array[String](["Hey Colibri cómo van tus clases de cocina? Ese tipo es muy pesado contigo ¿Estás bien?", "Estar sentada mucho tiempo en esta silla me esta haciendo doler las pompis.", "¿Crees que en algún momento pare la tormenta?"])

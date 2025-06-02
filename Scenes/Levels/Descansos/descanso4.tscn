@@ -1,6 +1,7 @@
-[gd_scene load_steps=86 format=4 uid="uid://xv65nci4wovg"]
+[gd_scene load_steps=88 format=4 uid="uid://xv65nci4wovg"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_4agvk"]
+[ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_bjpdo"]
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_dcr34"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_tt5t2"]
@@ -34,6 +35,52 @@
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="25_q4224"]
 [ext_resource type="Texture2D" uid="uid://bs6tsauvm3gfx" path="res://art/NPCs/Cry baby/NPC-Cry baby.png" id="26_u8eso"]
 [ext_resource type="Texture2D" uid="uid://wcycly2mwi6a" path="res://art/NPCs Portraits/CryBaby-Portrait.png" id="27_r43av"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo1o3"]
+texture = ExtResource("1_bjpdo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4ntp"]
 texture = ExtResource("1_4agvk")
@@ -467,6 +514,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/1 = SubResource("TileSetAtlasSource_g4ntp")
+sources/0 = SubResource("TileSetAtlasSource_uo1o3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5kti"]
 atlas = ExtResource("3_dcr34")
@@ -842,7 +890,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="Seccion1"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD1//v/AQATAAIAAAD1//n/AQATAAAAAAD1//r/AQATAAEAAAD5//n/AQATAAAAAAD5//r/AQATAAEAAAD5//v/AQATAAIAAAD4//n/AQANAAwAAAD4//r/AQANAA0AAAD2//n/AQAMAAwAAAD2//r/AQAMAA0AAAD3//n/AQALAAwAAAD3//r/AQALAA0AAAD2//v/AQAMAAsAAAD3//v/AQAMAAsAAAD4//v/AQAMAAsAAADx//v/AQAFAAsAAADy//v/AQAHAAsAAADx//n/AQAGAAAAAADx//r/AQAGAAEAAADy//n/AQAHAAAAAADy//r/AQAHAAEAAAD6//r/AQAMAAQAADD0//r/AQAMAAQAACD0//3/AQANAAMAAAD3//3/AQANAAMAAAD6//3/AQANAAMAAADx//7/AQATAAQAAAD6//v/AQAFABEAAAAAAP//AQAPABIAAAA=")
+tile_map_data = PackedByteArray("AAD1//v/AQATAAIAAAD1//n/AQATAAAAAAD1//r/AQATAAEAAAD5//n/AQATAAAAAAD5//r/AQATAAEAAAD5//v/AQATAAIAAAD4//n/AQANAAwAAAD4//r/AQANAA0AAAD2//n/AQAMAAwAAAD2//r/AQAMAA0AAAD3//n/AQALAAwAAAD3//r/AQALAA0AAAD2//v/AQAMAAsAAAD3//v/AQAMAAsAAAD4//v/AQAMAAsAAADx//v/AQAFAAsAAADy//v/AQAHAAsAAADx//n/AQAGAAAAAADx//r/AQAGAAEAAADy//n/AQAHAAAAAADy//r/AQAHAAEAAAD6//r/AQAMAAQAADD0//r/AQAMAAQAACD0//3/AQANAAMAAAD3//3/AQANAAMAAAD6//3/AQANAAMAAADx//7/AQATAAQAAAD6//v/AQAFABEAAAD+//7/AAADAAIAAAD+////AAADAAMAAAD///7/AAAEAAIAAAD/////AAAEAAMAAAAAAP7/AAAFAAIAAAAAAP//AAAFAAMAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1196,12 +1244,13 @@ voice_sound = ExtResource("19_c2nhh")
 sprite = ExtResource("18_aam83")
 
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
-position = Vector2(8, -5)
+position = Vector2(-8, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3gro2")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
+position = Vector2(0, 10)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 npc_portrait = ExtResource("23_7foio")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
@@ -1235,7 +1284,7 @@ voice_sound = ExtResource("19_c2nhh")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAABAAQAAQAJABAAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD+//7/AQANABEAAAD+////AQANABIAAAD///7/AQAOABEAAAD/////AQAOABIAAAAAAP7/AQAPABEAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAABAAQAAQAJABAAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD+/wUAAQATABAAAAD+/wYAAQATABEAAAD3/wUAAQAEAAwAAAD3/wYAAQAEAA0AAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAFAAUAAQAEAAwAABAEAAUAAQAFAAwAABAFAAYAAQAEAA0AABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
