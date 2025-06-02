@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dsnc5g1q2d0th"]
+[gd_scene load_steps=74 format=4 uid="uid://dsnc5g1q2d0th"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_jbt40"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="2_hxsjq"]
@@ -771,20 +771,69 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oukus"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_neuhu"]
+atlas = ExtResource("2_hxsjq")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwy8k"]
+atlas = ExtResource("2_hxsjq")
+region = Rect2(32, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1y54"]
+atlas = ExtResource("2_hxsjq")
+region = Rect2(64, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eksx1"]
+atlas = ExtResource("2_hxsjq")
+region = Rect2(96, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57cwd"]
+atlas = ExtResource("2_hxsjq")
+region = Rect2(128, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61oxn"]
 atlas = ExtResource("2_hxsjq")
 region = Rect2(160, 0, 32, 41)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7myk7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuehg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oukus")
+"texture": SubResource("AtlasTexture_neuhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwy8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1y54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eksx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57cwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61oxn")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_t3gb1"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ipb5j"]
+gradient = SubResource("Gradient_t3gb1")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
 
 [node name="Node2D3" type="Node2D"]
 position = Vector2(21, 124)
@@ -915,6 +964,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
 
 [node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
+visible = false
 position = Vector2(-87, -65)
 scale = Vector2(0.15625, 0.154871)
 color = Color(0.82746, 0, 0.0770657, 1)
@@ -922,6 +972,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_otg58")
 
 [node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
+visible = false
 position = Vector2(-185, -67)
 scale = Vector2(0.15625, 0.154871)
 color = Color(0.82746, 0, 0.0770657, 1)
@@ -1016,16 +1067,28 @@ sprite_frames = SubResource("SpriteFrames_p8nii")
 autoplay = "default"
 frame_progress = 0.782229
 
-[node name="lavaAzul2" type="AnimatedSprite2D" parent="."]
+[node name="lavaAzul4" type="AnimatedSprite2D" parent="."]
 position = Vector2(-187, -66)
 scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_7myk7")
+sprite_frames = SubResource("SpriteFrames_uuehg")
 autoplay = "default"
-frame_progress = 0.693114
 
-[node name="lavaAzul" type="AnimatedSprite2D" parent="."]
+[node name="PointLight2D20" type="PointLight2D" parent="lavaAzul4"]
+position = Vector2(1.90735e-06, 9.11111)
+scale = Vector2(0.590554, 0.476941)
+color = Color(0, 0.391246, 0.876339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ipb5j")
+
+[node name="lavaAzul5" type="AnimatedSprite2D" parent="."]
 position = Vector2(-87, -65)
 scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_7myk7")
+sprite_frames = SubResource("SpriteFrames_uuehg")
 autoplay = "default"
-frame_progress = 0.313439
+
+[node name="PointLight2D20" type="PointLight2D" parent="lavaAzul5"]
+position = Vector2(1.90735e-06, 9.11111)
+scale = Vector2(0.590554, 0.476941)
+color = Color(0, 0.391246, 0.876339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ipb5j")

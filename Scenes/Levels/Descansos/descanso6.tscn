@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://co0t5xvs8ypex"]
+[gd_scene load_steps=115 format=4 uid="uid://co0t5xvs8ypex"]
 
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_0c50o"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_35a7h"]
@@ -591,20 +591,69 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oukus"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_neuhu"]
+atlas = ExtResource("5_uusvj")
+region = Rect2(0, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwy8k"]
+atlas = ExtResource("5_uusvj")
+region = Rect2(32, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1y54"]
+atlas = ExtResource("5_uusvj")
+region = Rect2(64, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eksx1"]
+atlas = ExtResource("5_uusvj")
+region = Rect2(96, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57cwd"]
+atlas = ExtResource("5_uusvj")
+region = Rect2(128, 0, 32, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61oxn"]
 atlas = ExtResource("5_uusvj")
 region = Rect2(160, 0, 32, 41)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7myk7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7epbs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oukus")
+"texture": SubResource("AtlasTexture_neuhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwy8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1y54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eksx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57cwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61oxn")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_88u0i"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u7uml"]
+gradient = SubResource("Gradient_88u0i")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
 atlas = ExtResource("7_sy7dw")
@@ -1154,9 +1203,15 @@ rendering_quadrant_size = 32
 [node name="lavaAzul3" type="AnimatedSprite2D" parent="Seccion5"]
 position = Vector2(23, 80)
 scale = Vector2(0.34375, 0.329268)
-sprite_frames = SubResource("SpriteFrames_7myk7")
+sprite_frames = SubResource("SpriteFrames_7epbs")
 autoplay = "default"
-frame_progress = 0.313439
+
+[node name="PointLight2D20" type="PointLight2D" parent="Seccion5/lavaAzul3"]
+position = Vector2(1.90735e-06, 9.11111)
+scale = Vector2(0.590554, 0.476941)
+color = Color(0, 0.391246, 0.876339, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_u7uml")
 
 [node name="Seccion6" type="Node2D" parent="."]
 
