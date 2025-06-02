@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=4 uid="uid://bthnee7teg28i"]
+[gd_scene load_steps=119 format=4 uid="uid://bthnee7teg28i"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_d1x5t"]
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
@@ -30,8 +30,11 @@
 [ext_resource type="PackedScene" uid="uid://despcl5wghpmr" path="res://Scenes/Entities/chica-empanada.tscn" id="21_x4gxf"]
 [ext_resource type="PackedScene" uid="uid://c4gkrjplyfaeg" path="res://Scenes/Entities/dormilon1.tscn" id="22_k266c"]
 [ext_resource type="PackedScene" uid="uid://cuwxpjgb2addv" path="res://Scenes/Entities/dormilon2.tscn" id="23_b8gip"]
+[ext_resource type="PackedScene" uid="uid://c6gxvhkjgpuiu" path="res://Scenes/Entities/test_npc2.tscn" id="26_aihbl"]
 [ext_resource type="Texture2D" uid="uid://dc3c0nnqxyy1l" path="res://art/NPCs/Chico Cat/NPC-Chico cat.png" id="26_ma2an"]
+[ext_resource type="Texture2D" uid="uid://dy1ejo7t7fmhv" path="res://art/Main Character 1 Final.png" id="27_0spwe"]
 [ext_resource type="Texture2D" uid="uid://qtcyh7n8sidv" path="res://art/NPCs/Y/Y-NPC.png" id="27_dd2rm"]
+[ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="28_1m6ew"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="28_q738t"]
 [ext_resource type="Texture2D" uid="uid://kks3q16ywxfw" path="res://art/NPCs/Cry baby/NPC-Cry baby 2.png" id="34_7biem"]
 [ext_resource type="Texture2D" uid="uid://wcycly2mwi6a" path="res://art/NPCs Portraits/CryBaby-Portrait.png" id="35_jbh6u"]
@@ -42,11 +45,6 @@
 [ext_resource type="AudioStream" uid="uid://de7wj5gqp4rup" path="res://SFX/NPC_Voice4.mp3" id="40_oot1f"]
 [ext_resource type="Texture2D" uid="uid://ltcyiaopkvt1" path="res://art/NPCs/Sleepy head 3/el Pela.png" id="41_dpjjv"]
 [ext_resource type="Texture2D" uid="uid://dh25l0smmtxgo" path="res://art/NPCs/Leticia/Lety.png" id="42_jvavs"]
-[ext_resource type="Texture2D" uid="uid://bonbd8ci4si8h" path="res://art/NPCs/Jessica y Jaime/Jessica-Jaime.png" id="43_ljs64"]
-[ext_resource type="PackedScene" uid="uid://c6gxvhkjgpuiu" path="res://Scenes/Entities/test_npc2.tscn" id="44_m7lnx"]
-[ext_resource type="Texture2D" uid="uid://dsu2pt8ti5bpu" path="res://art/NPCs Portraits/Jessica.png" id="45_crnk4"]
-[ext_resource type="Texture2D" uid="uid://nqtkf6tm5ydc" path="res://art/NPCs Portraits/Jaime.png" id="46_t7cpu"]
-[ext_resource type="AudioStream" uid="uid://ctksywh20comf" path="res://SFX/NPC_Voice6.mp3" id="47_mp4su"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7g7c"]
 texture = ExtResource("1_eywyh")
@@ -1020,84 +1018,6 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7olky"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(0, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g14ey"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(64, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tix33"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(128, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mkxr4"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(192, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_anusg"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(256, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1huf1"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(320, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp75e"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(384, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwskr"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(448, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njbds"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(512, 0, 64, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sy012"]
-atlas = ExtResource("43_ljs64")
-region = Rect2(576, 0, 64, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yvdlu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7olky")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g14ey")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tix33")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mkxr4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_anusg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1huf1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xp75e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwskr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_njbds")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sy012")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -1618,6 +1538,12 @@ scale = Vector2(0.27, 0.27)
 position = Vector2(42, -79)
 scale = Vector2(0.5, 0.5)
 
+[node name="NPC" parent="Scene Manager/Olivia" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("26_aihbl")]
+dialogue_lines1 = Array[String](["asdad asd as ", "asdasdasd", "dadsad"])
+npc_portrait1 = ExtResource("27_0spwe")
+npc_portrait2 = ExtResource("28_1m6ew")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+
 [node name="PunkGirl" parent="Scene Manager" instance=ExtResource("3_a10bd")]
 position = Vector2(-104, 17)
 scale = Vector2(0.5, 0.5)
@@ -1678,7 +1604,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("36_8pldd")
 
 [node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
-position = Vector2(-2, 4)
+position = Vector2(0, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("37_tbqob")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
@@ -1710,22 +1636,6 @@ scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_015r0")
 autoplay = "default"
 frame_progress = 0.327942
-
-[node name="JessicaJaime" type="AnimatedSprite2D" parent="Scene Manager"]
-position = Vector2(81, -46)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_yvdlu")
-autoplay = "default"
-frame_progress = 0.815725
-
-[node name="NPC2" parent="Scene Manager/JessicaJaime" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("44_m7lnx")]
-position = Vector2(-2, 8)
-dialogue_lines1 = Array[String](["Preparensen para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!"])
-npc_portrait1 = ExtResource("45_crnk4")
-npc_portrait2 = ExtResource("46_t7cpu")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound1 = ExtResource("40_oot1f")
-voice_sound2 = ExtResource("47_mp4su")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

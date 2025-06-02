@@ -55,6 +55,37 @@ func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, 
 			show_dialogue()
 	
 	_display_current_line()
+func start_alternating_dialogue(lines: Array[String], npc: Node, portrait1: Texture2D, voice1: AudioStream, portrait2: Texture2D, voice2: AudioStream):
+	if current_npc != npc or not is_visible:
+		current_npc = npc
+		current_lines = lines
+		current_line_index = 0
+		show_dialogue()
+	else:
+		if is_visible:
+			# If showing last line, hide and reset to last line
+			if current_line_index >= current_lines.size() - 1:
+				hide_dialogue()
+				current_line_index = current_lines.size() - 1  # Set to last line
+				return
+			else:
+				current_line_index += 1
+		else:
+			# If starting new dialogue with same NPC (after completion)
+			current_line_index = current_lines.size() - 1  # Show last line
+			show_dialogue()
+
+	var is_npc1 = current_line_index % 2 == 0
+	if is_npc1:
+		portrait.texture = portrait1
+		current_voice = voice1
+	else:
+		portrait.texture = portrait2
+		current_voice = voice2
+
+	_display_current_line()
+
+
 
 func _input(event: InputEvent) -> void:
 	if not is_visible: return
