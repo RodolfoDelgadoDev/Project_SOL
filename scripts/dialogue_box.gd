@@ -55,28 +55,63 @@ func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, 
 			show_dialogue()
 	
 	_display_current_line()
-func start_alternating_dialogue(lines: Array[String], npc: Node, portrait1: Texture2D, voice1: AudioStream, portrait2: Texture2D, voice2: AudioStream):
+
+func play_jump_and_switch():
+	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	var milo_jump = scene_manager.get_node("MiloJump")
+	var milo = scene_manager.get_node("Milo")
+
+	milo.visible = false
+	milo_jump.visible = true
+	milo_jump.play("default")
+
+	if milo_jump.animation_finished.is_connected(_on_jump_finished):
+		milo_jump.animation_finished.disconnect(_on_jump_finished)
+
+	milo_jump.animation_finished.connect(_on_jump_finished.bind(milo, milo_jump), Object.CONNECT_ONE_SHOT)
+
+func _on_jump_finished(milo: AnimatedSprite2D, milo_jump: AnimatedSprite2D):
+	milo_jump.visible = false
+	milo.visible = true
+
+
+var has_played_final_dialogue := false
+
+func start_alternating_dialogue(
+	lines: Array[String],
+	npc: Node,
+	portrait1: Texture2D, voice1: AudioStream,
+	portrait2: Texture2D, voice2: AudioStream,
+	portrait3: Texture2D, voice3: AudioStream
+):
 	if current_npc != npc or not is_visible:
 		current_npc = npc
 		current_lines = lines
 		current_line_index = 0
+		has_played_final_dialogue = false
 		show_dialogue()
 	else:
 		if is_visible:
-			# If showing last line, hide and reset to last line
 			if current_line_index >= current_lines.size() - 1:
-				hide_dialogue()
-				current_line_index = current_lines.size() - 1  # Set to last line
-				return
+				if not has_played_final_dialogue:
+					has_played_final_dialogue = true
+					current_line_index = current_lines.size() - 1
+				else:
+					current_line_index = current_lines.size() - 1
 			else:
 				current_line_index += 1
 		else:
-			# If starting new dialogue with same NPC (after completion)
-			current_line_index = current_lines.size() - 1  # Show last line
+	
+			current_line_index = current_lines.size() - 1
 			show_dialogue()
 
-	var is_npc1 = current_line_index % 2 == 0
-	if is_npc1:
+	
+	if current_line_index == current_lines.size() - 1:
+		portrait.texture = portrait3
+		current_voice = voice3
+		if not has_played_final_dialogue:
+			play_jump_and_switch()
+	elif current_line_index % 2 == 0:
 		portrait.texture = portrait1
 		current_voice = voice1
 	else:
@@ -84,6 +119,8 @@ func start_alternating_dialogue(lines: Array[String], npc: Node, portrait1: Text
 		current_voice = voice2
 
 	_display_current_line()
+
+
 
 
 

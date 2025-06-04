@@ -12,6 +12,7 @@ extends Node2D
 
 @export var npc_portrait1: Texture2D
 @export var npc_portrait2: Texture2D
+@export var npc_portrait3: Texture2D
 @export var dialogue_manager: Node2D
 @export var voice_sound1: AudioStream
 @export var voice_sound2: AudioStream
@@ -43,6 +44,8 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 				npc_portrait1,
 				voice_sound1,
 				npc_portrait2,
+				voice_sound2,
+				npc_portrait3,
 				voice_sound2
 			)
 		print(current_dialogue.size())

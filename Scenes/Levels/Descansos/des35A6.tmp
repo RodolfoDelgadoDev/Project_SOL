@@ -1133,7 +1133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c35ux")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 7.0
 }]
@@ -1953,8 +1953,7 @@ position = Vector2(56, -46)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_we0qm")
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
+frame_progress = 0.00390522
 
 [node name="JessicaJaime" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(81, -46)
