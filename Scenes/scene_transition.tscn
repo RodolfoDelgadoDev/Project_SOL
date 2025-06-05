@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bc07026ptp2sm"]
+[gd_scene load_steps=16 format=3 uid="uid://bc07026ptp2sm"]
 
 [ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_3fciy"]
-[ext_resource type="Texture2D" uid="uid://b56vns8424lj" path="res://art/UI/Colores.png" id="1_lks0u"]
+[ext_resource type="Texture2D" uid="uid://cxbqt1s8xmk2" path="res://art/Transitions/Screen transition-3.png" id="2_7s2fa"]
 [ext_resource type="Texture2D" uid="uid://b83q57xkhuhvu" path="res://animations/Moto - Godot.png" id="3_el6ma"]
+[ext_resource type="Texture2D" uid="uid://ccwjmgnncutj1" path="res://art/Transitions/2- Screen transition.png" id="3_eoy7r"]
+[ext_resource type="Texture2D" uid="uid://0y6fl4cuy8u6" path="res://art/Transitions/Screen transition-1.png" id="4_skjpf"]
 [ext_resource type="AudioStream" uid="uid://7klne4qs6072" path="res://SFX/transition.mp3" id="4_yigwe"]
+[ext_resource type="Texture2D" uid="uid://whj8jk6pipb4" path="res://art/Transitions/Screen transition-4.png" id="5_11xlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44hu4"]
 atlas = ExtResource("3_el6ma")
@@ -126,6 +129,7 @@ _data = {
 
 [node name="Scene_Transition" type="CanvasLayer"]
 script = ExtResource("1_3fciy")
+bgs = Array[Texture]([ExtResource("3_eoy7r"), ExtResource("4_skjpf"), ExtResource("2_7s2fa"), ExtResource("5_11xlc")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -137,7 +141,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_lks0u")
 expand_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]

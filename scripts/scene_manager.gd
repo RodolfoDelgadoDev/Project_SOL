@@ -49,10 +49,9 @@ func change_scene():
 	if descanso == true:
 		chooseTargetScene()  # Set the targetScene first
 		print("Changing to: ", targetScene)
-	
 	if not animation_player.is_connected("animation_finished", _on_TransitionAnimation_finished):
 		animation_player.animation_finished.connect(_on_TransitionAnimation_finished)    
-	animation_player.play("Scene_Transition_in")
+	SceneTransition.transition_in()
 
 func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":

@@ -1882,7 +1882,7 @@ sprite_frames = SubResource("SpriteFrames_jo55b")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Cris" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
-position = Vector2(-12, 8)
+position = Vector2(-12, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("35_jbh6u")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")

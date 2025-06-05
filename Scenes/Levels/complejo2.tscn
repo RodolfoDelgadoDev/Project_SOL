@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=34 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_r0nti"]
 [ext_resource type="AudioStream" uid="uid://cpehqk8k1fvky" path="res://Music/complex2.mp3" id="12_hdcll"]
 [ext_resource type="Texture2D" uid="uid://cj6w3c7y3ys1b" path="res://animations/Doors/Complejo2/complejo2.png" id="16_8ahaa"]
+[ext_resource type="PackedScene" uid="uid://balalg54hbujh" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
 texture = ExtResource("1_ts6fr")
@@ -831,7 +832,7 @@ position = Vector2(136, -120)
 damage = 0
 
 [node name="Trap5" parent="." instance=ExtResource("3_kokj1")]
-position = Vector2(136, -102)
+position = Vector2(136, -104)
 damage = 0
 
 [node name="Trap6" parent="." instance=ExtResource("3_kokj1")]
@@ -962,6 +963,14 @@ playback_type = 1
 [node name="Player" parent="Scene Manager" instance=ExtResource("4_by454")]
 position = Vector2(72, -74)
 scale = Vector2(0.25, 0.25)
+
+[node name="Thief" parent="Scene Manager" instance=ExtResource("19_w6dn7")]
+position = Vector2(424, -154)
+scale = Vector2(0.25, 0.25)
+quieto = false
+wait_time = 0.2
+health = 20
+player_node_path = NodePath("../Player")
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

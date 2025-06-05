@@ -321,6 +321,7 @@ theme_override_fonts/font = ExtResource("7_lvm8q")
 text = "EXIT"
 
 [node name="Scene_Transition" parent="Control" instance=ExtResource("3_q4hgc")]
+no_transition = true
 
 [node name="audiobutton" type="AudioStreamPlayer2D" parent="Control"]
 stream = ExtResource("10_eq08b")

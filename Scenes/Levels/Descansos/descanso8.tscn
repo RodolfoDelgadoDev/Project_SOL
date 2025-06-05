@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_dn7yt"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="5_ph7xw"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="6_teq0q"]
-[ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="7_3cart"]
 [ext_resource type="Shader" path="res://ghost.gdshader" id="7_v6cr2"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="8_0i3wa"]
 [ext_resource type="Texture2D" uid="uid://cwmhyg6krbr26" path="res://art/fogtexture.png" id="8_sxcka"]
+[ext_resource type="AudioStream" uid="uid://bhv4rd1p88xr4" path="res://Music/descanso_creepy.mp3" id="9_vfu7c"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="15_ewbq5"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="16_el5hq"]
 [ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="17_vumlk"]
@@ -922,7 +922,7 @@ stretch_mode = 1
 color = Color(0.202318, 0.676983, 0.856705, 1)
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
-stream = ExtResource("7_3cart")
+stream = ExtResource("9_vfu7c")
 autoplay = true
 panning_strength = 0.0
 bus = &"Musica"

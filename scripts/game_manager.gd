@@ -9,6 +9,7 @@ var goal: bool = false
 var descanso: bool = false
 var extra_time : int = 0
 var music_on : bool = true
+var transicion_bg : int = 0
 
 func takeDamage(damage):
 	Segundos -= damage

@@ -900,7 +900,6 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Luces" type="Node2D" parent="."]
-visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Luces"]
 position = Vector2(-375, 111)
@@ -1029,7 +1028,7 @@ energy = 3.44
 texture = SubResource("GradientTexture2D_hyndh")
 
 [node name="PointLight2D19" type="PointLight2D" parent="Luces"]
-position = Vector2(250, -92)
+position = Vector2(246, -63)
 scale = Vector2(0.839844, 0.839844)
 color = Color(0.246019, 0.600351, 0.8963, 1)
 energy = 3.44
