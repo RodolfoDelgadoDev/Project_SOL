@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6hbr3koxa2a"
-path="res://.godot/imported/Robot enemy.png-66355c25fa66e9250ba27deb9847b89a.ctex"
+uid="uid://dbvrqdw6kngsx"
+path="res://.godot/imported/Skullboy.png-0f0199bfd6eca94ea6fb193c244d4672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Robot enemy.png"
-dest_files=["res://.godot/imported/Robot enemy.png-66355c25fa66e9250ba27deb9847b89a.ctex"]
+source_file="res://animations/Enemies/SkullBoy/Skullboy.png"
+dest_files=["res://.godot/imported/Skullboy.png-0f0199bfd6eca94ea6fb193c244d4672.ctex"]
 
 [params]
 
