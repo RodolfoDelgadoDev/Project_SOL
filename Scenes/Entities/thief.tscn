@@ -1,6 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://balalg54hbujh"]
+[gd_scene load_steps=20 format=3 uid="uid://balalg54hbujh"]
 
 [ext_resource type="Script" path="res://scripts/thief.gd" id="1_gmmis"]
+[ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="2_0lqs6"]
+[ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_7iffk"]
 [ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="3_b6573"]
 [ext_resource type="Texture2D" uid="uid://d2l8ww03xpfol" path="res://art/Planta Animation V2.png" id="4_cnfnm"]
 
@@ -112,9 +114,11 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
-[node name="Plant2" type="Node2D"]
+[node name="Thief" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_gmmis")
+moveSFX = ExtResource("2_7iffk")
+hurtSFX = ExtResource("2_0lqs6")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
@@ -151,5 +155,10 @@ autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="light_timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
 [connection signal="area_shape_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="light_timer" to="." method="_on_light_timer_timeout"]

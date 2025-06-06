@@ -22,6 +22,7 @@ var initial_position: Vector2
 # Store the last difference vector from enemy to player and a flag to check if alternative move was tried.
 var last_diff: Vector2 = Vector2.ZERO
 var tried_alternative: bool = false
+@export var light_node: Node2D
 
 @export var player_node_path: NodePath
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
@@ -29,13 +30,14 @@ var tried_alternative: bool = false
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animatedSprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
-
+var thief_light = load("res://Scenes/Entities/thief_color_lights.tscn")
 
 func _ready():
 	# Reference our own CharacterBody2D node.
 	character_body = $CharacterBody2D
 	# Start in a stationary state.
 	quieto = true
+	get_parent().bottleTotal+=1
 
 
 func _physics_process(delta: float):
@@ -93,7 +95,7 @@ func player_distance():
 	# Else maintain current state
 	
 	# Optional: print for debugging
-	print("Player distance: ", distance, " quieto: ", quieto)
+	#print("Player distance: ", distance, " quieto: ", quieto)
 
 
 # Calculate the primary move direction (the axis with the larger distance to the player).
@@ -193,16 +195,8 @@ func try_alternative_move():
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if alive() && GameManager.Segundos > 0:
-		if area.is_in_group("player"):
-			audio_player.stream = attackSFX
-			audio_player.play()  # Play attack sound
-			GameManager.takeDamage(damage)
-			print(GameManager.Segundos)
 		if area.is_in_group("weapon"):
-			audio_player.stream = hurtSFX
-			audio_player.play()
 			takeDamage()
-			print (health)
 
 
 func alive() -> bool:
@@ -211,13 +205,19 @@ func alive() -> bool:
 
 func takeDamage():
 	if health <= 0:
+		audio_player.stream = hurtSFX
+		audio_player.play()
 		if audio_player.playing:
 			await audio_player.finished
+		GameManager.Segundos += 5
+		get_parent().addBottle()
 		queue_free()
 	else:
 		health -= GameManager.playerDamage
 		animator.play("takeDamage")
 		if health <= 0:
+			audio_player.stream = hurtSFX
+			audio_player.play()
 			if audio_player.playing:
 				await audio_player.finished
 			var particle_scene = load("res://Scenes/Particles/confetti.tscn")
@@ -227,7 +227,10 @@ func takeDamage():
 			get_parent().add_child(particles_instance)
 			particles.emitting = true
 			particles.restart()
-				
+			GameManager.Segundos += 5
+			get_parent().addBottle()
+			audio_player.stream = hurtSFX
+			audio_player.play()
 			queue_free()
 
 
@@ -236,3 +239,38 @@ func updateFlip(dir: bool):
 		animatedSprite.flip_h = false
 	else:
 		animatedSprite.flip_h = true
+		
+@export var max_lights: int = 6  # Maximum number of allowed lights
+
+func spawn_light():
+	if not thief_light:
+		push_error("Light scene not loaded!")
+		return
+		
+	var light = thief_light.instantiate()
+	if not light:
+		push_error("Failed to instantiate light")
+		return
+	
+	# Count existing lights and remove oldest if needed
+	var current_lights = get_lights()
+	if current_lights.size() >= max_lights:
+		var oldest_light = current_lights[0]
+		oldest_light.queue_free()
+	
+	# Add new light
+	add_child(light)
+	light.position = character_body.position
+	print("Spawned light (Total: ", current_lights.size() + 1, ")")
+
+func get_lights():
+	var lights = []
+	for child in get_children():
+		if child.is_in_group("enemy_light"):  # Add this group to your light scene
+			lights.append(child)
+	# Sort by age (process order)
+	lights.sort_custom(func(a, b): return a.get_index() < b.get_index())
+	return lights
+
+func _on_light_timer_timeout() -> void:
+	spawn_light()

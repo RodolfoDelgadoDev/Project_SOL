@@ -780,12 +780,12 @@ sources/0 = SubResource("TileSetAtlasSource_h7q0p")
 default_font = ExtResource("13_01kxf")
 default_font_size = 15
 
-[sub_resource type="Gradient" id="Gradient_sgmji"]
+[sub_resource type="Gradient" id="Gradient_rd6fh"]
 offsets = PackedFloat32Array(0, 0.337662)
 colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_so1k2"]
-gradient = SubResource("Gradient_sgmji")
+gradient = SubResource("Gradient_rd6fh")
 width = 128
 height = 128
 use_hdr = true
