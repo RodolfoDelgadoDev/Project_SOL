@@ -8,6 +8,9 @@ extends CharacterBody2D
 @export var attack_damage: float = 10.0
 @export var player_node: Node2D
 
+# Para el escudito
+@export var shield: MeshInstance2D
+
 @onready var colorRect: ColorRect = $ColorRect
 @onready var attack_area: Area2D = $Area2D
 
@@ -19,6 +22,8 @@ var movement_timer: Timer = null
 var windup_timer: Timer = null
 var blink_timer: Timer = null
 var attack_timer: Timer = null
+var brokenGen: int = 0
+
 
 func _ready():
 	# Initialize all timers
@@ -60,6 +65,8 @@ func _physics_process(delta):
 	# Move toward player
 	velocity = direction * move_speed
 	move_and_slide()
+	
+	
 
 func start_chasing():
 	colorRect.color = Color(1, 0, 0, 0.5)  # Red when chasing
@@ -119,3 +126,11 @@ func set_attack_area_enabled(enabled: bool):
 func deal_damage():
 	GameManager.takeDamage(attack_damage)
 	set_attack_area_enabled(false)  # Just disable the attack area without ending phase
+
+func on_destroy_gen():
+	brokenGen += 1
+	print("Se rompieron " + str(brokenGen))
+	if brokenGen == 2:
+		shield.hide()
+		print("ADIOS ESCUDOS")
+	

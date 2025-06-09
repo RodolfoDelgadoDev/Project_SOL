@@ -595,10 +595,19 @@ attack_duration = 2.0
 attack_damage = 50.0
 player_node = NodePath("../Scene Manager/Player")
 
-[node name="Generator" parent="." instance=ExtResource("14_npar4")]
+[node name="Generator" parent="." node_paths=PackedStringArray("boss1", "boss2") instance=ExtResource("14_npar4")]
 position = Vector2(536, 40)
 attackSFX = ExtResource("15_4gw4y")
 destroySFX = ExtResource("16_f6ndr")
+boss1 = NodePath("../Boss")
+boss2 = NodePath("../Boss2")
+
+[node name="Generator2" parent="." node_paths=PackedStringArray("boss1", "boss2") instance=ExtResource("14_npar4")]
+position = Vector2(-24, -24)
+attackSFX = ExtResource("15_4gw4y")
+destroySFX = ExtResource("16_f6ndr")
+boss1 = NodePath("../Boss")
+boss2 = NodePath("../Boss2")
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

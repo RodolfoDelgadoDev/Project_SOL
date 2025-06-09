@@ -61,10 +61,11 @@ shader_parameter/transparency = 0.15
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p322"]
 size = Vector2(44, 42)
 
-[node name="Boss" type="CharacterBody2D"]
+[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("shield")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_axsa3")
+shield = NodePath("MeshInstance2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.780392)
