@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=32 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
@@ -12,9 +12,11 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_008vq"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_r0nti"]
 [ext_resource type="AudioStream" uid="uid://cpehqk8k1fvky" path="res://Music/complex2.mp3" id="12_hdcll"]
-[ext_resource type="PackedScene" uid="uid://bkv0q66uey72s" path="res://Scenes/Entities/thief_color_lights.tscn" id="15_0fv3y"]
+[ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="14_5dpln"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/thief_color_lights.tscn" id="15_0fv3y"]
+[ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="15_4js2s"]
 [ext_resource type="Texture2D" uid="uid://cj6w3c7y3ys1b" path="res://animations/Doors/Complejo2/complejo2.png" id="16_8ahaa"]
-[ext_resource type="PackedScene" uid="uid://balalg54hbujh" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
+[ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
 texture = ExtResource("1_ts6fr")
@@ -899,26 +901,24 @@ playback_type = 1
 position = Vector2(72, -74)
 scale = Vector2(0.25, 0.25)
 
-[node name="Thief" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("19_w6dn7")]
-position = Vector2(425, -154)
+[node name="NinjaRosa" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("14_5dpln")]
+position = Vector2(424, -186)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.1
 health = 30
-escape_range = 3
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
-[node name="Thief2" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("19_w6dn7")]
-position = Vector2(281, -202)
-scale = Vector2(0.25, 0.25)
-wait_time = 0.1
-health = 30
-escape_range = 3
-light_node = NodePath("../Luces")
-player_node_path = NodePath("../Player")
-
-[node name="Thief3" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("19_w6dn7")]
+[node name="NinjaNaranja" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("15_4js2s")]
 position = Vector2(-55, -362)
+scale = Vector2(0.25, 0.25)
+wait_time = 0.1
+health = 30
+light_node = NodePath("../Luces")
+player_node_path = NodePath("../Player")
+
+[node name="NinjaVioleta" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("19_w6dn7")]
+position = Vector2(281, -202)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.1
 health = 30

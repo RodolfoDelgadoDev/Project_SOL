@@ -1,27 +1,83 @@
-[gd_scene load_steps=14 format=3 uid="uid://dncmwk0t3feu3"]
+[gd_scene load_steps=22 format=3 uid="uid://dmimvp0ktwiqa"]
 
-[ext_resource type="Script" path="res://scripts/thief.gd" id="1_gmmis"]
-[ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="2_0lqs6"]
-[ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_7iffk"]
-[ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="3_b6573"]
-[ext_resource type="Texture2D" uid="uid://chquwl6ylj76j" path="res://animations/Enemies/Ninjas/NinjaJaime.png" id="4_jxxhe"]
+[ext_resource type="Script" path="res://scripts/thief.gd" id="1_70mpd"]
+[ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_fno32"]
+[ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="3_3aumt"]
+[ext_resource type="Texture2D" uid="uid://de7vv0lhovglx" path="res://animations/Enemies/Ninjas/MiloNinja.png" id="4_x8vwp"]
+[ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="5_itoid"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ghmhc"]
-atlas = ExtResource("4_jxxhe")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2h2"]
+atlas = ExtResource("4_x8vwp")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b116r"]
-atlas = ExtResource("4_jxxhe")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn4j1"]
+atlas = ExtResource("4_x8vwp")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjav3"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui3tp"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n53mo"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6cy7"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qermy"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwtwn"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ae2f"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3v7n"]
+atlas = ExtResource("4_x8vwp")
+region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ddob7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ghmhc")
+"texture": SubResource("AtlasTexture_5q2h2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b116r")
+"texture": SubResource("AtlasTexture_jn4j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjav3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui3tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n53mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6cy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qermy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwtwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ae2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3v7n")
 }],
 "loop": true,
 "name": &"default",
@@ -72,11 +128,11 @@ _data = {
 "takeDamage": SubResource("Animation_7cwl3")
 }
 
-[node name="NinjaVioleta" type="Node2D"]
+[node name="NinjaNaranja" type="Node2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_gmmis")
-moveSFX = ExtResource("2_7iffk")
-hurtSFX = ExtResource("2_0lqs6")
+script = ExtResource("1_70mpd")
+moveSFX = ExtResource("2_fno32")
+hurtSFX = ExtResource("3_3aumt")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
 collision_layer = 4
@@ -87,13 +143,13 @@ position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_ddob7")
 autoplay = "default"
-frame_progress = 0.857241
+frame_progress = 0.946073
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 visible = false
 position = Vector2(-4.76837e-07, 0)
 scale = Vector2(2.5, 1.875)
-texture = ExtResource("3_b6573")
+texture = ExtResource("5_itoid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_s6hlb")
