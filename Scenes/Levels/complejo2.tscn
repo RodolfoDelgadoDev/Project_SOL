@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=33 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Entities/thief_color_lights.tscn" id="15_0fv3y"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="15_4js2s"]
 [ext_resource type="Texture2D" uid="uid://cj6w3c7y3ys1b" path="res://animations/Doors/Complejo2/complejo2.png" id="16_8ahaa"]
+[ext_resource type="PackedScene" uid="uid://c6oy8cryt40b0" path="res://Scenes/Entities/robot2.tscn" id="17_vxarh"]
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
@@ -926,14 +927,13 @@ escape_range = 3
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
-[node name="Thief4" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("19_w6dn7")]
+[node name="Robot2" parent="Scene Manager" instance=ExtResource("17_vxarh")]
 position = Vector2(441, -730)
 scale = Vector2(0.25, 0.25)
-wait_time = 0.1
-health = 30
-escape_range = 3
-light_node = NodePath("../Luces")
-player_node_path = NodePath("../Player")
+
+[node name="Robot3" parent="Scene Manager" instance=ExtResource("17_vxarh")]
+position = Vector2(87, -715)
+scale = Vector2(0.25, 0.25)
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 

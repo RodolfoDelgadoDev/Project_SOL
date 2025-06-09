@@ -136,7 +136,7 @@ position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_ddob7")
 autoplay = "default"
-frame_progress = 0.35959
+frame_progress = 0.441375
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 visible = false
