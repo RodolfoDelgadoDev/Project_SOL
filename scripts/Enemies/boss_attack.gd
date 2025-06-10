@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var attack_duration: float = 3.0
 @export var attack_damage: float = 10.0
 @export var player_node: Node2D
+@export var health: int
+
 
 # Para el escudito
 @export var shield: MeshInstance2D
@@ -114,6 +116,8 @@ func _on_blink_timeout():
 func _on_attack_area_entered(area: Area2D):
 	if area.is_in_group("player") and is_attacking:
 		deal_damage()
+	if area.is_in_group("weapon") && !shield:
+		takeDamage()
 
 func _on_attack_body_entered(body: Node2D):
 	if body.is_in_group("player") and is_attacking:
@@ -129,8 +133,21 @@ func deal_damage():
 
 func on_destroy_gen():
 	brokenGen += 1
-	print("Se rompieron " + str(brokenGen))
+	print("Se rompieron " + str(brokenGen) + " gens")
 	if brokenGen == 2:
-		shield.hide()
+		shield.queue_free()
 		print("ADIOS ESCUDOS")
 	
+func takeDamage():
+	if health <= 0:
+		queue_free()
+	else:
+		health -= GameManager.playerDamage
+		print(health)
+		if health <= 0:
+			var particle_scene = load("res://Scenes/Particles/confetti.tscn")
+			var particles_instance = particle_scene.instantiate()
+			var particles = particles_instance.get_node("GPUParticles2D")
+			get_parent().add_child(particles_instance)
+			particles.emitting = true
+			particles.restart()
