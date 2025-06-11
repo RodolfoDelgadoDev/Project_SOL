@@ -1,10 +1,10 @@
 extends Node2D
 
 var directions = {
-	"UP": [Vector2.UP, "AttackUp", "WalkUp", "HiUp", "DamageUp"],
-	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown", "HiDown", "DamageDown"],
-	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft", "HiLeft", "DamageLeft"],
-	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight", "HiRight", "DamageRight"]
+	"UP": [Vector2.UP, "AttackUp", "WalkUp", "HiUp", "DamageUp", "IdleUp"],
+	"DOWN": [Vector2.DOWN, "AttackDown", "WalkDown", "HiDown", "DamageDown", "Idle"],
+	"LEFT": [Vector2.LEFT, "AttackLeft", "WalkLeft", "HiLeft", "DamageLeft", "IdleLeft"],
+	"RIGHT": [Vector2.RIGHT, "AttackRight", "WalkRight", "HiRight", "DamageRight", "IdleRight"]
 }
 
 @onready var attack_sprite: Sprite2D = $CharacterBody2D/Area2D/AttackSprite
@@ -165,7 +165,7 @@ func walkAnimation(dir):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if alive():
-		animaton.play("Idle")
+		animaton.play(directions[lastDir][5])
 
 # Helper function to convert direction vector to string
 func direction_to_string(direction: Vector2) -> String:

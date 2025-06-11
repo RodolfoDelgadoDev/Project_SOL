@@ -908,11 +908,11 @@ position = Vector2(397, 215)
 damage = 3
 
 [node name="Trap30" parent="traps" instance=ExtResource("3_su13o")]
-position = Vector2(349, 39)
+position = Vector2(325, 71)
 damage = 3
 
 [node name="Trap31" parent="traps" instance=ExtResource("3_su13o")]
-position = Vector2(269, 23)
+position = Vector2(309, 23)
 damage = 3
 
 [node name="Trap32" parent="traps" instance=ExtResource("3_su13o")]

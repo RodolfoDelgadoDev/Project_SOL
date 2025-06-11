@@ -56,12 +56,13 @@ func updateBar() -> void:
 	barra.value = GameManager.Segundos
 	if current_bottles < SceneManager.bottleNum:
 		current_bottles = SceneManager.bottleNum
-		wave_amplitude += 1
-		aberration += 0.1
-		glitch += 0.1
-		botella.material.set_shader_parameter("wave_amplitude", wave_amplitude)
-		botella.material.set_shader_parameter("aberration_speed", aberration)
-		botella.material.set_shader_parameter("glitch_intensity", glitch)
+		if wave_amplitude < 7:
+			wave_amplitude += 1
+			aberration += 0.1
+			glitch += 0.1
+			botella.material.set_shader_parameter("wave_amplitude", wave_amplitude)
+			botella.material.set_shader_parameter("aberration_speed", aberration)
+			botella.material.set_shader_parameter("glitch_intensity", glitch)
 
 	var porcentaje = (GameManager.Segundos / float(barra.max_value)) * 100
 

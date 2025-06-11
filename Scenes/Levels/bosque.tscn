@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://lve4n7ojftks"]
+[gd_scene load_steps=128 format=4 uid="uid://lve4n7ojftks"]
 
 [ext_resource type="Shader" path="res://ghost.gdshader" id="1_548vq"]
 [ext_resource type="Texture2D" uid="uid://byepw2ujntrg7" path="res://art/Tilemap-Bosque.png" id="1_h0w56"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_62k27"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_cqmo4"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_8i3an"]
+[ext_resource type="Texture2D" uid="uid://4et8o2323svf" path="res://animations/Doors/Bosque/farmer.png" id="9_5mnd7"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="10_lkmvh"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_76117"]
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="11_oj3rn"]
@@ -1233,6 +1234,84 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_h7q0p")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pssgj"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(0, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1tkd"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(66, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwpfs"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(132, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbnpv"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(198, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jbke"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(264, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kalw"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(330, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s31x0"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(396, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jguw4"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(462, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p00l4"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(528, 0, 66, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_345ns"]
+atlas = ExtResource("9_5mnd7")
+region = Rect2(594, 0, 66, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmpku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pssgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1tkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwpfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbnpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kalw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s31x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jguw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p00l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_345ns")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 5.0
+}]
+
 [sub_resource type="Theme" id="Theme_2ce4l"]
 default_font = ExtResource("12_bnjuu")
 default_font_size = 15
@@ -1402,7 +1481,7 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("5_cqmo4")
-segundos = 100
+segundos = 120
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Traps" type="Node" parent="Scene Manager"]
@@ -1482,10 +1561,17 @@ position = Vector2(-152, 535)
 [node name="Trap28" parent="Scene Manager/Traps" instance=ExtResource("14_gqdpp")]
 position = Vector2(328, 519)
 
-[node name="Goal" parent="Scene Manager" instance=ExtResource("7_8i3an")]
+[node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("7_8i3an")]
+z_index = 4
 position = Vector2(848, 1102)
 scale = Vector2(2, 2)
-has_npc = false
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Scene Manager/Goal"]
+position = Vector2(-8, -18.2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_kmpku")
+animation = &"Open"
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("13_41d7j")]
 position = Vector2(-496, 654)
