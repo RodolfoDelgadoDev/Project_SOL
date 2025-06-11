@@ -261,7 +261,7 @@ func spawn_light():
 	# Add new light
 	add_child(light)
 	light.position = character_body.position
-	print("Spawned light (Total: ", current_lights.size() + 1, ")")
+	#print("Spawned light (Total: ", current_lights.size() + 1, ")")
 
 func get_lights():
 	var lights = []

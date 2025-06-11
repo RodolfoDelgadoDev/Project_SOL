@@ -24,6 +24,10 @@ func _ready():
 	set_random_target_color()
 	change_time += randf_range(-0.2, 0.2)
 	
+	#spawnea un poquito corrida de lugar
+	var random_offset = randf_range(0.5, 5)
+	self.global_position += Vector2(random_offset, random_offset)
+	
 	# Animate appearance
 	animate_appear()
 

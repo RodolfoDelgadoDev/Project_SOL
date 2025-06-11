@@ -824,7 +824,7 @@ animations = [{
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_od0b7")
 }, {
-"duration": 0.3,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_elwxn")
 }],
 "loop": false,
@@ -838,7 +838,7 @@ animations = [{
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_pw87m")
 }, {
-"duration": 0.3,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_g2ewh")
 }],
 "loop": false,
@@ -855,7 +855,7 @@ animations = [{
 "duration": 0.2,
 "texture": SubResource("AtlasTexture_psylu")
 }, {
-"duration": 0.2,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_mn2r7")
 }],
 "loop": false,
@@ -890,7 +890,7 @@ texture = SubResource("GradientTexture2D_xj6sn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
-animation = &"Idle"
+animation = &"WalkUp"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

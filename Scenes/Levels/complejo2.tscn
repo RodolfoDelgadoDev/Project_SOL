@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cgv1prvrj7rb4"]
+[gd_scene load_steps=35 format=4 uid="uid://cgv1prvrj7rb4"]
 
 [ext_resource type="Texture2D" uid="uid://dbq5n68hp8f61" path="res://art/Tilemap_Town.png" id="1_ts6fr"]
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_r0nti"]
 [ext_resource type="AudioStream" uid="uid://cpehqk8k1fvky" path="res://Music/complex2.mp3" id="12_hdcll"]
 [ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="14_5dpln"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/thief_color_lights.tscn" id="15_0fv3y"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="15_4js2s"]
 [ext_resource type="Texture2D" uid="uid://cj6w3c7y3ys1b" path="res://animations/Doors/Complejo2/complejo2.png" id="16_8ahaa"]
 [ext_resource type="PackedScene" uid="uid://c6oy8cryt40b0" path="res://Scenes/Entities/robot2.tscn" id="17_vxarh"]
+[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="18_mauv8"]
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]
@@ -734,6 +734,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_nehqx"]
+offsets = PackedFloat32Array(0, 0.571429)
+colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ugi2r"]
+gradient = SubResource("Gradient_nehqx")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(53, 191)
 
@@ -794,42 +808,42 @@ segundos = 45
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(359, -331)
+position = Vector2(360, -330)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin2" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(488, -698)
+position = Vector2(489, -697)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin3" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(71, -715)
+position = Vector2(72, -714)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin4" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(391, -331)
+position = Vector2(392, -330)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin5" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(471, -107)
+position = Vector2(472, -106)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin6" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(215, -139)
+position = Vector2(216, -138)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin7" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(392, -202)
+position = Vector2(393, -201)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
 [node name="Coin8" parent="Scene Manager" instance=ExtResource("6_6fulg")]
-position = Vector2(-24, -330)
+position = Vector2(-23, -329)
 scale = Vector2(0.5, 0.5)
 recuperacion = 8
 
@@ -907,6 +921,7 @@ position = Vector2(424, -186)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.1
 health = 30
+escape_range = 1
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
@@ -915,6 +930,7 @@ position = Vector2(-55, -362)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.1
 health = 30
+escape_range = 1
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
@@ -923,25 +939,171 @@ position = Vector2(281, -202)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.1
 health = 30
-escape_range = 3
+escape_range = 1
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
 [node name="Robot2" parent="Scene Manager" instance=ExtResource("17_vxarh")]
-position = Vector2(441, -730)
+position = Vector2(456, -650)
 scale = Vector2(0.25, 0.25)
+patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)])
 
 [node name="Robot3" parent="Scene Manager" instance=ExtResource("17_vxarh")]
-position = Vector2(87, -715)
+position = Vector2(88, -714)
 scale = Vector2(0.25, 0.25)
+patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)])
+
+[node name="Robot4" parent="Scene Manager" instance=ExtResource("17_vxarh")]
+position = Vector2(456, -362)
+scale = Vector2(0.25, 0.25)
+patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)])
+
+[node name="Robot5" parent="Scene Manager" instance=ExtResource("17_vxarh")]
+position = Vector2(-232, -362)
+scale = Vector2(0.25, 0.25)
+patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1), Vector2(1, 0), Vector2(0, 1)])
 
 [node name="Luces" type="Node2D" parent="Scene Manager"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
-color = Color(0.893815, 0.76392, 0.672217, 1)
+color = Color(0.480325, 0.336133, 0.366771, 1)
 
-[node name="Node2D" parent="Scene Manager" instance=ExtResource("15_0fv3y")]
-position = Vector2(68, -97)
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-119, -186)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(230, -198)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(326, -200)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(265, -106)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(138, -105)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(509, -198)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(391, -425)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(521, -425)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(567, -425)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(399, -584)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(344, -714)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(231, -715)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(155, -562)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(187, -426)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(39, -412)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-152, -410)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-281, -570)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-314, -313)
+scale = Vector2(1.5, 1.5)
+color = Color(0.816483, 0.618496, 0.334076, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(22, -226)
+scale = Vector2(1.5, 1.5)
+color = Color(0.415181, 0.0886732, 0.0891672, 1)
+energy = 2.07
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ugi2r")
+script = ExtResource("18_mauv8")
+blink_interval_min = 0.2
+blink_interval_max = 1.0
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

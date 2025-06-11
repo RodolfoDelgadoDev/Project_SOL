@@ -661,12 +661,12 @@ shader_parameter/wave_frequency = 5.757
 shader_parameter/wave_speed = 1.79
 shader_parameter/transparency = 0.341
 
-[sub_resource type="Gradient" id="Gradient_nehqx"]
+[sub_resource type="Gradient" id="Gradient_j3hwb"]
 offsets = PackedFloat32Array(0, 0.61039)
 colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tmn42"]
-gradient = SubResource("Gradient_nehqx")
+gradient = SubResource("Gradient_j3hwb")
 width = 128
 height = 128
 use_hdr = true
