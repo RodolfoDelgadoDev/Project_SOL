@@ -148,7 +148,6 @@ func basicAttack(dir):
 # Function to hide the attack sprite
 func _hide_attack_sprite():
 	attack_sprite.visible = false
-	animaton.play("Idle")
 
 # Function to check if the player is still alive
 func alive() -> bool:
