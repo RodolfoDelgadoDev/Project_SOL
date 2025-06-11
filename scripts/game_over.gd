@@ -56,9 +56,9 @@ func _start_bounce_animation():
 	
 	# Create bounce effect
 	bounce_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	bounce_tween.tween_property(current_focused_button, "position:y", original_y - 2, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y - 0.5, 0.2)
 	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
-	bounce_tween.tween_property(current_focused_button, "position:y", original_y + 4, 0.2)
+	bounce_tween.tween_property(current_focused_button, "position:y", original_y + 1, 0.2)
 	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
 
 func _on_TransitionAnimation_finished(animation_name: String):

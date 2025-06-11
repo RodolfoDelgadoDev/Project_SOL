@@ -1,20 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene load_steps=9 format=3 uid="uid://8sgjnqmx3clh"]
 
-[ext_resource type="Shader" path="res://ghost.gdshader" id="1_fh85g"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
+[ext_resource type="Texture2D" uid="uid://dehupigx1763n" path="res://art/UI/Colibrí-Pause Screen820.png" id="2_2bpoq"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="2_3mkai"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]
-[ext_resource type="Texture2D" uid="uid://c2x105b3aifoa" path="res://art/GameOver/GameOver_bg.png" id="3_1dqx8"]
 [ext_resource type="AudioStream" uid="uid://3gsb4hayxrbx" path="res://SFX/button_ok.mp3" id="4_q3h3t"]
 [ext_resource type="AudioStream" uid="uid://cutx24v6upa6s" path="res://SFX/button_change.mp3" id="5_dp34f"]
 [ext_resource type="AudioStream" uid="uid://b6r4combydyxl" path="res://SFX/pause.mp3" id="6_jl30n"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hetu"]
-shader = ExtResource("1_fh85g")
-shader_parameter/wave_amplitude = 0.506
-shader_parameter/wave_frequency = 6.665
-shader_parameter/wave_speed = 0.876
-shader_parameter/transparency = 1.0
+[ext_resource type="StyleBox" uid="uid://dssb3q1bvccp3" path="res://art/UI/menubox.tres" id="8_7cr7x"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -35,14 +28,14 @@ offset_bottom = 101.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_4hetu")
 layout_mode = 0
 offset_left = -155.0
 offset_top = -94.0
 offset_right = 133.0
 offset_bottom = 68.0
 scale = Vector2(1.115, 1.115)
-texture = ExtResource("3_1dqx8")
+texture = ExtResource("2_2bpoq")
+expand_mode = 1
 
 [node name="Control" type="Control" parent="."]
 z_index = 2
@@ -67,11 +60,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -91.0
-offset_top = -34.0
+offset_top = -63.0
 offset_right = 97.0
-offset_bottom = -11.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.839216, 0.596078, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_3mkai")
 theme_override_font_sizes/font_size = 30
 text = "PAUSA"
@@ -85,62 +81,42 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -111.0
+offset_top = 52.0
 offset_right = 111.0
-offset_bottom = 28.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OptionsButton" type="Button" parent="Control/PauseContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0.912984, 0.790648, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/font_hover_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/font_focus_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/font_outline_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_focus_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.913725, 0.792157, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0.913725, 0.792157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "OPCIONES"
 flat = true
 
 [node name="ContinueButton" type="Button" parent="Control/PauseContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0.63438, 0.231125, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/font_hover_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/font_focus_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/font_outline_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_normal_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_focus_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_hover_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "VOLVER"
 flat = true
 
 [node name="ExitButton" type="Button" parent="Control/PauseContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.741176, 0.529412, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "SALIR"
 flat = true
 
@@ -155,36 +131,43 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -116.0
+offset_top = 52.0
 offset_right = 113.0
-offset_bottom = 28.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackButton" type="Button" parent="Control/OptionsContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_pressed_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_focus_color = Color(0.890196, 0.603922, 0.592157, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "ATRÁS"
 flat = true
 
 [node name="DifficultyButton" type="Button" parent="Control/OptionsContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_pressed_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_focus_color = Color(0.890196, 0.603922, 0.592157, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
 theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "SIN ASISTENCIA"
 flat = true
 
 [node name="MusicButton" type="Button" parent="Control/OptionsContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_pressed_color = Color(0.890196, 0.603922, 0.592157, 1)
-theme_override_colors/font_focus_color = Color(0.890196, 0.603922, 0.592157, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
+theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "MUSICA ON"
 flat = true
 
