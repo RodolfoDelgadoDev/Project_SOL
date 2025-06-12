@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://bsl117rvxx81b"]
+[gd_scene load_steps=163 format=4 uid="uid://bsl117rvxx81b"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_adp11"]
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_f0hqh"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="14_nh3da"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_rr43l"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_v1c0p"]
-[ext_resource type="PackedScene" uid="uid://despcl5wghpmr" path="res://Scenes/Entities/chica-empanada.tscn" id="15_y84yp"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_lkuor"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_c2srg"]
 [ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_5vca1"]
@@ -35,12 +34,15 @@
 [ext_resource type="Texture2D" uid="uid://buqi0sv16g5hj" path="res://art/NPCs Portraits/Nicky-Portrait.png" id="25_auxy8"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="25_ljwmo"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="26_nlsxi"]
-[ext_resource type="Texture2D" uid="uid://dnmrmx62iqoi7" path="res://art/NPCs/Ver/NPC - Ver.png" id="27_pl2pq"]
 [ext_resource type="Texture2D" uid="uid://3auc8y5lc7or" path="res://art/NPCs Portraits/Sleepyhead-Portrait.png" id="27_trc1a"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="28_w4bgj"]
 [ext_resource type="Texture2D" uid="uid://djobe5y3qjdw0" path="res://art/NPCs Portraits/Sleepyhead2-Portrait.png" id="29_0lbu6"]
 [ext_resource type="Texture2D" uid="uid://kks3q16ywxfw" path="res://art/NPCs/Cry baby/NPC-Cry baby 2.png" id="29_jt6w3"]
 [ext_resource type="Texture2D" uid="uid://wcycly2mwi6a" path="res://art/NPCs Portraits/CryBaby-Portrait.png" id="30_t42rh"]
+[ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="34_2isrv"]
+[ext_resource type="Texture2D" uid="uid://idl4t2quk7fj" path="res://art/NPCs/Punk gurl/PUNK-NPCs estáticos-sheet.png" id="36_ns50m"]
+[ext_resource type="Texture2D" uid="uid://dvqycf46t80qg" path="res://art/NPCs/Nicky/Nicky-NPCs animation (1).png" id="38_wejcv"]
+[ext_resource type="Texture2D" uid="uid://clw625i2fj2ui" path="res://art/NPCs/Ver/NPC - Vero - Animation.png" id="40_vlaed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rw5a"]
 texture = ExtResource("1_f0hqh")
@@ -712,6 +714,381 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6rk2"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitjr"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15mic"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcme"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rewug"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3qcy"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2rkp"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7mee"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmbce"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuks6"]
+atlas = ExtResource("34_2isrv")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ea8pb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6rk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15mic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rewug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3qcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2rkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7mee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuks6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75k3t"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88xgf"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujelr"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3vbm"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcrnl"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsx8e"]
+atlas = ExtResource("36_ns50m")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0vfn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75k3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88xgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujelr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3vbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcrnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsx8e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7px3"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0lom"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olfxx"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amecd"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0tm3"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a5t4"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plpog"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1khm"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmwp1"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qhyo"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq6cb"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3luus"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7f0h"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d1im"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcvak"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtieq"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udhif"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns5tx"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51q2d"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5tm7"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20n5l"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w372t"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(672, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bn5o"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(704, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj2hl"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(736, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csfkb"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(768, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4sn6"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(800, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f1rr"]
+atlas = ExtResource("38_wejcv")
+region = Rect2(832, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ym8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7px3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0lom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amecd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0tm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a5t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plpog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1khm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmwp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qhyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq6cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3luus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7f0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d1im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcvak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtieq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udhif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns5tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51q2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5tm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20n5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w372t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bn5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj2hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csfkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4sn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f1rr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ob5d"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43tng"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srwb1"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kymh"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcnu0"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mysr3"]
+atlas = ExtResource("40_vlaed")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbmyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ob5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43tng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srwb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcnu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mysr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_auy3r"]
 atlas = ExtResource("6_mx7l4")
 region = Rect2(0, 0, 13, 30)
@@ -1351,17 +1728,6 @@ npc_portrait = ExtResource("20_ksgnn")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
-[node name="PunkGirl" parent="Scene Manager" instance=ExtResource("3_vwsgi")]
-position = Vector2(-104, 17)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Scene Manager/PunkGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
-position = Vector2(0, 10)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-npc_portrait = ExtResource("21_hajfj")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_obdyb")
-
 [node name="ComputerGirl" parent="Scene Manager" instance=ExtResource("14_nh3da")]
 position = Vector2(-24, 99)
 scale = Vector2(0.5, 0.5)
@@ -1370,17 +1736,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
 npc_portrait = ExtResource("23_ywao4")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_obdyb")
-
-[node name="Nicky" parent="Scene Manager" instance=ExtResource("15_y84yp")]
-position = Vector2(-168, 19)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
-position = Vector2(0, 6)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-npc_portrait = ExtResource("25_auxy8")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
@@ -1405,13 +1760,6 @@ npc_portrait = ExtResource("29_0lbu6")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
-[node name="Olga" parent="Scene Manager" instance=ExtResource("17_c2srg")]
-position = Vector2(-200, -74)
-scale = Vector2(0.5, 0.5)
-npc_portrait = ExtResource("18_5vca1")
-voice_sound = ExtResource("19_obdyb")
-sprite = ExtResource("18_5vca1")
-
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(8, -5)
 scale = Vector2(0.5, 0.5)
@@ -1422,18 +1770,6 @@ autoplay = "default"
 position = Vector2(2, 22)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 npc_portrait = ExtResource("26_nlsxi")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_obdyb")
-
-[node name="Ver" type="Sprite2D" parent="Scene Manager"]
-position = Vector2(74, 69)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("27_pl2pq")
-
-[node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
-position = Vector2(-2, 2)
-dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-npc_portrait = ExtResource("28_w4bgj")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
@@ -1448,6 +1784,54 @@ position = Vector2(-12, 8)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("30_t42rh")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_obdyb")
+
+[node name="Olga2" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-200, -75)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ea8pb")
+autoplay = "default"
+
+[node name="Olga" parent="Scene Manager/Olga2" instance=ExtResource("17_c2srg")]
+position = Vector2(0, 2)
+npc_portrait = ExtResource("18_5vca1")
+voice_sound = ExtResource("19_obdyb")
+
+[node name="ChicaPunk" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-104, 19)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_b0vfn")
+autoplay = "default"
+
+[node name="NPC" parent="Scene Manager/ChicaPunk" instance=ExtResource("17_c2srg")]
+position = Vector2(0, 6)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("21_hajfj")
+voice_sound = ExtResource("19_obdyb")
+
+[node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-168, 19)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7ym8g")
+autoplay = "default"
+
+[node name="NPC" parent="Scene Manager/Nicky" instance=ExtResource("17_c2srg")]
+position = Vector2(0, 6)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("25_auxy8")
+voice_sound = ExtResource("19_obdyb")
+
+[node name="Ver" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(74, 69)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gbmyb")
+autoplay = "default"
+
+[node name="NPC" parent="Scene Manager/Ver" instance=ExtResource("17_c2srg")]
+position = Vector2(-4, 2)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+dialogue_lines3 = Array[String](["¡¡¡He vuelto !!!", "Me extrañaste?", "Hay menos arañas verdad, ¿¡VERDAD!?", "¡¡Que pedo!! hay arañas en ese cuarto o.0"])
+npc_portrait = ExtResource("28_w4bgj")
 voice_sound = ExtResource("19_obdyb")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]

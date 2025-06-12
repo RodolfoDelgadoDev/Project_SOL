@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://6v64rv8tjie4"]
+[gd_scene load_steps=97 format=4 uid="uid://6v64rv8tjie4"]
 
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_ljidj"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_rqaos"]
@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_u5jkx"]
 [ext_resource type="Texture2D" uid="uid://dniwhdh8d4sbq" path="res://art/NPCs Portraits/Juanito-Portrait.png" id="8_jphev"]
 [ext_resource type="Texture2D" uid="uid://31ly88j2bmqw" path="res://art/Spider 2 opuesto.png" id="8_xtcmg"]
-[ext_resource type="Texture2D" uid="uid://dnmrmx62iqoi7" path="res://art/NPCs/Ver/NPC - Ver.png" id="9_esd8j"]
 [ext_resource type="Texture2D" uid="uid://d36bffp7indiu" path="res://art/Spider 3.png" id="9_owl6h"]
+[ext_resource type="Texture2D" uid="uid://clw625i2fj2ui" path="res://art/NPCs/Ver/NPC - Vero - Animation.png" id="10_8kdo0"]
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="10_cdgg1"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="10_wipvo"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="11_42mji"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="16_r8hod"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="17_owhe0"]
 [ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="17_tg8ud"]
-[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="18_4qqdx"]
+[ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="18_uwiws"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_0f7ib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lckut"]
@@ -568,6 +568,56 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ob5d"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43tng"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srwb1"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kymh"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcnu0"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mysr3"]
+atlas = ExtResource("10_8kdo0")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxt6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ob5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43tng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srwb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcnu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mysr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_hvs2q"]
 offsets = PackedFloat32Array(0, 0.681818)
 colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0, 0, 0, 1)
@@ -581,6 +631,84 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6rk2"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitjr"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15mic"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcme"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rewug"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3qcy"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2rkp"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7mee"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmbce"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuks6"]
+atlas = ExtResource("18_uwiws")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5si0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6rk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15mic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rewug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3qcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2rkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7mee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuks6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et0de"]
 atlas = ExtResource("15_px4u1")
@@ -941,10 +1069,12 @@ npc_portrait = ExtResource("8_jphev")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
 
-[node name="Ver" type="Sprite2D" parent="Seccion1"]
+[node name="Ver" type="AnimatedSprite2D" parent="Seccion1"]
 position = Vector2(40, 24)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_esd8j")
+sprite_frames = SubResource("SpriteFrames_fxt6o")
+autoplay = "default"
+frame_progress = 0.56196
 
 [node name="NPC" parent="Seccion1/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 dialogue_lines1 = Array[String](["¿Le tienes miedo a las arañas?", "Las arañas corretean por todo este lugar.", "Me gusta el color negro."])
@@ -1091,16 +1221,19 @@ panning_strength = 0.0
 bus = &"Musica"
 playback_type = 1
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
+[node name="Olga" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_e5si0")
+autoplay = "default"
+
+[node name="OlgaDialogo" parent="Scene Manager/Olga" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_owhe0")]
 dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
 dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "A este lugar le haría muy bien una limpieza, ¿no?", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
 dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
 npc_portrait = ExtResource("17_tg8ud")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
-sprite = ExtResource("18_4qqdx")
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("16_r8hod")]
 position = Vector2(88, -26)

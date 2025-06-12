@@ -27,6 +27,7 @@ var tried_alternative: bool = false
 @export var player_node_path: NodePath
 @onready var player_body: CharacterBody2D = get_node(player_node_path).get_node("CharacterBody2D")
 @onready var animator : AnimationPlayer = $CharacterBody2D/AnimationPlayer
+@onready var animaton: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animatedSprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
@@ -70,7 +71,8 @@ func _physics_process(delta: float):
 				wait_timer += delta
 				if wait_timer >= wait_time:
 					start_moving()
-
+	else:	
+		animaton.play("Puff")
 
 # Check if the player is within the detection range.
 func player_distance():

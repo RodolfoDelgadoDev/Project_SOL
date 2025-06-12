@@ -1,10 +1,51 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmimvp0ktwiqa"]
+[gd_scene load_steps=33 format=3 uid="uid://dmimvp0ktwiqa"]
 
 [ext_resource type="Script" path="res://scripts/thief.gd" id="1_70mpd"]
 [ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_fno32"]
 [ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="3_3aumt"]
+[ext_resource type="Texture2D" uid="uid://drotnseffmliv" path="res://animations/Enemies/Ninjas/Milo - Death - Ninja.png" id="4_7seus"]
 [ext_resource type="Texture2D" uid="uid://de7vv0lhovglx" path="res://animations/Enemies/Ninjas/MiloNinja.png" id="4_x8vwp"]
 [ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="5_itoid"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vxlg"]
+atlas = ExtResource("4_7seus")
+region = Rect2(0, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmcmq"]
+atlas = ExtResource("4_7seus")
+region = Rect2(33, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03jks"]
+atlas = ExtResource("4_7seus")
+region = Rect2(66, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j0ed"]
+atlas = ExtResource("4_7seus")
+region = Rect2(99, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k4ih"]
+atlas = ExtResource("4_7seus")
+region = Rect2(132, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_523e8"]
+atlas = ExtResource("4_7seus")
+region = Rect2(165, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnsgu"]
+atlas = ExtResource("4_7seus")
+region = Rect2(198, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57kxo"]
+atlas = ExtResource("4_7seus")
+region = Rect2(231, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaq67"]
+atlas = ExtResource("4_7seus")
+region = Rect2(264, 0, 33, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnsh6"]
+atlas = ExtResource("4_7seus")
+region = Rect2(297, 0, 33, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q2h2"]
 atlas = ExtResource("4_x8vwp")
@@ -48,6 +89,41 @@ region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ddob7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vxlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmcmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03jks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j0ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k4ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_523e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnsgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57kxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaq67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnsh6")
+}],
+"loop": true,
+"name": &"Puff",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5q2h2")
@@ -142,8 +218,9 @@ collision_mask = 7
 position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_ddob7")
+animation = &"Puff"
 autoplay = "default"
-frame_progress = 0.370195
+frame_progress = 0.731268
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 visible = false

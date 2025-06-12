@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://mb6v2konbssl"]
+[gd_scene load_steps=113 format=4 uid="uid://mb6v2konbssl"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_1rfgy"]
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_ckvsa"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c4s3uwb8t20d" path="res://art/NPCs/Olivia/NPC - Olivia - March.png" id="19_fsqsj"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_owwac"]
 [ext_resource type="Texture2D" uid="uid://1eq3otnivk6f" path="res://art/NPCs Portraits/Olga-Portrait.png" id="20_63rre"]
-[ext_resource type="Texture2D" uid="uid://fb1fmiwlijtd" path="res://art/NPC - Olga.png" id="21_acsc8"]
+[ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="21_hpcbq"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="22_v5urr"]
 [ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="23_cosp4"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="23_e44ld"]
@@ -789,6 +789,84 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txru4"]
 size = Vector2(96, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6rk2"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitjr"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15mic"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcme"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rewug"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3qcy"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2rkp"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7mee"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmbce"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuks6"]
+atlas = ExtResource("21_hpcbq")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ruy7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6rk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15mic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rewug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3qcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2rkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7mee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuks6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
 atlas = ExtResource("7_f7e24")
 region = Rect2(0, 0, 37, 17)
@@ -1144,13 +1222,13 @@ position = Vector2(-183, -69)
 position = Vector2(-87, -68)
 
 [node name="Dreadlocks" type="AnimatedSprite2D" parent="Seccion1"]
-position = Vector2(-168, -71)
+position = Vector2(-107, -69)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_1oj6x")
 autoplay = "default"
 
 [node name="NPC" parent="Seccion1/Dreadlocks" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
-position = Vector2(0, 12)
+position = Vector2(0, 18)
 dialogue_lines2 = Array[String](["Invité a Juanito a la barra, precisaba un par de manos extra.", "A veces le pido mucho a Juanito, es buen pibe pero no se da cuenta de los errores pequeños.", "Esperemos que todo siga adelante, ¡tú sigue en busca de esas botellas para que las mejoras no se detengan!"])
 dialogue_lines3 = Array[String](["Podríamos tratar de seguir invirtiendo un poco mas de nuestro tiempo para poder mejorar nuestro lugar ¿sabes?", "Espero que no se las siga pisando Juanito, porque si no queda \"Juanmuertito\".", ".", "...", "...", "Mejor no me dedico a la comedia."])
 npc_portrait = ExtResource("5_y3pda")
@@ -1158,7 +1236,7 @@ dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
 
 [node name="Juanito" type="AnimatedSprite2D" parent="Seccion1"]
-position = Vector2(-108, -70)
+position = Vector2(-166, -69)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_f8yfv")
 autoplay = "default"
@@ -1264,16 +1342,19 @@ npc_portrait = ExtResource("19_cddvg")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
+[node name="Olga" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-200, -74)
 scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ruy7u")
+autoplay = "default"
+
+[node name="OlgaDialogo" parent="Scene Manager/Olga" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_088kn")]
 dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
 dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "¡Wow dos seguida!, Este lugar esta tomando forma, gracias por ese aporte.", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
 dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
 npc_portrait = ExtResource("20_63rre")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_owwac")
-sprite = ExtResource("21_acsc8")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

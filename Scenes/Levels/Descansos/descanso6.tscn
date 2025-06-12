@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=4 uid="uid://co0t5xvs8ypex"]
+[gd_scene load_steps=170 format=4 uid="uid://co0t5xvs8ypex"]
 
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_0c50o"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_35a7h"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://hr65q2b5wtkk" path="res://Scenes/Entities/olivia.tscn" id="19_oo3ft"]
 [ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="20_ptg8r"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="21_bfqq2"]
-[ext_resource type="PackedScene" uid="uid://despcl5wghpmr" path="res://Scenes/Entities/chica-empanada.tscn" id="21_br20u"]
 [ext_resource type="PackedScene" uid="uid://c4gkrjplyfaeg" path="res://Scenes/Entities/dormilon1.tscn" id="22_f85p7"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="22_vralp"]
 [ext_resource type="PackedScene" uid="uid://cuwxpjgb2addv" path="res://Scenes/Entities/dormilon2.tscn" id="23_b57d5"]
@@ -37,14 +36,17 @@
 [ext_resource type="Texture2D" uid="uid://kks3q16ywxfw" path="res://art/NPCs/Cry baby/NPC-Cry baby 2.png" id="30_xcy2o"]
 [ext_resource type="Texture2D" uid="uid://wcycly2mwi6a" path="res://art/NPCs Portraits/CryBaby-Portrait.png" id="31_eeeso"]
 [ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="31_g07dk"]
-[ext_resource type="Texture2D" uid="uid://dnmrmx62iqoi7" path="res://art/NPCs/Ver/NPC - Ver.png" id="32_x47vv"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="33_20ssj"]
 [ext_resource type="Texture2D" uid="uid://buqi0sv16g5hj" path="res://art/NPCs Portraits/Nicky-Portrait.png" id="33_xtrwp"]
 [ext_resource type="Texture2D" uid="uid://3auc8y5lc7or" path="res://art/NPCs Portraits/Sleepyhead-Portrait.png" id="35_7np56"]
 [ext_resource type="Texture2D" uid="uid://djobe5y3qjdw0" path="res://art/NPCs Portraits/Sleepyhead2-Portrait.png" id="37_4dt8f"]
 [ext_resource type="Texture2D" uid="uid://dpoh3q6oomtfu" path="res://art/NPCs/John Jairo/John Jairo.png" id="42_gi3xj"]
+[ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="42_io2hl"]
 [ext_resource type="Texture2D" uid="uid://cksb003hg01wp" path="res://art/NPCs Portraits/JhonJairo-Portrait.png" id="43_87jl7"]
+[ext_resource type="Texture2D" uid="uid://idl4t2quk7fj" path="res://art/NPCs/Punk gurl/PUNK-NPCs estáticos-sheet.png" id="44_7xqmu"]
 [ext_resource type="AudioStream" uid="uid://de7wj5gqp4rup" path="res://SFX/NPC_Voice4.mp3" id="44_wl88k"]
+[ext_resource type="Texture2D" uid="uid://dvqycf46t80qg" path="res://art/NPCs/Nicky/Nicky-NPCs animation (1).png" id="46_x0wxb"]
+[ext_resource type="Texture2D" uid="uid://4geble26jui5" path="res://art/NPCs/Ver/NPC - Vero - Animation - Sentada.png" id="48_eenl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ou8kc"]
 texture = ExtResource("1_0c50o")
@@ -997,6 +999,381 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6rk2"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitjr"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15mic"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcme"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rewug"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3qcy"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2rkp"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7mee"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmbce"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuks6"]
+atlas = ExtResource("42_io2hl")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7i0ri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6rk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15mic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rewug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3qcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2rkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7mee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmbce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuks6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75k3t"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88xgf"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujelr"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3vbm"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcrnl"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsx8e"]
+atlas = ExtResource("44_7xqmu")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d447l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75k3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88xgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujelr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3vbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcrnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsx8e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7px3"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0lom"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olfxx"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amecd"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0tm3"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a5t4"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plpog"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1khm"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmwp1"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qhyo"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq6cb"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3luus"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7f0h"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d1im"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcvak"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtieq"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udhif"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns5tx"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51q2d"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5tm7"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20n5l"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w372t"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(672, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bn5o"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(704, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj2hl"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(736, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csfkb"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(768, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4sn6"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(800, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f1rr"]
+atlas = ExtResource("46_x0wxb")
+region = Rect2(832, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc6kf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7px3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0lom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amecd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0tm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a5t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plpog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1khm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmwp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qhyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq6cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3luus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7f0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d1im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcvak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtieq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udhif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns5tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51q2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5tm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20n5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w372t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bn5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj2hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csfkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4sn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f1rr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pif63"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjstc"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmw2n"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmpxm"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h11hk"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyy0n"]
+atlas = ExtResource("48_eenl2")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2vcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pif63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjstc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmw2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmpxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h11hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyy0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -1410,18 +1787,6 @@ npc_portrait = ExtResource("22_vralp")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_8d5ik")
 
-[node name="Ver" type="Sprite2D" parent="Scene Manager"]
-position = Vector2(-136, -50)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("32_x47vv")
-
-[node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
-position = Vector2(-2, -2)
-dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-npc_portrait = ExtResource("33_20ssj")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_8d5ik")
-
 [node name="Player" parent="Scene Manager" instance=ExtResource("16_gyeq2")]
 position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
@@ -1441,14 +1806,6 @@ npc_portrait = ExtResource("25_8y8dy")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_8d5ik")
 
-[node name="Olga" parent="Scene Manager" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
-position = Vector2(-200, -74)
-scale = Vector2(0.5, 0.5)
-npc_portrait = ExtResource("18_rdwme")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_8d5ik")
-sprite = ExtResource("18_rdwme")
-
 [node name="Olivia" parent="Scene Manager" instance=ExtResource("19_oo3ft")]
 position = Vector2(42, -74)
 scale = Vector2(0.5, 0.5)
@@ -1459,36 +1816,14 @@ npc_portrait = ExtResource("28_ipkge")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_8d5ik")
 
-[node name="PunkGirl" parent="Scene Manager" instance=ExtResource("3_cyb3s")]
-position = Vector2(-104, 17)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Scene Manager/PunkGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
-position = Vector2(0, 10)
-dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
-npc_portrait = ExtResource("29_7govt")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_8d5ik")
-
-[node name="ComputerGirl" parent="Scene Manager" instance=ExtResource("20_ptg8r")]
+[node name="Wanda" parent="Scene Manager" instance=ExtResource("20_ptg8r")]
 position = Vector2(-172, 72)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPC" parent="Scene Manager/ComputerGirl" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+[node name="NPC" parent="Scene Manager/Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
 position = Vector2(8, 4)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 npc_portrait = ExtResource("31_g07dk")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_8d5ik")
-
-[node name="Nicky" parent="Scene Manager" instance=ExtResource("21_br20u")]
-position = Vector2(-168, 19)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
-position = Vector2(2, 6)
-dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
-npc_portrait = ExtResource("33_xtrwp")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_8d5ik")
 
@@ -1539,6 +1874,58 @@ npc_portrait = ExtResource("43_87jl7")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("44_wl88k")
 
+[node name="Olga2" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-200, -75)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7i0ri")
+autoplay = "default"
+
+[node name="Olga" parent="Scene Manager/Olga2" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(0, 2)
+npc_portrait = ExtResource("18_rdwme")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_8d5ik")
+
+[node name="ChicaPunk" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-104, 19)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_d447l")
+autoplay = "default"
+
+[node name="NPC" parent="Scene Manager/ChicaPunk" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(0, 6)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("29_7govt")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_8d5ik")
+
+[node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager"]
+position = Vector2(-168, 19)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dc6kf")
+autoplay = "default"
+
+[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(0, 6)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("33_xtrwp")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_8d5ik")
+
+[node name="Ver" type="AnimatedSprite2D" parent="."]
+position = Vector2(-137, -47)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_e2vcl")
+autoplay = "default"
+frame_progress = 0.901343
+
+[node name="NPC" parent="Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(0, -2)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("33_20ssj")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_8d5ik")
+
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD9/wQAAQAFAAIAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAP//AQASABAAAAAEAAAAAQASABEAAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD2/wQAAQAGAAgAAAD2/wMAAQAGAAgAAAD2/wIAAQAAAAcAAAA=")
@@ -1554,6 +1941,7 @@ rendering_quadrant_size = 32
 [node name="SeccionTop1" type="Node2D" parent="."]
 
 [node name="Piso2" type="TileMapLayer" parent="SeccionTop1"]
+visible = false
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADt//j/AQABAAcAAADt//n/AQABAAcAAADt//r/AQABAAcAAADt//v/AQABAAcAAADt//z/AQABAAcAAADt//3/AQABAAcAAADt//7/AQABAAcAAADt////AQABAAcAAADt/wAAAQABAAcAAADt/wEAAQABAAcAAADu//j/AQABAAcAAADu//n/AQABAAcAAADu//r/AQABAAcAAADu//v/AQABAAcAAADu//z/AQABAAcAAADu//3/AQABAAcAAADv//j/AQABAAcAAADv//n/AQABAAcAAADv//r/AQABAAcAAADt/wIAAQABAAcAAADt/wMAAQABAAcAAADt/wQAAQABAAcAAADt/wUAAQABAAcAAADt/wYAAQABAAcAAADt/wcAAQABAAcAAADv//v/AQABAAcAAADv//z/AQABAAcAAADv//3/AQABAAcAAAAJAPj/AQABAAcAAAAJAPn/AQABAAcAAAAJAPr/AQABAAcAAAAJAPv/AQABAAcAAAAJAPz/AQABAAcAAAAJAP3/AQABAAcAAAAJAP7/AQABAAcAAAAJAP//AQABAAcAAAAJAAAAAQABAAcAAAAJAAEAAQABAAcAAAAJAAIAAQABAAcAAAAJAAMAAQABAAcAAAAJAAQAAQABAAcAAAAJAAUAAQABAAcAAAAJAAYAAQABAAcAAAAJAAcAAQABAAcAAADt//f/AQABAAcAAADu//f/AQABAAcAAADv//f/AQABAAcAAADw//f/AQABAAcAAADx//f/AQABAAcAAADy//f/AQABAAcAAADz//f/AQABAAcAAAD0//f/AQABAAcAAAD1//f/AQABAAcAAAD2//f/AQABAAcAAAD3//f/AQABAAcAAAD4//f/AQABAAcAAAD5//f/AQABAAcAAAD6//f/AQABAAcAAAD7//f/AQABAAcAAAD8//f/AQABAAcAAAD9//f/AQABAAcAAAD+//f/AQABAAcAAAD///f/AQABAAcAAAAAAPf/AQABAAcAAAABAPf/AQABAAcAAAACAPf/AQABAAcAAAADAPf/AQABAAcAAAAEAPf/AQABAAcAAAAFAPf/AQABAAcAAAAGAPf/AQABAAcAAAAHAPf/AQABAAcAAAAIAPf/AQABAAcAAAAJAPf/AQABAAcAAAAKAPf/AQABAAcAAAAKAPj/AQABAAcAAAAKAPn/AQABAAcAAAAKAPr/AQABAAcAAAAKAPv/AQABAAcAAAAKAPz/AQABAAcAAAAKAP3/AQABAAcAAAAKAP7/AQABAAcAAAAKAP//AQABAAcAAAAKAAAAAQABAAcAAAAKAAEAAQABAAcAAAAKAAIAAQABAAcAAAAKAAMAAQABAAcAAAAKAAQAAQABAAcAAAAKAAUAAQABAAcAAAAKAAYAAQABAAcAAAAKAAcAAQABAAcAAADr//f/AQABAAcAAADs//j/AQABAAcAAADs//n/AQABAAcAAADs//r/AQABAAcAAADs//v/AQABAAcAAADs//z/AQABAAcAAADs//f/AQABAAcAAADr//j/AQABAAcAAADr//n/AQABAAcAAADr//z/AQABAAcAAADr//v/AQABAAcAAADr//r/AQABAAcAAADr//3/AQABAAcAAADr//7/AQABAAcAAADr////AQABAAcAAADs////AQABAAcAAADs//7/AQABAAcAAADs//3/AQABAAcAAADs/wcAAQABAAcAAADr/wcAAQABAAcAAADr/wYAAQABAAcAAADs/wYAAQABAAcAAADs/wUAAQABAAcAAADr/wUAAQABAAcAAADr/wQAAQABAAcAAADs/wQAAQABAAcAAADs/wMAAQABAAcAAADr/wMAAQABAAcAAADr/wIAAQABAAcAAADs/wIAAQABAAcAAADs/wEAAQABAAcAAADr/wEAAQABAAcAAADs/wAAAQABAAcAAADr/wAAAQABAAcAAAALAAcAAQABAAcAAAAMAAcAAQABAAcAAAALAAYAAQABAAcAAAAMAAYAAQABAAcAAAAMAAUAAQABAAcAAAALAAUAAQABAAcAAAALAAQAAQABAAcAAAAMAAQAAQABAAcAAAAMAAMAAQABAAcAAAALAAMAAQABAAcAAAALAAIAAQABAAcAAAALAAEAAQABAAcAAAAMAAIAAQABAAcAAAAMAAEAAQABAAcAAAAMAAAAAQABAAcAAAALAAAAAQABAAcAAAALAP//AQABAAcAAAAMAP//AQABAAcAAAAMAP7/AQABAAcAAAALAP7/AQABAAcAAAALAP3/AQABAAcAAAALAPz/AQABAAcAAAAMAP3/AQABAAcAAAAMAPz/AQABAAcAAAAMAPv/AQABAAcAAAAMAPr/AQABAAcAAAALAPr/AQABAAcAAAALAPv/AQABAAcAAAAMAPj/AQABAAcAAAAMAPn/AQABAAcAAAALAPj/AQABAAcAAAALAPf/AQABAAcAAAAMAPf/AQABAAcAAAALAPn/AQABAAcAAADr/wgAAQABAAcAAADr/wkAAQABAAcAAADs/wkAAQABAAcAAADs/woAAQABAAcAAADt/woAAQABAAcAAADu/woAAQABAAcAAADv/woAAQABAAcAAADw/woAAQABAAcAAADx/woAAQABAAcAAADy/woAAQABAAcAAADz/woAAQABAAcAAAD0/woAAQABAAcAAAD1/woAAQABAAcAAAD2/woAAQABAAcAAAD3/woAAQABAAcAAAD4/woAAQABAAcAAAD5/woAAQABAAcAAAD6/woAAQABAAcAAADr/woAAQABAAcAAADs/wgAAQABAAcAAADt/wgAAQABAAcAAADt/wkAAQABAAcAAADu/wkAAQABAAcAAADv/wkAAQABAAcAAADw/wkAAQABAAcAAADx/wkAAQABAAcAAADy/wkAAQABAAcAAADz/wkAAQABAAcAAAD0/wkAAQABAAcAAAD1/wkAAQABAAcAAAD2/wkAAQABAAcAAAD3/wkAAQABAAcAAAD4/wkAAQABAAcAAAD5/wkAAQABAAcAAAD6/wkAAQABAAcAAAD7/wkAAQABAAcAAAD7/woAAQABAAcAAAD8/wkAAQABAAcAAAD8/woAAQABAAcAAAD9/wkAAQABAAcAAAD9/woAAQABAAcAAAD+/wkAAQABAAcAAAD+/woAAQABAAcAAAD//wkAAQABAAcAAAD//woAAQABAAcAAAAAAAkAAQABAAcAAAAAAAoAAQABAAcAAAABAAkAAQABAAcAAAABAAoAAQABAAcAAAACAAkAAQABAAcAAAACAAoAAQABAAcAAAADAAkAAQABAAcAAAADAAoAAQABAAcAAAAEAAkAAQABAAcAAAAEAAoAAQABAAcAAAAFAAkAAQABAAcAAAAFAAoAAQABAAcAAAAGAAkAAQABAAcAAAAGAAoAAQABAAcAAAAHAAkAAQABAAcAAAAHAAoAAQABAAcAAAAIAAkAAQABAAcAAAAIAAoAAQABAAcAAAAJAAgAAQABAAcAAAAJAAkAAQABAAcAAAAJAAoAAQABAAcAAAAKAAgAAQABAAcAAAAKAAkAAQABAAcAAAAKAAoAAQABAAcAAAALAAgAAQABAAcAAAALAAkAAQABAAcAAAALAAoAAQABAAcAAAAMAAgAAQABAAcAAAAMAAkAAQABAAcAAAAMAAoAAQABAAcAAADr//b/AQABAAcAAADs//b/AQABAAcAAADt//b/AQABAAcAAADu//b/AQABAAcAAADv//b/AQABAAcAAADw//b/AQABAAcAAADx//b/AQABAAcAAADy//b/AQABAAcAAADz//b/AQABAAcAAAD0//b/AQABAAcAAAD1//b/AQABAAcAAAD2//b/AQABAAcAAAD3//b/AQABAAcAAAD4//b/AQABAAcAAAD5//b/AQABAAcAAAD6//b/AQABAAcAAAD7//b/AQABAAcAAAD8//b/AQABAAcAAAD9//b/AQABAAcAAAD+//b/AQABAAcAAAD///b/AQABAAcAAAAAAPb/AQABAAcAAAABAPb/AQABAAcAAAACAPb/AQABAAcAAAADAPb/AQABAAcAAAAEAPb/AQABAAcAAAAFAPb/AQABAAcAAAAGAPb/AQABAAcAAAAHAPb/AQABAAcAAAAIAPb/AQABAAcAAAAJAPb/AQABAAcAAAAKAPb/AQABAAcAAAALAPb/AQABAAcAAAAMAPb/AQABAAcAAAA=")
 tile_set = SubResource("TileSet_yil1h")
@@ -1568,6 +1956,7 @@ rendering_quadrant_size = 32
 [node name="SeccionTop5" type="Node2D" parent="."]
 
 [node name="Piso2" type="TileMapLayer" parent="SeccionTop5"]
+visible = false
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADt//j/AQABAAcAAADt//n/AQABAAcAAADt//r/AQABAAcAAADt//v/AQABAAcAAADt//z/AQABAAcAAADt//3/AQABAAcAAADt//7/AQABAAcAAADt////AQABAAcAAADt/wAAAQABAAcAAADt/wEAAQABAAcAAADu//j/AQABAAcAAADu//n/AQABAAcAAADu//r/AQABAAcAAADu//v/AQABAAcAAADu//z/AQABAAcAAADu//3/AQABAAcAAADv//j/AQABAAcAAADv//n/AQABAAcAAADv//r/AQABAAcAAADt/wIAAQABAAcAAADt/wMAAQABAAcAAADt/wQAAQABAAcAAADt/wUAAQABAAcAAADt/wYAAQABAAcAAADt/wcAAQABAAcAAADv//v/AQABAAcAAADv//z/AQABAAcAAADv//3/AQABAAcAAAAJAPj/AQABAAcAAAAJAPn/AQABAAcAAAAJAPr/AQABAAcAAAAJAPv/AQABAAcAAAAJAPz/AQABAAcAAAAJAP3/AQABAAcAAAAJAP7/AQABAAcAAAAJAP//AQABAAcAAAAJAAAAAQABAAcAAAAJAAEAAQABAAcAAAAJAAIAAQABAAcAAAAJAAMAAQABAAcAAAAJAAQAAQABAAcAAAAJAAUAAQABAAcAAAAJAAYAAQABAAcAAAAJAAcAAQABAAcAAADt//f/AQABAAcAAADu//f/AQABAAcAAADv//f/AQABAAcAAADw//f/AQABAAcAAADx//f/AQABAAcAAADy//f/AQABAAcAAADz//f/AQABAAcAAAD0//f/AQABAAcAAAD1//f/AQABAAcAAAD2//f/AQABAAcAAAD3//f/AQABAAcAAAD4//f/AQABAAcAAAD5//f/AQABAAcAAAD6//f/AQABAAcAAAD7//f/AQABAAcAAAD8//f/AQABAAcAAAD9//f/AQABAAcAAAD+//f/AQABAAcAAAD///f/AQABAAcAAAAAAPf/AQABAAcAAAABAPf/AQABAAcAAAACAPf/AQABAAcAAAADAPf/AQABAAcAAAAEAPf/AQABAAcAAAAFAPf/AQABAAcAAAAGAPf/AQABAAcAAAAHAPf/AQABAAcAAAAIAPf/AQABAAcAAAAJAPf/AQABAAcAAAAKAPf/AQABAAcAAAAKAPj/AQABAAcAAAAKAPn/AQABAAcAAAAKAPr/AQABAAcAAAAKAPv/AQABAAcAAAAKAPz/AQABAAcAAAAKAP3/AQABAAcAAAAKAP7/AQABAAcAAAAKAP//AQABAAcAAAAKAAAAAQABAAcAAAAKAAEAAQABAAcAAAAKAAIAAQABAAcAAAAKAAMAAQABAAcAAAAKAAQAAQABAAcAAAAKAAUAAQABAAcAAAAKAAYAAQABAAcAAAAKAAcAAQABAAcAAADr//f/AQABAAcAAADs//j/AQABAAcAAADs//n/AQABAAcAAADs//r/AQABAAcAAADs//v/AQABAAcAAADs//z/AQABAAcAAADs//f/AQABAAcAAADr//j/AQABAAcAAADr//n/AQABAAcAAADr//z/AQABAAcAAADr//v/AQABAAcAAADr//r/AQABAAcAAADr//3/AQABAAcAAADr//7/AQABAAcAAADr////AQABAAcAAADs////AQABAAcAAADs//7/AQABAAcAAADs//3/AQABAAcAAADs/wcAAQABAAcAAADr/wcAAQABAAcAAADr/wYAAQABAAcAAADs/wYAAQABAAcAAADs/wUAAQABAAcAAADr/wUAAQABAAcAAADr/wQAAQABAAcAAADs/wQAAQABAAcAAADs/wMAAQABAAcAAADr/wMAAQABAAcAAADr/wIAAQABAAcAAADs/wIAAQABAAcAAADs/wEAAQABAAcAAADr/wEAAQABAAcAAADs/wAAAQABAAcAAADr/wAAAQABAAcAAAALAAcAAQABAAcAAAAMAAcAAQABAAcAAAALAAYAAQABAAcAAAAMAAYAAQABAAcAAAAMAAUAAQABAAcAAAALAAUAAQABAAcAAAALAAQAAQABAAcAAAAMAAQAAQABAAcAAAAMAAMAAQABAAcAAAALAAMAAQABAAcAAAALAAIAAQABAAcAAAALAAEAAQABAAcAAAAMAAIAAQABAAcAAAAMAAEAAQABAAcAAAAMAAAAAQABAAcAAAALAAAAAQABAAcAAAALAP//AQABAAcAAAAMAP//AQABAAcAAAAMAP7/AQABAAcAAAALAP7/AQABAAcAAAALAP3/AQABAAcAAAALAPz/AQABAAcAAAAMAP3/AQABAAcAAAAMAPz/AQABAAcAAAAMAPv/AQABAAcAAAAMAPr/AQABAAcAAAALAPr/AQABAAcAAAALAPv/AQABAAcAAAAMAPj/AQABAAcAAAAMAPn/AQABAAcAAAALAPj/AQABAAcAAAALAPf/AQABAAcAAAAMAPf/AQABAAcAAAALAPn/AQABAAcAAADr/wgAAQABAAcAAADr/wkAAQABAAcAAADs/wkAAQABAAcAAADs/woAAQABAAcAAADt/woAAQABAAcAAADu/woAAQABAAcAAADv/woAAQABAAcAAADw/woAAQABAAcAAADx/woAAQABAAcAAADy/woAAQABAAcAAADz/woAAQABAAcAAAD0/woAAQABAAcAAAD1/woAAQABAAcAAAD2/woAAQABAAcAAAD3/woAAQABAAcAAAD4/woAAQABAAcAAAD5/woAAQABAAcAAAD6/woAAQABAAcAAADr/woAAQABAAcAAADs/wgAAQABAAcAAADt/wgAAQABAAcAAADt/wkAAQABAAcAAADu/wkAAQABAAcAAADv/wkAAQABAAcAAADw/wkAAQABAAcAAADx/wkAAQABAAcAAADy/wkAAQABAAcAAADz/wkAAQABAAcAAAD0/wkAAQABAAcAAAD1/wkAAQABAAcAAAD2/wkAAQABAAcAAAD3/wkAAQABAAcAAAD4/wkAAQABAAcAAAD5/wkAAQABAAcAAAD6/wkAAQABAAcAAAD7/wkAAQABAAcAAAD7/woAAQABAAcAAAD8/wkAAQABAAcAAAD8/woAAQABAAcAAAD9/wkAAQABAAcAAAD9/woAAQABAAcAAAD+/wkAAQABAAcAAAD+/woAAQABAAcAAAD//wkAAQABAAcAAAD//woAAQABAAcAAAAAAAkAAQABAAcAAAAAAAoAAQABAAcAAAABAAkAAQABAAcAAAABAAoAAQABAAcAAAACAAkAAQABAAcAAAACAAoAAQABAAcAAAADAAkAAQABAAcAAAADAAoAAQABAAcAAAAEAAkAAQABAAcAAAAEAAoAAQABAAcAAAAFAAkAAQABAAcAAAAFAAoAAQABAAcAAAAGAAkAAQABAAcAAAAGAAoAAQABAAcAAAAHAAkAAQABAAcAAAAHAAoAAQABAAcAAAAIAAkAAQABAAcAAAAIAAoAAQABAAcAAAAJAAgAAQABAAcAAAAJAAkAAQABAAcAAAAJAAoAAQABAAcAAAAKAAgAAQABAAcAAAAKAAkAAQABAAcAAAAKAAoAAQABAAcAAAALAAgAAQABAAcAAAALAAkAAQABAAcAAAALAAoAAQABAAcAAAAMAAgAAQABAAcAAAAMAAkAAQABAAcAAAAMAAoAAQABAAcAAADr//b/AQABAAcAAADs//b/AQABAAcAAADt//b/AQABAAcAAADu//b/AQABAAcAAADv//b/AQABAAcAAADw//b/AQABAAcAAADx//b/AQABAAcAAADy//b/AQABAAcAAADz//b/AQABAAcAAAD0//b/AQABAAcAAAD1//b/AQABAAcAAAD2//b/AQABAAcAAAD3//b/AQABAAcAAAD4//b/AQABAAcAAAD5//b/AQABAAcAAAD6//b/AQABAAcAAAD7//b/AQABAAcAAAD8//b/AQABAAcAAAD9//b/AQABAAcAAAD+//b/AQABAAcAAAD///b/AQABAAcAAAAAAPb/AQABAAcAAAABAPb/AQABAAcAAAACAPb/AQABAAcAAAADAPb/AQABAAcAAAAEAPb/AQABAAcAAAAFAPb/AQABAAcAAAAGAPb/AQABAAcAAAAHAPb/AQABAAcAAAAIAPb/AQABAAcAAAAJAPb/AQABAAcAAAAKAPb/AQABAAcAAAALAPb/AQABAAcAAAAMAPb/AQABAAcAAAA=")
 tile_set = SubResource("TileSet_yil1h")
