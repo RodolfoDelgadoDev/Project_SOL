@@ -2313,10 +2313,9 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nekbt")
 autoplay = "default"
 
-[node name="Olga" parent="Scene Manager/Olga2" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+[node name="Olga" parent="Scene Manager/Olga2" instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
 npc_portrait = ExtResource("18_eiu76")
-dialogue_manager = NodePath("")
 voice_sound = ExtResource("19_n4614")
 
 [node name="ChicaPunk" type="AnimatedSprite2D" parent="Scene Manager"]
@@ -2325,11 +2324,10 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y4n3f")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/ChicaPunk" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/ChicaPunk" instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("28_c6tfu")
-dialogue_manager = NodePath("")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager"]
@@ -2338,11 +2336,10 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kpidl")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/Nicky" instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("32_blg1d")
-dialogue_manager = NodePath("")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Ver" type="AnimatedSprite2D" parent="Scene Manager"]
@@ -2351,11 +2348,10 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ebdbs")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/Ver" instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("37_tbqob")
-dialogue_manager = NodePath("")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]

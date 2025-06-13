@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://pajr6my34o1t"]
+
+[ext_resource type="Script" path="res://scripts/test_npc3.gd" id="1_nxi4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ridtw"]
+size = Vector2(60, 60)
+
+[node name="NPC3" type="Node2D"]
+script = ExtResource("1_nxi4d")
+dialogue_lines1 = Array[String](["gdfgdfg", "gdfgdgfgf", "dfgdfg", "dgdfgfdd", "dgdfgdfgd", "dgfgdg"])
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ridtw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ridtw")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

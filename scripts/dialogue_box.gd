@@ -200,3 +200,60 @@ func hide_dialogue(instant: bool = false) -> void:
 			visible = false
 			position.y = original_y + MOVE_OFFSET  # Ensure final position
 		)
+
+func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, voice_res: AudioStream = null) -> void:
+	current_npc = npc
+	current_lines = lines
+	current_line_index = 0
+	portrait.texture = portrait_texture
+	current_voice = voice_res
+	show_dialogue()
+	_display_auto_line()
+
+func _display_auto_line() -> void:
+	play_walking()
+	text_label.visible_ratio = 0
+	text_label.text = current_lines[current_line_index]
+
+	voice_timer.stop()
+	var line_length = current_lines[current_line_index].length()
+	var typewriter_duration = CHARACTER_DISPLAY_SPEED * line_length
+
+	if current_voice and line_length > 0:
+		voice_player.stream = current_voice
+		var interval = max(0.1, typewriter_duration / line_length)
+		voice_timer.start(interval)
+
+	var tween = create_tween()
+	tween.tween_property(text_label, "visible_ratio", 1.0, typewriter_duration)
+	tween.tween_callback(voice_timer.stop)
+
+	tween.tween_callback(func() -> void:
+		await get_tree().create_timer(1.2).timeout  
+
+		if current_line_index < current_lines.size() - 1:
+			current_line_index += 1
+			_display_auto_line()
+		else:
+			await get_tree().create_timer(2.0).timeout  
+			hide_dialogue()
+	)
+	
+func play_walking():
+	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	var milo_jump = scene_manager.get_node("Pablo")
+	var milo = scene_manager.get_node("PabloSeVa")
+
+	milo.visible = false
+	milo_jump.visible = true
+	milo_jump.play("default")
+
+	if milo_jump.animation_finished.is_connected(_disapear):
+		milo_jump.animation_finished.disconnect(_disapear)
+
+	milo_jump.animation_finished.connect(_disapear.bind(milo, milo_jump), Object.CONNECT_ONE_SHOT)
+
+func _disapear(milo: AnimatedSprite2D, milo_jump: AnimatedSprite2D):
+	milo_jump.visible = false
+	milo.visible = true
+	milo.play("default")
