@@ -30,6 +30,7 @@ var tried_alternative: bool = false
 @onready var animaton: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animatedSprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var light_timer : Timer = $light_timer
 
 var thief_light = load("res://Scenes/Entities/thief_color_lights.tscn")
 
@@ -207,34 +208,41 @@ func alive() -> bool:
 
 func takeDamage():
 	if health <= 0:
+		light_timer.stop()
+		die()
+	else:
 		audio_player.stream = hurtSFX
 		audio_player.play()
-		if audio_player.playing:
-			await audio_player.finished
-		GameManager.Segundos += 5
-		get_parent().addBottle()
-		queue_free()
-	else:
 		health -= GameManager.playerDamage
 		animator.play("takeDamage")
 		if health <= 0:
-			audio_player.stream = hurtSFX
-			audio_player.play()
-			if audio_player.playing:
-				await audio_player.finished
-			var particle_scene = load("res://Scenes/Particles/confetti.tscn")
-			var particles_instance = particle_scene.instantiate()
-			var particles = particles_instance.get_node("GPUParticles2D")
-			particles.global_position = character_body.global_position
-			get_parent().add_child(particles_instance)
-			particles.emitting = true
-			particles.restart()
+			light_timer.stop()
 			GameManager.Segundos += 5
 			get_parent().addBottle()
-			audio_player.stream = hurtSFX
-			audio_player.play()
-			queue_free()
+			if audio_player.playing:
+				await audio_player.finished
+			die()
 
+func die():
+	delete_lights()
+	GameManager.Segundos += 5
+	get_parent().addBottle()
+	var particle_scene = load("res://Scenes/Particles/confetti.tscn")
+	var particles_instance = particle_scene.instantiate()
+	var particles = particles_instance.get_node("GPUParticles2D")
+	particles.global_position = character_body.global_position
+	get_parent().add_child(particles_instance)
+	particles.emitting = true
+	particles.restart()
+	if audio_player.playing:
+				await audio_player.finished
+	if animaton.is_playing():
+		await animaton.animation_finished
+		queue_free()
+	
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	print("holaa")
 
 func updateFlip(dir: bool):
 	if dir == false:
@@ -273,6 +281,12 @@ func get_lights():
 	# Sort by age (process order)
 	lights.sort_custom(func(a, b): return a.get_index() < b.get_index())
 	return lights
+	
+func delete_lights():
+	for child in get_children():
+		if child.is_in_group("enemy_light"):  # Add this group to your light scene
+			child.queue_free()
+			print ("deleted light")
 
 func _on_light_timer_timeout() -> void:
 	spawn_light()

@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nnsh6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Puff",
 "speed": 5.0
 }, {
