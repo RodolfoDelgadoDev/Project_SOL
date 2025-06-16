@@ -4,6 +4,11 @@ extends Node2D
 @onready var text_label: RichTextLabel = $Background/Text
 @onready var portrait: TextureRect = $Background/Portrait
 @onready var voice_player: AudioStreamPlayer2D = $VoicePlayer
+@onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
+@onready var animatic_sprite: AnimatedSprite2D = scene_manager.get_node("Pablo")
+
+var pause_frames := [10, 22, 35, 49, 65, 76]
+var is_waiting_for_frame := false
 
 var current_lines: Array[String] = []
 var current_line_index: int = 0
@@ -212,20 +217,16 @@ func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: N
 	show_dialogue()
 	_display_auto_line()
 
-@onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
-@onready var animatic_sprite: AnimatedSprite2D = scene_manager.get_node("Pablo")
-
-var pause_frames := [10, 22, 35, 49, 65, 76]
-var is_waiting_for_frame := false
-
 func _display_auto_line() -> void:
 	var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var puerta = scene_manager.get_node("Puerta")
+	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	text_label.visible_ratio = 0
 	text_label.text = current_lines[current_line_index]
 	if pablo_condicional:
 		puerta.visible = true
 		puerta.play("default")
+		colision.set_deferred("disabled", false)
 	pablo_condicional = false
 	
 
@@ -292,9 +293,11 @@ func play_walking():
 func _disapear(pablo_seVa: AnimatedSprite2D, pablo_intro: AnimatedSprite2D):
 	var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var puerta = scene_manager.get_node("Puerta")
+	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	pablo_intro.visible = false
 	pablo_seVa.visible = true
 	pablo_seVa.play("default")
 	pablo_condicional = true
+	colision.set_deferred("disabled", true)
 	puerta.play("desaparece")
 	hide_dialogue()

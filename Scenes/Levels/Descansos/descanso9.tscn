@@ -1,4 +1,4 @@
-[gd_scene load_steps=433 format=4 uid="uid://df0t1lclgh11u"]
+[gd_scene load_steps=434 format=4 uid="uid://df0t1lclgh11u"]
 
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_410lx"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="2_c6vi5"]
@@ -3135,6 +3135,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08yhd"]
+size = Vector2(62, 58)
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -3924,6 +3927,16 @@ position = Vector2(-200, 133)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_20ia3")
 animation = &"desaparece"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Scene Manager/Puerta"]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/Puerta/StaticBody2D"]
+position = Vector2(0, 4)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_08yhd")
+disabled = true
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
