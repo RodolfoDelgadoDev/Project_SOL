@@ -2073,7 +2073,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lakk3")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cadi6")
 }, {
 "duration": 1.0,
@@ -2417,7 +2417,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eeq61"]
@@ -3003,7 +3003,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="Node2D2" type="Node2D"]
@@ -3745,6 +3745,8 @@ voice_sound = ExtResource("7_4w4ue")
 position = Vector2(-304, 158)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tw2xd")
+frame = 116
+frame_progress = 1.0
 script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
@@ -3786,6 +3788,8 @@ visible = false
 position = Vector2(-216, 167)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3qrxc")
+frame = 24
+frame_progress = 1.0
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

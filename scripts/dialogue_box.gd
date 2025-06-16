@@ -13,6 +13,7 @@ var tween: Tween
 var original_y: float
 var voice_timer: Timer
 var current_voice: AudioStream
+var pablo_condicional: bool = true
 
 const MOVE_OFFSET: float = 500
 const ANIM_DURATION: float = 0.3
@@ -135,7 +136,8 @@ func _input(event: InputEvent) -> void:
 		player_moved()
 
 func player_moved() -> void:
-	hide_dialogue()
+	if pablo_condicional:
+		hide_dialogue()
 
 func _display_current_line() -> void:
 	# Setup text display
@@ -210,10 +212,16 @@ func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: N
 	show_dialogue()
 	_display_auto_line()
 
+@onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
+@onready var animatic_sprite: AnimatedSprite2D = scene_manager.get_node("Pablo")
+
+var pause_frames := [10, 22, 35, 49, 65, 76]
+var is_waiting_for_frame := false
+
 func _display_auto_line() -> void:
-	play_walking()
 	text_label.visible_ratio = 0
 	text_label.text = current_lines[current_line_index]
+	pablo_condicional = false
 
 	voice_timer.stop()
 	var line_length = current_lines[current_line_index].length()
@@ -229,31 +237,54 @@ func _display_auto_line() -> void:
 	tween.tween_callback(voice_timer.stop)
 
 	tween.tween_callback(func() -> void:
-		await get_tree().create_timer(1.2).timeout  
+		await get_tree().create_timer(1.2).timeout
+
+		# 🟢 Activar animación si estamos en el primer diálogo
+		if current_line_index == 0:
+			play_walking()
+			# Empezar a observar los frames
+			animatic_sprite.frame_changed.connect(_on_animatic_frame, CONNECT_DEFERRED)
 
 		if current_line_index < current_lines.size() - 1:
 			current_line_index += 1
-			_display_auto_line()
+			is_waiting_for_frame = true
 		else:
-			await get_tree().create_timer(2.0).timeout  
+			await get_tree().create_timer(2.0).timeout
+			animatic_sprite.frame_changed.disconnect(_on_animatic_frame)
 			hide_dialogue()
 	)
+
+func _on_animatic_frame():
+	if not is_waiting_for_frame:
+		return
+
+	if pause_frames.has(animatic_sprite.frame):
+		is_waiting_for_frame = false
+		animatic_sprite.pause()
+		_display_auto_line()
+		await get_tree().create_timer(1.2).timeout
+		animatic_sprite.play()
+
+
 	
 func play_walking():
 	var scene_manager = get_node("/root/Node2D2/Scene Manager")
-	var milo_jump = scene_manager.get_node("Pablo")
-	var milo = scene_manager.get_node("PabloSeVa")
+	var pablo_intro = scene_manager.get_node("Pablo")
+	var pablo_seVa = scene_manager.get_node("PabloSeVa")
+	pablo_condicional = false
 
-	milo.visible = false
-	milo_jump.visible = true
-	milo_jump.play("default")
+	pablo_seVa.visible = false
+	pablo_intro.visible = true
+	pablo_intro.play("default")
 
-	if milo_jump.animation_finished.is_connected(_disapear):
-		milo_jump.animation_finished.disconnect(_disapear)
+	if pablo_intro.animation_finished.is_connected(_disapear):
+		pablo_intro.animation_finished.disconnect(_disapear)
 
-	milo_jump.animation_finished.connect(_disapear.bind(milo, milo_jump), Object.CONNECT_ONE_SHOT)
+	pablo_intro.animation_finished.connect(_disapear.bind(pablo_seVa, pablo_intro), Object.CONNECT_ONE_SHOT)
 
-func _disapear(milo: AnimatedSprite2D, milo_jump: AnimatedSprite2D):
-	milo_jump.visible = false
-	milo.visible = true
-	milo.play("default")
+func _disapear(pablo_seVa: AnimatedSprite2D, pablo_intro: AnimatedSprite2D):
+	pablo_intro.visible = false
+	pablo_seVa.visible = true
+	pablo_seVa.play("default")
+	pablo_condicional = true
+	hide_dialogue()
