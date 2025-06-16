@@ -1,4 +1,4 @@
-[gd_scene load_steps=415 format=4 uid="uid://df0t1lclgh11u"]
+[gd_scene load_steps=433 format=4 uid="uid://df0t1lclgh11u"]
 
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_410lx"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="2_c6vi5"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://dwnaa3v6pjwna" path="res://animations/owners/Marce Dancing.png" id="63_iuyg6"]
 [ext_resource type="Texture2D" uid="uid://cgk44gbqcupkj" path="res://animations/Pablo/Pablo Explosion.png" id="63_qpxmp"]
 [ext_resource type="Texture2D" uid="uid://dve5cargghi3s" path="res://animations/owners/Rodo Dancing.png" id="64_h3n71"]
+[ext_resource type="Texture2D" uid="uid://djtfv8tnncglw" path="res://animations/Pablo/Puerta Pablo.png" id="67_mv0nl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7g7c"]
 texture = ExtResource("1_410lx")
@@ -3006,6 +3007,134 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss3yi"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(0, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t463"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(32, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xg15"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(64, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05pdq"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(96, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtx42"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(128, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm6rc"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(160, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idi5w"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(192, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4kd6"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(224, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck0nf"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(224, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccgqg"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(192, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n302k"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(160, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y8yl"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(128, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f105"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(96, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ubq"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(64, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f2b1"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(32, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k0r4"]
+atlas = ExtResource("67_mv0nl")
+region = Rect2(0, 0, 32, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20ia3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss3yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t463")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xg15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05pdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtx42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm6rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idi5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4kd6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck0nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccgqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n302k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y8yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f105")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1ubq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f2b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k0r4")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"desaparece",
+"speed": 5.0
+}]
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -3745,8 +3874,6 @@ voice_sound = ExtResource("7_4w4ue")
 position = Vector2(-304, 158)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tw2xd")
-frame = 116
-frame_progress = 1.0
 script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
@@ -3790,6 +3917,13 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3qrxc")
 frame = 24
 frame_progress = 1.0
+
+[node name="Puerta" type="AnimatedSprite2D" parent="Scene Manager"]
+visible = false
+position = Vector2(-200, 133)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_20ia3")
+animation = &"desaparece"
 
 [node name="Obstaculos2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

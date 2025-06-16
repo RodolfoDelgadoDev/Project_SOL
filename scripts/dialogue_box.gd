@@ -219,9 +219,15 @@ var pause_frames := [10, 22, 35, 49, 65, 76]
 var is_waiting_for_frame := false
 
 func _display_auto_line() -> void:
+	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	var puerta = scene_manager.get_node("Puerta")
 	text_label.visible_ratio = 0
 	text_label.text = current_lines[current_line_index]
+	if pablo_condicional:
+		puerta.visible = true
+		puerta.play("default")
 	pablo_condicional = false
+	
 
 	voice_timer.stop()
 	var line_length = current_lines[current_line_index].length()
@@ -239,7 +245,6 @@ func _display_auto_line() -> void:
 	tween.tween_callback(func() -> void:
 		await get_tree().create_timer(1.2).timeout
 
-		# 🟢 Activar animación si estamos en el primer diálogo
 		if current_line_index == 0:
 			play_walking()
 			# Empezar a observar los frames
@@ -272,10 +277,12 @@ func play_walking():
 	var pablo_intro = scene_manager.get_node("Pablo")
 	var pablo_seVa = scene_manager.get_node("PabloSeVa")
 	pablo_condicional = false
+	
 
 	pablo_seVa.visible = false
 	pablo_intro.visible = true
 	pablo_intro.play("default")
+	
 
 	if pablo_intro.animation_finished.is_connected(_disapear):
 		pablo_intro.animation_finished.disconnect(_disapear)
@@ -283,8 +290,11 @@ func play_walking():
 	pablo_intro.animation_finished.connect(_disapear.bind(pablo_seVa, pablo_intro), Object.CONNECT_ONE_SHOT)
 
 func _disapear(pablo_seVa: AnimatedSprite2D, pablo_intro: AnimatedSprite2D):
+	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	var puerta = scene_manager.get_node("Puerta")
 	pablo_intro.visible = false
 	pablo_seVa.visible = true
 	pablo_seVa.play("default")
 	pablo_condicional = true
+	puerta.play("desaparece")
 	hide_dialogue()
