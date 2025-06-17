@@ -561,6 +561,11 @@ texture_region_size = Vector2i(32, 32)
 14:20/0 = 0
 14:21/0 = 0
 14:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+17:21/0 = 0
+16:21/0 = 0
+15:21/0 = 0
+18:21/0 = 0
+19:21/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yil1h"]
 tile_size = Vector2i(32, 32)
@@ -3512,7 +3517,7 @@ rendering_quadrant_size = 32
 
 [node name="Obstaculos2" type="TileMapLayer" parent="Museo"]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD3/wUAAQATAAgAAAD8/wMAAQAJAAMAAAD8/wQAAQAJAAQAAAD9/wMAAQAKAAMAAAD9/wQAAQAKAAQAAAACAP//AQATABAAAADy/wcAAQAJABUAAADy/wgAAQAGABUAAADx/wcAAQAHABUAAADx/wgAAQAEABUAAADw/wcAAQAHABUAAADw/wgAAQAGABUAAADv/wcAAQAHABUAAADv/wgAAQABABUAAADu/wcAAQAHABUAAADu/wgAAQAGABUAAADt/wcAAQAHABUAAADt/wgAAQAFABUAAADs/wcAAQAHABUAAADs/wgAAQAGABUAAADr/wcAAQAHABUAAADr/wgAAQAAABUAAADq/wcAAQAHABUAAADq/wgAAQAGABUAAADp/wcAAQAHABUAAADp/wgAAQAFABUAAADo/wcAAQAHABUAAADo/wgAAQAGABUAAADn/wcAAQAIABUAAADn/wgAAQADABUAAADz/woAAQAPAAsAAADn/woAAQAPAAsAABDw//z/AQANABUAAADw//7/AQANABUAAAA=")
+tile_map_data = PackedByteArray("AAD3/wUAAQATAAgAAAD8/wMAAQAJAAMAAAD8/wQAAQAJAAQAAAD9/wMAAQAKAAMAAAD9/wQAAQAKAAQAAAACAP//AQATABAAAADy/wcAAQAJABUAAADy/wgAAQAPABUAAADx/wcAAQAHABUAAADx/wgAAQAEABUAAADw/wcAAQAHABUAAADw/wgAAQAQABUAAADv/wcAAQAHABUAAADv/wgAAQABABUAAADu/wcAAQAHABUAAADu/wgAAQARABUAAADt/wcAAQAHABUAAADt/wgAAQAFABUAAADs/wcAAQAHABUAAADs/wgAAQASABUAAADr/wcAAQAHABUAAADr/wgAAQAAABUAAADq/wcAAQAHABUAAADq/wgAAQATABUAAADp/wcAAQAHABUAAADp/wgAAQAFABUAAADo/wcAAQAHABUAAADo/wgAAQAGABUAAADn/wcAAQAIABUAAADn/wgAAQADABUAAADz/woAAQAPAAsAAADn/woAAQAPAAsAABDw//z/AQANABUAAADw//7/AQANABUAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -3881,7 +3886,7 @@ script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
 position = Vector2(176, -18)
-dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conoscas por participar en diseños artisticos", "Este es Javi", "Este es Alen", "Este es Eric", "Este es Ale", "Este es Santi", "Este es Gaby"])
+dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conoscas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Este es Alen", "Este es Eric", "Este es Ale", "Este es Santi", "Este es Gaby"])
 npc_portrait = ExtResource("61_tkmy8")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 

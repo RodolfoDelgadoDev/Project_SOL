@@ -268,7 +268,7 @@ func _on_animatic_frame():
 		is_waiting_for_frame = false
 		animatic_sprite.pause()
 		_display_auto_line()
-		await get_tree().create_timer(1.2).timeout
+		await get_tree().create_timer(5.2).timeout
 		animatic_sprite.play()
 
 
