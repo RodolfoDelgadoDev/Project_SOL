@@ -3886,7 +3886,7 @@ script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
 position = Vector2(176, -18)
-dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conoscas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Este es Alen", "Este es Eric", "Este es Ale", "Este es Santi", "Este es Gaby"])
+dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conoscas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Alen fue como un cometa, nos lanzó el software especial para llevar los registros y luego no lo volvimos a ver, aún es un misterio", "Antes este lugar no tenía nombre, después del desastre, ponerle Proyecto sol fue idea de D y Eric", "Ale escribió el documento de una especie nueva de murciélagos, mientras Jhon peleaba con uno", "Santi con Wanda diseñaron una alerta para cuando nuestra mochila está en riesgo", "Gaby diseñó varias habitaciones de la guarida con Juanito"])
 npc_portrait = ExtResource("61_tkmy8")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 

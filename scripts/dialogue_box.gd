@@ -7,7 +7,7 @@ extends Node2D
 @onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
 @onready var animatic_sprite: AnimatedSprite2D = scene_manager.get_node("Pablo")
 
-var pause_frames := [10, 22, 35, 49, 65, 76]
+var pause_frames := [10, 22, 34, 49, 65, 76]
 var is_waiting_for_frame := false
 
 var current_lines: Array[String] = []
@@ -216,6 +216,7 @@ func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: N
 	current_voice = voice_res
 	show_dialogue()
 	_display_auto_line()
+	
 
 func _display_auto_line() -> void:
 	var scene_manager = get_node("/root/Node2D2/Scene Manager")
@@ -268,7 +269,7 @@ func _on_animatic_frame():
 		is_waiting_for_frame = false
 		animatic_sprite.pause()
 		_display_auto_line()
-		await get_tree().create_timer(5.2).timeout
+		await get_tree().create_timer(7.5).timeout
 		animatic_sprite.play()
 
 
@@ -296,6 +297,12 @@ func _disapear(pablo_seVa: AnimatedSprite2D, pablo_intro: AnimatedSprite2D):
 	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	pablo_intro.visible = false
 	pablo_seVa.visible = true
+	start_dialogue(
+				["En fin, mi deber ha llegado a su fin. Hasta luego, viajero"], 
+				portrait.texture, 
+				current_npc, 
+				current_voice
+			)
 	pablo_seVa.play("default")
 	pablo_condicional = true
 	colision.set_deferred("disabled", true)
