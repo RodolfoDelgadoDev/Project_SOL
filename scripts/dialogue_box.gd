@@ -12,7 +12,7 @@ var is_waiting_for_frame := false
 
 var current_lines: Array[String] = []
 var current_line_index: int = 0
-var is_visible: bool = false
+var es_visible: bool = false
 var current_npc: Node = null
 var tween: Tween
 var original_y: float
@@ -47,7 +47,7 @@ func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, 
 		show_dialogue()
 	# Same NPC interactions
 	else:
-		if is_visible:
+		if es_visible:
 			# If showing last line, hide and reset to last line
 			if current_line_index >= current_lines.size() - 1:
 				hide_dialogue()
@@ -63,7 +63,7 @@ func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, 
 	_display_current_line()
 
 func play_jump_and_switch():
-	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	#var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var milo_jump = scene_manager.get_node("MiloJump")
 	var milo = scene_manager.get_node("Milo")
 
@@ -90,14 +90,14 @@ func start_alternating_dialogue(
 	portrait2: Texture2D, voice2: AudioStream,
 	portrait3: Texture2D, voice3: AudioStream
 ):
-	if current_npc != npc or not is_visible:
+	if current_npc != npc or not es_visible:
 		current_npc = npc
 		current_lines = lines
 		current_line_index = 0
 		has_played_final_dialogue = false
 		show_dialogue()
 	else:
-		if is_visible:
+		if es_visible:
 			if current_line_index >= current_lines.size() - 1:
 				if not has_played_final_dialogue:
 					has_played_final_dialogue = true
@@ -131,7 +131,7 @@ func start_alternating_dialogue(
 
 
 func _input(event: InputEvent) -> void:
-	if not is_visible: return
+	if not es_visible: return
 	
 	if (event.is_action_pressed("ui_up") ||
 		event.is_action_pressed("ui_down") ||
@@ -179,7 +179,7 @@ func show_dialogue() -> void:
 	# Ensure we're starting from below screen
 	position.y = original_y + MOVE_OFFSET
 	visible = true
-	is_visible = true
+	es_visible = true
 	set_process_input(true)
 	
 	# Animate up
@@ -187,12 +187,12 @@ func show_dialogue() -> void:
 	tween.tween_property(self, "position:y", original_y, ANIM_DURATION)
 
 func hide_dialogue(instant: bool = false) -> void:
-	if not is_visible: return
+	if not es_visible: return
 	
 	if tween:
 		tween.kill()
 	
-	is_visible = false
+	es_visible = false
 	set_process_input(false)
 	voice_timer.stop()
 	
@@ -220,7 +220,7 @@ func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: N
 
 func _display_auto_line() -> void:
 	animatic_sprite = scene_manager.get_node("Pablo")
-	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	#var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var puerta = scene_manager.get_node("Puerta")
 	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	text_label.visible_ratio = 0
@@ -241,11 +241,11 @@ func _display_auto_line() -> void:
 		var interval = max(0.1, typewriter_duration / line_length)
 		voice_timer.start(interval)
 
-	var tween = create_tween()
-	tween.tween_property(text_label, "visible_ratio", 1.0, typewriter_duration)
-	tween.tween_callback(voice_timer.stop)
+	var tweent = create_tween()
+	tweent.tween_property(text_label, "visible_ratio", 1.0, typewriter_duration)
+	tweent.tween_callback(voice_timer.stop)
 
-	tween.tween_callback(func() -> void:
+	tweent.tween_callback(func() -> void:
 		await get_tree().create_timer(1.2).timeout
 
 		if current_line_index == 0:
@@ -276,7 +276,7 @@ func _on_animatic_frame():
 
 	
 func play_walking():
-	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	#var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var pablo_intro = scene_manager.get_node("Pablo")
 	var pablo_seVa = scene_manager.get_node("PabloSeVa")
 	pablo_condicional = false
@@ -293,7 +293,7 @@ func play_walking():
 	pablo_intro.animation_finished.connect(_disapear.bind(pablo_seVa, pablo_intro), Object.CONNECT_ONE_SHOT)
 
 func _disapear(pablo_seVa: AnimatedSprite2D, pablo_intro: AnimatedSprite2D):
-	var scene_manager = get_node("/root/Node2D2/Scene Manager")
+	#var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var puerta = scene_manager.get_node("Puerta")
 	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	pablo_intro.visible = false

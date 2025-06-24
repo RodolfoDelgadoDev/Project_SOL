@@ -13,7 +13,7 @@ extends Node2D
 @export var dialogue_manager: Node2D
 @export var voice_sound: AudioStream
 @export var sprite: Texture
-@onready var sprite2D: Sprite2D = $Sprite2D
+#@onready var sprite2D: Sprite2D = $Sprite2D
 
 var dialogue_started := false  # <- Para que no se dispare muchas veces
 

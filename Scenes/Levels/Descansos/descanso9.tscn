@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_410lx"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="2_c6vi5"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_m2fe1"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="5_v5tso"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_skcci"]
@@ -3676,7 +3676,6 @@ voice_sound = ExtResource("7_4w4ue")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
 stream = ExtResource("21_mh5hk")
-autoplay = true
 panning_strength = 0.0
 bus = &"Musica"
 playback_type = 1
