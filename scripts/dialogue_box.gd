@@ -5,7 +5,7 @@ extends Node2D
 @onready var portrait: TextureRect = $Background/Portrait
 @onready var voice_player: AudioStreamPlayer2D = $VoicePlayer
 @onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
-@onready var animatic_sprite: AnimatedSprite2D = scene_manager.get_node("Pablo")
+@onready var animatic_sprite: AnimatedSprite2D = null
 
 var pause_frames := [10, 22, 34, 49, 65, 76]
 var is_waiting_for_frame := false
@@ -219,6 +219,7 @@ func start_auto_dialogue(lines: Array[String], portrait_texture: Texture, npc: N
 	
 
 func _display_auto_line() -> void:
+	animatic_sprite = scene_manager.get_node("Pablo")
 	var scene_manager = get_node("/root/Node2D2/Scene Manager")
 	var puerta = scene_manager.get_node("Puerta")
 	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
