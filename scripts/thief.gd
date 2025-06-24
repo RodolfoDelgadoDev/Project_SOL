@@ -11,6 +11,7 @@ extends Node2D
 @export var hurtSFX: AudioStream
 @export var escape_range: int = 5  # Grid cells to start escaping
 @export var calm_range: int = 8    # Grid cells to return to idle
+@export var ninja_boss: bool = false
 
 var character_body: CharacterBody2D
 var target_velocity: Vector2 = Vector2.ZERO
@@ -227,6 +228,8 @@ func die():
 	delete_lights()
 	GameManager.Segundos += 5
 	get_parent().addBottle()
+	if ninja_boss:
+		GameManager.ninja_boss +=1
 	var particle_scene = load("res://Scenes/Particles/confetti.tscn")
 	var particles_instance = particle_scene.instantiate()
 	var particles = particles_instance.get_node("GPUParticles2D")

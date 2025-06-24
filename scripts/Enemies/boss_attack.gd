@@ -57,7 +57,7 @@ func _create_timer(one_shot: bool) -> Timer:
 	timer.one_shot = one_shot
 	return timer
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not is_chasing or not player_body or is_winding_up or is_attacking:
 		return
 	

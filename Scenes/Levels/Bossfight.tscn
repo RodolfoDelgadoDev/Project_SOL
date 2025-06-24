@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dt06te87vkkei"]
+[gd_scene load_steps=37 format=4 uid="uid://dt06te87vkkei"]
 
 [ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_4e8m5"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="23_tuxxp"]
 [ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="24_12qmp"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="25_b2t3n"]
+[ext_resource type="Script" path="res://Scenes/Levels/cubodehielo.gd" id="26_dds47"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_daqb4"]
 shader = ExtResource("2_1p1vl")
@@ -549,6 +550,27 @@ shader_parameter/trail_color = Vector4(0.3, 0.9, 0.8, 0.6)
 default_font = ExtResource("8_fsop3")
 default_font_size = 15
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kbn"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwson"]
+atlas = ExtResource("1_4e8m5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="Gradient" id="Gradient_2rs26"]
+offsets = PackedFloat32Array(0, 0.668831)
+colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cijbd"]
+gradient = SubResource("Gradient_2rs26")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -568,7 +590,7 @@ rendering_quadrant_size = 32
 
 [node name="Piso2" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADw//D/AgABAAcAAADw//H/AgABAAcAAADw//L/AgABAAcAAADw//P/AgABAAcAAADw//T/AgABAAcAAADw//X/AgABAAcAAADw//b/AgABAAcAAADw//f/AgABAAcAAADw//j/AgABAAcAAADw//n/AgABAAcAAADw//r/AgABAAcAAADw//v/AgABAAcAAADw//z/AgABAAcAAADw//3/AgABAAcAAADw//7/AgABAAcAAADw////AgABAAcAAADw/wAAAgABAAcAAADw/wEAAgABAAcAAADw/wIAAgABAAcAAADw/wMAAgABAAcAAADw/wQAAgABAAcAAADw/wUAAgABAAcAAADw/wYAAgABAAcAAADw/wcAAgABAAcAAADw/wgAAgABAAcAAADw/wkAAgABAAcAAADw/woAAgABAAcAAADw/wsAAgABAAcAAADw/wwAAgABAAcAAAD2/w4AAgABAAcAAAD6/w8AAgABAAcAAAD7/xAAAgABAAcAAAD+/xEAAgABAAcAAAD+/xIAAgABAAcAAAD//w4AAgABAAcAAAACAA4AAgABAAcAAAANAA4AAgABAAcAAAAOAA4AAgABAAcAAAAPAA4AAgABAAcAAAAQAA8AAgABAAcAAAAXAA4AAgABAAcAAAAfABEAAgABAAcAAADw/w0AAgABAAcAAADw/w4AAgABAAcAAADw/w8AAgABAAcAAADw/xAAAgABAAcAAADw/xEAAgABAAcAAADw/xIAAgABAAcAAADx/w4AAgABAAcAAADx/w8AAgABAAcAAADx/xAAAgABAAcAAADx/xEAAgABAAcAAADx/xIAAgABAAcAAADy/w4AAgABAAcAAADy/w8AAgABAAcAAADy/xAAAgABAAcAAADy/xEAAgABAAcAAADy/xIAAgABAAcAAADz/w4AAgABAAcAAADz/w8AAgABAAcAAADz/xAAAgABAAcAAADz/xEAAgABAAcAAADz/xIAAgABAAcAAAD0/w4AAgABAAcAAAD0/w8AAgABAAcAAAD0/xAAAgABAAcAAAD0/xEAAgABAAcAAAD0/xIAAgABAAcAAAD1/w4AAgABAAcAAAD1/w8AAgABAAcAAAD1/xAAAgABAAcAAAD1/xEAAgABAAcAAAD1/xIAAgABAAcAAAD2/w8AAgABAAcAAAD2/xAAAgABAAcAAAD2/xEAAgABAAcAAAD2/xIAAgABAAcAAAD3/w4AAgABAAcAAAD3/w8AAgABAAcAAAD3/xAAAgABAAcAAAD3/xEAAgABAAcAAAD3/xIAAgABAAcAAAD4/w4AAgABAAcAAAD4/w8AAgABAAcAAAD4/xAAAgABAAcAAAD4/xEAAgABAAcAAAD4/xIAAgABAAcAAAD5/w4AAgABAAcAAAD5/w8AAgABAAcAAAD5/xAAAgABAAcAAAD5/xEAAgABAAcAAAD5/xIAAgABAAcAAAD6/w4AAgABAAcAAAD6/xAAAgABAAcAAAD6/xEAAgABAAcAAAD6/xIAAgABAAcAAAD7/w4AAgABAAcAAAD7/w8AAgABAAcAAAD7/xEAAgABAAcAAAD7/xIAAgABAAcAAAD8/w4AAgABAAcAAAD8/w8AAgABAAcAAAD8/xAAAgABAAcAAAD8/xEAAgABAAcAAAD8/xIAAgABAAcAAAD9/w4AAgABAAcAAAD9/w8AAgABAAcAAAD9/xAAAgABAAcAAAD9/xEAAgABAAcAAAD9/xIAAgABAAcAAAD+/w4AAgABAAcAAAD+/w8AAgABAAcAAAD+/xAAAgABAAcAAAD//w8AAgABAAcAAAD//xAAAgABAAcAAAD//xEAAgABAAcAAAD//xIAAgABAAcAAAAAAA4AAgABAAcAAAAAAA8AAgABAAcAAAAAABAAAgABAAcAAAAAABEAAgABAAcAAAAAABIAAgABAAcAAAABAA4AAgABAAcAAAABAA8AAgABAAcAAAABABAAAgABAAcAAAABABEAAgABAAcAAAABABIAAgABAAcAAAACAA8AAgABAAcAAAACABAAAgABAAcAAAACABEAAgABAAcAAAACABIAAgABAAcAAAADAA4AAgABAAcAAAADAA8AAgABAAcAAAADABAAAgABAAcAAAADABEAAgABAAcAAAADABIAAgABAAcAAAAEAA4AAgABAAcAAAAEAA8AAgABAAcAAAAEABAAAgABAAcAAAAEABEAAgABAAcAAAAEABIAAgABAAcAAAAFAA4AAgABAAcAAAAFAA8AAgABAAcAAAAFABAAAgABAAcAAAAFABEAAgABAAcAAAAFABIAAgABAAcAAAAGAA4AAgABAAcAAAAGAA8AAgABAAcAAAAGABAAAgABAAcAAAAGABEAAgABAAcAAAAGABIAAgABAAcAAAAHAA4AAgABAAcAAAAHAA8AAgABAAcAAAAHABAAAgABAAcAAAAHABEAAgABAAcAAAAHABIAAgABAAcAAAAIAA4AAgABAAcAAAAIAA8AAgABAAcAAAAIABAAAgABAAcAAAAIABEAAgABAAcAAAAIABIAAgABAAcAAAAJAA4AAgABAAcAAAAJAA8AAgABAAcAAAAJABAAAgABAAcAAAAJABEAAgABAAcAAAAJABIAAgABAAcAAAAKAA4AAgABAAcAAAAKAA8AAgABAAcAAAAKABAAAgABAAcAAAAKABEAAgABAAcAAAAKABIAAgABAAcAAAALAA4AAgABAAcAAAALAA8AAgABAAcAAAALABAAAgABAAcAAAALABEAAgABAAcAAAALABIAAgABAAcAAAAMAA4AAgABAAcAAAAMAA8AAgABAAcAAAAMABAAAgABAAcAAAAMABEAAgABAAcAAAAMABIAAgABAAcAAAANAA8AAgABAAcAAAANABAAAgABAAcAAAANABEAAgABAAcAAAANABIAAgABAAcAAAAOAA8AAgABAAcAAAAOABAAAgABAAcAAAAOABEAAgABAAcAAAAOABIAAgABAAcAAAAPAA8AAgABAAcAAAAPABAAAgABAAcAAAAPABEAAgABAAcAAAAPABIAAgABAAcAAAAQAA4AAgABAAcAAAAQABAAAgABAAcAAAAQABEAAgABAAcAAAAQABIAAgABAAcAAAARAA4AAgABAAcAAAARAA8AAgABAAcAAAARABAAAgABAAcAAAARABEAAgABAAcAAAARABIAAgABAAcAAAASAA4AAgABAAcAAAASAA8AAgABAAcAAAASABAAAgABAAcAAAASABEAAgABAAcAAAASABIAAgABAAcAAAATAA4AAgABAAcAAAATAA8AAgABAAcAAAATABAAAgABAAcAAAATABEAAgABAAcAAAATABIAAgABAAcAAAAUAA4AAgABAAcAAAAUAA8AAgABAAcAAAAUABAAAgABAAcAAAAUABEAAgABAAcAAAAUABIAAgABAAcAAAAVAA4AAgABAAcAAAAVAA8AAgABAAcAAAAVABAAAgABAAcAAAAVABEAAgABAAcAAAAVABIAAgABAAcAAAAWAA4AAgABAAcAAAAWAA8AAgABAAcAAAAWABAAAgABAAcAAAAWABEAAgABAAcAAAAWABIAAgABAAcAAAAXAA8AAgABAAcAAAAXABAAAgABAAcAAAAXABEAAgABAAcAAAAXABIAAgABAAcAAAAYAA4AAgABAAcAAAAYAA8AAgABAAcAAAAYABAAAgABAAcAAAAYABEAAgABAAcAAAAYABIAAgABAAcAAAAZAA4AAgABAAcAAAAZAA8AAgABAAcAAAAZABAAAgABAAcAAAAZABEAAgABAAcAAAAZABIAAgABAAcAAAAaAA4AAgABAAcAAAAaAA8AAgABAAcAAAAaABAAAgABAAcAAAAaABEAAgABAAcAAAAaABIAAgABAAcAAAAbAA4AAgABAAcAAAAbAA8AAgABAAcAAAAbABAAAgABAAcAAAAbABEAAgABAAcAAAAbABIAAgABAAcAAAAcAA4AAgABAAcAAAAcAA8AAgABAAcAAAAcABAAAgABAAcAAAAcABEAAgABAAcAAAAcABIAAgABAAcAAAAdAA4AAgABAAcAAAAdAA8AAgABAAcAAAAdABAAAgABAAcAAAAdABEAAgABAAcAAAAdABIAAgABAAcAAAAeAA4AAgABAAcAAAAeAA8AAgABAAcAAAAeABAAAgABAAcAAAAeABEAAgABAAcAAAAeABIAAgABAAcAAAAfAA4AAgABAAcAAAAfAA8AAgABAAcAAAAfABAAAgABAAcAAAAfABIAAgABAAcAAAAgAA4AAgABAAcAAAAgAA8AAgABAAcAAAAgABAAAgABAAcAAAAgABEAAgABAAcAAAAgABIAAgABAAcAAAAhAA4AAgABAAcAAAAhAA8AAgABAAcAAAAhABAAAgABAAcAAAAhABEAAgABAAcAAAAhABIAAgABAAcAAAAiAA4AAgABAAcAAAAiAA8AAgABAAcAAAAiABAAAgABAAcAAAAiABEAAgABAAcAAAAiABIAAgABAAcAAAAjAA4AAgABAAcAAAAjAA8AAgABAAcAAAAjABAAAgABAAcAAAAjABEAAgABAAcAAAAjABIAAgABAAcAAAAkAA4AAgABAAcAAAAkAA8AAgABAAcAAAAkABAAAgABAAcAAAAkABEAAgABAAcAAAAkABIAAgABAAcAAAAlAA4AAgABAAcAAAAlAA8AAgABAAcAAAAlABAAAgABAAcAAAAlABEAAgABAAcAAAAlABIAAgABAAcAAAD4/wkAAAAAAAIAAAD3/wYAAAAAAAIAAAD4/wQAAAAAAAIAAAD3/wAAAAAAAAIAAAD4/wIAAAAAAAIAAAD4//7/AAAAAAIAAAD4//z/AAAAAAIAAAD4//v/AAAAAAIAAAD8//r/AAAAAAIAAAD8//v/AAAAAAIAAAD9//v/AAAAAAIAAAD+//n/AAAAAAIAAAD+//j/AAAAAAIAAAAAAPr/AAAAAAIAAAAAAPn/AAAAAAIAAAAAAPj/AAAAAAIAAAD///j/AAAAAAIAAAACAPv/AAAAAAIAAAACAPn/AAAAAAIAAAAEAPj/AAAAAAIAAAAEAPn/AAAAAAIAAAAGAPv/AAAAAAIAAAAGAPr/AAAAAAIAAAAGAPn/AAAAAAIAAAAHAPv/AAAAAAIAAAAQAPn/AAAAAAIAAAAQAPr/AAAAAAIAAAAQAPj/AAAAAAIAAAAQAPf/AAAAAAIAAAATAPb/AAAAAAIAAAAUAPj/AAAAAAIAAAAVAPn/AAAAAAIAAAAXAPr/AAAAAAIAAAAYAPj/AAAAAAIAAAAZAPf/AAAAAAIAAAAWAPf/AAAAAAIAAAAbAPj/AAAAAAIAAAAaAPr/AAAAAAIAAAAgAP//AAAAAAIAAAAfAP//AAAAAAIAAAAdAP//AAAAAAIAAAAcAP//AAAAAAIAAAAdAAAAAAAAAAIAAAAfAAAAAAAAAAIAAAAfAAEAAAAAAAIAAAAdAAEAAAAAAAIAAAAfAAIAAAAAAAIAAAAdAAIAAAAAAAIAAAAgAAQAAAAAAAIAAAAfAAQAAAAAAAIAAAAQAAgAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AADw//D/AgABAAcAAADw//H/AgABAAcAAADw//L/AgABAAcAAADw//P/AgABAAcAAADw//T/AgABAAcAAADw//X/AgABAAcAAADw//b/AgABAAcAAADw//f/AgABAAcAAADw//j/AgABAAcAAADw//n/AgABAAcAAADw//r/AgABAAcAAADw//v/AgABAAcAAADw//z/AgABAAcAAADw//3/AgABAAcAAADw//7/AgABAAcAAADw////AgABAAcAAADw/wAAAgABAAcAAADw/wEAAgABAAcAAADw/wIAAgABAAcAAADw/wMAAgABAAcAAADw/wQAAgABAAcAAADw/wUAAgABAAcAAADw/wYAAgABAAcAAADw/wcAAgABAAcAAADw/wgAAgABAAcAAADw/wkAAgABAAcAAADw/woAAgABAAcAAADw/wsAAgABAAcAAADw/wwAAgABAAcAAAD2/w4AAgABAAcAAAD6/w8AAgABAAcAAAD7/xAAAgABAAcAAAD+/xEAAgABAAcAAAD+/xIAAgABAAcAAAD//w4AAgABAAcAAAACAA4AAgABAAcAAAANAA4AAgABAAcAAAAOAA4AAgABAAcAAAAPAA4AAgABAAcAAAAQAA8AAgABAAcAAAAXAA4AAgABAAcAAAAfABEAAgABAAcAAADw/w0AAgABAAcAAADw/w4AAgABAAcAAADw/w8AAgABAAcAAADw/xAAAgABAAcAAADw/xEAAgABAAcAAADw/xIAAgABAAcAAADx/w4AAgABAAcAAADx/w8AAgABAAcAAADx/xAAAgABAAcAAADx/xEAAgABAAcAAADx/xIAAgABAAcAAADy/w4AAgABAAcAAADy/w8AAgABAAcAAADy/xAAAgABAAcAAADy/xEAAgABAAcAAADy/xIAAgABAAcAAADz/w4AAgABAAcAAADz/w8AAgABAAcAAADz/xAAAgABAAcAAADz/xEAAgABAAcAAADz/xIAAgABAAcAAAD0/w4AAgABAAcAAAD0/w8AAgABAAcAAAD0/xAAAgABAAcAAAD0/xEAAgABAAcAAAD0/xIAAgABAAcAAAD1/w4AAgABAAcAAAD1/w8AAgABAAcAAAD1/xAAAgABAAcAAAD1/xEAAgABAAcAAAD1/xIAAgABAAcAAAD2/w8AAgABAAcAAAD2/xAAAgABAAcAAAD2/xEAAgABAAcAAAD2/xIAAgABAAcAAAD3/w4AAgABAAcAAAD3/w8AAgABAAcAAAD3/xAAAgABAAcAAAD3/xEAAgABAAcAAAD3/xIAAgABAAcAAAD4/w4AAgABAAcAAAD4/w8AAgABAAcAAAD4/xAAAgABAAcAAAD4/xEAAgABAAcAAAD4/xIAAgABAAcAAAD5/w4AAgABAAcAAAD5/w8AAgABAAcAAAD5/xAAAgABAAcAAAD5/xEAAgABAAcAAAD5/xIAAgABAAcAAAD6/w4AAgABAAcAAAD6/xAAAgABAAcAAAD6/xEAAgABAAcAAAD6/xIAAgABAAcAAAD7/w4AAgABAAcAAAD7/w8AAgABAAcAAAD7/xEAAgABAAcAAAD7/xIAAgABAAcAAAD8/w4AAgABAAcAAAD8/w8AAgABAAcAAAD8/xAAAgABAAcAAAD8/xEAAgABAAcAAAD8/xIAAgABAAcAAAD9/w4AAgABAAcAAAD9/w8AAgABAAcAAAD9/xAAAgABAAcAAAD9/xEAAgABAAcAAAD9/xIAAgABAAcAAAD+/w4AAgABAAcAAAD+/w8AAgABAAcAAAD+/xAAAgABAAcAAAD//w8AAgABAAcAAAD//xAAAgABAAcAAAD//xEAAgABAAcAAAD//xIAAgABAAcAAAAAAA4AAgABAAcAAAAAAA8AAgABAAcAAAAAABAAAgABAAcAAAAAABEAAgABAAcAAAAAABIAAgABAAcAAAABAA4AAgABAAcAAAABAA8AAgABAAcAAAABABAAAgABAAcAAAABABEAAgABAAcAAAABABIAAgABAAcAAAACAA8AAgABAAcAAAACABAAAgABAAcAAAACABEAAgABAAcAAAACABIAAgABAAcAAAADAA4AAgABAAcAAAADAA8AAgABAAcAAAADABAAAgABAAcAAAADABEAAgABAAcAAAADABIAAgABAAcAAAAEAA4AAgABAAcAAAAEAA8AAgABAAcAAAAEABAAAgABAAcAAAAEABEAAgABAAcAAAAEABIAAgABAAcAAAAFAA4AAgABAAcAAAAFAA8AAgABAAcAAAAFABAAAgABAAcAAAAFABEAAgABAAcAAAAFABIAAgABAAcAAAAGAA4AAgABAAcAAAAGAA8AAgABAAcAAAAGABAAAgABAAcAAAAGABEAAgABAAcAAAAGABIAAgABAAcAAAAHAA4AAgABAAcAAAAHAA8AAgABAAcAAAAHABAAAgABAAcAAAAHABEAAgABAAcAAAAHABIAAgABAAcAAAAIAA4AAgABAAcAAAAIAA8AAgABAAcAAAAIABAAAgABAAcAAAAIABEAAgABAAcAAAAIABIAAgABAAcAAAAJAA4AAgABAAcAAAAJAA8AAgABAAcAAAAJABAAAgABAAcAAAAJABEAAgABAAcAAAAJABIAAgABAAcAAAAKAA4AAgABAAcAAAAKAA8AAgABAAcAAAAKABAAAgABAAcAAAAKABEAAgABAAcAAAAKABIAAgABAAcAAAALAA4AAgABAAcAAAALAA8AAgABAAcAAAALABAAAgABAAcAAAALABEAAgABAAcAAAALABIAAgABAAcAAAAMAA4AAgABAAcAAAAMAA8AAgABAAcAAAAMABAAAgABAAcAAAAMABEAAgABAAcAAAAMABIAAgABAAcAAAANAA8AAgABAAcAAAANABAAAgABAAcAAAANABEAAgABAAcAAAANABIAAgABAAcAAAAOAA8AAgABAAcAAAAOABAAAgABAAcAAAAOABEAAgABAAcAAAAOABIAAgABAAcAAAAPAA8AAgABAAcAAAAPABAAAgABAAcAAAAPABEAAgABAAcAAAAPABIAAgABAAcAAAAQAA4AAgABAAcAAAAQABAAAgABAAcAAAAQABEAAgABAAcAAAAQABIAAgABAAcAAAARAA4AAgABAAcAAAARAA8AAgABAAcAAAARABAAAgABAAcAAAARABEAAgABAAcAAAARABIAAgABAAcAAAASAA4AAgABAAcAAAASAA8AAgABAAcAAAASABAAAgABAAcAAAASABEAAgABAAcAAAASABIAAgABAAcAAAATAA4AAgABAAcAAAATAA8AAgABAAcAAAATABAAAgABAAcAAAATABEAAgABAAcAAAATABIAAgABAAcAAAAUAA4AAgABAAcAAAAUAA8AAgABAAcAAAAUABAAAgABAAcAAAAUABEAAgABAAcAAAAUABIAAgABAAcAAAAVAA4AAgABAAcAAAAVAA8AAgABAAcAAAAVABAAAgABAAcAAAAVABEAAgABAAcAAAAVABIAAgABAAcAAAAWAA4AAgABAAcAAAAWAA8AAgABAAcAAAAWABAAAgABAAcAAAAWABEAAgABAAcAAAAWABIAAgABAAcAAAAXAA8AAgABAAcAAAAXABAAAgABAAcAAAAXABEAAgABAAcAAAAXABIAAgABAAcAAAAYAA4AAgABAAcAAAAYAA8AAgABAAcAAAAYABAAAgABAAcAAAAYABEAAgABAAcAAAAYABIAAgABAAcAAAAZAA4AAgABAAcAAAAZAA8AAgABAAcAAAAZABAAAgABAAcAAAAZABEAAgABAAcAAAAZABIAAgABAAcAAAAaAA4AAgABAAcAAAAaAA8AAgABAAcAAAAaABAAAgABAAcAAAAaABEAAgABAAcAAAAaABIAAgABAAcAAAAbAA4AAgABAAcAAAAbAA8AAgABAAcAAAAbABAAAgABAAcAAAAbABEAAgABAAcAAAAbABIAAgABAAcAAAAcAA4AAgABAAcAAAAcAA8AAgABAAcAAAAcABAAAgABAAcAAAAcABEAAgABAAcAAAAcABIAAgABAAcAAAAdAA4AAgABAAcAAAAdAA8AAgABAAcAAAAdABAAAgABAAcAAAAdABEAAgABAAcAAAAdABIAAgABAAcAAAAeAA4AAgABAAcAAAAeAA8AAgABAAcAAAAeABAAAgABAAcAAAAeABEAAgABAAcAAAAeABIAAgABAAcAAAAfAA4AAgABAAcAAAAfAA8AAgABAAcAAAAfABAAAgABAAcAAAAfABIAAgABAAcAAAAgAA4AAgABAAcAAAAgAA8AAgABAAcAAAAgABAAAgABAAcAAAAgABEAAgABAAcAAAAgABIAAgABAAcAAAAhAA4AAgABAAcAAAAhAA8AAgABAAcAAAAhABAAAgABAAcAAAAhABEAAgABAAcAAAAhABIAAgABAAcAAAAiAA4AAgABAAcAAAAiAA8AAgABAAcAAAAiABAAAgABAAcAAAAiABEAAgABAAcAAAAiABIAAgABAAcAAAAjAA4AAgABAAcAAAAjAA8AAgABAAcAAAAjABAAAgABAAcAAAAjABEAAgABAAcAAAAjABIAAgABAAcAAAAkAA4AAgABAAcAAAAkAA8AAgABAAcAAAAkABAAAgABAAcAAAAkABEAAgABAAcAAAAkABIAAgABAAcAAAAlAA4AAgABAAcAAAAlAA8AAgABAAcAAAAlABAAAgABAAcAAAAlABEAAgABAAcAAAAlABIAAgABAAcAAAD4/wkAAAAAAAIAAAD3/wYAAAAAAAIAAAD4/wQAAAAAAAIAAAD3/wAAAAAAAAIAAAD4/wIAAAAAAAIAAAD4//7/AAAAAAIAAAD4//z/AAAAAAIAAAD4//v/AAAAAAIAAAD8//r/AAAAAAIAAAD8//v/AAAAAAIAAAD9//v/AAAAAAIAAAD+//n/AAAAAAIAAAD+//j/AAAAAAIAAAAAAPr/AAAAAAIAAAAAAPn/AAAAAAIAAAAAAPj/AAAAAAIAAAD///j/AAAAAAIAAAACAPv/AAAAAAIAAAACAPn/AAAAAAIAAAAEAPj/AAAAAAIAAAAEAPn/AAAAAAIAAAAGAPv/AAAAAAIAAAAGAPr/AAAAAAIAAAAGAPn/AAAAAAIAAAAHAPv/AAAAAAIAAAAQAPn/AAAAAAIAAAAQAPr/AAAAAAIAAAAQAPj/AAAAAAIAAAAQAPf/AAAAAAIAAAATAPb/AAAAAAIAAAAUAPj/AAAAAAIAAAAVAPn/AAAAAAIAAAAXAPr/AAAAAAIAAAAYAPj/AAAAAAIAAAAZAPf/AAAAAAIAAAAWAPf/AAAAAAIAAAAbAPj/AAAAAAIAAAAaAPr/AAAAAAIAAAAgAP//AAAAAAIAAAAfAP//AAAAAAIAAAAdAP//AAAAAAIAAAAcAP//AAAAAAIAAAAdAAAAAAAAAAIAAAAfAAAAAAAAAAIAAAAfAAEAAAAAAAIAAAAdAAEAAAAAAAIAAAAfAAIAAAAAAAIAAAAdAAIAAAAAAAIAAAAgAAQAAAAAAAIAAAAfAAQAAAAAAAIAAAAQAAgAAgALABIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -593,7 +615,39 @@ script = ExtResource("3_k2xfe")
 segundos = 300
 
 [node name="Coin" parent="Scene Manager" instance=ExtResource("4_p74jr")]
-position = Vector2(-88, 70)
+position = Vector2(168, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(184, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(200, -90)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(520, -74)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(520, -58)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(184, 86)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(-40, 86)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin8" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(-40, -10)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coin9" parent="Scene Manager" instance=ExtResource("4_p74jr")]
+position = Vector2(184, -10)
 scale = Vector2(0.5, 0.5)
 
 [node name="Goal" parent="Scene Manager" instance=ExtResource("5_cc6t1")]
@@ -654,171 +708,463 @@ bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("2_e7vlc")]
-position = Vector2(-120, 182)
+position = Vector2(376, 134)
 scale = Vector2(0.25, 0.25)
 
-[node name="NinjaVioleta" parent="Scene Manager" instance=ExtResource("23_tuxxp")]
+[node name="NinjaVioleta" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("23_tuxxp")]
 position = Vector2(296, 134)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.35
 health = 30
+ninja_boss = true
+light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
-[node name="NinjaRosa" parent="Scene Manager" instance=ExtResource("24_12qmp")]
+[node name="NinjaRosa" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("24_12qmp")]
 position = Vector2(328, 118)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.35
 health = 30
+ninja_boss = true
+light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
-[node name="NinjaNaranja" parent="Scene Manager" instance=ExtResource("25_b2t3n")]
+[node name="NinjaNaranja" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("25_b2t3n")]
 position = Vector2(360, 86)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.35
 health = 30
+ninja_boss = true
+light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
-[node name="Spitters" type="Node" parent="."]
+[node name="Spitters" type="Node" parent="Scene Manager"]
 
-[node name="Spitter" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 152)
 
-[node name="Spitter2" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter2" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 120)
 wait_time = 0.9
 
-[node name="Spitter3" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter3" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 88)
 wait_time = 0.8
 
-[node name="Spitter4" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter4" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 56)
 wait_time = 0.7
 
-[node name="Spitter5" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter5" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 24)
 wait_time = 0.6
 
-[node name="Spitter6" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter6" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -8)
 wait_time = 0.7
 
-[node name="Spitter7" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter7" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -40)
 wait_time = 0.8
 
-[node name="Spitter8" parent="Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter8" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -72)
 wait_time = 0.6
 
-[node name="Traps" type="Node" parent="."]
+[node name="Traps" type="Node" parent="Scene Manager"]
 
-[node name="Trap1" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap1" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(-40, -88)
 
-[node name="Trap2" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap2" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(-8, -72)
 
-[node name="Trap3" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap3" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(40, -88)
 
-[node name="Trap4" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap4" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(24, -104)
 
-[node name="Trap5" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap5" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(56, -120)
 
-[node name="Trap6" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap6" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(56, -88)
 
-[node name="Trap7" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap7" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(88, -104)
 
-[node name="Trap8" parent="Traps" instance=ExtResource("20_pv2wu")]
+[node name="Trap8" parent="Scene Manager/Traps" instance=ExtResource("20_pv2wu")]
 position = Vector2(120, -120)
 
-[node name="Dogs" type="Node" parent="."]
+[node name="Dogs" type="Node" parent="Scene Manager"]
 
-[node name="Dog" parent="Dogs" instance=ExtResource("21_danki")]
+[node name="Dog" parent="Scene Manager/Dogs" instance=ExtResource("21_danki")]
 position = Vector2(312, -88)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Dog2" parent="Dogs" instance=ExtResource("21_danki")]
+[node name="Dog2" parent="Scene Manager/Dogs" instance=ExtResource("21_danki")]
 position = Vector2(360, -120)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Dog3" parent="Dogs" instance=ExtResource("21_danki")]
+[node name="Dog3" parent="Scene Manager/Dogs" instance=ExtResource("21_danki")]
 position = Vector2(376, -152)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Dog4" parent="Dogs" instance=ExtResource("21_danki")]
+[node name="Dog4" parent="Scene Manager/Dogs" instance=ExtResource("21_danki")]
 position = Vector2(424, -136)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Dog5" parent="Dogs" instance=ExtResource("21_danki")]
+[node name="Dog5" parent="Scene Manager/Dogs" instance=ExtResource("21_danki")]
 position = Vector2(424, -104)
 scale = Vector2(0.25, 0.25)
 damage = 3
 health = 20
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueletos" type="Node" parent="."]
+[node name="Esqueletos" type="Node" parent="Scene Manager"]
 
-[node name="Esqueleto" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 8)
 scale = Vector2(0.25, 0.25)
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueleto2" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto2" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 24)
 scale = Vector2(0.25, 0.25)
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueleto3" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto3" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 40)
 scale = Vector2(0.25, 0.25)
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueleto4" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto4" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(520, 40)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueleto5" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto5" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(520, 24)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
 
-[node name="Esqueleto6" parent="Esqueletos" instance=ExtResource("22_fv4nb")]
+[node name="Esqueleto6" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(520, 8)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
 detection_range = 1
-player_node_path = NodePath("../../Scene Manager/Player")
+player_node_path = NodePath("../../Player")
+
+[node name="Cubodehielo" type="CharacterBody2D" parent="Scene Manager"]
+position = Vector2(264, 134)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+script = ExtResource("26_dds47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Manager/Cubodehielo"]
+shape = SubResource("RectangleShape2D_31kbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scene Manager/Cubodehielo"]
+self_modulate = Color(0.364706, 1, 0.513726, 1)
+texture = SubResource("AtlasTexture_jwson")
+
+[node name="Luces" type="Node2D" parent="Scene Manager"]
+position = Vector2(296, 134)
+scale = Vector2(0.25, 0.25)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
+color = Color(0.439216, 0.709804, 0.470588, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, 64)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1728, -128)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, -256)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, -384)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1728, -512)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, -640)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, -768)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1664, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1408, -896)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1404, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1344, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1280, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1280, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1276, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1216, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1148, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D17" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1152, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1152, -896)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1024, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D20" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1024, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D21" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-892, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D22" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-900, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D23" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-768, -960)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D24" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-768, -896)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D25" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-768, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D26" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-704, -832)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D27" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-128, -904)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D28" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-128, -1088)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D29" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(128, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D30" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(384, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D31" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(320, -896)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D32" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(512, -896)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D34" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(704, -576)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D35" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(832, -448)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D36" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(700, -384)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D37" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(828, -256)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D38" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(160, -96)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+
+[node name="PointLight2D33" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(580, -1024)
+scale = Vector2(0.306429, 0.306429)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]
