@@ -1,8 +1,8 @@
-[gd_scene load_steps=434 format=4 uid="uid://df0t1lclgh11u"]
+[gd_scene load_steps=435 format=4 uid="uid://df0t1lclgh11u"]
 
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_410lx"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="2_c6vi5"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
+[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_m2fe1"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="5_v5tso"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_skcci"]
@@ -58,10 +58,11 @@
 [ext_resource type="Texture2D" uid="uid://cbu5qdrxlpy63" path="res://animations/Pablo/Archivo4.png" id="58_utoqo"]
 [ext_resource type="Texture2D" uid="uid://4geble26jui5" path="res://art/NPCs/Ver/NPC - Vero - Animation - Sentada.png" id="59_eoew6"]
 [ext_resource type="Script" path="res://scripts/test_npc3.gd" id="59_skrba"]
-[ext_resource type="PackedScene" uid="uid://pajr6my34o1t" path="res://Scenes/Entities/test_npc3.tscn" id="60_6xr0p"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/test_npc3.tscn" id="60_6xr0p"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="60_u48su"]
 [ext_resource type="Texture2D" uid="uid://nlp8gbltnm5v" path="res://animations/owners/Mila Dancing 2.png" id="61_s7yvd"]
 [ext_resource type="Texture2D" uid="uid://b452qekanmbnq" path="res://animations/Pablo/Pablo-Portrait.png" id="61_tkmy8"]
+[ext_resource type="AudioStream" uid="uid://bw21okrgei63t" path="res://SFX/NPC_Voice1.mp3" id="62_emvc6"]
 [ext_resource type="Texture2D" uid="uid://bv50rp08qlalv" path="res://animations/owners/Juanma Dancing.png" id="62_l0wbg"]
 [ext_resource type="Texture2D" uid="uid://dwnaa3v6pjwna" path="res://animations/owners/Marce Dancing.png" id="63_iuyg6"]
 [ext_resource type="Texture2D" uid="uid://cgk44gbqcupkj" path="res://animations/Pablo/Pablo Explosion.png" id="63_qpxmp"]
@@ -3676,9 +3677,11 @@ voice_sound = ExtResource("7_4w4ue")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
 stream = ExtResource("21_mh5hk")
+autoplay = true
 panning_strength = 0.0
 bus = &"Musica"
 playback_type = 1
+parameters/looping = true
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("22_xokg2")]
 position = Vector2(88, -26)
@@ -3885,9 +3888,10 @@ script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
 position = Vector2(176, -18)
-dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conoscas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Alen fue como un cometa, nos lanzó el software especial para llevar los registros y luego no lo volvimos a ver, aún es un misterio", "Antes este lugar no tenía nombre, después del desastre, ponerle Proyecto sol fue idea de D y Eric", "Ale escribió el documento de una especie nueva de murciélagos, mientras Jhon peleaba con uno", "Santi con Wanda diseñaron una alerta para cuando nuestra mochila está en riesgo", "Gaby diseñó varias habitaciones de la guarida con Juanito"])
+dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conozcas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Alen fue como un cometa, nos lanzó el software especial para llevar los registros y luego no lo volvimos a ver, aún es un misterio", "Antes este lugar no tenía nombre, después del desastre, ponerle Proyecto sol fue idea de D y Eric", "Ale escribió el documento de una especie nueva de murciélagos, mientras Jhon peleaba con uno", "Santi con Wanda diseñaron una alerta para cuando nuestra mochila está en riesgo", "Gaby diseñó varias habitaciones de la guarida con Juanito"])
 npc_portrait = ExtResource("61_tkmy8")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("62_emvc6")
 
 [node name="Mila" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-58, -59)
