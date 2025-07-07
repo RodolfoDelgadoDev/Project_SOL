@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_410lx"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="2_c6vi5"]
-[ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
+[ext_resource type="PackedScene" path="res://Scenes/Entities/lamparaLava1.tscn" id="3_ipl1e"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_m2fe1"]
 [ext_resource type="PackedScene" uid="uid://cpdb2wsf0urtk" path="res://Scenes/Entities/test_npc.tscn" id="5_v5tso"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_skcci"]
@@ -58,7 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://cbu5qdrxlpy63" path="res://animations/Pablo/Archivo4.png" id="58_utoqo"]
 [ext_resource type="Texture2D" uid="uid://4geble26jui5" path="res://art/NPCs/Ver/NPC - Vero - Animation - Sentada.png" id="59_eoew6"]
 [ext_resource type="Script" path="res://scripts/test_npc3.gd" id="59_skrba"]
-[ext_resource type="PackedScene" path="res://Scenes/Entities/test_npc3.tscn" id="60_6xr0p"]
+[ext_resource type="PackedScene" uid="uid://pajr6my34o1t" path="res://Scenes/Entities/test_npc3.tscn" id="60_6xr0p"]
 [ext_resource type="Texture2D" uid="uid://hh5e1np6rvje" path="res://art/NPCs Portraits/Vero-Portrait.png" id="60_u48su"]
 [ext_resource type="Texture2D" uid="uid://nlp8gbltnm5v" path="res://animations/owners/Mila Dancing 2.png" id="61_s7yvd"]
 [ext_resource type="Texture2D" uid="uid://b452qekanmbnq" path="res://animations/Pablo/Pablo-Portrait.png" id="61_tkmy8"]
@@ -3144,7 +3144,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08yhd"]
 size = Vector2(62, 58)
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 position = Vector2(21, 124)
 
 [node name="Piso" type="TileMapLayer" parent="."]
@@ -3850,10 +3850,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y4n3f")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/ChicaPunk" instance=ExtResource("5_v5tso")]
+[node name="NPC" parent="Scene Manager/ChicaPunk" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("56_w1peg")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")
 
 [node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager"]
@@ -3862,10 +3863,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kpidl")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Nicky" instance=ExtResource("5_v5tso")]
+[node name="NPC" parent="Scene Manager/Nicky" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("58_s67e7")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")
 
 [node name="Ver" type="AnimatedSprite2D" parent="Scene Manager"]
@@ -3874,10 +3876,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ebdbs")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Ver" instance=ExtResource("5_v5tso")]
+[node name="NPC" parent="Scene Manager/Ver" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 npc_portrait = ExtResource("60_u48su")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")
 
 [node name="Pablo" type="AnimatedSprite2D" parent="Scene Manager"]

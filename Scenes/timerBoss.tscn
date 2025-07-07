@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://pm5admj02wws"]
+
+[ext_resource type="Script" path="res://Scenes/timer_boss.gd" id="1_pvfdx"]
+[ext_resource type="Texture2D" uid="uid://nv1uacfcbmyg" path="res://art/UI/HP_Bar_Fill_boss.png" id="2_tjarh"]
+[ext_resource type="Texture2D" uid="uid://cfhh8024l7x36" path="res://art/UI/HP_Bar_Border.png" id="10_xaawt"]
+[ext_resource type="Texture2D" uid="uid://bsd7qkv65vg33" path="res://art/NPCs Portraits/boss.png" id="14_ehc5e"]
+
+[node name="Timer" type="Node2D"]
+scale = Vector2(-1, -1)
+script = ExtResource("1_pvfdx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 193.0
+offset_bottom = 40.0
+value = 100.0
+texture_over = ExtResource("10_xaawt")
+texture_progress = ExtResource("2_tjarh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18.125, 28.125)
+scale = Vector2(-0.238333, -0.238333)
+texture = ExtResource("14_ehc5e")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dt06te87vkkei"]
+[gd_scene load_steps=38 format=4 uid="uid://dt06te87vkkei"]
 
 [ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_4e8m5"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="7_rm7rs"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="8_fsop3"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="9_7ws0j"]
+[ext_resource type="PackedScene" uid="uid://pm5admj02wws" path="res://Scenes/timerBoss.tscn" id="13_6pq2g"]
 [ext_resource type="PackedScene" uid="uid://df0vkkgwecxml" path="res://Scenes/Entities/generator.tscn" id="14_npar4"]
 [ext_resource type="AudioStream" uid="uid://myq4frqdbycc" path="res://SFX/trapAttack.mp3" id="15_4gw4y"]
 [ext_resource type="AudioStream" uid="uid://cbjo583xh5gix" path="res://SFX/trapDestroy.mp3" id="16_f6ndr"]
@@ -546,17 +547,6 @@ sources/0 = SubResource("TileSetAtlasSource_vhmel")
 shader = ExtResource("3_xxvrg")
 shader_parameter/trail_color = Vector4(0.3, 0.9, 0.8, 0.6)
 
-[sub_resource type="Theme" id="Theme_6rhx5"]
-default_font = ExtResource("8_fsop3")
-default_font_size = 15
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kbn"]
-size = Vector2(16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwson"]
-atlas = ExtResource("1_4e8m5")
-region = Rect2(0, 64, 32, 32)
-
 [sub_resource type="Gradient" id="Gradient_2rs26"]
 offsets = PackedFloat32Array(0, 0.668831)
 colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
@@ -570,6 +560,17 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
+
+[sub_resource type="Theme" id="Theme_6rhx5"]
+default_font = ExtResource("8_fsop3")
+default_font_size = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kbn"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwson"]
+atlas = ExtResource("1_4e8m5")
+region = Rect2(0, 64, 32, 32)
 
 [node name="Node2D" type="Node2D"]
 
@@ -602,9 +603,22 @@ move_speed = 50.0
 chase_duration = 4.0
 attack_damage = 50.0
 player_node = NodePath("../Scene Manager/Player")
+health = 10
+
+[node name="PointLight2D" type="PointLight2D" parent="Boss"]
+position = Vector2(1.25, -13.75)
+scale = Vector2(0.488281, 0.488281)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
 
 [node name="Generator" parent="." node_paths=PackedStringArray("boss") instance=ExtResource("14_npar4")]
 position = Vector2(488, 72)
+attackSFX = ExtResource("15_4gw4y")
+destroySFX = ExtResource("16_f6ndr")
+boss = NodePath("../Boss")
+
+[node name="Generator2" parent="." node_paths=PackedStringArray("boss") instance=ExtResource("14_npar4")]
+position = Vector2(72, 72)
 attackSFX = ExtResource("15_4gw4y")
 destroySFX = ExtResource("16_f6ndr")
 boss = NodePath("../Boss")
@@ -655,6 +669,10 @@ position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
+
+[node name="Boss_health" parent="Scene Manager/CanvasLayer" node_paths=PackedStringArray("boss") instance=ExtResource("13_6pq2g")]
+position = Vector2(285, 159)
+boss = NodePath("../../../Boss")
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("6_aqwqu")]
 position = Vector2(4, 4)
@@ -1165,6 +1183,14 @@ scale = Vector2(0.306429, 0.306429)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
+
+[node name="PointLight2D39" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-944, -320)
+scale = Vector2(6.21875, 6.21875)
+color = Color(0.96456, 0.58672, 0.691698, 1)
+energy = 4.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
 
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/textTimer" to="Scene Manager" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Scene Manager/CanvasLayer/DialogueBox/hideTimer" to="Scene Manager" method="_on_hide_timer_timeout"]

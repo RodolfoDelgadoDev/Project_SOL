@@ -4,7 +4,7 @@ extends Node2D
 @onready var text_label: RichTextLabel = $Background/Text
 @onready var portrait: TextureRect = $Background/Portrait
 @onready var voice_player: AudioStreamPlayer2D = $VoicePlayer
-@onready var scene_manager: Node = get_node("/root/Node2D2/Scene Manager")
+@onready var scene_manager: Node = get_node("/root/Node2D/Scene Manager")
 @onready var animatic_sprite: AnimatedSprite2D = null
 
 var pause_frames := [10, 22, 34, 49, 65, 76]
