@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dt06te87vkkei"]
+[gd_scene load_steps=40 format=4 uid="uid://dt06te87vkkei"]
 
 [ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_4e8m5"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="24_12qmp"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="25_b2t3n"]
 [ext_resource type="Script" path="res://Scenes/Levels/cubodehielo.gd" id="26_dds47"]
+[ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="27_41pmn"]
+[ext_resource type="AudioStream" uid="uid://dxvkod51ev133" path="res://SFX/player_hurt.mp3" id="28_q5ug0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_daqb4"]
 shader = ExtResource("2_1p1vl")
@@ -595,7 +597,7 @@ tile_map_data = PackedByteArray("AADw//D/AgABAAcAAADw//H/AgABAAcAAADw//L/AgABAAc
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Boss" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("2_m7lbr")]
+[node name="Boss" parent="." node_paths=PackedStringArray("player_node", "healthbar") instance=ExtResource("2_m7lbr")]
 material = SubResource("ShaderMaterial_7qcg1")
 position = Vector2(78, 28)
 scale = Vector2(0.8, 0.8)
@@ -603,7 +605,8 @@ move_speed = 50.0
 chase_duration = 4.0
 attack_damage = 50.0
 player_node = NodePath("../Scene Manager/Player")
-health = 10
+health = 100
+healthbar = NodePath("../Scene Manager/CanvasLayer/Boss_health")
 
 [node name="PointLight2D" type="PointLight2D" parent="Boss"]
 position = Vector2(1.25, -13.75)
@@ -726,7 +729,7 @@ bus = &"Musica"
 playback_type = 1
 
 [node name="Player" parent="Scene Manager" instance=ExtResource("2_e7vlc")]
-position = Vector2(376, 134)
+position = Vector2(-120, 198)
 scale = Vector2(0.25, 0.25)
 
 [node name="NinjaVioleta" parent="Scene Manager" node_paths=PackedStringArray("light_node") instance=ExtResource("23_tuxxp")]
@@ -862,18 +865,24 @@ player_node_path = NodePath("../../Player")
 [node name="Esqueleto" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 8)
 scale = Vector2(0.25, 0.25)
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 
 [node name="Esqueleto2" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 24)
 scale = Vector2(0.25, 0.25)
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 
 [node name="Esqueleto3" parent="Scene Manager/Esqueletos" instance=ExtResource("22_fv4nb")]
 position = Vector2(456, 40)
 scale = Vector2(0.25, 0.25)
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 
@@ -881,6 +890,8 @@ player_node_path = NodePath("../../Player")
 position = Vector2(520, 40)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 
@@ -888,6 +899,8 @@ player_node_path = NodePath("../../Player")
 position = Vector2(520, 24)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 
@@ -895,6 +908,8 @@ player_node_path = NodePath("../../Player")
 position = Vector2(520, 8)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.6
+attackSFX = ExtResource("27_41pmn")
+hurtSFX = ExtResource("28_q5ug0")
 detection_range = 1
 player_node_path = NodePath("../../Player")
 

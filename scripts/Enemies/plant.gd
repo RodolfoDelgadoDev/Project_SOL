@@ -187,8 +187,7 @@ func takeDamage():
 			get_parent().add_child(particles_instance)
 			particles.emitting = true
 			particles.restart()
-				
-			queue_free()
+			takeDamage()
 
 
 func updateFlip(dir: bool):
