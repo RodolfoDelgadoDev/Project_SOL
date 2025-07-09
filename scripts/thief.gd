@@ -32,6 +32,7 @@ var tried_alternative: bool = false
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animatedSprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var light_timer : Timer = $light_timer
+@onready var hitbox : Area2D = $CharacterBody2D/Area2D
 
 var thief_light = load("res://Scenes/Entities/thief_color_lights.tscn")
 
@@ -40,7 +41,8 @@ func _ready():
 	character_body = $CharacterBody2D
 	# Start in a stationary state.
 	quieto = true
-	get_parent().bottleTotal+=1
+	var Scene_Manager = get_parent()
+	Scene_Manager.bottleTotal+=1
 
 
 func _physics_process(delta: float):
@@ -226,6 +228,8 @@ func takeDamage():
 
 func die():
 	delete_lights()
+	hitbox.monitorable = false
+	hitbox.monitoring = false
 	GameManager.Segundos += 5
 	get_parent().addBottle()
 	if ninja_boss:

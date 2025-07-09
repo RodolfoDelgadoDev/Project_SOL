@@ -638,7 +638,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vnjn"]
 size = Vector2(46, 48.5)
 
-[node name="Main" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Piso" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
