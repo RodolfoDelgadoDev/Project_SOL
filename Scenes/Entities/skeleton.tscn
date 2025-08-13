@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://b76mnc55bf8pa"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_5jvvn"]
+[ext_resource type="Script" uid="uid://boajnf3s3d7xk" path="res://scripts/Enemies/plant.gd" id="1_5jvvn"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="3_ep477"]
 [ext_resource type="Texture2D" uid="uid://h7s2kwwsuev5" path="res://art/Skullboy.png" id="3_l8j58"]
 
@@ -119,8 +119,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w26u2"]

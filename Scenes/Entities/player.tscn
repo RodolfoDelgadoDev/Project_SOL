@@ -1,6 +1,6 @@
 [gd_scene load_steps=189 format=3 uid="uid://cmax2vhkuipx5"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_dlx5r"]
+[ext_resource type="Script" uid="uid://dk7p13ycoty7f" path="res://scripts/player.gd" id="1_dlx5r"]
 [ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
 [ext_resource type="Texture2D" uid="uid://b65biq01jwkep" path="res://animations/Ataque FV - Godot.png" id="2_uf1an"]
 [ext_resource type="Texture2D" uid="uid://cybqhgrwik1q8" path="res://animations/Ataque 1 L - Godot.png" id="3_1b1lt"]

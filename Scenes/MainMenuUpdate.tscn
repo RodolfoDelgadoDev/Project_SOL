@@ -1,9 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://tclvsxpekcfx"]
 
-[ext_resource type="Shader" path="res://ghost.gdshader" id="1_g58c7"]
+[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="1_g58c7"]
 [ext_resource type="Texture2D" uid="uid://b5bah30osjq1n" path="res://art/Transition/Pseudo cielo.png" id="1_mlxmx"]
 [ext_resource type="Texture2D" uid="uid://bvp43boalei7x" path="res://art/Transition/Sunshine.png" id="2_d0mjm"]
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_spgu8"]
+[ext_resource type="Script" uid="uid://bp7nyj7qcow16" path="res://scripts/MainMenu.gd" id="2_spgu8"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="3_q4hgc"]
 [ext_resource type="Texture2D" uid="uid://bhx46qhm4ws2" path="res://art/Transition/Palmeris.png" id="3_vvg7v"]
 [ext_resource type="AudioStream" uid="uid://ld5vcpy7abh8" path="res://SFX/mainMenu.mp3" id="4_53hdj"]
@@ -84,8 +84,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y3ae3"]
 _data = {
-"Palmeras Loop": SubResource("Animation_0f1ai"),
-"RESET": SubResource("Animation_qi18r")
+&"Palmeras Loop": SubResource("Animation_0f1ai"),
+&"RESET": SubResource("Animation_qi18r")
 }
 
 [sub_resource type="Animation" id="Animation_7u1lr"]
@@ -122,8 +122,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pogts"]
 _data = {
-"RESET": SubResource("Animation_7u1lr"),
-"Rejillas Background": SubResource("Animation_v6fku")
+&"RESET": SubResource("Animation_7u1lr"),
+&"Rejillas Background": SubResource("Animation_v6fku")
 }
 
 [sub_resource type="Animation" id="Animation_prp5v"]
@@ -131,7 +131,7 @@ resource_name = "Animacion Sol"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qmmgc"]
 _data = {
-"Animacion Sol": SubResource("Animation_prp5v")
+&"Animacion Sol": SubResource("Animation_prp5v")
 }
 
 [sub_resource type="Animation" id="Animation_3w21f"]
@@ -168,8 +168,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdswn"]
 _data = {
-"Background Loop": SubResource("Animation_3w21f"),
-"RESET": SubResource("Animation_ybv24")
+&"Background Loop": SubResource("Animation_3w21f"),
+&"RESET": SubResource("Animation_ybv24")
 }
 
 [node name="Main Menu" type="Node2D"]

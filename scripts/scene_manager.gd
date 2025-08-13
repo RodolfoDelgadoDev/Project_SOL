@@ -108,6 +108,10 @@ func chooseTargetScene():
 				targetScene = "res://Scenes/Levels/Descansos/descanso6.tscn"
 			7:
 				targetScene = "res://Scenes/Levels/Descansos/descanso7.tscn"
+			8:
+				targetScene = "res://Scenes/Levels/Descansos/descanso8.tscn"
+			9:
+				targetScene = "res://Scenes/Levels/Descansos/descanso9.tscn"
 
 	print("Selected target scene: ", targetScene)
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=40 format=4 uid="uid://dt06te87vkkei"]
+[gd_scene load_steps=41 format=4 uid="uid://dt06te87vkkei"]
 
 [ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_4e8m5"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
-[ext_resource type="Shader" path="res://ghost.gdshader" id="2_1p1vl"]
+[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="2_1p1vl"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="2_e7vlc"]
 [ext_resource type="PackedScene" uid="uid://dvfn5t1ti8w87" path="res://Scenes/Entities/Boss.tscn" id="2_m7lbr"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="3_k2xfe"]
+[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="3_k2xfe"]
 [ext_resource type="Texture2D" uid="uid://djlbkkf81ehj3" path="res://art/psycho_texture.png" id="3_lyayq"]
-[ext_resource type="Shader" path="res://ghost_trail.gdshader" id="3_xxvrg"]
+[ext_resource type="Shader" uid="uid://5ji2u32gefci" path="res://ghost_trail.gdshader" id="3_xxvrg"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="4_p74jr"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="5_cc6t1"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="6_aqwqu"]
@@ -26,9 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="23_tuxxp"]
 [ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="24_12qmp"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="25_b2t3n"]
-[ext_resource type="Script" path="res://Scenes/Levels/cubodehielo.gd" id="26_dds47"]
+[ext_resource type="Script" uid="uid://b43tgp4m0r7au" path="res://Scenes/Levels/cubodehielo.gd" id="26_dds47"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="27_41pmn"]
 [ext_resource type="AudioStream" uid="uid://dxvkod51ev133" path="res://SFX/player_hurt.mp3" id="28_q5ug0"]
+[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="30_f5ib3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_daqb4"]
 shader = ExtResource("2_1p1vl")
@@ -44,8 +45,11 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:2/0 = 0
@@ -560,8 +564,8 @@ shader = ExtResource("3_xxvrg")
 shader_parameter/trail_color = Vector4(0.3, 0.9, 0.8, 0.6)
 
 [sub_resource type="Gradient" id="Gradient_2rs26"]
-offsets = PackedFloat32Array(0, 0.668831)
-colors = PackedColorArray(0.638403, 0.626579, 0.581437, 1, 0.0476191, 0.0476191, 0.0476191, 1)
+offsets = PackedFloat32Array(0, 0.687831)
+colors = PackedColorArray(1, 1, 1, 1, 0.0476191, 0.0476191, 0.0476191, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cijbd"]
 gradient = SubResource("Gradient_2rs26")
@@ -615,7 +619,7 @@ move_speed = 50.0
 chase_duration = 4.0
 attack_damage = 50.0
 player_node = NodePath("../Scene Manager/Player")
-health = 100
+health = 500
 healthbar = NodePath("../Scene Manager/CanvasLayer/Boss_health")
 
 [node name="PointLight2D" type="PointLight2D" parent="Boss"]
@@ -941,11 +945,12 @@ position = Vector2(296, 134)
 scale = Vector2(0.25, 0.25)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Scene Manager/Luces"]
-color = Color(0.439216, 0.709804, 0.470588, 1)
+color = Color(0.645967, 0.896092, 0.669634, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="Scene Manager/Luces"]
-position = Vector2(-1664, 64)
+position = Vector2(-1760, 32)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -953,6 +958,7 @@ texture_scale = 8.03
 [node name="PointLight2D2" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1728, -128)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -960,6 +966,7 @@ texture_scale = 8.03
 [node name="PointLight2D3" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1664, -256)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -967,6 +974,7 @@ texture_scale = 8.03
 [node name="PointLight2D4" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1664, -384)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -974,6 +982,7 @@ texture_scale = 8.03
 [node name="PointLight2D5" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1728, -512)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -981,6 +990,7 @@ texture_scale = 8.03
 [node name="PointLight2D6" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1664, -640)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -988,6 +998,7 @@ texture_scale = 8.03
 [node name="PointLight2D7" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1664, -768)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -995,6 +1006,7 @@ texture_scale = 8.03
 [node name="PointLight2D8" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1664, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1002,6 +1014,7 @@ texture_scale = 8.03
 [node name="PointLight2D9" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1408, -896)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1009,6 +1022,7 @@ texture_scale = 8.03
 [node name="PointLight2D10" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1404, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1016,6 +1030,7 @@ texture_scale = 8.03
 [node name="PointLight2D11" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1344, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1023,6 +1038,7 @@ texture_scale = 8.03
 [node name="PointLight2D12" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1280, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1030,6 +1046,7 @@ texture_scale = 8.03
 [node name="PointLight2D13" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1280, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1037,6 +1054,7 @@ texture_scale = 8.03
 [node name="PointLight2D14" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1276, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1044,6 +1062,7 @@ texture_scale = 8.03
 [node name="PointLight2D15" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1216, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1051,6 +1070,7 @@ texture_scale = 8.03
 [node name="PointLight2D16" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1148, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1058,6 +1078,7 @@ texture_scale = 8.03
 [node name="PointLight2D17" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1152, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1065,6 +1086,7 @@ texture_scale = 8.03
 [node name="PointLight2D18" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1152, -896)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1072,6 +1094,7 @@ texture_scale = 8.03
 [node name="PointLight2D19" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1024, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1079,6 +1102,7 @@ texture_scale = 8.03
 [node name="PointLight2D20" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-1024, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1086,6 +1110,7 @@ texture_scale = 8.03
 [node name="PointLight2D21" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-892, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1093,6 +1118,7 @@ texture_scale = 8.03
 [node name="PointLight2D22" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-900, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1100,6 +1126,7 @@ texture_scale = 8.03
 [node name="PointLight2D23" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-768, -960)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1107,6 +1134,7 @@ texture_scale = 8.03
 [node name="PointLight2D24" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-768, -896)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1114,6 +1142,7 @@ texture_scale = 8.03
 [node name="PointLight2D25" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-768, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1121,6 +1150,7 @@ texture_scale = 8.03
 [node name="PointLight2D26" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-704, -832)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1128,6 +1158,7 @@ texture_scale = 8.03
 [node name="PointLight2D27" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-128, -904)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1135,6 +1166,7 @@ texture_scale = 8.03
 [node name="PointLight2D28" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-128, -1088)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1142,6 +1174,7 @@ texture_scale = 8.03
 [node name="PointLight2D29" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(128, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1149,6 +1182,7 @@ texture_scale = 8.03
 [node name="PointLight2D30" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(384, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1156,6 +1190,7 @@ texture_scale = 8.03
 [node name="PointLight2D31" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(320, -896)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1163,6 +1198,7 @@ texture_scale = 8.03
 [node name="PointLight2D32" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(512, -896)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1170,6 +1206,7 @@ texture_scale = 8.03
 [node name="PointLight2D34" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(704, -576)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1177,6 +1214,7 @@ texture_scale = 8.03
 [node name="PointLight2D35" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(832, -448)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1184,6 +1222,7 @@ texture_scale = 8.03
 [node name="PointLight2D36" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(700, -384)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1191,6 +1230,7 @@ texture_scale = 8.03
 [node name="PointLight2D37" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(828, -256)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1198,6 +1238,7 @@ texture_scale = 8.03
 [node name="PointLight2D38" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(160, -96)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
@@ -1205,15 +1246,52 @@ texture_scale = 8.03
 [node name="PointLight2D33" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(580, -1024)
 scale = Vector2(0.306429, 0.306429)
+color = Color(0.335446, 0.840203, 0.520958, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 texture_scale = 8.03
 
+[node name="PointLight2D40" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-572, -512)
+scale = Vector2(0.306429, 0.306429)
+energy = 1.13
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+script = ExtResource("30_f5ib3")
+
+[node name="PointLight2D41" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-572, -192)
+scale = Vector2(0.306429, 0.306429)
+energy = 1.13
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+script = ExtResource("30_f5ib3")
+
+[node name="PointLight2D42" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1340, -192)
+scale = Vector2(0.306429, 0.306429)
+energy = 1.13
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+script = ExtResource("30_f5ib3")
+
+[node name="PointLight2D43" type="PointLight2D" parent="Scene Manager/Luces"]
+position = Vector2(-1340, -512)
+scale = Vector2(0.306429, 0.306429)
+energy = 1.13
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cijbd")
+texture_scale = 8.03
+script = ExtResource("30_f5ib3")
+
 [node name="PointLight2D39" type="PointLight2D" parent="Scene Manager/Luces"]
 position = Vector2(-944, -320)
 scale = Vector2(6.21875, 6.21875)
-color = Color(0.96456, 0.58672, 0.691698, 1)
-energy = 4.0
+color = Color(0.976064, 0.706015, 0.774611, 1)
+energy = 2.31
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cijbd")
 

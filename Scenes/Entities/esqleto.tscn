@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://segsacufkmxa"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_s88xc"]
+[ext_resource type="Script" uid="uid://boajnf3s3d7xk" path="res://scripts/Enemies/plant.gd" id="1_s88xc"]
 [ext_resource type="AudioStream" uid="uid://5jy1urk55diu" path="res://SFX/enemyStep1.mp3" id="2_07i7p"]
 [ext_resource type="Texture2D" uid="uid://cytrordq4be07" path="res://art/Tilemap (1).png" id="3_fyt5s"]
 [ext_resource type="Texture2D" uid="uid://dbvrqdw6kngsx" path="res://animations/Enemies/SkullBoy/Skullboy.png" id="3_gvw43"]
@@ -120,8 +120,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w26u2"]

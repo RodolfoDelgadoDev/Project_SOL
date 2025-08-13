@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://dncmwk0t3feu3"]
 
-[ext_resource type="Script" path="res://scripts/thief.gd" id="1_gmmis"]
+[ext_resource type="Script" uid="uid://dusknqspfckmj" path="res://scripts/thief.gd" id="1_gmmis"]
 [ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="2_0lqs6"]
 [ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_7iffk"]
 [ext_resource type="Texture2D" uid="uid://c8vk72njqr3jm" path="res://art/MC-Ángulo prueba.png" id="3_b6573"]
@@ -144,8 +144,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="NinjaVioleta" type="Node2D"]

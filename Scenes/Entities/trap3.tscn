@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bgmhkt4ahxc8s"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_hhdrn"]
+[ext_resource type="Script" uid="uid://bvg0x72ax5520" path="res://scripts/Traps/trap1.gd" id="1_hhdrn"]
 [ext_resource type="AudioStream" uid="uid://myq4frqdbycc" path="res://SFX/trapAttack.mp3" id="2_6d7qj"]
 [ext_resource type="Texture2D" uid="uid://d0tvnrajdajqu" path="res://art/Bear trap.png" id="2_u308s"]
 [ext_resource type="AudioStream" uid="uid://cbjo583xh5gix" path="res://SFX/trapDestroy.mp3" id="3_75ykw"]

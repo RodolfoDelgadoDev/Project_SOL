@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://dnn0crvk1ig4r"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_pswgq"]
+[ext_resource type="Script" uid="uid://boajnf3s3d7xk" path="res://scripts/Enemies/plant.gd" id="1_pswgq"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_rhy64"]
 [ext_resource type="AudioStream" uid="uid://5jy1urk55diu" path="res://SFX/enemyStep1.mp3" id="3_cxqsl"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="4_tbqn2"]
@@ -115,8 +115,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w26u2"]

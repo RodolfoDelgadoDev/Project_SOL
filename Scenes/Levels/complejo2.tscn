@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cw2y1sefvjp4c" path="res://Scenes/Entities/guyDeAire.tscn" id="2_84v47"]
 [ext_resource type="PackedScene" uid="uid://cn2xmgjwdsl2f" path="res://Scenes/Entities/trap4.tscn" id="3_kokj1"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_by454"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_xsktw"]
+[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="5_xsktw"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_6fulg"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_c74ar"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_gyqse"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="15_4js2s"]
 [ext_resource type="Texture2D" uid="uid://cj6w3c7y3ys1b" path="res://animations/Doors/Complejo2/complejo2.png" id="16_8ahaa"]
 [ext_resource type="PackedScene" uid="uid://c6oy8cryt40b0" path="res://Scenes/Entities/robot2.tscn" id="17_vxarh"]
-[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="18_mauv8"]
+[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="18_mauv8"]
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="19_w6dn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oxwa"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bp1f3ntsgjecj"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_x7jtw"]
+[ext_resource type="Script" uid="uid://bvg0x72ax5520" path="res://scripts/Traps/trap1.gd" id="1_x7jtw"]
 [ext_resource type="Texture2D" uid="uid://cvj3ydiua651m" path="res://art/Purple potion.png" id="2_0jn8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]

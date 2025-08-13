@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cqonxdmamrl1y"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/fireball.gd" id="1_k6qjm"]
+[ext_resource type="Script" uid="uid://cakygv80rsnil" path="res://scripts/Enemies/fireball.gd" id="1_k6qjm"]
 [ext_resource type="Texture2D" uid="uid://wad6swmandky" path="res://animations/Enemies/Spitter/Fireball sola.png" id="2_us5xc"]
 [ext_resource type="Texture2D" uid="uid://co3ruibsg1jyh" path="res://animations/Enemies/Bat/Bat2 animation.png" id="4_tncxr"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_fpuq2"]
@@ -149,8 +149,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="Fireball" type="Node2D" groups=["enemy"]]

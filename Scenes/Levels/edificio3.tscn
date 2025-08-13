@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5du1q1o0k332" path="res://Scenes/Entities/ghost.tscn" id="3_or4ye"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="3_yom5i"]
 [ext_resource type="AudioStream" uid="uid://dvb5boyi26cmf" path="res://SFX/ghost1.mp3" id="4_01ite"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="4_b4syn"]
+[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="4_b4syn"]
 [ext_resource type="AudioStream" uid="uid://betqbremevai2" path="res://SFX/ghost2.mp3" id="5_8kv5a"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="5_h46wn"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="6_a3hl0"]
@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bbd2p33ee8gjw" path="res://animations/Doors/Edificio3/Level3.png" id="11_w2isq"]
 [ext_resource type="PackedScene" uid="uid://bgmhkt4ahxc8s" path="res://Scenes/Entities/trap3.tscn" id="12_orojg"]
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="13_njddb"]
-[ext_resource type="Script" path="res://scripts/ghost_trap.gd" id="17_2ngw3"]
-[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="17_dri2g"]
+[ext_resource type="Script" uid="uid://d2ybaqdpre7qq" path="res://scripts/ghost_trap.gd" id="17_2ngw3"]
+[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="17_dri2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_kvah8")

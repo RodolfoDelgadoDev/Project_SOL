@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuwxpjgb2addv"]
 
-[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_12xq5"]
+[ext_resource type="Script" uid="uid://bwtpow6ft2pcu" path="res://scripts/punkGirl.gd" id="1_12xq5"]
 [ext_resource type="Texture2D" uid="uid://dyem5v0btnkoe" path="res://art/NPCs/Sleepy head 2/NPC - Sleepy head 2.png" id="2_xwxq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8mav"]

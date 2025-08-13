@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkv0q66uey72s"]
 
-[ext_resource type="Script" path="res://scripts/thief_color_lights.gd" id="1_aokdp"]
+[ext_resource type="Script" uid="uid://b1ht3tbs8gneh" path="res://scripts/thief_color_lights.gd" id="1_aokdp"]
 
 [sub_resource type="Gradient" id="Gradient_72v5f"]
 offsets = PackedFloat32Array(0, 0.597403)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtt3stb4e27la"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_yp0o3"]
+[ext_resource type="Script" uid="uid://bvg0x72ax5520" path="res://scripts/Traps/trap1.gd" id="1_yp0o3"]
 [ext_resource type="Texture2D" uid="uid://duocq81ksr1y" path="res://art/vidrios.png" id="2_jn25b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]

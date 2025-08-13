@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://d2kgu6mlym0vy"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_ftw0r"]
+[ext_resource type="Script" uid="uid://c0xyvoqlpahir" path="res://scripts/Enemies/bat.gd" id="1_ftw0r"]
 [ext_resource type="Texture2D" uid="uid://nwsd0l2mm0pe" path="res://animations/Enemies/Robot/Robot enemy.png" id="2_b6a8e"]
 [ext_resource type="Texture2D" uid="uid://yqbdcjqe8a5o" path="res://art/Bat2.png" id="5_dbp7j"]
 
@@ -115,8 +115,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_561k1"]

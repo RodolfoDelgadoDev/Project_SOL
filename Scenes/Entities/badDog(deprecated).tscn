@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bycucsigj5vo4"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/plant.gd" id="1_83vce"]
+[ext_resource type="Script" uid="uid://boajnf3s3d7xk" path="res://scripts/Enemies/plant.gd" id="1_83vce"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_wru3d"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_3cyck"]
 [ext_resource type="Texture2D" uid="uid://dckyb8ts0ugwo" path="res://animations/Enemies/BadDog/Dog terror.png" id="5_6qss3"]
@@ -71,8 +71,8 @@ step = 0.05
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="Perrito" type="Node2D"]

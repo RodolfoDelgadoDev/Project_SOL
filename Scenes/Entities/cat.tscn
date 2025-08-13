@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c5ghp0ks8s7do"]
 
-[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_r3uyk"]
+[ext_resource type="Script" uid="uid://bwtpow6ft2pcu" path="res://scripts/punkGirl.gd" id="1_r3uyk"]
 [ext_resource type="Texture2D" uid="uid://bsi25ocbvyqd5" path="res://art/cat.png" id="2_jof2d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_su1lq"]

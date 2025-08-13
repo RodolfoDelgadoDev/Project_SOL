@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://d3s22my3nwvfq"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/spitter.gd" id="1_hpbxh"]
+[ext_resource type="Script" uid="uid://cr2tpc2lmn1wl" path="res://scripts/Enemies/spitter.gd" id="1_hpbxh"]
 [ext_resource type="Texture2D" uid="uid://bax3i3665jlyj" path="res://animations/Enemies/Spitter/Chupacabras solo.png" id="2_4blmb"]
 [ext_resource type="AudioStream" uid="uid://cg4kby43bidio" path="res://SFX/fireball.mp3" id="2_tj5wb"]
 [ext_resource type="Texture2D" uid="uid://c1tbatgf70tkw" path="res://animations/Enemies/Spitter/Idle-Chupacabras-Spitter.png" id="3_b1g2m"]
@@ -186,8 +186,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="Spitter" type="Node2D"]

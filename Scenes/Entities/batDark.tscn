@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://chdt0j2qa3ot1"]
 
-[ext_resource type="Script" path="res://scripts/Enemies/bat.gd" id="1_ul0ft"]
+[ext_resource type="Script" uid="uid://c0xyvoqlpahir" path="res://scripts/Enemies/bat.gd" id="1_ul0ft"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="2_wytdm"]
 [ext_resource type="AudioStream" uid="uid://dblabq5m3ww3e" path="res://SFX/bat_hurt.mp3" id="3_l7aqg"]
 [ext_resource type="Texture2D" uid="uid://jfn3p0d2mr6o" path="res://art/Bat B&W animation.png" id="4_jycof"]
@@ -89,8 +89,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="BatDark" type="Node2D"]

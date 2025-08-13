@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3x57uwkx1o3m"]
 
-[ext_resource type="Script" path="res://scripts/punkGirl.gd" id="1_a3xu1"]
+[ext_resource type="Script" uid="uid://bwtpow6ft2pcu" path="res://scripts/punkGirl.gd" id="1_a3xu1"]
 [ext_resource type="Texture2D" uid="uid://ca1bpfrpdgyp5" path="res://art/NPCs/Wanda/NPC-Wanda.png" id="2_08n8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j8s8"]

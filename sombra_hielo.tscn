@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx8hsmbddk6gk"]
+
+[ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_aibga"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8dcw5"]
+polygon = PackedVector2Array(-16, -9, -2, -16, 2, -16, 16, -9, 16, 9, 2, 16, -2, 16, -16, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va0is"]
+atlas = ExtResource("1_aibga")
+region = Rect2(0, 64, 32, 32)
+
+[node name="sombra_hielo" type="Node2D"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_8dcw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_va0is")

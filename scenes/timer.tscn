@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dr17f502lsjeq"]
 
-[ext_resource type="Script" path="res://scripts/timer.gd" id="1_bv3en"]
-[ext_resource type="Shader" path="res://ghost.gdshader" id="1_ks8lr"]
+[ext_resource type="Script" uid="uid://duaflcvt3uwx7" path="res://scripts/timer.gd" id="1_bv3en"]
+[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="1_ks8lr"]
 [ext_resource type="Texture2D" uid="uid://cfhh8024l7x36" path="res://art/UI/HP_Bar_Border.png" id="2_s23re"]
 [ext_resource type="Texture2D" uid="uid://6ivimr8m5j34" path="res://art/UI/HP_Full.png" id="2_xf826"]
 [ext_resource type="Texture2D" uid="uid://den3wwt6ke36" path="res://art/UI/HP_Bar_Fill.png" id="3_kin4v"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cy4mhavrpvrky" path="res://art/UI/HP_20.png" id="6_l70ip"]
 [ext_resource type="Texture2D" uid="uid://0h5piw6san2b" path="res://art/UI/HP_DEAD.png" id="7_0wj7n"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="8_3km0l"]
-[ext_resource type="Shader" path="res://chromaShader.gdshader" id="12_024b7"]
+[ext_resource type="Shader" uid="uid://b1j1wfao6dejf" path="res://chromaShader.gdshader" id="12_024b7"]
 [ext_resource type="Texture2D" uid="uid://dvvkdjv557x1w" path="res://art/botella.png" id="13_b5ghj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1ie"]

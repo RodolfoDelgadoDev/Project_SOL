@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://pm5admj02wws"]
 
-[ext_resource type="Script" path="res://Scenes/timer_boss.gd" id="1_pvfdx"]
+[ext_resource type="Script" uid="uid://purgw3dts1ik" path="res://Scenes/timer_boss.gd" id="1_pvfdx"]
 [ext_resource type="Texture2D" uid="uid://nv1uacfcbmyg" path="res://art/UI/HP_Bar_Fill_boss.png" id="2_tjarh"]
 [ext_resource type="Texture2D" uid="uid://cfhh8024l7x36" path="res://art/UI/HP_Bar_Border.png" id="10_xaawt"]
 [ext_resource type="Texture2D" uid="uid://bsd7qkv65vg33" path="res://art/NPCs Portraits/boss.png" id="14_ehc5e"]

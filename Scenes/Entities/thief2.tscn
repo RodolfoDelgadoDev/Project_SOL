@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://c5aibx2wdkqe0"]
 
-[ext_resource type="Script" path="res://scripts/thief.gd" id="1_w3vyf"]
+[ext_resource type="Script" uid="uid://dusknqspfckmj" path="res://scripts/thief.gd" id="1_w3vyf"]
 [ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_y6sye"]
 [ext_resource type="AudioStream" uid="uid://wsmkdwri3r62" path="res://SFX/bottle.mp3" id="3_weerd"]
 [ext_resource type="Texture2D" uid="uid://dovrq6jglf40a" path="res://animations/Enemies/Ninjas/NinjaJessica.png" id="4_xtgkj"]
@@ -200,8 +200,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h47lw"]
 _data = {
-"RESET": SubResource("Animation_2q3t7"),
-"takeDamage": SubResource("Animation_7cwl3")
+&"RESET": SubResource("Animation_2q3t7"),
+&"takeDamage": SubResource("Animation_7cwl3")
 }
 
 [node name="NinjaRosa" type="Node2D"]

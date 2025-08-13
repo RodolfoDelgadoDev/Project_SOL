@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bc07026ptp2sm"]
 
-[ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_3fciy"]
+[ext_resource type="Script" uid="uid://dlrvjy5j4gary" path="res://scripts/scene_transition.gd" id="1_3fciy"]
 [ext_resource type="Texture2D" uid="uid://cxbqt1s8xmk2" path="res://art/Transitions/Screen transition-3.png" id="2_7s2fa"]
 [ext_resource type="Texture2D" uid="uid://b83q57xkhuhvu" path="res://animations/Moto - Godot.png" id="3_el6ma"]
 [ext_resource type="Texture2D" uid="uid://ccwjmgnncutj1" path="res://art/Transitions/2- Screen transition.png" id="3_eoy7r"]
@@ -122,9 +122,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gh16f"]
 _data = {
-"RESET": SubResource("Animation_mcnen"),
-"Scene_Transition_in": SubResource("Animation_5gcru"),
-"Scene_Transition_out": SubResource("Animation_qvt0r")
+&"RESET": SubResource("Animation_mcnen"),
+&"Scene_Transition_in": SubResource("Animation_5gcru"),
+&"Scene_Transition_out": SubResource("Animation_qvt0r")
 }
 
 [node name="Scene_Transition" type="CanvasLayer"]

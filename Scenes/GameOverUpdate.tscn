@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://8sgjnqmx3clh"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_w1bok"]
+[ext_resource type="Script" uid="uid://c7u5ipa57sppu" path="res://scripts/game_over.gd" id="1_w1bok"]
 [ext_resource type="Texture2D" uid="uid://dehupigx1763n" path="res://art/UI/Colibrí-Pause Screen820.png" id="2_2bpoq"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="2_3mkai"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_qdyew"]

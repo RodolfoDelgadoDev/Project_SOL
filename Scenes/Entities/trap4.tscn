@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cn2xmgjwdsl2f"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_um2qe"]
+[ext_resource type="Script" uid="uid://bvg0x72ax5520" path="res://scripts/Traps/trap1.gd" id="1_um2qe"]
 [ext_resource type="AudioStream" uid="uid://crbq63dvg7rfk" path="res://SFX/slime1.mp3" id="2_7e22u"]
 [ext_resource type="Texture2D" uid="uid://bjep8vl108ger" path="res://art/Traps - Oil puddle.png" id="2_jj4f7"]
 [ext_resource type="AudioStream" uid="uid://dhosetkinj72n" path="res://SFX/slime2.mp3" id="3_svmiv"]

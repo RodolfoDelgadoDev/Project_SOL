@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bilwqgc62s12q"]
 
-[ext_resource type="Script" path="res://scripts/Traps/trap1.gd" id="1_j05qi"]
+[ext_resource type="Script" uid="uid://bvg0x72ax5520" path="res://scripts/Traps/trap1.gd" id="1_j05qi"]
 [ext_resource type="Texture2D" uid="uid://h81ldksnwj2n" path="res://art/Traps-Acid puddle Purple.png" id="2_1xmco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4f3a"]

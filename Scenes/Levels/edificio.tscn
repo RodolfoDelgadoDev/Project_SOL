@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_asp4p"]
 [ext_resource type="PackedScene" uid="uid://k5qb53ajcrce" path="res://Scenes/Entities/plant.tscn" id="3_g8f0l"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="4_e4ge1"]
-[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="5_qtx0x"]
+[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="5_qtx0x"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="6_q161q"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="7_fmbuq"]
 [ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="8_xd45n"]
@@ -13,7 +13,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="12_v1avn"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="13_s0fef"]
 [ext_resource type="AudioStream" uid="uid://hi3i3qkcjy84" path="res://Music/house3.mp3" id="14_6ly0s"]
-[ext_resource type="Script" path="res://scripts/blinking_light.gd" id="14_bomoy"]
+[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="14_bomoy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
 texture = ExtResource("1_8md0o")

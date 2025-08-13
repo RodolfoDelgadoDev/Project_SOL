@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cc2kq2da0sfae"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_edb8n"]
+[ext_resource type="Script" uid="uid://cbfb8avtxbe0i" path="res://scripts/coin.gd" id="1_edb8n"]
 [ext_resource type="Texture2D" uid="uid://bpf7m6q65dip1" path="res://art/MonedaD.png" id="2_ujxci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8cco"]
