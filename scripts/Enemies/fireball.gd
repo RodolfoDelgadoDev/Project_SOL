@@ -20,6 +20,7 @@ var direction: String = "right"
 var initial_position: Vector2
 var previous_position: Vector2
 
+
 func setup(fire_direction: String):
 	direction = fire_direction
 	create_patrol_path()

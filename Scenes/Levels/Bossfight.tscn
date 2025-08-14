@@ -775,36 +775,44 @@ player_node_path = NodePath("../Player")
 
 [node name="Spitters" type="Node" parent="Scene Manager"]
 
-[node name="Spitter" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 152)
+player_node = NodePath("../../Player")
 
-[node name="Spitter2" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter2" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 120)
 wait_time = 0.9
+player_node = NodePath("../../Player")
 
-[node name="Spitter3" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter3" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 88)
 wait_time = 0.8
+player_node = NodePath("../../Player")
 
-[node name="Spitter4" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter4" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 56)
 wait_time = 0.7
+player_node = NodePath("../../Player")
 
-[node name="Spitter5" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter5" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, 24)
 wait_time = 0.6
+player_node = NodePath("../../Player")
 
-[node name="Spitter6" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter6" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -8)
 wait_time = 0.7
+player_node = NodePath("../../Player")
 
-[node name="Spitter7" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter7" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -40)
 wait_time = 0.8
+player_node = NodePath("../../Player")
 
-[node name="Spitter8" parent="Scene Manager/Spitters" instance=ExtResource("19_0gghm")]
+[node name="Spitter8" parent="Scene Manager/Spitters" node_paths=PackedStringArray("player_node") instance=ExtResource("19_0gghm")]
 position = Vector2(-200, -72)
 wait_time = 0.6
+player_node = NodePath("../../Player")
 
 [node name="Traps" type="Node" parent="Scene Manager"]
 

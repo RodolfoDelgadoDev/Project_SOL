@@ -1,21 +1,22 @@
-[gd_scene load_steps=30 format=4 uid="uid://bxy4gh7twggrn"]
+[gd_scene load_steps=31 format=4 uid="uid://bxy4gh7twggrn"]
 
-[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_lgb0b"]
-[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="2_goayn"]
-[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="4_m6vbu"]
-[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="5_b57bp"]
-[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="6_eorjj"]
-[ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="7_2v3i2"]
-[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="8_xdui3"]
-[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="9_cva5w"]
-[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="10_dqlyb"]
-[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="11_xjbpv"]
-[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="12_ssmxi"]
-[ext_resource type="AudioStream" uid="uid://hi3i3qkcjy84" path="res://Music/house3.mp3" id="13_kboix"]
-[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="14_dkxc2"]
+[ext_resource type="Texture2D" uid="uid://dwmswvjh13gv6" path="res://art/Tilemap (3).png" id="1_m0vtj"]
+[ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="2_pyocb"]
+[ext_resource type="PackedScene" uid="uid://byycyvx2f7pjl" path="res://Scenes/Entities/bat.tscn" id="3_cckxy"]
+[ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="4_3mk7a"]
+[ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="5_6f3j5"]
+[ext_resource type="Texture2D" uid="uid://db8eurdsuccwd" path="res://animations/Doors/Edificio1/Puerta-Old man.png" id="6_b8cl5"]
+[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="7_cmxnp"]
+[ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="8_kcoaf"]
+[ext_resource type="Texture2D" uid="uid://ddx35wq0qqxt6" path="res://art/text bubble ver 1.jpg" id="9_15ymd"]
+[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="10_8oklv"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="11_myk32"]
+[ext_resource type="AudioStream" uid="uid://hi3i3qkcjy84" path="res://Music/house3.mp3" id="12_0sd5h"]
+[ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="13_4lnd4"]
+[ext_resource type="PackedScene" uid="uid://d3s22my3nwvfq" path="res://Scenes/Entities/Spitter.tscn" id="14_krcd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_182tc"]
-texture = ExtResource("1_lgb0b")
+texture = ExtResource("1_m0vtj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16, 16, -16)
@@ -376,43 +377,43 @@ physics_layer_0/collision_mask = 13
 sources/2 = SubResource("TileSetAtlasSource_182tc")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hdo8t"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(0, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kqc3"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(64, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3p7gx"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(128, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_by21n"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(192, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui1kg"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(256, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynyxa"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(320, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nh7ks"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(384, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgrni"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(448, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n4vw"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(512, 0, 64, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40o6o"]
-atlas = ExtResource("7_2v3i2")
+atlas = ExtResource("6_b8cl5")
 region = Rect2(576, 0, 64, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lccc0"]
@@ -468,7 +469,7 @@ fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
 
 [sub_resource type="Theme" id="Theme_6rhx5"]
-default_font = ExtResource("11_xjbpv")
+default_font = ExtResource("10_8oklv")
 default_font_size = 15
 
 [node name="Main" type="Node2D"]
@@ -485,46 +486,46 @@ tile_map_data = PackedByteArray("AAD1//n/AgAIAAIAAAD1//f/AgAKAAAAAAD1//j/AgAKAAE
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Bat3" parent="." instance=ExtResource("2_goayn")]
+[node name="Scene Manager" type="Node2D" parent="."]
+script = ExtResource("2_pyocb")
+segundos = 45
+targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
+
+[node name="Bat3" parent="Scene Manager" instance=ExtResource("3_cckxy")]
 position = Vector2(120, -88)
 scale = Vector2(0.25, 0.25)
 damage = 3
 patrol_path = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(0, -1)])
 
-[node name="Scene Manager" type="Node2D" parent="."]
-script = ExtResource("4_m6vbu")
-segundos = 45
-targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
-
-[node name="Coin" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(-88, 72)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin7" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin7" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(24, 104)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin2" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin2" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(104, -72)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin3" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin3" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(104, -56)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin4" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin4" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(8, -104)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin5" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin5" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(-104, -104)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin6" parent="Scene Manager" instance=ExtResource("5_b57bp")]
+[node name="Coin6" parent="Scene Manager" instance=ExtResource("4_3mk7a")]
 position = Vector2(88, 72)
 scale = Vector2(0.5, 0.5)
 
-[node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("6_eorjj")]
+[node name="Goal" parent="Scene Manager" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("5_6f3j5")]
 position = Vector2(-168, -104)
 scale = Vector2(0.5, 0.5)
 animated_sprite = NodePath("AnimatedSprite2D")
@@ -592,7 +593,7 @@ color = Color(0.64938, 0.881798, 0.837948, 1)
 energy = 1.44
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_6gwau")
-script = ExtResource("8_xdui3")
+script = ExtResource("7_cmxnp")
 blink_interval_min = 0.01
 blink_interval_max = 0.5
 
@@ -601,7 +602,7 @@ color = Color(0.629136, 0.602353, 0.556556, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager"]
 
-[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("9_cva5w")]
+[node name="Timer" parent="Scene Manager/CanvasLayer" instance=ExtResource("8_kcoaf")]
 position = Vector2(4, 4)
 
 [node name="DialogueBox" type="Node2D" parent="Scene Manager/CanvasLayer"]
@@ -612,7 +613,7 @@ offset_left = 65.0
 offset_top = 119.0
 offset_right = 240.0
 offset_bottom = 154.0
-texture = ExtResource("10_dqlyb")
+texture = ExtResource("9_15ymd")
 expand_mode = 1
 
 [node name="TextEdit" type="Label" parent="Scene Manager/CanvasLayer/DialogueBox/ColorRect"]
@@ -644,18 +645,23 @@ expand_mode = 1
 
 [node name="hideTimer" type="Timer" parent="Scene Manager/CanvasLayer/DialogueBox"]
 
-[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("12_ssmxi")]
+[node name="Scene_Transition" parent="Scene Manager" instance=ExtResource("11_myk32")]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager"]
-stream = ExtResource("13_kboix")
+stream = ExtResource("12_0sd5h")
 autoplay = true
 panning_strength = 0.0
 bus = &"Musica"
 playback_type = 1
 
-[node name="Player" parent="Scene Manager" instance=ExtResource("14_dkxc2")]
+[node name="Player" parent="Scene Manager" instance=ExtResource("13_4lnd4")]
 position = Vector2(200, -40)
 scale = Vector2(0.25, 0.25)
+
+[node name="Spitter" parent="Scene Manager" node_paths=PackedStringArray("player_node") instance=ExtResource("14_krcd5")]
+position = Vector2(120, 8)
+player_node = NodePath("../Player")
+onlyHorizontal = true
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
