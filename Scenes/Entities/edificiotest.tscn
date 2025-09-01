@@ -661,7 +661,6 @@ scale = Vector2(0.25, 0.25)
 [node name="Spitter" parent="Scene Manager" node_paths=PackedStringArray("player_node") instance=ExtResource("14_krcd5")]
 position = Vector2(120, 8)
 player_node = NodePath("../Player")
-onlyHorizontal = true
 
 [node name="Obstaculos top layer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)

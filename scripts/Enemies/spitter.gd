@@ -18,6 +18,7 @@ extends Node2D
 var current_direction_index := 0
 var fireball_scene = preload("res://Scenes/Entities/fireball.tscn")
 var animations: Array[String] = ["Attack"]
+var directionsDict = {"right": Vector2(25,0), "left": Vector2(-25,0), "down": Vector2(0,25), "up": Vector2(0,-25)}
 var player_body: CharacterBody2D
 var directionsid
 
@@ -81,7 +82,7 @@ func fireball(direction: Vector2) -> void:
 	sprite.play((animations[0]))
 	var fireball_instance = fireball_scene.instantiate()
 	get_parent().add_child(fireball_instance)
-	fireball_instance.global_position = characterBodysp.global_position
+	fireball_instance.global_position = characterBodysp.global_position + directionsDict[directions[directionsid]]
 	fireball_instance.setup(directions[directionsid])  # This initializes the movement
 	audio_player.stream = attackSFX
 	audio_player.play()
