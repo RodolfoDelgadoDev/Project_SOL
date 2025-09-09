@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_dn7yt"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="5_ph7xw"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="6_teq0q"]
-[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="7_v6cr2"]
+[ext_resource type="Shader" uid="uid://7nt20jv0f41w" path="res://ghost.gdshader" id="7_v6cr2"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="8_0i3wa"]
 [ext_resource type="Texture2D" uid="uid://cwmhyg6krbr26" path="res://art/fogtexture.png" id="8_sxcka"]
 [ext_resource type="AudioStream" uid="uid://bhv4rd1p88xr4" path="res://Music/descanso_creepy.mp3" id="9_vfu7c"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=143 format=4 uid="uid://xv65nci4wovg"]
+[gd_scene load_steps=153 format=4 uid="uid://xv65nci4wovg"]
 
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_4agvk"]
 [ext_resource type="Texture2D" uid="uid://cfy70442jrlem" path="res://art/Map-tilemap.png" id="1_bjpdo"]
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_dcr34"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_tt5t2"]
-[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_rgodk"]
+[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_rgodk"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_a24ov"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_g88ge"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_past7"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="11_s4fw4"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="12_5lrn5"]
 [ext_resource type="PackedScene" uid="uid://hr65q2b5wtkk" path="res://Scenes/Entities/olivia.tscn" id="12_xxfdf"]
-[ext_resource type="PackedScene" uid="uid://b3x57uwkx1o3m" path="res://Scenes/Entities/computer_girl.tscn" id="13_44foj"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="13_83o1q"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_rn5cp"]
 [ext_resource type="AudioStream" uid="uid://dpk7alq3asmi7" path="res://Music/restroom.mp3" id="15_im0sc"]
@@ -37,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://clw625i2fj2ui" path="res://art/NPCs/Ver/NPC - Vero - Animation.png" id="31_ncv0s"]
 [ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="32_fuf1i"]
 [ext_resource type="Texture2D" uid="uid://dvqycf46t80qg" path="res://art/NPCs/Nicky/Nicky-NPCs animation (1).png" id="33_158mo"]
+[ext_resource type="Texture2D" uid="uid://dy5dxxfi7ohgi" path="res://art/NPCs/Wanda/Wanda Standing.png" id="36_4jpbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo1o3"]
 texture = ExtResource("1_bjpdo")
@@ -1242,6 +1242,77 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lopf"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkm4"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w255"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pclei"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6en3y"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn6qk"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1st5"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eywmh"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hclt3"]
+atlas = ExtResource("36_4jpbu")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72av3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lopf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w255")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pclei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6en3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn6qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1st5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eywmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hclt3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(21, 124)
 
@@ -1579,17 +1650,6 @@ npc_portrait = ExtResource("19_jitoy")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
 
-[node name="Wanda" parent="Scene Manager" instance=ExtResource("13_44foj")]
-position = Vector2(-121, 3)
-scale = Vector2(0.5, 0.5)
-
-[node name="NPC" parent="Scene Manager/Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
-position = Vector2(2, 8)
-dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-npc_portrait = ExtResource("22_7ki5b")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_c2nhh")
-
 [node name="Y" type="AnimatedSprite2D" parent="Scene Manager"]
 position = Vector2(-8, 2)
 scale = Vector2(0.5, 0.5)
@@ -1729,3 +1789,17 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx/wIAAQASAAAAAADy/wIAAQAOAAAAAADz/wIAAQAPAAAAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
+
+[node name="Wanda" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, -28)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_72av3")
+frame = 8
+frame_progress = 1.0
+
+[node name="NPC" parent="Wanda" node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
+position = Vector2(-2, 2)
+dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+npc_portrait = ExtResource("22_7ki5b")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_c2nhh")
