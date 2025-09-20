@@ -1418,7 +1418,6 @@ directions = Array[String](["left"])
 [node name="Spitter4" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(104, 200)
 damage = 3
-wait_time = 1.5
 directions = Array[String](["left"])
 
 [node name="Spitter5" parent="." instance=ExtResource("12_arst7")]

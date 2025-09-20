@@ -5,6 +5,8 @@ extends Node2D
 @export var damage: int = 1
 @export var GRID_SIZE = 64
 @export var fireball_length = 5
+#Para la velocidad del proyectil
+@export var projectile_speed: float = 20.0
 
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
@@ -19,6 +21,8 @@ var patrol_path: Array[Vector2] = []
 var direction: String = "right"
 var initial_position: Vector2
 var previous_position: Vector2
+var shoot_timer := 0.0
+var hit: bool = false
 
 
 func setup(fire_direction: String):
@@ -48,47 +52,41 @@ func create_patrol_path():
 	for i in range(fireball_length):
 		patrol_path.append(dir_vector)
 
-func _process(delta):
-	if moving:
-		var remaining_time = move_duration - move_timer
-		character_body.velocity = target_velocity * min(delta, remaining_time) / move_duration
-		character_body.move_and_slide()
-		move_timer += delta
-		
-		if move_timer >= move_duration:
-			# Check if position changed after movement attempt
-			if character_body.position.distance_to(previous_position) < 1.0:  # Basically didn't move
-				print("Fireball stuck - destroying")
-				queue_free()
-				return
-				
-			previous_position = character_body.position
-			character_body.position = character_body.position.snapped(Vector2(GRID_SIZE, GRID_SIZE))
-			moving = false
-			move_timer = 0.0
-			wait_timer = 0.0
-			
-			current_patrol_index += 1
-			if current_patrol_index >= patrol_path.size():
-				queue_free()
-	else:
+func _physics_process(delta):
+	if not moving:
 		wait_timer += delta
 		if wait_timer >= wait_time:
 			start_moving()
+		return
+
+	# Movimiento lineal y lento
+	character_body.velocity = target_velocity
+	character_body.move_and_slide()
+
+	# Destruir si recorre la distancia máxima
+	if character_body.position.distance_to(initial_position) >= GRID_SIZE * fireball_length:
+		animated_sprite.play("Collision")
+		await animated_sprite.animation_finished
+		queue_free()
 
 func start_moving():
 	if current_patrol_index < patrol_path.size():
 		initial_position = character_body.position
-		target_velocity = patrol_path[current_patrol_index] * (GRID_SIZE / move_duration)
+		# Dirección normalizada * velocidad deseada
+		target_velocity = patrol_path[current_patrol_index].normalized() * projectile_speed
 		moving = true
-		move_timer = 0.0
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("player") && hit == false:
+		character_body.collision_mask  = 0
+		character_body.collision_layer = 0
+		hit = true
 		GameManager.takeDamage(damage)
 		explode()
 	pass
 	
 func explode():
+	animated_sprite.play("Collision")
+	await animated_sprite.animation_finished
 	#reproducir animacion bola de fuego
 	queue_free()

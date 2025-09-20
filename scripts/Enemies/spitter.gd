@@ -77,6 +77,8 @@ func start_direction_cycle() -> void:
 		var current_direction = get_direction(characterBodysp.global_position,player_body.global_position)
 		await get_tree().create_timer(wait_time).timeout
 		fireball(current_direction)
+		await get_tree().create_timer(2).timeout
+		
 
 func fireball(direction: Vector2) -> void:
 	sprite.play((animations[0]))
@@ -86,6 +88,7 @@ func fireball(direction: Vector2) -> void:
 	fireball_instance.setup(directions[directionsid])  # This initializes the movement
 	audio_player.stream = attackSFX
 	audio_player.play()
+	
 
 func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("weapon"):
