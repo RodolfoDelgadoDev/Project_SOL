@@ -6,7 +6,7 @@ extends Node2D
 @export var GRID_SIZE = 64
 @export var fireball_length = 5
 #Para la velocidad del proyectil
-@export var projectile_speed: float = 20.0
+@export var projectile_speed: float = 35.0
 
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animated_sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D

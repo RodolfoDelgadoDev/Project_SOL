@@ -4,7 +4,7 @@ extends Node2D
 @export var health: int = 20
 @export var attackSFX: AudioStream
 @export var destroySFX: AudioStream
-@export var wait_time: float = 1.5  # Time between direction changes
+   # Time between direction changes
 @export var directions: Array[String] = ["right", "left", "down" , "up"]  # Array of directions (up, down, left, right)
 @export var fireball_length = 5
 @export var player_node: Node2D
@@ -21,7 +21,7 @@ var animations: Array[String] = ["Attack"]
 var directionsDict = {"right": Vector2(25,0), "left": Vector2(-25,0), "down": Vector2(0,25), "up": Vector2(0,-25)}
 var player_body: CharacterBody2D
 var directionsid
-
+var wait_time: float = RandomNumberGenerator.new().randf_range(1.5, 2.0)
 var dying : bool = false
 
 func _ready() -> void:

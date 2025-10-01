@@ -1399,20 +1399,17 @@ rendering_quadrant_size = 32
 [node name="Spitter" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(-280, 312)
 damage = 3
-wait_time = 3.0
 directions = Array[String](["up"])
 fireball_length = 6
 
 [node name="Spitter2" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(168, 216)
 damage = 3
-wait_time = 2.0
 directions = Array[String](["left"])
 
 [node name="Spitter3" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(136, 184)
 damage = 3
-wait_time = 2.5
 directions = Array[String](["left"])
 
 [node name="Spitter4" parent="." instance=ExtResource("12_arst7")]
@@ -1423,20 +1420,17 @@ directions = Array[String](["left"])
 [node name="Spitter5" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(360, 344)
 damage = 3
-wait_time = 3.0
 directions = Array[String](["up", "right"])
 fireball_length = 6
 
 [node name="Spitter6" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(-104, 504)
 damage = 3
-wait_time = 3.0
 fireball_length = 6
 
 [node name="Spitter7" parent="." instance=ExtResource("12_arst7")]
 position = Vector2(40, 568)
 damage = 3
-wait_time = 3.0
 directions = Array[String](["up"])
 fireball_length = 6
 
