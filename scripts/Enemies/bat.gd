@@ -122,4 +122,52 @@ func takeDamage():
 			get_parent().add_child(particles_instance)
 			particles.emitting = true
 			particles.restart()
+			spawn_random_death_sprite()
 			queue_free()
+
+func spawn_random_death_sprite():
+	var folder_path = "res://art/UI/Onomatopeyas/"
+	var enemy = $CharacterBody2D
+	var enemyposition = enemy.global_position
+	var files = []
+	var dir = DirAccess.open(folder_path)
+	# Si existe direccion
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			# Loop para tomar pngs al array
+			if !dir.current_is_dir() and file_name.ends_with(".png"):
+				files.append(file_name)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+
+	if files.size() > 0:
+		# 1. Elegir uno al azar
+		var random_index = randi() % files.size()
+		var chosen_file = files[random_index]
+		
+		# 2. Crear un nuevo Sprite2D
+		var death_sprite = Sprite2D.new()
+		death_sprite.texture = load(folder_path + chosen_file)
+		
+		
+		death_sprite.global_position = enemyposition + Vector2(5, 0) # Selecciono el spawn y le sumo un poco hacia la derecha asi no sale de adentro del bicho
+		
+		death_sprite.scale = Vector2(0.2, 0.2) # Cambiar el tamaño de la escala de la imagen
+		
+		get_parent().add_child(death_sprite)
+		
+		var duracion_animacion = 2.0 # 
+		var distancia_subida = 30.0  
+
+		var posicion_final = death_sprite.position + Vector2(0, -distancia_subida)
+
+		var tween = get_tree().create_tween().set_parallel(true)
+
+		tween.tween_property(death_sprite, "modulate:a", 0.0, duracion_animacion).set_ease(Tween.EASE_IN)
+
+
+		tween.tween_property(death_sprite, "position", posicion_final, duracion_animacion).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+		tween.chain().tween_callback(death_sprite.queue_free)

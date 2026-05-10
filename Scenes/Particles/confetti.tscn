@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwhdma0gljs1y"]
+[gd_scene format=3 uid="uid://dwhdma0gljs1y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0prsh"]
 
 [sub_resource type="Gradient" id="Gradient_ero8v"]
 offsets = PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.729614, 0.871245, 1)
@@ -19,16 +21,14 @@ scale_max = 2.0
 color = Color(1, 0.90195, 0.546157, 1)
 color_ramp = SubResource("GradientTexture1D_kiul8")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0prsh"]
+[node name="Confetti" type="Node2D" unique_id=260098795]
 
-[node name="Confetti" type="Node2D"]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=834581577]
 emitting = false
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_8s4re")
 texture = SubResource("AtlasTexture_0prsh")
 lifetime = 1.5
 one_shot = true
 speed_scale = 2.5
 explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8s4re")
