@@ -20,8 +20,7 @@ func _process(_delta: float) -> void:
 			GameManager.reachedGoal(false)
 			if SceneManager.descanso == false:
 				GameManager.levelNumber = GameManager.levelNumber + 1
-				print("Level number:")
-				print(GameManager.levelNumber)
+				print("Level number: ",GameManager.levelNumber)
 			SceneManager.change_scene()
 			return
 	

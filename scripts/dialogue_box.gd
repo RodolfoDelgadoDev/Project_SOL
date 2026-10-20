@@ -126,10 +126,6 @@ func start_alternating_dialogue(
 
 	_display_current_line()
 
-
-
-
-
 func _input(event: InputEvent) -> void:
 	if not es_visible: return
 	
