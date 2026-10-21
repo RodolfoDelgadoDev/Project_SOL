@@ -4,8 +4,10 @@ extends Node2D
 @export var health: int = 20
 @export var attackSFX: AudioStream
 @export var destroySFX: AudioStream
-   # Time between direction changes
-@export var directions: Array[String] = ["right", "left", "down" , "up"]  # Array of directions (up, down, left, right)
+# Legacy: ya no se usa para decidir la direccion del disparo (la direccion se
+# calcula directo del vector hacia el jugador). Se deja para no romper los
+# overrides que ya existen en las escenas.
+@export var directions: Array[String] = ["right", "left", "down" , "up"]
 @export var fireball_length = 5
 @export var player_node: Node2D
 @export var onlyVertical: bool = false
@@ -15,12 +17,12 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 @onready var characterBodysp: CharacterBody2D = $CharacterBody2D
 
+const FIREBALL_SPAWN_OFFSET := 25.0
+
 var current_direction_index := 0
 var fireball_scene = preload("res://Scenes/Entities/fireball.tscn")
 var animations: Array[String] = ["Attack"]
-var directionsDict = {"right": Vector2(25,0), "left": Vector2(-25,0), "down": Vector2(0,25), "up": Vector2(0,-25)}
 var player_body: CharacterBody2D
-var directionsid
 var wait_time: float = RandomNumberGenerator.new().randf_range(1.5, 2.0)
 var dying : bool = false
 
@@ -32,45 +34,32 @@ func _ready() -> void:
 	start_direction_cycle()
 
 	
+# Devuelve la direccion cardinal (Vector2 unitario) desde "from" hacia "to".
+# Respeta onlyHorizontal / onlyVertical.
 func get_direction(from: Vector2, to: Vector2) -> Vector2:
-		
 	var dir = to - from  # Vector desde "from" hacia "to"
-	# Si solo quiero que solamente dispare hacia la derecha
-	if onlyHorizontal:
-		dir = Vector2(sign(dir.x), 0) 
-		print("Horizontal") # Horizontal dominante
-		if dir.x > 0:
-			directionsid = 0
-		else:
-			directionsid = 1
-		return dir
-	if onlyVertical:
-		if dir.y > 0:
-			directionsid = 2
-		else:
-			directionsid = 3
-		return dir
-		
-		
-	# Si solo querés saber la dirección cardinal (izq, der, arriba, abajo)
-	if abs(dir.x) > abs(dir.y):
-		dir = Vector2(sign(dir.x), 0) 
-		print("Horizontal") # Horizontal dominante
-		if dir.x > 0:
-			directionsid = 0
-		else:
-			directionsid = 1
-		return dir
-	else:
-		dir = Vector2(0, sign(dir.y))
-		print(("Vertical"))  # Vertical dominante
-		if dir.y > 0:
-			directionsid = 2
-		else:
-			directionsid = 3
-		return dir
-
+	var sx := 1.0 if dir.x >= 0.0 else -1.0
+	var sy := 1.0 if dir.y >= 0.0 else -1.0
 	
+	if onlyHorizontal:
+		return Vector2(sx, 0)
+	if onlyVertical:
+		return Vector2(0, sy)
+	
+	# Eje dominante
+	if abs(dir.x) > abs(dir.y):
+		return Vector2(sx, 0)
+	return Vector2(0, sy)
+
+# Convierte un vector cardinal al string que espera fireball.setup()
+func direction_to_string(dir: Vector2) -> String:
+	if dir.x > 0.0:
+		return "right"
+	if dir.x < 0.0:
+		return "left"
+	if dir.y > 0.0:
+		return "down"
+	return "up"
 
 func start_direction_cycle() -> void:
 	while health > 0:  # Changed to > 0 since we check health >= 0 elsewhere
@@ -80,12 +69,12 @@ func start_direction_cycle() -> void:
 		await get_tree().create_timer(2).timeout
 		
 
-func fireball(_direction: Vector2) -> void:
+func fireball(direction: Vector2) -> void:
 	sprite.play((animations[0]))
 	var fireball_instance = fireball_scene.instantiate()
 	get_parent().add_child(fireball_instance)
-	fireball_instance.global_position = characterBodysp.global_position + directionsDict[directions[directionsid]]
-	fireball_instance.setup(directions[directionsid])  # This initializes the movement
+	fireball_instance.global_position = characterBodysp.global_position + direction * FIREBALL_SPAWN_OFFSET
+	fireball_instance.setup(direction_to_string(direction))  # This initializes the movement
 	audio_player.stream = attackSFX
 	audio_player.play()
 	
