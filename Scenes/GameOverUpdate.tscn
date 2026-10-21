@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8sgjnqmx3clh"]
+[gd_scene format=3 uid="uid://8sgjnqmx3clh"]
 
 [ext_resource type="Script" uid="uid://c7u5ipa57sppu" path="res://scripts/game_over.gd" id="1_w1bok"]
 [ext_resource type="Texture2D" uid="uid://dehupigx1763n" path="res://art/UI/Colibrí-Pause Screen820.png" id="2_2bpoq"]
@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b6r4combydyxl" path="res://SFX/pause.mp3" id="6_jl30n"]
 [ext_resource type="StyleBox" uid="uid://dssb3q1bvccp3" path="res://art/UI/menubox.tres" id="8_7cr7x"]
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" unique_id=437205181]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -19,7 +19,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1612540118]
 layout_mode = 0
 offset_left = -176.0
 offset_top = -107.0
@@ -27,7 +27,7 @@ offset_right = 172.0
 offset_bottom = 101.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=858550809]
 layout_mode = 0
 offset_left = -155.0
 offset_top = -94.0
@@ -37,7 +37,7 @@ scale = Vector2(1.115, 1.115)
 texture = ExtResource("2_2bpoq")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=459511797]
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -51,7 +51,7 @@ button_ok = ExtResource("4_q3h3t")
 button_change = ExtResource("5_dp34f")
 pause = ExtResource("6_jl30n")
 
-[node name="GameText" type="Label" parent="Control"]
+[node name="GameText" type="Label" parent="Control" unique_id=99207278]
 light_mask = 0
 layout_mode = 1
 anchors_preset = 8
@@ -74,7 +74,7 @@ text = "PAUSA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseContainer" type="HBoxContainer" parent="Control"]
+[node name="PauseContainer" type="HBoxContainer" parent="Control" unique_id=1691993215]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -87,10 +87,12 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsButton" type="Button" parent="Control/PauseContainer"]
+[node name="OptionsButton" type="Button" parent="Control/PauseContainer" unique_id=581617290]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+focus_neighbor_left = NodePath("../ExitButton")
+focus_neighbor_right = NodePath("../ContinueButton")
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -98,10 +100,12 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "OPCIONES"
 flat = true
 
-[node name="ContinueButton" type="Button" parent="Control/PauseContainer"]
+[node name="ContinueButton" type="Button" parent="Control/PauseContainer" unique_id=2068752908]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+focus_neighbor_left = NodePath("../OptionsButton")
+focus_neighbor_right = NodePath("../ExitButton")
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -109,10 +113,12 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "VOLVER"
 flat = true
 
-[node name="ExitButton" type="Button" parent="Control/PauseContainer"]
+[node name="ExitButton" type="Button" parent="Control/PauseContainer" unique_id=516990025]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath("../OptionsButton")
 theme_override_colors/font_color = Color(0.968627, 0.741176, 0.529412, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -120,10 +126,11 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "SALIR"
 flat = true
 
-[node name="audiobutton" type="AudioStreamPlayer2D" parent="Control"]
+[node name="audiobutton" type="AudioStreamPlayer2D" parent="Control" unique_id=2101607742]
 panning_strength = 0.0
 
-[node name="OptionsContainer" type="HBoxContainer" parent="Control"]
+[node name="OptionsContainer" type="HBoxContainer" parent="Control" unique_id=988330239]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,10 +144,10 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackButton" type="Button" parent="Control/OptionsContainer"]
+[node name="BackButton" type="Button" parent="Control/OptionsContainer" unique_id=355538658]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -148,10 +155,10 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "ATRÁS"
 flat = true
 
-[node name="DifficultyButton" type="Button" parent="Control/OptionsContainer"]
+[node name="DifficultyButton" type="Button" parent="Control/OptionsContainer" unique_id=1243983589]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -160,10 +167,10 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "SIN ASISTENCIA"
 flat = true
 
-[node name="MusicButton" type="Button" parent="Control/OptionsContainer"]
+[node name="MusicButton" type="Button" parent="Control/OptionsContainer" unique_id=1620306514]
 layout_mode = 2
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_qdyew")
@@ -171,8 +178,8 @@ theme_override_styles/focus = ExtResource("8_7cr7x")
 text = "MUSICA ON"
 flat = true
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 2
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=867369759]
+layout_mode = 0
 offset_left = -176.0
 offset_top = -107.0
 offset_right = 172.0

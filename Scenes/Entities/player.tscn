@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://cmax2vhkuipx5"]
+[gd_scene format=3 uid="uid://cmax2vhkuipx5"]
 
 [ext_resource type="Script" uid="uid://dk7p13ycoty7f" path="res://scripts/player.gd" id="1_dlx5r"]
 [ext_resource type="AudioStream" uid="uid://543o0xleti31" path="res://SFX/player_attack.mp3" id="2_k1amx"]
@@ -1231,59 +1231,58 @@ size = Vector2(60, 60)
 size = Vector2(62, 62)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qh4pc"]
-polygon = PackedVector2Array(-18, -17, -7, -25, 7, -25, 14, -16, 16, -2, 12, 4, 15, 15, 11, 21, -8, 23, -18, 14, -14, 5, -18, -3)
+polygon = PackedVector2Array(-21, -18, -9, -27, 7, -27, 19, -18, 18, -1, 12, 4, 24, 14, 11, 24, -13, 24, -26, 15, -14, 5, -20, -2)
 
-[node name="Player" type="Node2D" groups=["player"]]
+[node name="Player" type="Node2D" unique_id=254131591 groups=["player"]]
 script = ExtResource("1_dlx5r")
 attackSFX = ExtResource("2_k1amx")
 hurtSFX = ExtResource("3_awhw6")
 movementSFX = Array[AudioStream]([ExtResource("4_ac0vv"), ExtResource("5_q7u33"), ExtResource("6_lxvt5"), ExtResource("7_dg1uu")])
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2060229363 groups=["player"]]
 collision_mask = 6
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D" unique_id=1216217875]
 visible = false
 scale = Vector2(1.597, 1.5)
 energy = 0.2
 texture = SubResource("GradientTexture2D_xj6sn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1169075497]
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
 animation = &"HiUp"
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1825857638]
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1022619809]
 shape = SubResource("RectangleShape2D_s6hlb")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["player"]]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1710493340 groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=55357108]
 shape = SubResource("RectangleShape2D_jwrfp")
 
-[node name="AttackSprite" type="Sprite2D" parent="CharacterBody2D/Area2D"]
+[node name="AttackSprite" type="Sprite2D" parent="CharacterBody2D/Area2D" unique_id=1973148871]
 visible = false
 scale = Vector2(0.5, 0.5)
 
-[node name="Attack_area" type="Area2D" parent="CharacterBody2D/Area2D/AttackSprite" groups=["weapon"]]
+[node name="Attack_area" type="Area2D" parent="CharacterBody2D/Area2D/AttackSprite" unique_id=1090034290 groups=["weapon"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D/AttackSprite/Attack_area" groups=["weapon"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D/AttackSprite/Attack_area" unique_id=994279913 groups=["weapon"]]
 shape = SubResource("RectangleShape2D_s6hlb")
 debug_color = Color(0.908467, 0.000113781, 0.736625, 0.42)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
-position = Vector2(6, 0)
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D" unique_id=608770700]
 occluder = SubResource("OccluderPolygon2D_qh4pc")
 
-[node name="attack_timer" type="Timer" parent="."]
+[node name="attack_timer" type="Timer" parent="." unique_id=421573774]
 wait_time = 0.3
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=366643893]
 panning_strength = 0.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
