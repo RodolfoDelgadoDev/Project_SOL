@@ -63,13 +63,25 @@ func direction_to_string(dir: Vector2) -> String:
 
 func start_direction_cycle() -> void:
 	while health > 0:  # Changed to > 0 since we check health >= 0 elsewhere
-		var current_direction = get_direction(characterBodysp.global_position,player_body.global_position)
 		await get_tree().create_timer(wait_time).timeout
+		# La direccion se calcula justo antes de disparar, con la posicion actual del jugador
+		var current_direction = get_direction(characterBodysp.global_position,player_body.global_position)
 		fireball(current_direction)
 		await get_tree().create_timer(2).timeout
 		
 
+# Gira el sprite (solo horizontal) para mirar al lado donde esta el jugador.
+# El arte mira a la DERECHA por defecto, asi que se flipea si el jugador esta a la izquierda.
+func face_player() -> void:
+	if player_body == null:
+		return
+	var dx := player_body.global_position.x - characterBodysp.global_position.x
+	if dx == 0.0:
+		return  # justo alineado en X: se queda como esta
+	sprite.flip_h = dx < 0.0
+
 func fireball(direction: Vector2) -> void:
+	face_player()
 	sprite.play((animations[0]))
 	var fireball_instance = fireball_scene.instantiate()
 	get_parent().add_child(fireball_instance)
