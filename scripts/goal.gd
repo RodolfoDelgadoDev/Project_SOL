@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 				GameManager.levelNumber = GameManager.levelNumber + 1
 				print("Level number:")
 				print(GameManager.levelNumber)
+				GameManager.save_game()
 			SceneManager.change_scene()
 			return
 	

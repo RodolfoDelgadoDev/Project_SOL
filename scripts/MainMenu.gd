@@ -5,12 +5,22 @@ extends Control
 @onready var audiobutton: AudioStreamPlayer2D = $audiobutton
 @export var button_ok: Resource
 @export var button_change: Resource
+
+@export var current_lvl : PackedScene
+@export var current_bottles : int 
 var Tutorial = false
 var current_focused_button: Button = null
 var bounce_tween: Tween = null
 var first_focus : bool = true
+var has_save = GameManager.save_file_exists()
 
 func _ready():
+	# Verificamos si existe un archivo de guardado
+	if has_save:
+		# Si hay partida, habilitamos o mostramos el botón de continuar
+		$RestartButton.text = "CONTINUE"
+	else:
+		print("No se encontró partida")
 	# Connect the button signals
 	$RestartButton.pressed.connect(_on_Restartbutton_pressed)
 	$ExitButton.pressed.connect(_on_Exitbutton_pressed)
@@ -72,8 +82,36 @@ func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
 		if Tutorial == true:
 			get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
+		if has_save:
+			GameManager.load_game()
+			var targetScene = chooseTargetScene()
+			get_tree().change_scene_to_file(targetScene)
 		else:
 			GameManager.levelNumber = 1
 			GameManager.plasticoin +=1
-			print(GameManager.currentLevel)
 			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso1.tscn")
+			
+func chooseTargetScene():
+	var targetScene : String
+	match GameManager.levelNumber:
+			1:
+				targetScene = "res://Scenes/Levels/edificio.tscn"
+			2:
+				targetScene = "res://Scenes/Levels/edificio2.tscn"
+			3:
+				targetScene = "res://Scenes/Levels/edificio3.tscn"
+			4:
+				targetScene = "res://Scenes/Levels/complejo.tscn"
+			5:
+				targetScene = "res://Scenes/Levels/complejo2.tscn"
+			6:
+				targetScene = "res://Scenes/Levels/bosque.tscn"
+			7:
+				targetScene = "res://Scenes/Levels/bosque2.tscn"
+			8:
+				targetScene = "res://Scenes/Levels/Bossfight.tscn"
+			_:
+				targetScene = "res://Scenes/Levels/edificio.tscn"
+				printerr("Unexpected level number, defaulting to level 1")
+	print("Current level number: ", GameManager.levelNumber)
+	return targetScene
