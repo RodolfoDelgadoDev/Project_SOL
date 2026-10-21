@@ -146,6 +146,8 @@ grow_vertical = 2
 
 [node name="BackButton" type="Button" parent="Control/OptionsContainer" unique_id=355538658]
 layout_mode = 2
+focus_neighbor_left = NodePath("../MusicButton")
+focus_neighbor_right = NodePath("../DifficultyButton")
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
@@ -157,6 +159,8 @@ flat = true
 
 [node name="DifficultyButton" type="Button" parent="Control/OptionsContainer" unique_id=1243983589]
 layout_mode = 2
+focus_neighbor_left = NodePath("../BackButton")
+focus_neighbor_right = NodePath("../MusicButton")
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
@@ -169,6 +173,8 @@ flat = true
 
 [node name="MusicButton" type="Button" parent="Control/OptionsContainer" unique_id=1620306514]
 layout_mode = 2
+focus_neighbor_left = NodePath("../DifficultyButton")
+focus_neighbor_right = NodePath("../BackButton")
 theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
