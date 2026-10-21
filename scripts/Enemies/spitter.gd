@@ -116,8 +116,9 @@ func takeDamage():
 		var particle_scene = load("res://Scenes/Particles/confetti.tscn")
 		var particles_instance = particle_scene.instantiate()
 		var particles = particles_instance.get_node("GPUParticles2D")
-		particles.global_position = global_position
 		get_parent().add_child(particles_instance)
+		# Se asigna DESPUES de add_child: antes de estar en el arbol Godot lo toma como posicion local
+		particles.global_position = global_position
 		particles.emitting = true
 		particles.restart()
 		
@@ -152,11 +153,14 @@ func spawn_random_death_sprite():
 		death_sprite.texture = load(folder_path + chosen_file)
 		
 		
-		death_sprite.global_position = enemyposition + Vector2(5, 0) # Selecciono el spawn y le sumo un poco hacia la derecha asi no sale de adentro del bicho
+		# (la posicion global se asigna despues del add_child, ver mas abajo)
 		
 		death_sprite.scale = Vector2(0.2, 0.2) # Cambiar el tamaño de la escala de la imagen
 		
 		get_parent().add_child(death_sprite)
+		# Se asigna DESPUES de add_child: antes de estar en el arbol Godot lo toma como posicion local.
+		# Selecciono el spawn y le sumo un poco hacia la derecha asi no sale de adentro del bicho
+		death_sprite.global_position = enemyposition + Vector2(5, 0)
 		
 		var duracion_animacion = 2.0 # 
 		var distancia_subida = 30.0  
