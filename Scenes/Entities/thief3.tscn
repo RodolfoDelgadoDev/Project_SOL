@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dmimvp0ktwiqa"]
+[gd_scene format=3 uid="uid://dmimvp0ktwiqa"]
 
 [ext_resource type="Script" uid="uid://dusknqspfckmj" path="res://scripts/thief.gd" id="1_70mpd"]
 [ext_resource type="AudioStream" uid="uid://bihnqpkl4vgnw" path="res://SFX/enemyStep2.mp3" id="2_fno32"]
@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nnsh6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Puff",
 "speed": 5.0
 }, {
@@ -155,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t3v7n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -204,49 +204,46 @@ _data = {
 &"takeDamage": SubResource("Animation_7cwl3")
 }
 
-[node name="NinjaNaranja" type="Node2D"]
+[node name="NinjaNaranja" type="Node2D" unique_id=1852968535]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_70mpd")
 moveSFX = ExtResource("2_fno32")
 hurtSFX = ExtResource("3_3aumt")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=707008575 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 7
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=540978620]
 position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_ddob7")
 animation = &"Puff"
 autoplay = "default"
-frame_progress = 0.731268
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2105517059]
 visible = false
 position = Vector2(-4.76837e-07, 0)
 scale = Vector2(2.5, 1.875)
 texture = ExtResource("5_itoid")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=393988308]
 shape = SubResource("RectangleShape2D_s6hlb")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["enemy"]]
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=2034222214 groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1422632225]
 shape = SubResource("RectangleShape2D_a4f3a")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-"": SubResource("AnimationLibrary_h47lw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=1678480254]
+libraries/ = SubResource("AnimationLibrary_h47lw")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1258857084]
 autostart = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1011799344]
 
-[node name="light_timer" type="Timer" parent="."]
+[node name="light_timer" type="Timer" parent="." unique_id=314111439]
 wait_time = 0.4
 autostart = true
 
