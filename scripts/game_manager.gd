@@ -53,6 +53,13 @@ func load_game() -> Dictionary:
 		
 		if error == OK:
 			var save_data = json.get_data()
+			if typeof(save_data) != TYPE_DICTIONARY:
+				print("El archivo de guardado no tiene el formato esperado.")
+				return {}
+			# Aplicamos los datos guardados. JSON devuelve los números como float, por eso int()
+			playerDamage = int(save_data.get("playerDamage", playerDamage))
+			levelNumber = int(save_data.get("levelNumber", levelNumber))
+			plasticoin = int(save_data.get("plasticoin", plasticoin))
 			print("¡Juego cargado exitosamente!")
 			return save_data
 		else:
@@ -63,3 +70,12 @@ func load_game() -> Dictionary:
 	# Retorna true si el archivo de guardado ya existe, false si no.
 func save_file_exists() -> bool:
 	return FileAccess.file_exists(SAVE_FILE_PATH)
+
+# Devuelve la escena del último descanso según las botellas (plasticoin) conseguidas.
+# Es la misma regla que usa goal.gd: "descanso" + plasticoin.
+func get_descanso_scene() -> String:
+	var path = "res://Scenes/Levels/Descansos/descanso" + str(plasticoin) + ".tscn"
+	if not ResourceLoader.exists(path):
+		printerr("No existe ", path, ", se usa descanso1")
+		path = "res://Scenes/Levels/Descansos/descanso1.tscn"
+	return path

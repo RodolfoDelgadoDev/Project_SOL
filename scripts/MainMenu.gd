@@ -82,10 +82,11 @@ func _on_TransitionAnimation_finished(animation_name: String):
 	if animation_name == "Scene_Transition_in":  # Check if the finished animation is the one we want
 		if Tutorial == true:
 			get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
+			return
 		if has_save:
+			# Cargamos levelNumber/plasticoin y volvemos al último descanso
 			GameManager.load_game()
-			var targetScene = chooseTargetScene()
-			get_tree().change_scene_to_file(targetScene)
+			get_tree().change_scene_to_file(GameManager.get_descanso_scene())
 		else:
 			GameManager.levelNumber = 1
 			GameManager.plasticoin +=1
