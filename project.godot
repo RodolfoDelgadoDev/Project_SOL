@@ -23,6 +23,7 @@ config/icon="res://art/Main Character 1 Final.png"
 
 GameManager="*res://scripts/game_manager.gd"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+DebugHotkeys="*res://scripts/debug/debug_hotkeys.gd"
 
 [display]
 

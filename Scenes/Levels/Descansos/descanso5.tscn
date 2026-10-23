@@ -544,7 +544,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -573,7 +573,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2jcdm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -637,7 +637,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61oxn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -673,7 +673,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61ypq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -709,7 +709,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7cirm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -787,7 +787,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -837,7 +837,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsx8e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1034,7 +1034,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8f1rr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1084,7 +1084,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mysr3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1129,7 +1129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_auy3r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1277,7 +1277,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -1355,7 +1355,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1815,11 +1815,12 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ea8pb")
 autoplay = "default"
 
-[node name="Olga" parent="Scene Manager/Olga2" unique_id=1215463098 instance=ExtResource("17_c2srg")]
+[node name="Olga" parent="Scene Manager/Olga2" unique_id=1215463098 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 2)
 dialogue_lines5 = Array[String](["¿Cómo te fue? El complejo se ha vuelto peligroso últimamente, ¿no?", "Lo importante es que las botel- tú estás a salvo", "Ánimos...ja ja", "¿Qué para qué sirven las botellas? Los intercambiamos por cosas lindas para acá"])
 dialogue_lines7 = Array[String](["Estábamos tan cerca, pero bueno, así son las cosas, creo", "Esperaba más de tí"])
 npc_portrait = ExtResource("18_5vca1")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
 [node name="ChicaPunk" type="AnimatedSprite2D" parent="Scene Manager" unique_id=1402400754]
@@ -1843,13 +1844,14 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7ym8g")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Nicky" unique_id=49553640 instance=ExtResource("17_c2srg")]
+[node name="NPC" parent="Scene Manager/Nicky" unique_id=49553640 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 dialogue_lines5 = Array[String](["La otra vez vi a la amiga de Olga medio sospechosa cargando unas cosas que parecía que eran para acá,", "pero jamás las vi puestas", "No sé, no quiero suponer nada, pero últimamente las cosas están medio raras aquí", "Se cuenta por ahí de la misteriosa cascada morada, ¿la llegaste a ver alguna vez?", "Dice que las luciérnagas te guían o algo así bien místico"])
 dialogue_lines6 = Array[String](["Jhon me ha contado que le llama la atención que siempre usas un casco", "dice algo sobre el aire o algo así, creo que a mí me molesta más el ruido, la verdad", "Por cierto, no quiero suponer nada, pero últimamente las cosas están medio raras aquí, ¿no lo sientes así?"])
 dialogue_lines7 = Array[String](["Se cuenta por ahí de la misteriosa cascada morada, ¿la llegaste a ver alguna vez?", "Dice que las luciérnagas te guían o algo así bien místico"])
 npc_portrait = ExtResource("25_auxy8")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
 [node name="Ver" type="AnimatedSprite2D" parent="Scene Manager" unique_id=773358683]
