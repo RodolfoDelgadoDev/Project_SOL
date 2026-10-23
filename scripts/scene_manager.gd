@@ -85,6 +85,8 @@ func chooseTargetScene():
 			7:
 				targetScene = "res://Scenes/Levels/bosque2.tscn"
 			8:
+				targetScene = "res://Scenes/cinematica.tscn"
+			9:
 				targetScene = "res://Scenes/Levels/Bossfight.tscn"
 			_:
 				targetScene = "res://Scenes/Levels/edificio.tscn"

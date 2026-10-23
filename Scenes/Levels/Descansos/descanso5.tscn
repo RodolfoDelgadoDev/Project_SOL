@@ -1818,7 +1818,7 @@ autoplay = "default"
 
 [node name="Olga" parent="Scene Manager/Olga2" unique_id=1215463098 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 2)
-dialogue_lines5 = Array[String](["¿Cómo te fue? El complejo se ha vuelto peligroso últimamente, ¿no?", "Lo importante es que las botel- tú estás a salvo", "Ánimos...ja ja", "¿Qué para qué sirven las botellas? Los intercambiamos por cosas lindas para acá"])
+dialogue_lines5 = Array[String](["¡Esperá! Antes de salir... ¿Hablaste con Wanda?", "La chica pelirroja, por si te olvidaste :P", "¿Cómo te fue? El complejo se ha vuelto peligroso últimamente, ¿no?", "Lo importante es que las botel- tú estás a salvo", "Ánimos...ja ja", "¿Qué para qué sirven las botellas? Los intercambiamos por cosas lindas para acá"])
 dialogue_lines7 = Array[String](["Estábamos tan cerca, pero bueno, así son las cosas, creo", "Esperaba más de tí"])
 npc_portrait = ExtResource("18_5vca1")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
