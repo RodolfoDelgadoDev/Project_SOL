@@ -6,31 +6,40 @@ extends Control
 @export var button_ok: Resource
 @export var button_change: Resource
 
+@export var newGameButton : Button
+@export var ContinueButton : Button
+@export var TutorialButton : Button
+@export var ExitButton : Button
+
 @export var current_lvl : PackedScene
 @export var current_bottles : int 
 var Tutorial = false
+var continue_game : bool = false
 var current_focused_button: Button = null
 var bounce_tween: Tween = null
 var first_focus : bool = true
 var has_save = GameManager.save_file_exists()
 
 func _ready():
-	# Verificamos si existe un archivo de guardado
-	if has_save:
-		# Si hay partida, habilitamos o mostramos el botón de continuar
-		$RestartButton.text = "CONTINUE"
-	else:
+	# El botón de continuar solo se muestra si hay una partida guardada
+	ContinueButton.visible = has_save
+	if not has_save:
 		print("No se encontró partida")
 	# Connect the button signals
-	$RestartButton.pressed.connect(_on_Restartbutton_pressed)
-	$ExitButton.pressed.connect(_on_Exitbutton_pressed)
-	$TutorialButton.pressed.connect(_on_TutorialButton_pressed)
+	newGameButton.pressed.connect(_on_NewGameButton_pressed)
+	ContinueButton.pressed.connect(_on_ContinueButton_pressed)
+	ExitButton.pressed.connect(_on_Exitbutton_pressed)
+	TutorialButton.pressed.connect(_on_TutorialButton_pressed)
 	animation_player.animation_finished.connect(_on_TransitionAnimation_finished)
 	# Connect focus signals
-	$RestartButton.focus_entered.connect(_on_button_focused.bind($RestartButton))
-	$ExitButton.focus_entered.connect(_on_button_focused.bind($ExitButton))
-	$TutorialButton.focus_entered.connect(_on_button_focused.bind($TutorialButton))
-	$TutorialButton.grab_focus()
+	newGameButton.focus_entered.connect(_on_button_focused.bind(newGameButton))
+	ContinueButton.focus_entered.connect(_on_button_focused.bind(ContinueButton))
+	ExitButton.focus_entered.connect(_on_button_focused.bind(ExitButton))
+	TutorialButton.focus_entered.connect(_on_button_focused.bind(TutorialButton))
+	if has_save:
+		ContinueButton.grab_focus()
+	else:
+		TutorialButton.grab_focus()
 
 func _on_button_focused(button: Button):
 	# Stop any existing bounce animation
@@ -60,7 +69,15 @@ func _start_bounce_animation():
 	bounce_tween.tween_property(current_focused_button, "position:y", original_y, 0.2)
 	
 
-func _on_Restartbutton_pressed():
+func _on_NewGameButton_pressed():
+	continue_game = false
+	_start_transition()
+
+func _on_ContinueButton_pressed():
+	continue_game = true
+	_start_transition()
+
+func _start_transition():
 	animation_player.play("Scene_Transition_in")  # Start the transition animation
 	audiobutton.stream = button_ok
 	audiobutton.play()
@@ -83,13 +100,13 @@ func _on_TransitionAnimation_finished(animation_name: String):
 		if Tutorial == true:
 			get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
 			return
-		if has_save:
+		if continue_game:
 			# Cargamos levelNumber/plasticoin y volvemos al último descanso
 			GameManager.load_game()
 			get_tree().change_scene_to_file(GameManager.get_descanso_scene())
 		else:
 			GameManager.levelNumber = 1
-			GameManager.plasticoin +=1
+			GameManager.plasticoin = 1
 			get_tree().change_scene_to_file("res://Scenes/Levels/Descansos/descanso1.tscn")
 			
 func chooseTargetScene():

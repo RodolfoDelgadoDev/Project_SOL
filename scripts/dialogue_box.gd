@@ -35,6 +35,8 @@ func _ready() -> void:
 	voice_timer.timeout.connect(_play_voice_sound)
 	text_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	text_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	# El scroll lo controlamos nosotros siguiendo el texto que ya se escribió
+	text_label.scroll_following = false
 
 func start_dialogue(lines: Array[String], portrait_texture: Texture, npc: Node, voice_res: AudioStream = null) -> void:
 	# If different NPC, completely reset dialogue
@@ -148,6 +150,7 @@ func _display_current_line() -> void:
 	# Setup text display
 	text_label.visible_ratio = 0
 	text_label.text = current_lines[current_line_index]
+	text_label.scroll_to_line(0)
 	
 	# Stop any ongoing voice sounds
 	voice_timer.stop()
@@ -164,8 +167,31 @@ func _display_current_line() -> void:
 	
 	# Animate text display
 	var typewriter_tween = create_tween()
-	typewriter_tween.tween_property(text_label, "visible_ratio", 1.0, typewriter_duration)
+	typewriter_tween.tween_method(_set_text_progress, 0.0, 1.0, typewriter_duration)
 	typewriter_tween.tween_callback(voice_timer.stop)
+
+func _set_text_progress(ratio: float) -> void:
+	text_label.visible_ratio = ratio
+	_follow_typed_text()
+
+# Mueve el scroll para que la última letra escrita siempre quede dentro de la caja
+func _follow_typed_text() -> void:
+	var typed: int = text_label.visible_characters
+	if typed < 0:
+		typed = text_label.get_total_character_count()
+	if typed <= 0:
+		return
+	var last_line: int = text_label.get_character_line(typed - 1)
+	var bottom: float
+	if last_line + 1 < text_label.get_line_count():
+		bottom = text_label.get_line_offset(last_line + 1)
+	else:
+		bottom = text_label.get_content_height()
+	# Primera línea que podemos mostrar arriba sin que la última se salga por abajo
+	var top_line: int = 0
+	while top_line < last_line and bottom - text_label.get_line_offset(top_line) > text_label.size.y:
+		top_line += 1
+	text_label.scroll_to_line(top_line)
 
 func _play_voice_sound() -> void:
 	if current_voice:
@@ -225,6 +251,7 @@ func _display_auto_line() -> void:
 	var colision = puerta.get_node("StaticBody2D/CollisionShape2D")
 	text_label.visible_ratio = 0
 	text_label.text = current_lines[current_line_index]
+	text_label.scroll_to_line(0)
 	if pablo_condicional:
 		puerta.visible = true
 		puerta.play("default")
@@ -242,7 +269,7 @@ func _display_auto_line() -> void:
 		voice_timer.start(interval)
 
 	var tweent = create_tween()
-	tweent.tween_property(text_label, "visible_ratio", 1.0, typewriter_duration)
+	tweent.tween_method(_set_text_progress, 0.0, 1.0, typewriter_duration)
 	tweent.tween_callback(voice_timer.stop)
 
 	tweent.tween_callback(func() -> void:

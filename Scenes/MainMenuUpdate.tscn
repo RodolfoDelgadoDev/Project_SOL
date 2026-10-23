@@ -202,7 +202,7 @@ offset_right = 2542.0
 offset_bottom = 81.0
 texture = ExtResource("4_udwr0")
 
-[node name="Control" type="Control" parent="." unique_id=130067398]
+[node name="Control" type="Control" parent="." unique_id=130067398 node_paths=PackedStringArray("newGameButton", "ContinueButton", "TutorialButton", "ExitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,6 +213,10 @@ tooltip_text = "ASDASDDSASDSADSDA"
 script = ExtResource("2_spgu8")
 button_ok = ExtResource("10_eq08b")
 button_change = ExtResource("8_3etqm")
+newGameButton = NodePath("VBoxContainer/NewGameButton")
+ContinueButton = NodePath("VBoxContainer/NewGameButton2")
+TutorialButton = NodePath("TutorialButton")
+ExitButton = NodePath("ExitButton")
 
 [node name="Gameovertext" type="Label" parent="Control" unique_id=916412090]
 light_mask = 0
@@ -234,19 +238,39 @@ text = "PROYECTO SOL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartButton" type="Button" parent="Control" unique_id=163224332]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = -46.0
-offset_right = 123.0
-offset_bottom = -15.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=364261718]
+layout_mode = 0
+offset_left = 34.0
+offset_top = -48.0
+offset_right = 117.0
+offset_bottom = 12.0
+
+[node name="NewGameButton2" type="Button" parent="Control/VBoxContainer" unique_id=1225338915]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+offset_transform_enabled = true
+theme_override_colors/font_focus_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/font_pressed_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/font_hover_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/font_disabled_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/font_outline_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_normal_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_focus_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_pressed_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_hover_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_colors/icon_disabled_color = Color(0.7490196, 0.33333334, 0.18431373, 1)
+theme_override_fonts/font = ExtResource("7_lvm8q")
+theme_override_font_sizes/font_size = 13
+text = "CONTINUE"
+
+[node name="NewGameButton" type="Button" parent="Control/VBoxContainer" unique_id=163224332]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
 theme_override_colors/font_focus_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/font_hover_color = Color(0, 0.635294, 0.231373, 1)
@@ -260,6 +284,7 @@ theme_override_colors/icon_hover_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0.635294, 0.231373, 1)
 theme_override_fonts/font = ExtResource("7_lvm8q")
+theme_override_font_sizes/font_size = 15
 text = "NEW GAME"
 
 [node name="TutorialButton" type="Button" parent="Control" unique_id=1723395544]
@@ -269,10 +294,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -2.0
-offset_right = 134.0
-offset_bottom = 29.0
+offset_left = 40.0
+offset_top = 14.0
+offset_right = 135.0
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.76, 0.76)
@@ -298,10 +323,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 36.0
-offset_right = 115.0
-offset_bottom = 67.0
+offset_left = 51.000004
+offset_top = 41.000004
+offset_right = 116.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.725, 0.725)
