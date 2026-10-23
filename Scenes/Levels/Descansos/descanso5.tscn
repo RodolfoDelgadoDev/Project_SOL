@@ -1742,14 +1742,15 @@ position = Vector2(-24, 99)
 scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Wanda" unique_id=1808841397 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
-position = Vector2(0, 12)
+position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-dialogue_lines5 = Array[String](["Solíamos tener un compañero que cantaba muy bien y tenía un ojo mecánico,", "lamentablemente se perdió en el bosque, nunca supimos más de él. ¿Seguirá vivo?", "¿No sientes que hay una vibra tensa últimamente o solo soy?", "¿Cómo te va con tu nueva mejora? Está increíble, ¿no?"])
+dialogue_lines5 = Array[String](["¡Hey! Qué bueno verte. Tengo algo para vos.", "Estuve trabajando en un bate nuevo para que te defiendas mejor.", "Con esto todas esas bestias y fantasmas deberían de darte menos problema.", "Esto lo hice con lo que sobró de las botellas que reciclaste.", "A ver, ¡probalo!"])
 dialogue_lines6 = Array[String](["Te veo un poco desanimado hoy, ¿todo bien?"])
 dialogue_lines7 = Array[String](["¿Te faltaron cosas? Entiendo, pero siempre puedes volver a intentarlo, lo sabes", "Ánimos, todo se aprende practicando"])
 npc_portrait = ExtResource("23_ywao4")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
+nuevo_bate = true
 
 [node name="Sleepy" parent="Scene Manager" unique_id=1173471289 instance=ExtResource("19_eykhs")]
 position = Vector2(-136, 86)
@@ -1829,13 +1830,14 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_b0vfn")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/ChicaPunk" unique_id=533935490 instance=ExtResource("17_c2srg")]
+[node name="NPC" parent="Scene Manager/ChicaPunk" unique_id=533935490 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-dialogue_lines5 = Array[String](["Por ahí dicen que Rastas dejó de trabajar de delivery porque perdió visión de un ojo y por eso siempre se va con su hermana o duerme aqu", "¿Se habrá quedado sin casa para poder pagar algo de este lugar?", "¿Héroe? Hmm, más bien medio bobo. Solo digo, eh"])
+dialogue_lines5 = Array[String](["Por ahí dicen que Rastas dejó de trabajar de delivery porque perdió visión de un ojo y por eso siempre se va con su hermana o duerme aquí", "¿Se habrá quedado sin casa para poder pagar algo de este lugar?", "¿Héroe? Hmm, más bien medio bobo. Solo digo, eh"])
 dialogue_lines6 = Array[String](["No te me acerques hoy, estoy de mal humor", "¿Cómo que siempre estoy así? BUENO, HOY ESTOY PEOR, ALÉJATE"])
 dialogue_lines7 = Array[String](["¿No crees que la familia a veces suele ser un problema?", "Les dices la solución y solo se quejan y lloran y todo eso"])
 npc_portrait = ExtResource("21_hajfj")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
 [node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager" unique_id=443667965]

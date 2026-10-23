@@ -549,7 +549,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -578,7 +578,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2jcdm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -642,7 +642,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61oxn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -790,7 +790,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -868,7 +868,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -904,7 +904,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ntrni")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -933,7 +933,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yx6dn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -969,7 +969,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7cirm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -991,7 +991,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ymob5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1027,7 +1027,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_leo5j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1063,7 +1063,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mwdaq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 4.0
 }]
@@ -1134,7 +1134,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c35ux")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 7.0
 }]
@@ -1170,7 +1170,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qm4kl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1248,7 +1248,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sy012")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 4.0
 }]
@@ -1326,7 +1326,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1376,7 +1376,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsx8e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1573,7 +1573,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8f1rr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1623,7 +1623,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tyy0n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -2301,6 +2301,7 @@ frame_progress = 0.815725
 [node name="NPC2" parent="Scene Manager/JessicaJaime" unique_id=1134873285 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("44_m7lnx")]
 position = Vector2(-2, 8)
 dialogue_lines1 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau"])
+dialogue_lines7 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", ""])
 npc_portrait1 = ExtResource("45_crnk4")
 npc_portrait2 = ExtResource("46_t7cpu")
 npc_portrait3 = ExtResource("58_rxiha")
@@ -2314,10 +2315,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_nekbt")
 autoplay = "default"
 
-[node name="Olga" parent="Scene Manager/Olga2" unique_id=386753283 instance=ExtResource("17_qbucu")]
+[node name="Olga" parent="Scene Manager/Olga2" unique_id=386753283 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
 dialogue_lines7 = Array[String](["Eres un tesoro, amiguito. Gracias por todo", "Ya puedes irte, tengo que hacer cosas", "Estoy ocupada"])
 npc_portrait = ExtResource("18_eiu76")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
 
 [node name="ChicaPunk" type="AnimatedSprite2D" parent="Scene Manager" unique_id=182817900]
@@ -2326,10 +2328,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y4n3f")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/ChicaPunk" unique_id=491293424 instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/ChicaPunk" unique_id=491293424 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines7 = Array[String](["Se dice que vendrá más gente nueva otra vez", "El chisme más potente que te voy a hacer hoy", "es que hay más de 100 diálogos en todo lo que va el jueguito"])
 npc_portrait = ExtResource("28_c6tfu")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager" unique_id=840443206]
@@ -2338,10 +2341,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kpidl")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Nicky" unique_id=225239315 instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/Nicky" unique_id=225239315 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines7 = Array[String](["¿Estos muchachos nuevos los ves sospechosos?", "Bueno, no importa, creo que me quedé con la idea desde hace días", "Por ahí se cuenta que hay una cascada muy enorme y montón de luciérnagas lindas. ¿Ya las viste?", "O capaz es puro cuento, pero espero que no lo sea, entre tanto desastre debería de ver algo lindo por ahí", "Espera, ¿No te conté esto antes? Disculpa, ando distraída"])
 npc_portrait = ExtResource("32_blg1d")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Ver" type="AnimatedSprite2D" parent="Scene Manager" unique_id=1931716817]
@@ -2350,10 +2354,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ebdbs")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Ver" unique_id=1533496851 instance=ExtResource("17_qbucu")]
+[node name="NPC" parent="Scene Manager/Ver" unique_id=1533496851 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
 dialogue_lines7 = Array[String](["El combustible de compost te sirvió? Está increíble", "Es mucho mejor que el licuado de desechos que teníamos antes, gracias a Jhon tenemos estos nuevos artilugios"])
 npc_portrait = ExtResource("37_tbqob")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="." unique_id=720122999]

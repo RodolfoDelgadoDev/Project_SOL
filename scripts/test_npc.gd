@@ -16,6 +16,11 @@ extends Node2D
 @export var sprite: Texture
 @onready var sprite2D: Sprite2D = $Sprite2D
 
+@export var nuevo_bate : bool = false
+
+# Bandera interna para saber si estábamos conversando con este NPC
+var _was_in_dialogue: bool = false
+
 func _ready():
 	sprite2D.texture = sprite
 
@@ -35,9 +40,22 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 	if area.is_in_group("weapon"):
 		var current_dialogue = get_dialogue_for_current_level()
 		if current_dialogue.size() > 0:  # Only start if there's dialogue
+			_was_in_dialogue = true
 			dialogue_manager.start_dialogue(
 				current_dialogue, 
 				npc_portrait, 
 				self, 
 				voice_sound
 			)
+
+func powerup():
+	GameManager.playerDamage = 15
+
+# Verificamos periódicamente o por frame si el diálogo se cerró para ejecutar el powerup
+func _process(_delta: float) -> void:
+	if _was_in_dialogue:
+		# Verificamos si el dialogue_manager ya ocultó la caja o cambió de NPC actual
+		if dialogue_manager.current_npc != self or not dialogue_manager.es_visible:
+			_was_in_dialogue = false
+			if nuevo_bate:
+				powerup()

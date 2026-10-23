@@ -7,6 +7,7 @@ var segundos = GameManager.Segundos + GameManager.extra_time
 @export var hp_40: Texture
 @export var hp_20: Texture
 @export var hp_dead: Texture
+@export var logo_bate : Sprite2D
 
 @onready var barra: TextureProgressBar = $TextureProgressBar
 @onready var timer: Timer = $Timer
@@ -31,6 +32,8 @@ func _ready() -> void:
 	barra.max_value = SceneManager.segundos
 	box_Sprite.texture = hp_full
 	Max_Segundos = segundos
+	if GameManager.playerDamage == 15:
+		logo_bate.visible = true
 	updateBar()
 
 func _process(_delta: float) -> void:

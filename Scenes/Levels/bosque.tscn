@@ -1307,7 +1307,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_345ns")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Open",
 "speed": 5.0
 }]
@@ -1481,7 +1481,7 @@ player_node_path = NodePath("../Scene Manager/Player")
 position = Vector2(0, 1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("5_cqmo4")
-segundos = 120
+segundos = 200
 targetScene = NodePath("res://Scenes/Levels/descanso.tscn")
 
 [node name="Traps" type="Node" parent="Scene Manager" unique_id=718864426]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dr17f502lsjeq"]
+[gd_scene format=3 uid="uid://dr17f502lsjeq"]
 
 [ext_resource type="Script" uid="uid://duaflcvt3uwx7" path="res://scripts/timer.gd" id="1_bv3en"]
 [ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="1_ks8lr"]
@@ -41,7 +41,7 @@ shader_parameter/aberration_speed = 0.0
 shader_parameter/glitch_intensity = 0.0
 shader_parameter/glitch_speed = 0.36
 
-[node name="Timer" type="Node2D"]
+[node name="Timer" type="Node2D" unique_id=2042512245 node_paths=PackedStringArray("logo_bate")]
 script = ExtResource("1_bv3en")
 hp_full = ExtResource("2_xf826")
 hp_80 = ExtResource("3_vdpys")
@@ -49,11 +49,12 @@ hp_60 = ExtResource("4_wk8mn")
 hp_40 = ExtResource("5_8826p")
 hp_20 = ExtResource("6_l70ip")
 hp_dead = ExtResource("7_0wj7n")
+logo_bate = NodePath("logo bate")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=63757486]
 autostart = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1072352146]
 material = SubResource("ShaderMaterial_vr1ie")
 offset_left = 36.0
 offset_top = 9.0
@@ -65,7 +66,7 @@ text = "X 88"
 scroll_active = false
 tab_size = 0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=670473928]
 offset_left = 36.0
 offset_right = 229.0
 offset_bottom = 40.0
@@ -74,17 +75,24 @@ value = 45.0
 texture_over = ExtResource("2_s23re")
 texture_progress = ExtResource("3_kin4v")
 
-[node name="botella" type="Sprite2D" parent="."]
+[node name="botella" type="Sprite2D" parent="." unique_id=2111935143]
 material = SubResource("ShaderMaterial_06ppk")
 position = Vector2(75, 21)
 rotation = 0.00634304
 scale = Vector2(0.589517, 0.589517)
 texture = ExtResource("13_b5ghj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=689591962]
 material = SubResource("ShaderMaterial_6q728")
 position = Vector2(15.9219, 16.9219)
 scale = Vector2(0.945772, 0.945772)
+texture = ExtResource("2_xf826")
+
+[node name="logo bate" type="Sprite2D" parent="." unique_id=602706515]
+visible = false
+material = SubResource("ShaderMaterial_6q728")
+position = Vector2(245.46095, 10.460926)
+scale = Vector2(0.6787677, 0.6787677)
 texture = ExtResource("2_xf826")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
