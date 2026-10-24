@@ -44,6 +44,10 @@ var can_attack: bool = true
 
 var can_move: bool = true
 
+# --- PowerUp (ocurre una sola vez, al hablar con Wanda en el descanso5) ---
+# Mientras dura la animación el jugador no puede moverse ni atacar
+var powering_up: bool = false
+
 func _ready():
 	# Reference the CharacterBody2D node
 	character_body = $CharacterBody2D
