@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dhrh7rux0lbbi" path="res://Scenes/Entities/black_dog.tscn" id="21_danki"]
 [ext_resource type="PackedScene" uid="uid://ct1w5208wpoup" path="res://Scenes/Entities/balloonBossFight.tscn" id="21_w7ivr"]
 [ext_resource type="PackedScene" uid="uid://segsacufkmxa" path="res://Scenes/Entities/esqleto.tscn" id="22_fv4nb"]
+[ext_resource type="AudioStream" uid="uid://kx3guhhj5c2k" path="res://SFX/boom.mp3" id="22_gc7ms"]
 [ext_resource type="PackedScene" uid="uid://dncmwk0t3feu3" path="res://Scenes/Entities/thief.tscn" id="23_tuxxp"]
 [ext_resource type="PackedScene" uid="uid://c5aibx2wdkqe0" path="res://Scenes/Entities/thief2.tscn" id="24_12qmp"]
 [ext_resource type="PackedScene" uid="uid://dmimvp0ktwiqa" path="res://Scenes/Entities/thief3.tscn" id="25_b2t3n"]
@@ -760,6 +761,7 @@ player_node_path = NodePath("../Player")
 [node name="Balloon" parent="Scene Manager" unique_id=586885661 node_paths=PackedStringArray("light_node") instance=ExtResource("21_w7ivr")]
 position = Vector2(328, 118.00001)
 scale = Vector2(0.26000002, 0.26000002)
+hurtSFX = ExtResource("22_gc7ms")
 ninja_boss = true
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
@@ -767,6 +769,7 @@ player_node_path = NodePath("../Player")
 [node name="Balloon2" parent="Scene Manager" unique_id=879959683 node_paths=PackedStringArray("light_node") instance=ExtResource("21_w7ivr")]
 position = Vector2(296, 134)
 scale = Vector2(0.26000002, 0.26000002)
+hurtSFX = ExtResource("22_gc7ms")
 ninja_boss = true
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
@@ -774,6 +777,7 @@ player_node_path = NodePath("../Player")
 [node name="Balloon3" parent="Scene Manager" unique_id=1814606875 node_paths=PackedStringArray("light_node") instance=ExtResource("21_w7ivr")]
 position = Vector2(360, 86)
 scale = Vector2(0.26000002, 0.26000002)
+hurtSFX = ExtResource("22_gc7ms")
 ninja_boss = true
 light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")

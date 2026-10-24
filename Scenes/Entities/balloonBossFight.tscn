@@ -49,22 +49,22 @@ region = Rect2(4944, 0, 824, 1080)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ddob7"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_2772r")
 }, {
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_hxfgt")
 }, {
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_qx4mh")
 }, {
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_g8tm8")
 }, {
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_72r1p")
 }, {
-"duration": 0.6,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_24383")
 }],
 "loop": 0,
@@ -149,6 +149,8 @@ scale = Vector2(0.057418086, 0.05741806)
 sprite_frames = SubResource("SpriteFrames_ddob7")
 animation = &"Puff"
 autoplay = "default"
+frame = 5
+frame_progress = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=255581832]
 visible = false

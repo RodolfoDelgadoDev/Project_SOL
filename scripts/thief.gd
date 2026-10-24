@@ -76,7 +76,9 @@ func _physics_process(delta: float):
 				if wait_timer >= wait_time:
 					start_moving()
 	else:	
-		animaton.play("Puff")
+		# play() reinicia la animación si ya terminó, así que solo la lanzamos una vez
+		if animaton.animation != "Puff":
+			animaton.play("Puff")
 
 # Check if the player is within the detection range.
 func player_distance():
@@ -209,6 +211,27 @@ func alive() -> bool:
 	return health > 0
 
 
+# Espera hasta que termine el sonido de daño o la animación Puff, lo que ocurra primero.
+# Así, si el Puff es corto (globos), las partículas no esperan al sonido completo.
+func _wait_audio_or_puff() -> void:
+	while audio_player.playing and not _puff_terminado():
+		await get_tree().process_frame
+
+
+func _puff_terminado() -> bool:
+	return animaton.animation == "Puff" and not animaton.is_playing()
+
+
+# Al morir, el enemigo deja de bloquear el paso y de recibir golpes de inmediato,
+# sin esperar a que termine el sonido o el Puff (set_deferred porque puede llamarse
+# desde una señal de física).
+func _disable_collisions() -> void:
+	character_body.set_deferred("collision_layer", 0)
+	character_body.set_deferred("collision_mask", 0)
+	hitbox.set_deferred("monitorable", false)
+	hitbox.set_deferred("monitoring", false)
+
+
 func takeDamage():
 	if health <= 0:
 		light_timer.stop()
@@ -220,18 +243,17 @@ func takeDamage():
 		animator.play("takeDamage")
 		if health <= 0:
 			light_timer.stop()
+			_disable_collisions()
 			GameManager.Segundos += 5
 			get_parent().addBottle()
-			if audio_player.playing:
-				await audio_player.finished
+			# Espera a lo que termine primero: el sonido de daño o el Puff
+			await _wait_audio_or_puff()
 			die()
 
 func die():
 	delete_lights()
 	hitbox.monitorable = false
 	hitbox.monitoring = false
-	GameManager.Segundos += 5
-	get_parent().addBottle()
 	if ninja_boss:
 		GameManager.ninja_boss +=1
 	var particle_scene = load("res://Scenes/Particles/confetti.tscn")
@@ -241,11 +263,15 @@ func die():
 	get_parent().add_child(particles_instance)
 	particles.emitting = true
 	particles.restart()
-	if audio_player.playing:
-				await audio_player.finished
 	if animaton.is_playing():
 		await animaton.animation_finished
-		queue_free()
+	else:
+		# El Puff ya terminó (globo): se oculta el último frame para que no quede colgado
+		animaton.visible = false
+	# Se espera al sonido para que no se corte al borrar al enemigo
+	if audio_player.playing:
+		await audio_player.finished
+	queue_free()
 	
 
 func _on_animated_sprite_2d_animation_finished() -> void:
