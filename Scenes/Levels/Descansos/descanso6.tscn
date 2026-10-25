@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_dpama"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_cyb3s"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_sykmf"]
-[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_hno4b"]
+[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_hno4b"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_uusvj"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_yn6tp"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_rg286"]
@@ -322,6 +322,7 @@ texture_region_size = Vector2i(32, 32)
 10:2/0 = 0
 7:4/0 = 0
 19:9/0 = 0
+19:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 19:8/0 = 0
 18:12/0 = 0
 19:12/0 = 0
@@ -366,6 +367,7 @@ texture_region_size = Vector2i(32, 32)
 9:4/0 = 0
 10:3/0 = 0
 11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -2.5490456, -16, -16, 16, -16, 16, 16, -16, 16, -16, -1.9117851)
 11:3/0 = 0
 0:14/0 = 0
 0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -545,7 +547,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -574,7 +576,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2jcdm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -638,7 +640,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61oxn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -800,7 +802,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -878,7 +880,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -900,45 +902,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61ypq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhcvq"]
-atlas = ExtResource("24_j5sga")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrnkc"]
-atlas = ExtResource("24_j5sga")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4dxg"]
-atlas = ExtResource("24_j5sga")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_il8i2"]
-atlas = ExtResource("24_j5sga")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l2d43"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rhcvq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrnkc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4dxg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_il8i2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qaf4c"]
@@ -972,7 +938,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7cirm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -994,7 +960,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ymob5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1072,7 +1038,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1122,7 +1088,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsx8e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1319,7 +1285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8f1rr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1369,9 +1335,45 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tyy0n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhcvq"]
+atlas = ExtResource("24_j5sga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrnkc"]
+atlas = ExtResource("24_j5sga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4dxg"]
+atlas = ExtResource("24_j5sga")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il8i2"]
+atlas = ExtResource("24_j5sga")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2d43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhcvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrnkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4dxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il8i2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1222691241]
@@ -1783,6 +1785,7 @@ sprite_frames = SubResource("SpriteFrames_8nr5x")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" unique_id=1794728203 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(0, -10)
 dialogue_lines6 = Array[String](["¿Ya exploraste los lugares más recónditos?", "No te olvides de los pequeños detalles, todo quedará plasmado aquí"])
 dialogue_lines7 = Array[String](["Buen trabajo, coli", "¿Te gustaron los dibujos?"])
 npc_portrait = ExtResource("22_vralp")
@@ -1794,20 +1797,6 @@ position = Vector2(88, -26)
 scale = Vector2(0.25, 0.25)
 attackSFX = null
 hurtSFX = null
-
-[node name="Henrry" type="AnimatedSprite2D" parent="Scene Manager" unique_id=412769122]
-position = Vector2(-212, 49)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_l2d43")
-autoplay = "default"
-
-[node name="NPC" parent="Scene Manager/Henrry" unique_id=2002325553 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
-position = Vector2(0, 6)
-dialogue_lines6 = Array[String]([" Soy una persona simple, veo un gato y lo adopto", "Soy delivery, pero mi misión, en realidad, es rescatar a los gatos de los monstruos de allá afuera", "¿Ya conociste a mi amigo Jhon? Capaz te da un buen consejo algún día", "Sé que conoces a Mackuin, me habló de ti, que andas a otro nivel. Te daré un consejo:", "Si ves que algo te tira unos rayos rojos, corre, corre muy lejos", "Es una bestia enorme, no pude vencerla", "Ahora ya sabes por qué uso estos lentes lindos", "Suerte"])
-dialogue_lines7 = Array[String](["¿Viste a la bestia? Te pega un susto que quedas bien loco, qué miedo", "¿QUÉ? ¿LO VISTE?", "Eres un pro, Coli, sobreviviste sin un rasguño", "Hasta el gato se sorprendió", "*Miau*"])
-npc_portrait = ExtResource("25_8y8dy")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_8d5ik")
 
 [node name="Olivia" parent="Scene Manager" unique_id=1652801377 instance=ExtResource("19_oo3ft")]
 position = Vector2(42, -74)
@@ -1943,7 +1932,7 @@ voice_sound = ExtResource("19_8d5ik")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="." unique_id=1194310098]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD9/wQAAQAFAAIAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAP//AQASABAAAAAEAAAAAQASABEAAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD2/wQAAQAGAAgAAAD2/wMAAQAGAAgAAAD2/wIAAQAAAAcAAAA=")
+tile_map_data = PackedByteArray("AADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD9/wQAAQAFAAIAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAP//AQASABAAAAAEAAAAAQASABEAAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD2/wQAAQAGAAgAAAD2/wMAAQAGAAgAAAD2/wIAAQAAAAcAAADy/wIAAQAOAAAAAADz/wIAAQAPAAAAAADx/wIAAQASAAAAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1967,6 +1956,20 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AADx//3/AQATAAMAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
+
+[node name="Henrry" type="AnimatedSprite2D" parent="." unique_id=412769122]
+position = Vector2(-212, 51)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_l2d43")
+autoplay = "default"
+
+[node name="NPC" parent="Henrry" unique_id=2002325553 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
+position = Vector2(-2, 10)
+dialogue_lines6 = Array[String]([" Soy una persona simple, veo un gato y lo adopto", "Soy delivery, pero mi misión, en realidad, es rescatar a los gatos de los monstruos de allá afuera", "¿Ya conociste a mi amigo Jhon? Capaz te da un buen consejo algún día", "Sé que conoces a Mackuin, me habló de ti, que andas a otro nivel. Te daré un consejo:", "Si ves que algo te tira unos rayos rojos, corre, corre muy lejos", "Es una bestia enorme, no pude vencerla", "Ahora ya sabes por qué uso estos lentes lindos", "Suerte"])
+dialogue_lines7 = Array[String](["¿Viste a la bestia? Te pega un susto que quedas bien loco, qué miedo", "¿QUÉ? ¿LO VISTE?", "Eres un pro, Coli, sobreviviste sin un rasguño", "Hasta el gato se sorprendió", "*Miau*"])
+npc_portrait = ExtResource("25_8y8dy")
+dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_8d5ik")
 
 [node name="SeccionTop5" type="Node2D" parent="." unique_id=2141467977]
 

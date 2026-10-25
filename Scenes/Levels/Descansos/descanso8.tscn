@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="4_dn7yt"]
 [ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="5_ph7xw"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="6_teq0q"]
-[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="7_v6cr2"]
+[ext_resource type="Shader" uid="uid://7nt20jv0f41w" path="res://ghost.gdshader" id="7_v6cr2"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="8_0i3wa"]
 [ext_resource type="Texture2D" uid="uid://cwmhyg6krbr26" path="res://art/fogtexture.png" id="8_sxcka"]
 [ext_resource type="AudioStream" uid="uid://bhv4rd1p88xr4" path="res://Music/descanso_creepy.mp3" id="9_vfu7c"]
@@ -326,14 +326,18 @@ texture_region_size = Vector2i(32, 32)
 7:14/0 = 0
 6:14/0 = 0
 8:15/0 = 0
+8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 8:14/0 = 0
 9:15/0 = 0
 9:14/0 = 0
 11:15/0 = 0
 11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 11:14/0 = 0
+11:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 12:14/0 = 0
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 13:14/0 = 0
 13:15/0 = 0
 13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -360,18 +364,23 @@ texture_region_size = Vector2i(32, 32)
 17:16/0 = 0
 17:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 18:15/0 = 0
+18:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 19:15/0 = 0
+19:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 19:14/0 = 0
 18:14/0 = 0
 9:16/0 = 0
 8:16/0 = 0
 17:7/0 = 0
+17:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 17:6/0 = 0
 18:6/0 = 0
 18:7/0 = 0
 15:7/0 = 0
 14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 17:9/0 = 0
 18:10/0 = 0
 19:10/0 = 0
@@ -402,11 +411,15 @@ texture_region_size = Vector2i(32, 32)
 6:16/0 = 0
 6:5/0 = 0
 2:19/0 = 0
+2:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 3:19/0 = 0
+3:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 4:19/0 = 0
+4:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 10:16/0 = 0
 11:16/0 = 0
 12:16/0 = 0
+12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 13:17/0 = 0
 14:17/0 = 0
 14:18/0 = 0
