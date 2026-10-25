@@ -18,6 +18,7 @@ var tween: Tween = null
 var bottleNum: int = 0
 var bottleTotal: int
 var allBottles: bool = false
+var powerupUsado : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -201,3 +202,7 @@ func _remove_pause_scene():
 	if pause_scene_instance:
 		pause_scene_instance.queue_free()
 		pause_scene_instance = null
+		
+func powerup():
+	if powerupUsado == false:
+		Player.animaton.play("PowerUp")

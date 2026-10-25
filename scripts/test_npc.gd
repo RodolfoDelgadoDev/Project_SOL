@@ -50,6 +50,8 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 
 func powerup():
 	GameManager.playerDamage = 15
+	var SceneManager = self.get_parent().get_parent()
+	SceneManager.powerup()
 
 # Verificamos periódicamente o por frame si el diálogo se cerró para ejecutar el powerup
 func _process(_delta: float) -> void:

@@ -1587,6 +1587,8 @@ texture = SubResource("GradientTexture2D_xj6sn")
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_dltfv")
 animation = &"PowerUp"
+frame = 46
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1825857638]
 zoom = Vector2(1.5, 1.5)
