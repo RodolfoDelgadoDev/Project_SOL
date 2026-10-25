@@ -3,8 +3,10 @@ extends Node2D
 @export var animaciones : Array[AnimatedSprite2D]
 var index_anim = 0
 var esperando_input = false
+@export var popup : ColorRect
 
 func _ready() -> void:
+	popup.appear()
 	avanzar()
 
 func _input(event: InputEvent) -> void:

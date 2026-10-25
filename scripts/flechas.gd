@@ -10,7 +10,7 @@ extends ColorRect
 # State
 var target_position: Vector2
 var tween: Tween
-var is_visible: bool = false
+var is_visible : bool = false
 
 func _ready():
 	target_position = position

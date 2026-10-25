@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bkruuba4167c" path="res://art/cinematica/Coli Device.png" id="1_aegrg"]
 [ext_resource type="Script" uid="uid://fmvu5isv2uf1" path="res://Scenes/cinematica.gd" id="1_jgs6b"]
+[ext_resource type="Script" uid="uid://bulht4qi8pje6" path="res://scripts/flechas.gd" id="3_4hv28"]
 [ext_resource type="Texture2D" uid="uid://bf711geua8r35" path="res://art/cinematica/Cinematic Rastas 1.png" id="3_jgs6b"]
+[ext_resource type="Texture2D" uid="uid://72molumf43rx" path="res://art/barra.png" id="4_dk0fy"]
 [ext_resource type="Texture2D" uid="uid://bpokgwv0kddf5" path="res://art/cinematica/Cinematic Wanda 1.png" id="4_jgs6b"]
+[ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="5_hn2s7"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="5_u8x87"]
-[ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="6_6v0ev"]
+[ext_resource type="PackedScene" uid="uid://dusqepmu52cyw" path="res://Scenes/dialogue_box_transparente.tscn" id="7_4hv28"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuk0u"]
 atlas = ExtResource("1_aegrg")
@@ -134,6 +137,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvrcj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av0lp"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8x87"]
 atlas = ExtResource("3_jgs6b")
 region = Rect2(0, 0, 1308, 900)
@@ -202,6 +209,74 @@ region = Rect2(19620, 0, 1308, 900)
 atlas = ExtResource("3_jgs6b")
 region = Rect2(20928, 0, 1308, 900)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gosdt"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(0, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17sn"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(1308, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8hxd"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(2616, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0mt7"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(3924, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c1p5"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(5232, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22inv"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(6540, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgrvm"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(7848, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6hl6"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(9156, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3udl"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(10464, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfa8w"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(11772, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63bo"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(13080, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jl6j"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(14388, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx8k8"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(15696, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ly3w"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(17004, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn3ur"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(18312, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueqyj"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(19620, 0, 1308, 900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snh3y"]
+atlas = ExtResource("3_jgs6b")
+region = Rect2(20928, 0, 1308, 900)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8w0r3"]
 animations = [{
 "frames": [{
@@ -255,6 +330,57 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bxkw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gosdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h17sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8hxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0mt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c1p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22inv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgrvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6hl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3udl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfa8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i63bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jl6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx8k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ly3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn3ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueqyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snh3y")
 }],
 "loop": 1,
 "name": &"default",
@@ -388,9 +514,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=370825195 node_paths=PackedStringArray("animaciones")]
+[node name="Node2D" type="Node2D" unique_id=370825195 node_paths=PackedStringArray("animaciones", "popup")]
 script = ExtResource("1_jgs6b")
-animaciones = [NodePath("CanvasLayer/device"), NodePath("CanvasLayer/rastas"), NodePath("CanvasLayer/wanda")]
+animaciones = [NodePath("CanvasLayer/device"), NodePath("CanvasLayer/wanda"), NodePath("CanvasLayer/rastas")]
+popup = NodePath("CanvasLayer/device/barra")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1261580960]
 
@@ -408,21 +535,69 @@ position = Vector2(143.67638, 81.5)
 scale = Vector2(0.24850088, 0.23676471)
 sprite_frames = SubResource("SpriteFrames_teq2u")
 
+[node name="DialogueBox" parent="CanvasLayer/device" unique_id=1721211756 instance=ExtResource("7_4hv28")]
+visible = false
+position = Vector2(-10.616211, 282.8629)
+scale = Vector2(4.6249995, 4.6249995)
+dialogue_lines = Array[String](["hola"])
+
+[node name="barra" type="ColorRect" parent="CanvasLayer/device" unique_id=435470059]
+self_modulate = Color(1, 1, 1, 0.733333)
+material = SubResource("ShaderMaterial_lvrcj")
+offset_left = 53.616005
+offset_top = 145.7143
+offset_right = 210.616
+offset_bottom = 183.7143
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_4hv28")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/device/barra" unique_id=2017495414]
+layout_mode = 0
+offset_left = 310.54645
+offset_top = 54.279495
+offset_right = 507.53534
+offset_bottom = 91.00624
+texture = ExtResource("4_dk0fy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/device/barra" unique_id=85453796]
+material = SubResource("ShaderMaterial_av0lp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.863342
+offset_right = 306.46338
+offset_bottom = 83.85712
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hn2s7")
+theme_override_font_sizes/font_size = 48
+text = "Usa la barra para
+interactuar"
+vertical_alignment = 1
+
 [node name="rastas" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1100781156]
 visible = false
-position = Vector2(143.67638, 81.5)
-scale = Vector2(0.24850088, 0.23676471)
+position = Vector2(164, 81.22794)
+scale = Vector2(0.18839078, 0.17949349)
 sprite_frames = SubResource("SpriteFrames_8w0r3")
-frame = 16
-frame_progress = 1.0
+frame_progress = 0.5067505
+
+[node name="DialogueBox" parent="CanvasLayer/rastas" unique_id=163539625 instance=ExtResource("7_4hv28")]
+position = Vector2(-10.616238, 282.86295)
+scale = Vector2(4.625, 4.625)
+dialogue_lines = Array[String](["hola"])
 
 [node name="wanda" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1417818878]
 visible = false
-position = Vector2(144.26073, 81)
-scale = Vector2(0.24868388, 0.23823531)
+position = Vector2(164.54265, 81.698524)
+scale = Vector2(0.188, 0.179)
 sprite_frames = SubResource("SpriteFrames_l4xgv")
 
-[node name="Scene_Transition" parent="CanvasLayer" unique_id=1800279402 instance=ExtResource("5_u8x87")]
+[node name="DialogueBox" parent="CanvasLayer/wanda" unique_id=1455479767 instance=ExtResource("7_4hv28")]
+position = Vector2(-10.616238, 282.86295)
+scale = Vector2(4.625, 4.625)
+dialogue_lines = Array[String](["pruea", "prueba prueba"])
 
-[node name="DialogueBox" parent="CanvasLayer" unique_id=854833769 instance=ExtResource("6_6v0ev")]
-visible = true
+[node name="Scene_Transition" parent="CanvasLayer" unique_id=1800279402 instance=ExtResource("5_u8x87")]
