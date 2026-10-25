@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dusqepmu52cyw"]
 
 [ext_resource type="Script" uid="uid://b71qjba2gmal4" path="res://Scenes/dialogue_box_transparente.gd" id="1_rpi76"]
+[ext_resource type="AudioStream" uid="uid://de7wj5gqp4rup" path="res://SFX/NPC_Voice4.mp3" id="2_1vqvi"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="3_1vqvi"]
+[ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="3_68so2"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="4_68so2"]
+[ext_resource type="AudioStream" uid="uid://cmha2ty7mn0bw" path="res://SFX/NPC_Voice3.mp3" id="4_jcoqk"]
+[ext_resource type="AudioStream" uid="uid://b6r4combydyxl" path="res://SFX/pause.mp3" id="5_68so2"]
 
 [sub_resource type="Theme" id="Theme_6rhx5"]
 default_font = ExtResource("3_1vqvi")
@@ -10,6 +14,10 @@ default_font_size = 15
 
 [node name="DialogueBox" type="Node2D" unique_id=1721211756 node_paths=PackedStringArray("text_label", "voice_player")]
 script = ExtResource("1_rpi76")
+voces_coli = Array[AudioStream]([ExtResource("2_1vqvi")])
+voces_wanda = Array[AudioStream]([ExtResource("3_68so2")])
+voces_rastas = Array[AudioStream]([ExtResource("4_jcoqk")])
+sfx = Array[AudioStream]([ExtResource("5_68so2")])
 text_label = NodePath("Background/Text")
 voice_player = NodePath("VoicePlayer")
 

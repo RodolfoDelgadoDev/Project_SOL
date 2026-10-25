@@ -7,13 +7,6 @@ extends Node2D
 @onready var scene_manager: Node = get_parent().get_parent()
 @onready var animatic_sprite: AnimatedSprite2D = null
 
-@export_group("Cinemática")
-## Líneas que dice este personaje en la cinemática. cinematica.gd las muestra una por una.
-@export var cinematic_lines: Array[String] = []
-## Voz opcional para el sonido mientras se escribe el texto.
-@export var cinematic_voice: AudioStream
-@export_group("")
-
 var pause_frames := [10, 22, 34, 49, 65, 76]
 var is_waiting_for_frame := false
 

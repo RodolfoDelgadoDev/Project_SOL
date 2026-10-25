@@ -10,6 +10,7 @@ extends ColorRect
 # State
 var target_position: Vector2
 var tween: Tween
+@warning_ignore_start("shadowed_variable_base_class")
 var is_visible : bool = false
 
 func _ready():

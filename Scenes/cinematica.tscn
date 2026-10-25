@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="5_hn2s7"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="5_u8x87"]
 [ext_resource type="PackedScene" uid="uid://dusqepmu52cyw" path="res://Scenes/dialogue_box_transparente.tscn" id="7_4hv28"]
+[ext_resource type="AudioStream" uid="uid://bw21okrgei63t" path="res://SFX/NPC_Voice1.mp3" id="8_dk0fy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuk0u"]
 atlas = ExtResource("1_aegrg")
@@ -539,7 +540,7 @@ sprite_frames = SubResource("SpriteFrames_teq2u")
 visible = false
 position = Vector2(-10.616211, 282.8629)
 scale = Vector2(4.6249995, 4.6249995)
-dialogue_lines = Array[String](["hola"])
+dialogue_lines = Array[String](["[sfx] beep!"])
 
 [node name="barra" type="ColorRect" parent="CanvasLayer/device" unique_id=435470059]
 self_modulate = Color(1, 1, 1, 0.733333)
@@ -587,7 +588,8 @@ frame_progress = 0.5067505
 [node name="DialogueBox" parent="CanvasLayer/rastas" unique_id=163539625 instance=ExtResource("7_4hv28")]
 position = Vector2(-10.616238, 282.86295)
 scale = Vector2(4.625, 4.625)
-dialogue_lines = Array[String](["hola"])
+dialogue_lines = Array[String](["[rastas]Coli. Escucha con atención: Esas plantas que hablas son generadores. Debes estar pendiente con---", "[sfx] beep!"])
+voice = ExtResource("8_dk0fy")
 
 [node name="wanda" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1417818878]
 visible = false
@@ -598,6 +600,6 @@ sprite_frames = SubResource("SpriteFrames_l4xgv")
 [node name="DialogueBox" parent="CanvasLayer/wanda" unique_id=1455479767 instance=ExtResource("7_4hv28")]
 position = Vector2(-10.616238, 282.86295)
 scale = Vector2(4.625, 4.625)
-dialogue_lines = Array[String](["pruea", "prueba prueba"])
+dialogue_lines = Array[String](["[Wanda]¿¡Coli¡? ¡¡Coli!! ¿Me escuchas?", "[Coli] !!!", "[Wanda]Estamos encerrados en el depósito del Proyecto sol. Olga nos tendió una trampa a todos.Sé que estabas por llegar, pero aquí no te veo.", "[Coli]¿...?", "[Wanda]...¿Dimensión paralela? ¿Con...un cerdo? ¿Y plantas eléctricas?...Si no fueras Coli, diría que estás en un viaje extraño...", "...", "Espera.", "[sfx] beep!"])
 
 [node name="Scene_Transition" parent="CanvasLayer" unique_id=1800279402 instance=ExtResource("5_u8x87")]
