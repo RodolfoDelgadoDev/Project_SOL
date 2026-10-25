@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1o32rtpuv36b"
-path="res://.godot/imported/Cinematic W & Coli.png-3fb6306a12bad6320a8babc7f1577c06.ctex"
+uid="uid://bf711geua8r35"
+path="res://.godot/imported/Cinematic Rastas 1.png-eac095aa445c18c284bf59144a7eedeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cinematica/Cinematic W & Coli.png"
-dest_files=["res://.godot/imported/Cinematic W & Coli.png-3fb6306a12bad6320a8babc7f1577c06.ctex"]
+source_file="res://art/cinematica/Cinematic Rastas 1.png"
+dest_files=["res://.godot/imported/Cinematic Rastas 1.png-eac095aa445c18c284bf59144a7eedeb.ctex"]
 
 [params]
 
