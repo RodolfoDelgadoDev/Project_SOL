@@ -89,6 +89,8 @@ func chooseTargetScene():
 				targetScene = "res://Scenes/cinematica.tscn"
 			9:
 				targetScene = "res://Scenes/Levels/Bossfight.tscn"
+			10: 
+				targetScene = "res://Scenes/credits.tscn"
 			_:
 				targetScene = "res://Scenes/Levels/edificio.tscn"
 				printerr("Unexpected level number, defaulting to level 1")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dusqepmu52cyw"]
 
-[ext_resource type="Script" uid="uid://b71qjba2gmal4" path="res://Scenes/dialogue_box_transparente.gd" id="1_rpi76"]
+[ext_resource type="Script" uid="uid://b71qjba2gmal4" path="res://scripts/dialogue_box_transparente.gd" id="1_rpi76"]
 [ext_resource type="AudioStream" uid="uid://de7wj5gqp4rup" path="res://SFX/NPC_Voice4.mp3" id="2_1vqvi"]
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="3_1vqvi"]
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="3_68so2"]

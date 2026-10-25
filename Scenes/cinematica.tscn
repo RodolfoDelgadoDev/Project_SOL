@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://n8johv78v5gi"]
 
 [ext_resource type="Texture2D" uid="uid://bkruuba4167c" path="res://art/cinematica/Coli Device.png" id="1_aegrg"]
-[ext_resource type="Script" uid="uid://fmvu5isv2uf1" path="res://Scenes/cinematica.gd" id="1_jgs6b"]
+[ext_resource type="Script" uid="uid://fmvu5isv2uf1" path="res://scripts/cinematica.gd" id="1_jgs6b"]
 [ext_resource type="Script" uid="uid://bulht4qi8pje6" path="res://scripts/flechas.gd" id="3_4hv28"]
 [ext_resource type="Texture2D" uid="uid://bf711geua8r35" path="res://art/cinematica/Cinematic Rastas 1.png" id="3_jgs6b"]
 [ext_resource type="Texture2D" uid="uid://72molumf43rx" path="res://art/barra.png" id="4_dk0fy"]
