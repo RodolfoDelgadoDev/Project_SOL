@@ -534,7 +534,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -563,7 +563,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ssmjx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -613,7 +613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mysr3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -705,7 +705,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -727,7 +727,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61ypq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -772,7 +772,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_auy3r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -920,7 +920,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -998,12 +998,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=504189704]
+[node name="Node2D2" type="Node2D" unique_id=504189704]
 position = Vector2(21, 124)
 
 [node name="Piso" type="TileMapLayer" parent="." unique_id=1694029800]
@@ -1274,7 +1274,7 @@ dialogue_lines3 = Array[String](["Un detalle acá... Y otro acá...", "¿Crees q
 dialogue_lines4 = Array[String](["Ahh, hoy estoy cansado. Muchas ganas, pero poco material", "La pintura cada vez escasea más.", "Hoy NO estoy inspirado"])
 dialogue_lines5 = Array[String](["Hoy trabajando con las uñas, pero ahí vamos", "Silencio, estoy inspirado"])
 dialogue_lines6 = Array[String](["La pintura se esfumó, no queda nada", "Estoy tratando de al menos bocetar con lápiz", ":'c"])
-dialogue_lines7 = Array[String](["Tengo bloqueo artístico", "No, hoy no estoy inspirado >:c, ya eso no existe en mí"])
+dialogue_lines7 = Array[String](["Tengo bloqueo artístico", "No, hoy no estoy inspirado >:c, ya eso no existe en mí.", "Me retiro"])
 npc_portrait = ExtResource("16_hv30d")
 dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_0f7ib")
