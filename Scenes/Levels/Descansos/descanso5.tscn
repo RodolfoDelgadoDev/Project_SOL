@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_ecyef"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_taxi3"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_vwsgi"]
-[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_oddae"]
+[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_oddae"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_cf4i4"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_tgnsq"]
 [ext_resource type="Texture2D" uid="uid://di887xjb5oe7r" path="res://art/Spider.png" id="6_mx7l4"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="34_2isrv"]
 [ext_resource type="Texture2D" uid="uid://idl4t2quk7fj" path="res://art/NPCs/Punk gurl/PUNK-NPCs estáticos-sheet.png" id="36_ns50m"]
 [ext_resource type="Texture2D" uid="uid://dvqycf46t80qg" path="res://art/NPCs/Nicky/Nicky-NPCs animation (1).png" id="38_wejcv"]
+[ext_resource type="Texture2D" uid="uid://dy5dxxfi7ohgi" path="res://art/NPCs/Wanda/Wanda Standing.png" id="40_phmiq"]
 [ext_resource type="Texture2D" uid="uid://clw625i2fj2ui" path="res://art/NPCs/Ver/NPC - Vero - Animation.png" id="40_vlaed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rw5a"]
@@ -657,6 +658,77 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 1)
 metadata/_snap_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lopf"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkm4"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w255"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pclei"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6en3y"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn6qk"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1st5"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eywmh"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hclt3"]
+atlas = ExtResource("40_phmiq")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6w1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lopf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w255")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pclei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6en3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn6qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1st5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eywmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hclt3")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et0de"]
 atlas = ExtResource("25_ljwmo")
@@ -1739,12 +1811,13 @@ npc_portrait = ExtResource("20_ksgnn")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
-[node name="Wanda" parent="Scene Manager" unique_id=1286331418 instance=ExtResource("14_nh3da")]
-position = Vector2(-24, 99)
+[node name="Wanda" type="AnimatedSprite2D" parent="Scene Manager" unique_id=7009422]
+position = Vector2(40, -27)
 scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_v6w1j")
 
 [node name="NPC" parent="Scene Manager/Wanda" unique_id=1808841397 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
-position = Vector2(0, 6)
+position = Vector2(-2, 2)
 dialogue_lines1 = Array[String]([""])
 dialogue_lines5 = Array[String](["¡Hey! Qué bueno verte. Tengo algo para tí.", "Estuve trabajando en algo nuevo para que te defiendas mejor.", "Con esto todas esas bestias y fantasmas deberían de darte menos problema.", "Esto lo hice con cosas que he conseguido en mis viajes.", "A ver, ¡pruébalo!"])
 dialogue_lines6 = Array[String](["Te veo un poco desanimado hoy, ¿todo bien?"])
@@ -1877,7 +1950,7 @@ voice_sound = ExtResource("19_obdyb")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="." unique_id=1701383507]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD5//r/AQAGABEAAAD6//r/AQAFABMAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAAUAAQAFAAwAABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQATABAAAAACAP//AQATABEAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAQAAAAcAAAD2/wMAAQAGAAgAAAD2/wQAAQAGAAgAAADx/wYAAQACAAkAAADy/wYAAQADAAkAAADz/wYAAQADAAkAAAD0/wYAAQADAAkAAAD1/wYAAQABAAwAAAD1/wcAAQACAA0AAAD2/wUAAQAGAAgAAAD2/wYAAQAHAAgAAAD9/wQAAQAFAAIAAAD//wYAAQAHAAgAAAACAAMAAQAHAAMAAAD9//7/AQADAAgAAAABAP7/AQAIAAgAAAAAAAYAAQAQAAIAAAD8/wMAAQAGAAMAAAD9/wMAAQAGAAIAAAD+/wMAAQAGAAIAAAD//wMAAQAGAAIAAAAAAAMAAQAGAAIAAAABAAMAAQAGAAIAAAD5//r/AQAGABEAAAD6//r/AQAFABMAAAABAAAAAQAIABAAAAD9/wAAAQAJABAAAAD9/wUAAQASABAAAAD9/wYAAQASABEAAAD4/wUAAQAFAAwAAAD4/wYAAQAFAA0AAAAEAAUAAQAFAAwAABAEAAYAAQAFAA0AABAEAP//AQASABAAAAAEAAAAAQASABEAAAACAP7/AQAJABIAABACAP//AQAJABMAABA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
@@ -1886,6 +1959,12 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD2/wIAAQAGAAMAAAABAAAAAQAJAA8AAAD9/wAAAQAJAA8AAAD9////AQAJAA4AAAABAP//AQAJAA4AAAD+//7/AQAGAAIAAAD///7/AQAGAAIAAAAAAP7/AQAGAAIAAAA=")
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
+
+[node name="WandaV2" parent="." unique_id=770144846 instance=ExtResource("14_nh3da")]
+visible = false
+position = Vector2(42, -14)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
 
 [node name="SeccionTop5" type="Node2D" parent="." unique_id=351218835]
 position = Vector2(0, 1)
