@@ -41,6 +41,10 @@ movie_writer/movie_file="F:/boss_test.avi"
 movie_writer/disable_vsync=true
 movie_writer/mjpeg_quality=0.1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
+
 [global_group]
 
 player="Part of the player class"
