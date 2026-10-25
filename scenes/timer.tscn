@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="8_3km0l"]
 [ext_resource type="Shader" uid="uid://b1j1wfao6dejf" path="res://chromaShader.gdshader" id="12_024b7"]
 [ext_resource type="Texture2D" uid="uid://dvvkdjv557x1w" path="res://art/botella.png" id="13_b5ghj"]
+[ext_resource type="Texture2D" uid="uid://b7cm47su3yf4" path="res://art/UI/Bate UI/Bate nuevo 5.png" id="14_s1orw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1ie"]
 shader = ExtResource("1_ks8lr")
@@ -90,9 +91,9 @@ texture = ExtResource("2_xf826")
 
 [node name="logo bate" type="Sprite2D" parent="." unique_id=602706515]
 visible = false
-material = SubResource("ShaderMaterial_6q728")
-position = Vector2(245.46095, 10.460926)
-scale = Vector2(0.6787677, 0.6787677)
-texture = ExtResource("2_xf826")
+position = Vector2(86.00001, 19)
+rotation = -0.00036583608
+scale = Vector2(0.4960899, 0.49608994)
+texture = ExtResource("14_s1orw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
