@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://fmvu5isv2uf1" path="res://Scenes/cinematica.gd" id="1_jgs6b"]
 [ext_resource type="Texture2D" uid="uid://bf711geua8r35" path="res://art/cinematica/Cinematic Rastas 1.png" id="3_jgs6b"]
 [ext_resource type="Texture2D" uid="uid://bpokgwv0kddf5" path="res://art/cinematica/Cinematic Wanda 1.png" id="4_jgs6b"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="5_u8x87"]
+[ext_resource type="PackedScene" uid="uid://banb12bfkt7u1" path="res://Scenes/dialogue_box.tscn" id="6_6v0ev"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuk0u"]
 atlas = ExtResource("1_aegrg")
@@ -407,6 +409,7 @@ scale = Vector2(0.24850088, 0.23676471)
 sprite_frames = SubResource("SpriteFrames_teq2u")
 
 [node name="rastas" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1100781156]
+visible = false
 position = Vector2(143.67638, 81.5)
 scale = Vector2(0.24850088, 0.23676471)
 sprite_frames = SubResource("SpriteFrames_8w0r3")
@@ -418,3 +421,8 @@ visible = false
 position = Vector2(144.26073, 81)
 scale = Vector2(0.24868388, 0.23823531)
 sprite_frames = SubResource("SpriteFrames_l4xgv")
+
+[node name="Scene_Transition" parent="CanvasLayer" unique_id=1800279402 instance=ExtResource("5_u8x87")]
+
+[node name="DialogueBox" parent="CanvasLayer" unique_id=854833769 instance=ExtResource("6_6v0ev")]
+visible = true

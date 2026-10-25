@@ -1362,7 +1362,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1803170600]
+[node name="Node2D2" type="Node2D" unique_id=1803170600]
 position = Vector2(21, 124)
 
 [node name="Piso" type="TileMapLayer" parent="." unique_id=191082241]
@@ -1864,7 +1864,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gbmyb")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Ver" unique_id=1643374419 instance=ExtResource("17_c2srg")]
+[node name="NPC" parent="Scene Manager/Ver" unique_id=1643374419 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(-4, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 dialogue_lines3 = Array[String](["¡¡¡He vuelto !!!", "Me extrañaste?", "Hay menos arañas verdad, ¿¡VERDAD!?", "¡¡Que pedo!! hay arañas en ese cuarto o.0"])
@@ -1872,6 +1872,7 @@ dialogue_lines5 = Array[String](["¿Hmm? ¿Quieres saber más de la historia?", 
 dialogue_lines6 = Array[String](["¿Te gusta el nombre Proyecto Sol? Mi hermano lo hizo así, dice que representa un nuevo amanecer", "Espero que haya algo así muy pronto, un \"nuevo amanecer\""])
 dialogue_lines7 = Array[String](["¿Qué opinas, Coli, entonces esto se acabó sin dejar nada más?", "Yahir se fue dejando el mural incompleto, estoy un poco triste porque no siempre lo veo así"])
 npc_portrait = ExtResource("28_w4bgj")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_obdyb")
 
 [node name="Obstaculos2" type="TileMapLayer" parent="." unique_id=1701383507]

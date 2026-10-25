@@ -15,6 +15,7 @@ var current_line_index: int = 0
 var es_visible: bool = false
 var current_npc: Node = null
 var tween: Tween
+var typewriter_tween: Tween
 var original_y: float
 var voice_timer: Timer
 var current_voice: AudioStream
@@ -166,9 +167,17 @@ func _display_current_line() -> void:
 		voice_timer.start(interval)
 	
 	# Animate text display
-	var typewriter_tween = create_tween()
-	typewriter_tween.tween_method(_set_text_progress, 0.0, 1.0, typewriter_duration)
+	_start_typewriter(typewriter_duration)
+
+# Un solo efecto de escritura a la vez. Si el de la línea anterior seguía vivo,
+# pisaba visible_ratio del texto nuevo y además paraba el sonido de voz al terminar.
+func _start_typewriter(duration: float) -> Tween:
+	if typewriter_tween and typewriter_tween.is_valid():
+		typewriter_tween.kill()
+	typewriter_tween = create_tween()
+	typewriter_tween.tween_method(_set_text_progress, 0.0, 1.0, duration)
 	typewriter_tween.tween_callback(voice_timer.stop)
+	return typewriter_tween
 
 func _set_text_progress(ratio: float) -> void:
 	text_label.visible_ratio = ratio
@@ -268,9 +277,7 @@ func _display_auto_line() -> void:
 		var interval = max(0.1, typewriter_duration / line_length)
 		voice_timer.start(interval)
 
-	var tweent = create_tween()
-	tweent.tween_method(_set_text_progress, 0.0, 1.0, typewriter_duration)
-	tweent.tween_callback(voice_timer.stop)
+	var tweent = _start_typewriter(typewriter_duration)
 
 	tweent.tween_callback(func() -> void:
 		await get_tree().create_timer(1.2).timeout
