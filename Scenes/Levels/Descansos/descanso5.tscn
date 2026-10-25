@@ -1422,7 +1422,7 @@ autoplay = "default"
 [node name="NPC" parent="Seccion1/Juanito" unique_id=1590644802 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-dialogue_lines5 = Array[String](["Buenas, estimado ¿Cafecito?", "No... ¿Si era cierto el rumor de los ladrones?", "¿Y qué hiciste?", "Hmm...no me sorprende, tienes garra para esto.", "Y como ves, el barrio te respalda también, ja ja. Vos solo avisa."])
+dialogue_lines5 = Array[String](["Buenas, estimado ¿Cafecito? Wanda me dijo que quería charlar contigo. ¿Ya lo hiciste?", "No... ¿Si era cierto el rumor de los ladrones?", "¿Y qué hiciste?", "Hmm...no me sorprende, tienes garra para esto.", "Y como ves, el barrio te respalda también, ja ja. Vos solo avisa."])
 dialogue_lines6 = Array[String](["Hoy mi café quedó amargo, no sé si lo querés.", "Uff, mal día para que las cosas no salgan bien, ¿no?"])
 dialogue_lines7 = Array[String](["Bueno, fuera de joda, se hizo lo que se pudo.", "Siempre puedes volver a empezar, vamo' arriba.", "Yo me he acostumbrado a mi zona de confort."])
 npc_portrait = ExtResource("8_5k7va")

@@ -1377,7 +1377,7 @@ autoplay = "default"
 [node name="NPC" parent="Seccion1/Juanito" unique_id=894330862 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-dialogue_lines4 = Array[String](["Escuché un rumor de que andan robando botellas y cosas valiosas por ahí. Ten cuidado, Guachín", "Quiero creer que puedes cuidarte por tu cuenta, pero una ayuda de una amiga tuya te podría servir", "Wanda me dijo que quería charlar contigo. ¿Ya lo hiciste?"])
+dialogue_lines4 = Array[String](["Escuché un rumor de que andan robando botellas y cosas valiosas por ahí. Ten cuidado, Guachín", "Quiero creer que puedes cuidarte por tu cuenta, pero una ayuda de una amiga tuya te podría servir", "Dijo que estaba trabajando en algo, pero que se va a tardar un poco.", "Capaz en la próxima entrega, no lo sé, Coli. Aguantá un cachito."])
 dialogue_lines5 = Array[String](["Andan robando botellas por ahí, ten cuidado", "Lo bueno es que no andan robando botellas de alcohol, ja ja", "Sí, ya estoy mejor de eso de tomar, Coli, no te preocupes"])
 dialogue_lines6 = Array[String](["Ando ayudando al Rastas con sus cosas, parece que consiguió algunos recursos por su cuenta", "¿Querías una bebida o algo por el estilo? Puedes servirte si quieres, pero no te puedo ayudar hoy"])
 dialogue_lines7 = Array[String](["¿Última entrega ya? Ouf, pensé que querías conversar más conmigo", "Quería ver qué pasaba después, no sé, me gusta ser chusma a veces", "Capaz son cosas que te quedan por ser bartender"])
