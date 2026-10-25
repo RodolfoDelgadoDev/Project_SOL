@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_dwf1a"]
-[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_gictb"]
+[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_gictb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_r0lr3"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_df24l"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_ufwyp"]
@@ -1673,8 +1673,8 @@ autoplay = "default"
 
 [node name="NPC" parent="Seccion1/Dreadlocks" unique_id=219039030 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Eres una persona valiosa, Coli. No tengo más consejos que darte", "Solo disfruta los momentos lindos de la vida"])
-dialogue_lines7 = Array[String](["Hay algunos secretos ocultos por ahí, siempre es bueno comenzar de cero", "Un abrazo, Colibrí"])
+dialogue_lines1 = Array[String](["Eres una persona valiosa, Coli. No tengo más consejos que darte.", "Solo disfruta los momentos lindos de la vida."])
+dialogue_lines7 = Array[String](["Hay algunos secretos ocultos por ahí, siempre es bueno comenzar. de cero", "Un abrazo, Colibrí."])
 npc_portrait = ExtResource("6_df24l")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -1687,7 +1687,8 @@ autoplay = "default"
 
 [node name="NPC" parent="Seccion1/Juanito" unique_id=441611350 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Estoy como para comer un asado hoy", "¿Esta noche también trabajas? Relájate un poco, Coli", "¿Viste la mesa de pool? es preciosa, es...ES...HERMOSA"])
+dialogue_lines1 = Array[String](["", "", ""])
+dialogue_lines7 = Array[String](["Estoy como para comer un asado hoy.", "¿Esta noche también trabajas? Relájate un poco, Coli.", "¿Viste la mesa de pool? es preciosa, es...ES...HERMOSA."])
 npc_portrait = ExtResource("9_uel52")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2159,7 +2160,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Olivia" unique_id=1766127120 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(6, 0)
-dialogue_lines7 = Array[String](["Hey yo ¿Tu moto puede hacer willies? Yo quiero intentarlo también ¿Me explicas?", "gustó, ya no soy tan \"little\", ¿no?", "Sí, sé que soy la más joven, pero un poquito más de respeto a la MÁS RÁPIDA, ¿eh?"])
+dialogue_lines7 = Array[String](["Hey yo ¿Tu moto puede hacer willies? Yo quiero intentarlo también ¿Me explicas?", "La otra vez me dijeron little makuin, pero no me gustó, ya no soy tan \"little\", ¿no?", "Sí, sé que soy la más joven, pero un poquito más de respeto a la MÁS RÁPIDA, ¿eh?"])
 npc_portrait = ExtResource("26_tvogv")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2170,7 +2171,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Wanda" unique_id=198071312 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(8, 2)
-dialogue_lines7 = Array[String](["¿Cómo estoy? Hoy estoy agotada, pero capaz solo me falta comer mejor", "Hoy estaba pensando en querer hacer algo más arriesgado, y me acordé de un museo en ruinas. ", "¿Crees que sea horrible ir allí? ¿ O no es nada para el gran Coli? jajaj"])
+dialogue_lines7 = Array[String](["¿Cómo estoy? Hoy estoy agotada, pero capaz solo me falta comer mejor.", "Hoy estaba pensando en querer hacer algo más arriesgado, y me acordé de un museo en ruinas.", "¿Crees que sea horrible ir allí? ¿ O no es nada para el gran Coli? jajaj."])
 npc_portrait = ExtResource("30_cor7d")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2181,7 +2182,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Sleepy (Rosa)" unique_id=190605131 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
-dialogue_lines7 = Array[String](["Hey...", "Acércate...", "*Recibiste una hamburguesa*", "Gracias, Coli, me han hablado lindo de tí", "zzz...", "zz..zz...zzz"])
+dialogue_lines7 = Array[String](["Hey...", "Acércate...", "*Recibiste una hamburguesa*", "Gracias, Coli, me han hablado lindo de tí.", "zzz...", "zz..zz...zzz"])
 npc_portrait = ExtResource("34_fyr04")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2192,7 +2193,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Dormilon (Bere)" unique_id=150863941 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
-dialogue_lines7 = Array[String](["Se dice que el fin se acerca", "zzz....", "Muy cerca", "zz...zzz...."])
+dialogue_lines7 = Array[String](["Se dice que el fin se acerca.", "zzz....", "Muy cerca.", "zz...zzz...."])
 npc_portrait = ExtResource("36_ds50k")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2206,7 +2207,7 @@ frame_progress = 0.452845
 
 [node name="NPC" parent="Scene Manager/Henry" unique_id=254707089 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
-dialogue_lines7 = Array[String](["Hey Coli. Conseguí otro par de gatitos.", "Traje uno hoy, se llama Paquito. Es suavecito", "Tengo otra amiga aquí, pero que tiene como tres trabajos", "Probablemente cuando la veas aquí es porque anda durmiendo, tiene el cabello rosa."])
+dialogue_lines7 = Array[String](["Hey Coli. Conseguí otro par de gatitos.", "Traje uno hoy, se llama Paquito. Es suavecito.", "Tengo otra amiga aquí, pero que tiene como tres trabajos.", "Probablemente cuando la veas aquí es porque anda durmiendo, tiene el cabello rosa."])
 npc_portrait = ExtResource("38_3k34o")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2220,7 +2221,7 @@ frame_progress = 0.840665
 
 [node name="NPC" parent="Scene Manager/Y" unique_id=674432866 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
-dialogue_lines7 = Array[String](["Tengo que felicitarte a ti por ayudar a recaudar los fondos encontrando lo que sea que andes encontrando", "Las descripciones de los lugares que me dan tú y los demás chicos,", "me ayudan a hacer mejores dibujos y formas", "Además tengo bastante pintura ahora, el cielo es el límite"])
+dialogue_lines7 = Array[String](["Tengo que felicitarte a ti por ayudar a recaudar los fondos encontrando lo que sea que andes encontrando.", "Las descripciones de los lugares que me dan tú y los demás chicos,", "me ayudan a hacer mejores dibujos y formas.", "Además tengo bastante pintura ahora, el cielo es el límite."])
 npc_portrait = ExtResource("28_q738t")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2233,7 +2234,7 @@ autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Cris" unique_id=1892059487 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(-12, 2)
-dialogue_lines7 = Array[String](["Me gusta hacer alfajores y mandocas", "Quiero también hacer pastafrola. ¿Qué opinas?", "Perdón, es que no tengo con quién más hablar por aquí", "¿En serio no te molesta? Bueno..gracias por escucharme siempre"])
+dialogue_lines7 = Array[String](["Me gusta hacer alfajores y mandocas.", "Quiero también hacer pastafrola. ¿Qué opinas?", "Perdón, es que no tengo con quién más hablar por aquí.", "¿En serio no te molesta? Bueno..gracias por escucharme siempre."])
 npc_portrait = ExtResource("35_jbh6u")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2246,7 +2247,7 @@ autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Jhon Jairo" unique_id=421702060 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
-dialogue_lines7 = Array[String](["Estuviste en ESE bosque? Admiro tu valentía", "Hay una bestia que es lo más horrible que he visto en mi vida, de broma no me come", "Dios me protegió, creo", "Hace tiempo que quiero un sombrero de vaquero, pero valoro más mis rizos"])
+dialogue_lines7 = Array[String](["¿Estuviste en ESE bosque? Admiro tu valentía.", "Hay una bestia que es lo más horrible que he visto en mi vida, de broma no me come.", "Dios me protegió, creo.", "Hace tiempo que quiero un sombrero de vaquero, pero valoro más mis rizos."])
 npc_portrait = ExtResource("39_le07k")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("40_oot1f")
@@ -2260,7 +2261,7 @@ frame_progress = 0.544391
 
 [node name="NPC" parent="Scene Manager/elPela" unique_id=1104265643 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, -2)
-dialogue_lines7 = Array[String](["Las interrogantes de este mundo son infinitas", "No se han dado cuenta de que no trabajo aquí, pero no digas nada", "zzzz..."])
+dialogue_lines7 = Array[String](["Las interrogantes de este mundo son infinitas.", "No se han dado cuenta de que no trabajo aquí, pero no digas nada.", "zzzz..."])
 npc_portrait = ExtResource("49_5aoix")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2274,7 +2275,7 @@ frame_progress = 0.327942
 
 [node name="NPC" parent="Scene Manager/Lety" unique_id=1356078718 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2.86102e-06)
-dialogue_lines7 = Array[String](["Por favor, no me hables, me molestan las personas"])
+dialogue_lines7 = Array[String](["Por favor, no me hables, me molestan las personas."])
 npc_portrait = ExtResource("51_xrfik")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2304,7 +2305,7 @@ frame_progress = 0.815725
 
 [node name="NPC2" parent="Scene Manager/JessicaJaime" unique_id=1134873285 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("44_m7lnx")]
 position = Vector2(-2, 8)
-dialogue_lines1 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau"])
+dialogue_lines1 = Array[String](["Prepárense para los problemas.", "Más vale que teman.", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau."])
 dialogue_lines7 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau "])
 npc_portrait1 = ExtResource("45_crnk4")
 npc_portrait2 = ExtResource("46_t7cpu")
@@ -2321,7 +2322,7 @@ autoplay = "default"
 
 [node name="Olga" parent="Scene Manager/Olga2" unique_id=386753283 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 2)
-dialogue_lines7 = Array[String](["Eres un tesoro, amiguito. Gracias por todo", "Ya puedes irte, tengo que hacer cosas", "Estoy ocupada"])
+dialogue_lines7 = Array[String](["Eres un tesoro, amiguito. Gracias por todo.", "Ya puedes irte, tengo que hacer cosas.", "Estoy ocupada."])
 npc_portrait = ExtResource("18_eiu76")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2334,7 +2335,7 @@ autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/ChicaPunk" unique_id=491293424 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 6)
-dialogue_lines7 = Array[String](["Se dice que vendrá más gente nueva otra vez", "El chisme más potente que te voy a hacer hoy", "es que hay más de 100 diálogos en todo lo que va el jueguito"])
+dialogue_lines7 = Array[String](["Se dice que vendrá más gente nueva otra vez.", "El chisme más potente que te voy a hacer hoy,", "es que hay más de 100 diálogos en todo lo que va el jueguito."])
 npc_portrait = ExtResource("28_c6tfu")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2347,7 +2348,7 @@ autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Nicky" unique_id=225239315 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 4)
-dialogue_lines7 = Array[String](["¿Estos muchachos nuevos los ves sospechosos?", "Bueno, no importa, creo que me quedé con la idea desde hace días", "Por ahí se cuenta que hay una cascada muy enorme y montón de luciérnagas lindas. ¿Ya las viste?", "O capaz es puro cuento, pero espero que no lo sea, entre tanto desastre debería de ver algo lindo por ahí", "Espera, ¿No te conté esto antes? Disculpa, ando distraída"])
+dialogue_lines7 = Array[String](["¿Estos muchachos nuevos los ves sospechosos?", "Bueno, no importa, creo que me quedé con la idea desde hace días.", "Por ahí se cuenta que hay una cascada muy enorme y montón de luciérnagas lindas. ¿Ya las viste?", "O capaz es puro cuento, pero espero que no lo sea, entre tanto desastre debería de ver algo lindo por ahí.", "Espera, ¿No te conté esto antes? Disculpa, ando distraída."])
 npc_portrait = ExtResource("32_blg1d")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")
@@ -2360,7 +2361,7 @@ autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Ver" unique_id=1533496851 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 8)
-dialogue_lines7 = Array[String](["El combustible de compost te sirvió? Está increíble", "Es mucho mejor que el licuado de desechos que teníamos antes, gracias a Jhon tenemos estos nuevos artilugios"])
+dialogue_lines7 = Array[String](["El combustible de compost te sirvió? Está increíble.", "Es mucho mejor que el licuado de desechos que teníamos antes, gracias a Jhon tenemos estos nuevos artilugios."])
 npc_portrait = ExtResource("37_tbqob")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")

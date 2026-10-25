@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_dcr34"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_tt5t2"]
-[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_rgodk"]
+[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_rgodk"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_a24ov"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_g88ge"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_past7"]
@@ -1360,7 +1360,7 @@ autoplay = "default"
 [node name="NPC" parent="Seccion1/Dreadlocks" unique_id=545577089 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
-dialogue_lines4 = Array[String](["Querido Colibrí, ¿cómo has estado? Veo que venís haciendo un excelente trabajo. Gracias", "Hice un smoothie especial para vos, para que recargues energía, las cosas se empiezan a complicar más", "*Recibiste un Smoothie*", "Mucha suerte"])
+dialogue_lines4 = Array[String](["Querido Colibrí, ¿cómo has estado? Veo que venís haciendo un excelente trabajo. Gracias.", "Hice un smoothie especial para vos, para que recargues energía, las cosas se empiezan a complicar más.", "*Recibiste un Smoothie*", "¡Mucha suerte!"])
 dialogue_lines5 = Array[String](["Hola, Co- ¿Qué casi logras conseguir todo, pero no pudiste?", "Siempre puedes practicar en otro momento, no todo proceso es lineal, ánimos"])
 dialogue_lines6 = Array[String](["Hoy estoy un poco ocupado ayudando a los demás", "Se han complicado las cosas de repente, pero lograremos solucionarlo"])
 dialogue_lines7 = Array[String](["Cada vez llegas más lejos, tengo fe de que lo lograrás con paciencia", "Espero verte pronto"])
@@ -1657,10 +1657,10 @@ scale = Vector2(0.5, 0.5)
 [node name="NPC" parent="Scene Manager/Olivia" unique_id=1375687481 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-dialogue_lines4 = Array[String](["Hace algún tiempo conseguí unas botellas, de esas parecidas a las tuyas", "Ayer me torcí el tobillo, así que tuve que parar temprano, pero ya estoy mejor", "Si no me ves más, probablemente esté en mi casa, o que no sobreviví, nunca se sabe", "Jhon y Chico Cat también consiguieron varias, somos los más locos aquí. Gracias por unirte a nuestro club, ¡ja ja!", "¿Las botellas? Hmm, no lo sé, Olga se las lleva y consigue cosas para la guarida", "La otra vez escuché algo de Tomora...aurora...tambora...algo así era el nombre, búscalo"])
-dialogue_lines5 = Array[String](["¿Te contaron locuras sobre las botellas y nosotros?", "Chico Cat, Jhon y yo, hemos sido los más rápidos para conseguirlas, pero necesitábamos a alguien más que nos apoyara en estas aventuras raras"])
-dialogue_lines6 = Array[String](["Hoy tengo mucha pereza; creo que me quedaré caminando por ahí o yendo a dormir. Aunque no recuerdo si ya hay nuevas camas", "Por ahí casi no paso, es un poco aburrido jajaja"])
-dialogue_lines7 = Array[String](["Hoy no me traje la tableta de chocolate, se quedó en mi casa, hoy es un día triste", "¿TÚ ÚLTIMA ENTREGA? ¿Pero por qué te vas? Aún no hemos terminado", "Ay, ahora el día está peor"])
+dialogue_lines4 = Array[String](["Hace algún tiempo conseguí unas botellas, de esas parecidas a las tuyas.", "Ayer me torcí el tobillo, así que tuve que parar temprano, pero ya estoy mejor.", "Si no me ves más, probablemente esté en mi casa, o que no sobreviví, nunca se sabe.", "Jhon y Chico Cat también consiguieron varias, somos los más locos aquí. Gracias por unirte a nuestro club, ¡ja ja!", "¿Las botellas? Hmm, no lo sé, Olga se las lleva y consigue cosas para la guarida.", "La otra vez escuché algo de Tomora...aurora...tambora...algo así era el nombre, búscalo."])
+dialogue_lines5 = Array[String](["¿Te contaron locuras sobre las botellas y nosotros?", "Chico Cat, Jhon y yo, hemos sido los más rápidos para conseguirlas, pero necesitábamos a alguien más que nos apoyara en estas aventuras raras."])
+dialogue_lines6 = Array[String](["Hoy tengo mucha pereza; creo que me quedaré caminando por ahí o yendo a dormir. Aunque no recuerdo si ya hay nuevas camas.", "Por ahí casi no paso, es un poco aburrido jajaja."])
+dialogue_lines7 = Array[String](["Hoy no me traje la tableta de chocolate, se quedó en mi casa, hoy es un día triste.", "¿TÚ ÚLTIMA ENTREGA? ¿Pero por qué te vas? Aún no hemos terminado.", "Ay, ahora el día está peor."])
 npc_portrait = ExtResource("19_jitoy")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
@@ -1674,9 +1674,9 @@ autoplay = "default"
 [node name="NPC" parent="Scene Manager/Y" unique_id=81431390 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 8)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
-dialogue_lines4 = Array[String](["Hey, Colibrí. ¿Te gusta cómo va quedando?", "Después de este mural, quisiera pintar algo impresionante afuera", "Perdón que tenga que dejar de hablar, pero falta un poco de pintura aquí"])
-dialogue_lines5 = Array[String](["Falta un poco de pintura, justo la que está difícil de conseguir por ahí, pero veré qué puedo hacer"])
-dialogue_lines6 = Array[String](["El avance va lento, no he tenido inspiración, siento que me falta una chispa", "¿Chispa en la carretera? No, esa no, hablo de algo más allá", "Iré a dar una vuelta"])
+dialogue_lines4 = Array[String](["Hey, Colibrí. ¿Te gusta cómo va quedando?", "Después de este mural, quisiera pintar algo impresionante afuera.", "Perdón que tenga que dejar de hablar, pero falta un poco de pintura aquí."])
+dialogue_lines5 = Array[String](["Falta un poco de pintura, justo la que está difícil de conseguir por ahí, pero veré qué puedo hacer."])
+dialogue_lines6 = Array[String](["El avance va lento, no he tenido inspiración, siento que me falta una chispa.", "¿Chispa en la carretera? No, esa no, hablo de algo más allá.", "Iré a dar una vuelta."])
 npc_portrait = ExtResource("23_7foio")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
@@ -1691,10 +1691,10 @@ frame_progress = 0.229023
 [node name="NPC" parent="Scene Manager/Cris" unique_id=2105749458 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(10, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-dialogue_lines4 = Array[String](["Los monstruos del bosque son horribles ¡¡Y nadie me cree!!! ¡Yo los ví! ...No volveré a salir nunca más", "Solo estamos en el patio de juegos de esos monstruos del bosque"])
-dialogue_lines5 = Array[String](["AHHH", "¡Me asustaste!", "Con razón tienes habilidades para conseguir cosas, tienes mucho sigilo", "Por cierto, soy Cris. Perdón que no me presenté antes", "Por cierto, no lo vuelvas a hacer, lo de ser sigiloso, me espanta. Al menos activa un sonido o algo, no sé"])
-dialogue_lines6 = Array[String](["¿Qué? ¿Algo sospechoso en el bosque?", "¡No! ¡No me digas más!", "Me da escalofríos"])
-dialogue_lines7 = Array[String](["¿Peleaste con ese monstruo? AHHH", "Gracias, al fin alguien me cree", "¿Cómo fue que no moriste?", "Escuché que es tu última entrega. Mucha suerte"])
+dialogue_lines4 = Array[String](["Los monstruos del bosque son horribles ¡¡Y nadie me cree!!! ¡Yo los ví! ...No volveré a salir nunca más.", "Solo estamos en el patio de juegos de esos monstruos del bosque."])
+dialogue_lines5 = Array[String](["¡AHHH!", "¡Me asustaste!", "Con razón tienes habilidades para conseguir cosas, tienes mucho sigilo.", "Por cierto, soy Cris. Perdón que no me presenté antes.", "Además, no lo vuelvas a hacer, lo de ser sigiloso, me espanta. Al menos activa un sonido o algo, no sé."])
+dialogue_lines6 = Array[String](["¿Qué? ¿Algo sospechoso en el bosque?", "¡No! ¡No me digas más!", "Me da escalofríos."])
+dialogue_lines7 = Array[String](["¿Peleaste con ese monstruo? AHHH", "Gracias, al fin alguien me cree.", "¿Cómo fue que no moriste?", "Escuché que es tu última entrega. Mucha suerte."])
 npc_portrait = ExtResource("27_r43av")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
@@ -1707,10 +1707,10 @@ autoplay = "default"
 
 [node name="Olga" parent="Scene Manager/Olga2" unique_id=271660706 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 2)
-dialogue_lines4 = Array[String](["Wow, que lindas botellas has conseguido esta vez, las pondré en el almacén en un rato", "Preciosas, preciosas botellas", "A veces parece más de lo mismo lo que exploras, pero pueden sorprenderte las diferencias"])
-dialogue_lines5 = Array[String](["¿Alguna vez viste un robot poseído? Mejor no verlo", "A veces parece más de lo mismo lo que exploras, pero pueden sorprenderte las diferencias"])
-dialogue_lines6 = Array[String](["Todo casi perfecto, casi...AH, no noté que estabas ahí", "¿Alguna novedad? ¿No?", "Tu poncho hoy está 5 cm más hacia la izquierda, me incomoda", "Mejor ve a tu próxima entrega rápido"])
-dialogue_lines7 = Array[String](["Mejoraste, empeoraste, mejoraste de nuevo, y así sucesivamente", "No sabía que eras una persona inestable", "-¿Qué debería de \"ENTENDER\" que pasan cosas en el camino?", "Que horror. Entiéndeme TÚ a MÍ ", "¿No vas a decir nada más?", "Hey, ¡¡esperaaaa!!"])
+dialogue_lines4 = Array[String](["Wow, que lindas botellas has conseguido esta vez, las pondré en el almacén en un rato.", "Preciosas, preciosas botellas.", "A veces parece más de lo mismo lo que exploras, pero pueden sorprenderte las diferencias."])
+dialogue_lines5 = Array[String](["¿Alguna vez viste un robot poseído? Mejor no verlo.", "A veces parece más de lo mismo lo que exploras, pero pueden sorprenderte las diferencias."])
+dialogue_lines6 = Array[String](["Todo casi perfecto, casi...AH, no noté que estabas ahí.", "¿Alguna novedad? ¿No?", "Tu poncho hoy está 5 cm más hacia la izquierda, me incomoda.", "Mejor ve a tu próxima entrega rápido."])
+dialogue_lines7 = Array[String](["Mejoraste, empeoraste, mejoraste de nuevo, y así sucesivamente.", "No sabía que eras una persona inestable.", "-¿Qué debería de \"ENTENDER\" que pasan cosas en el camino?", "Que horror. Entiéndeme TÚ a MÍ.", "¿No vas a decir nada más?", "Hey, ¡¡esperaaaa!!"])
 npc_portrait = ExtResource("18_aam83")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
@@ -1757,10 +1757,10 @@ frame_progress = 0.574018
 [node name="NPC" parent="Scene Manager/Nicky" unique_id=740278839 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 6)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
-dialogue_lines4 = Array[String](["¿Escuchaste hablar sobre el fantasma que sale en el apartamento 42?", "Todo al que le toca un pedido allí, queda con secuelas o simplemente no acepta el viaje. ¿Qué curioso, no?", "Una pregunta random: ¿Empanada de carne mechada o de pollo?", "¿Mechada? Excelente elección. Yo no puedo elegir ninguna, me encantan las dos", "A veces las partes metálicas de mi brazo se enfrían demasiado y mi cuerpo sufre las consecuencias"])
-dialogue_lines5 = Array[String](["¿Escuchaste hablar sobre el fantasma que sale en el apartamento 42?", "Yo no he ido, pero se dice que está horrible. Suerte", "Si hay frío, a veces las partes metálicas de mi brazo se enfrían demasiado y mi cuerpo sufre las consecuencias", "Espero nunca te pase"])
-dialogue_lines6 = Array[String](["Esto dice que empezará a llover por algunas zonas hoy, ¿será verdad? El radar me indica eso, y el radar no miente", "Uff, qué día fuerte hoy, ¿verdad?", "Cero ganas de trabajar, ya quiero irme a mi casa"])
-dialogue_lines7 = Array[String](["Últimamente todo el mundo está disperso, ¿será por la lluvia en algunas zonas?", "Ya yo tengo que irme a esas zonas, lamentablemente vivo por allí", "Deseéame suerte, porque la ruta se pone muy peligrosa. Nos vemos"])
+dialogue_lines4 = Array[String](["¿Escuchaste hablar sobre el fantasma que sale en el apartamento 42?", "Todo al que le toca un pedido allí, queda con secuelas o simplemente no acepta el viaje. ¿Qué curioso, no?", "Una pregunta random: ¿Empanada de carne mechada o de pollo?", "¿Mechada? Excelente elección. Yo no puedo elegir ninguna, me encantan las dos."])
+dialogue_lines5 = Array[String](["¿Viste lo del fantasma que sale en el apartamento 42?", "Yo no he ido, pero se dice que está horrible. Suerte", "Si hay frío, a veces las partes metálicas de mi brazo se enfrían demasiado y mi cuerpo sufre las consecuencias", "Espero nunca te pase"])
+dialogue_lines6 = Array[String](["Esto dice que empezará a llover por algunas zonas hoy, ¿será verdad? El radar me indica eso, y el radar no miente", "Uff, qué día fuerte hoy, ¿verdad?", "Cero ganas de trabajar, ya quiero irme a mi casa."])
+dialogue_lines7 = Array[String](["Últimamente todo el mundo está disperso, ¿será por la lluvia en algunas zonas?", "Ya yo tengo que irme a esas zonas, lamentablemente vivo por allí.", "Deseéame suerte, porque la ruta se pone muy peligrosa. Nos vemos."])
 npc_portrait = ExtResource("24_dhwge")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
