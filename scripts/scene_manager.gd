@@ -206,3 +206,4 @@ func _remove_pause_scene():
 func powerup():
 	if powerupUsado == false:
 		Player.animaton.play("PowerUp")
+		powerupUsado = true
