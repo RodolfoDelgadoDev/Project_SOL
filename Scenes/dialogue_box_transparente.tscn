@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dusqepmu52cyw"]
+
+[ext_resource type="Script" uid="uid://b71qjba2gmal4" path="res://Scenes/dialogue_box_transparente.gd" id="1_rpi76"]
+[ext_resource type="FontFile" uid="uid://jbjy5jyjtamn" path="res://fonts/Micro5-Regular.ttf" id="3_1vqvi"]
+[ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="4_68so2"]
+
+[sub_resource type="Theme" id="Theme_6rhx5"]
+default_font = ExtResource("3_1vqvi")
+default_font_size = 15
+
+[node name="DialogueBox" type="Node2D" unique_id=1721211756 node_paths=PackedStringArray("text_label", "voice_player")]
+script = ExtResource("1_rpi76")
+text_label = NodePath("Background/Text")
+voice_player = NodePath("VoicePlayer")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1752693982]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -17.5
+offset_right = 87.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="Background" unique_id=2118930733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6rhx5")
+theme_override_colors/default_color = Color(0.10980392, 0.101960786, 0.1882353, 1)
+theme_override_fonts/normal_font = ExtResource("4_68so2")
+theme_override_font_sizes/normal_font_size = 7
+bbcode_enabled = true
+text = "Este texto ha estado dando problemas desde que se creó el juego hola hola hola hola"
+scroll_active = false
+scroll_following = true
+tab_size = 2
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="." unique_id=959004366]
+volume_db = -0.2
+panning_strength = 0.0
