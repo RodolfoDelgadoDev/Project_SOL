@@ -613,7 +613,7 @@ tile_map_data = PackedByteArray("AADw//D/AgABAAcAAADw//H/AgABAAcAAADw//L/AgABAAc
 tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
-[node name="Boss" parent="." unique_id=2085278086 node_paths=PackedStringArray("player_node", "healthbar") instance=ExtResource("2_m7lbr")]
+[node name="Boss" parent="." unique_id=2085278086 node_paths=PackedStringArray("player_node", "healthbar", "SceneManager") instance=ExtResource("2_m7lbr")]
 material = SubResource("ShaderMaterial_7qcg1")
 position = Vector2(78, 28)
 scale = Vector2(0.8, 0.8)
@@ -623,6 +623,7 @@ attack_damage = 50.0
 player_node = NodePath("../Scene Manager/Player")
 health = 500
 healthbar = NodePath("../Scene Manager/CanvasLayer/Boss_health")
+SceneManager = NodePath("../Scene Manager")
 
 [node name="PointLight2D" type="PointLight2D" parent="Boss" unique_id=1032528062]
 position = Vector2(1.25, -13.75)
@@ -690,7 +691,7 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager" unique_id=1825471743]
 
 [node name="Boss_health" parent="Scene Manager/CanvasLayer" unique_id=1518512065 node_paths=PackedStringArray("boss") instance=ExtResource("13_6pq2g")]
-position = Vector2(337, 188)
+position = Vector2(320, 158)
 boss = NodePath("../../../Boss")
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" unique_id=1645084447 instance=ExtResource("6_aqwqu")]
@@ -740,6 +741,7 @@ expand_mode = 1
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager" unique_id=84793958]
 stream = ExtResource("17_jero0")
+autoplay = true
 panning_strength = 0.0
 bus = &"Musica"
 playback_type = 1

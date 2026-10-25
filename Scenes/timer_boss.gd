@@ -14,9 +14,6 @@ var shake_loops_during_pull_out: int = 20 # Número de sacudidas durante el movi
 func _ready() -> void:
 	# Almacenar la posición X inicial de este nodo (el Node2D principal) desde el editor
 	original_x_position = self.position.x
-	
-	# Mover este nodo (el Node2D principal) 200px a la derecha instantáneamente al inicio,
-	# asumiendo que esta es su posición "fuera de pantalla" o inicial visible.
 	self.position.x = original_x_position + 200
 	
 	# Configurar el valor máximo y actual de la barra de vida
@@ -32,25 +29,11 @@ func damage():
 		healthbar.value = boss.health
 
 func pull_in():
-	# Mueve este nodo (el Node2D principal) 200px a la izquierda (hacia la posición original) con un tween
-	
-	# Detener cualquier tween existente en este nodo para evitar conflictos
-	#if self.has_method("stop_all_tweens"): # Godot 4+ has this method for Node2D
-		#self.stop_all_tweens()
-	
 	var pull_in_tween = create_tween()
 	pull_in_tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	# Mover este nodo a su posición X original (200px a la izquierda desde donde está)
-	pull_in_tween.tween_property(self, "position:x", original_x_position, 0.5) # Duración de 0.5 segundos
+	pull_in_tween.tween_property(self, "position:x", original_x_position, 0.5)
 
 func pull_out():
-	# Se sacude un montón y mueve este nodo (el Node2D principal) lentamente 200px a la derecha (fuera de pantalla)
-	
-	# Detener cualquier tween existente en este nodo
-	#if self.has_method("stop_all_tweens"):
-		#self.stop_all_tweens()
-	
-	# Tween principal para el movimiento lento hacia la derecha de este nodo
 	var main_move_tween = create_tween()
 	main_move_tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	# Mover este nodo 200px a la derecha desde su posición actual

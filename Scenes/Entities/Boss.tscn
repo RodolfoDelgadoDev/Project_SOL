@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvfn5t1ti8w87"]
+[gd_scene format=3 uid="uid://dvfn5t1ti8w87"]
 
 [ext_resource type="Texture2D" uid="uid://jxkwrg5r6b4x" path="res://animations/Enemies/Final boss/Final boss.png" id="2_5y8xu"]
 [ext_resource type="Script" uid="uid://d21ymybexle6c" path="res://scripts/Enemies/boss_attack.gd" id="2_axsa3"]
@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wns3g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 6.0
 }]
@@ -61,44 +61,44 @@ shader_parameter/transparency = 0.15
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p322"]
 size = Vector2(44, 42)
 
-[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("shield")]
+[node name="Boss" type="CharacterBody2D" unique_id=1311155274 node_paths=PackedStringArray("shield")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_axsa3")
 shield = NodePath("MeshInstance2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1045185278]
 modulate = Color(1, 1, 1, 0.780392)
 position = Vector2(1.19209e-07, 6)
 scale = Vector2(0.275, 0.1875)
 texture = ExtResource("2_w8nyk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=698989125]
 position = Vector2(1.90735e-06, -16)
 scale = Vector2(0.458333, 0.458333)
 sprite_frames = SubResource("SpriteFrames_iktgq")
 frame_progress = 0.398999
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=594726688]
 material = SubResource("ShaderMaterial_n86vd")
 position = Vector2(1.90735e-06, -21)
 scale = Vector2(37.1854, 37.1854)
 mesh = SubResource("SphereMesh_wq5nf")
 texture = ExtResource("5_disw0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=728410297]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_6p322")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=2100213205]
 position = Vector2(0, -6)
 collision_layer = 4
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1232943789]
 shape = SubResource("RectangleShape2D_6p322")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1979386486]
 visible = false
 offset_left = -22.0
 offset_top = -27.0

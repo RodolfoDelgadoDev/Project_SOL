@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var player_node: Node2D
 @export var health: int
 @export var healthbar : Node2D # Se asume que healthbar es un Node2D con un método 'damage()'
+@export var SceneManager : Node2D
 
 # Para el escudito
 @export var shield: MeshInstance2D
@@ -226,20 +227,24 @@ func on_destroy_gen():
 
 # Función para manejar el daño recibido por el jefe
 func takeDamage():
+	if health <= 250:
+		move_speed = 105.0
+		attack_windup_duration = 1.0
+	health -= GameManager.playerDamage # Reducir la vida por el daño del jugador
+	print(health)
+	if healthbar: # Verificar si la barra de vida está asignada
+		healthbar.damage() # Llamar al método damage en la barra de vida
 	if health <= 0:
-		queue_free() # Eliminar al jefe si la vida es cero o menos
-	else:
-		health -= GameManager.playerDamage # Reducir la vida por el daño del jugador
-		print(health)
-		if healthbar: # Verificar si la barra de vida está asignada
-			healthbar.damage() # Llamar al método damage en la barra de vida
-		if health <= 0:
-			# Instanciar partículas de confeti al derrotar al jefe
-			var particle_scene = load("res://Scenes/Particles/confetti.tscn")
-			var particles_instance = particle_scene.instantiate()
-			var particles = particles_instance.get_node("GPUParticles2D")
-			get_parent().add_child(particles_instance)
-			particles.emitting = true
-			particles.restart()
-			healthbar.pull_out()
-			takeDamage()
+		# Instanciar partículas de confeti al derrotar al jefe
+		var particle_scene = load("res://Scenes/Particles/confetti.tscn")
+		var particles_instance = particle_scene.instantiate()
+		var particles = particles_instance.get_node("GPUParticles2D")
+		get_parent().add_child(particles_instance)
+		particles.emitting = true
+		particles.restart()
+		healthbar.pull_out()
+		await healthbar.pull_out()
+		SceneManager.stop_timer()
+		SceneManager.targetScene = "res://Scenes/Levels/Descansos/descanso9.tscn"
+		SceneManager.change_scene()
+		self.queue_free()
