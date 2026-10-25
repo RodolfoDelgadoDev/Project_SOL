@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_b427h"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="3_dcr34"]
 [ext_resource type="PackedScene" uid="uid://gdp1t0u0lb6l" path="res://Scenes/Entities/punk_girl.tscn" id="3_tt5t2"]
-[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_rgodk"]
+[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_rgodk"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="5_a24ov"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_g88ge"]
 [ext_resource type="Texture2D" uid="uid://cbnw78cxl7wir" path="res://art/NPCs/Juanito/NPC-Juanito.png" id="7_past7"]
@@ -356,6 +356,7 @@ texture_region_size = Vector2i(32, 32)
 9:4/0 = 0
 10:3/0 = 0
 11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 11:3/0 = 0
 0:14/0 = 0
 0:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -400,8 +401,11 @@ texture_region_size = Vector2i(32, 32)
 11:15/0 = 0
 11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 11:14/0 = 0
+11:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 12:14/0 = 0
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 13:14/0 = 0
 13:15/0 = 0
 13:16/0 = 0
@@ -1647,7 +1651,7 @@ attackSFX = null
 hurtSFX = null
 
 [node name="Olivia" parent="Scene Manager" unique_id=155679579 instance=ExtResource("12_xxfdf")]
-position = Vector2(40, -74)
+position = Vector2(40, -77)
 scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Olivia" unique_id=1375687481 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
@@ -1668,7 +1672,7 @@ sprite_frames = SubResource("SpriteFrames_3gro2")
 autoplay = "default"
 
 [node name="NPC" parent="Scene Manager/Y" unique_id=81431390 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
-position = Vector2(0, 10)
+position = Vector2(0, 8)
 dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
 dialogue_lines4 = Array[String](["Hey, Colibrí. ¿Te gusta cómo va quedando?", "Después de este mural, quisiera pintar algo impresionante afuera", "Perdón que tenga que dejar de hablar, pero falta un poco de pintura aquí"])
 dialogue_lines5 = Array[String](["Falta un poco de pintura, justo la que está difícil de conseguir por ahí, pero veré qué puedo hacer"])
@@ -1823,7 +1827,7 @@ tile_set = SubResource("TileSet_yil1h")
 rendering_quadrant_size = 32
 
 [node name="Wanda" type="AnimatedSprite2D" parent="." unique_id=1925184402]
-position = Vector2(40, -28)
+position = Vector2(40, -23)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_72av3")
 frame = 8
