@@ -4055,8 +4055,8 @@ autoplay = "default"
 
 [node name="NPC" parent="SeccionTop1/SeccionTop4/Jessica" unique_id=1949847554 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
 position = Vector2(4, 22)
-dialogue_lines1 = Array[String](["Eres una pesadilla por ahí en las calles, lo intentamos todo", "Como líder de estos dos ninjas tontos, me quito el sombrero.", "No vinimos por mucho tiempo, pero conseguimos un propósito nuevo.", "Proteger a los delivery más novatos.", "Gracias a este lugar, tenemos más guías de las bestias y el mapa completo.", "Es una linda comunidad."])
-dialogue_lines8 = Array[String](["Eres una pesadilla por ahí en las calles, lo intentamos todo", "Como líder de estos dos ninjas tontos, me quito el sombrero.", "No vinimos por mucho tiempo, pero conseguimos un propósito nuevo.", "Proteger a los delivery más novatos.", "Gracias a este lugar, tenemos más guías de las bestias y el mapa completo.", "Es una linda comunidad."])
+dialogue_lines1 = Array[String](["Eres una pesadilla por ahí en las calles, lo intentamos todo.", "Como líder de estos dos ninjas tontos, me quito el sombrero.", "No vinimos por mucho tiempo, pero conseguimos un propósito nuevo.", "Proteger a los delivery más novatos.", "Gracias a este lugar, tenemos más guías de las bestias y el mapa completo.", "Es una linda comunidad."])
+dialogue_lines8 = Array[String](["Eres una pesadilla por ahí en las calles, lo intentamos todo.", "Como líder de estos dos ninjas tontos, me quito el sombrero.", "No vinimos por mucho tiempo, pero conseguimos un propósito nuevo.", "Proteger a los delivery más novatos.", "Gracias a este lugar, tenemos más guías de las bestias y el mapa completo.", "Es una linda comunidad."])
 npc_portrait = ExtResource("71_dcehr")
 dialogue_manager = NodePath("../../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")

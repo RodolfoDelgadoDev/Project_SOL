@@ -1835,7 +1835,7 @@ frame_progress = 1.0
 
 [node name="NPC" parent="Wanda" unique_id=233932125 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(-2, 2)
-dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
+dialogue_lines1 = Array[String]([""])
 npc_portrait = ExtResource("22_7ki5b")
 dialogue_manager = NodePath("../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")

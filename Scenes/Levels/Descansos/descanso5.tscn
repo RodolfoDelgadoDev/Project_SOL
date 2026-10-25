@@ -1745,7 +1745,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Wanda" unique_id=1808841397 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_c2srg")]
 position = Vector2(0, 6)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
+dialogue_lines1 = Array[String]([""])
 dialogue_lines5 = Array[String](["¡Hey! Qué bueno verte. Tengo algo para tí.", "Estuve trabajando en algo nuevo para que te defiendas mejor.", "Con esto todas esas bestias y fantasmas deberían de darte menos problema.", "Esto lo hice con cosas que he conseguido en mis viajes.", "A ver, ¡pruébalo!"])
 dialogue_lines6 = Array[String](["Te veo un poco desanimado hoy, ¿todo bien?"])
 dialogue_lines7 = Array[String](["¿Te faltaron cosas? Entiendo, pero siempre puedes volver a intentarlo, lo sabes", "Ánimos, todo se aprende practicando"])
