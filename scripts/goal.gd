@@ -37,7 +37,7 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		var plasticoinstr = str(GameManager.plasticoin)
 		if creditos == true:
 			var targetScene = "res://Scenes/credits.tscn"
-			if GameManager.plasticoin == 8:
+			if GameManager.plasticoin == 8 && GameManager.currentLevel == "res://Scenes/Levels/bosque2.tscn":
 				targetScene = "res://Scenes/Levels/Descansos/descanso8.tscn"
 				GameManager.levelNumber += 1
 			else:
