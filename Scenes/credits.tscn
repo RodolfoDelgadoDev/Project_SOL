@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://r8muhvyy5ykv"]
+[gd_scene format=3 uid="uid://r8muhvyy5ykv"]
 
+[ext_resource type="Script" uid="uid://031tqqhkkqgx" path="res://scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://bfh1ue47xfvdj" path="res://art/Credits/background.jpg" id="1_8hhbh"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="2_65kx8"]
 [ext_resource type="AudioStream" uid="uid://ld5vcpy7abh8" path="res://SFX/mainMenu.mp3" id="3_xusin"]
+[ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="5_xelri"]
 
 [sub_resource type="Animation" id="Animation_ccjgh"]
 length = 0.001
@@ -65,9 +67,11 @@ _data = {
 &"credits": SubResource("Animation_dft4k")
 }
 
-[node name="Credits" type="Node2D"]
+[node name="Credits" type="Node2D" unique_id=287557769 node_paths=PackedStringArray("exit")]
+script = ExtResource("1_1bamb")
+exit = NodePath("ExitButton")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1100156252]
 z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,38 +86,51 @@ texture = ExtResource("1_8hhbh")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Credits" type="Label" parent="."]
+[node name="Credits" type="Label" parent="." unique_id=1745611394]
 z_index = 4
+custom_maximum_size = Vector2(305, -1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -49.0
 offset_top = 169.0
-offset_right = 351.0
-offset_bottom = 669.0
+offset_right = 251.0
+offset_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_65kx8")
 text = "The end
 
 
-Elsa pato
-BC SPN
-Armando Casas
-Memeto
-Mis primos:
-Micho
-Tito
-Gordo
-Cabezon
-Juan carlos rissot
+A game by:
+Trashumante Studios
 
-"
+Milagros Ortiz
+Juanma Ferreira
+Rodolfo Delgado
+Marcelo Guaraglia
+
+Additional work done by:
+Javier Ferraro
+Alejandro Nuñez
+Ericson Guzmán
+Alejandra Rodríguez
+Santiago Revetria
+Gabriel Abib
+Pablo Zuluaga
+
+Thanks for playing,
+kill  your boss."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="AnimationCredits" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s687h")
-}
-autoplay = "credits"
+[node name="AnimationCredits" type="AnimationPlayer" parent="." unique_id=1795309896]
+libraries/ = SubResource("AnimationLibrary_s687h")
+autoplay = &"credits"
 
-[node name="BlackBox" type="ColorRect" parent="."]
+[node name="BlackBox" type="ColorRect" parent="." unique_id=41125138]
 offset_left = -109.0
 offset_top = -3.0
 offset_right = 74.0
@@ -121,35 +138,39 @@ offset_bottom = 180.0
 scale = Vector2(3, 1)
 color = Color(0.00784314, 0.00784314, 0.00784314, 0)
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="." unique_id=441373760]
 z_index = 4
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 244.0
-offset_top = 136.0
-offset_right = 309.0
-offset_bottom = 167.0
+offset_left = 227.0
+offset_top = 136.00002
+offset_right = 292.0
+offset_bottom = 167.00002
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.725, 0.725)
-theme_override_colors/font_disabled_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.905882, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0.905882, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.78087425, 0.30988654, 0.21818596, 1)
+theme_override_colors/font_pressed_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/font_hover_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/font_disabled_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/font_outline_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_normal_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_focus_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_pressed_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_hover_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
+theme_override_colors/icon_disabled_color = Color(0.78039217, 0.30980393, 0.21960784, 1)
 theme_override_fonts/font = ExtResource("2_65kx8")
 text = "EXIT"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=698276747]
 stream = ExtResource("3_xusin")
 autoplay = true
+
+[node name="Scene_Transition" parent="." unique_id=1516183886 instance=ExtResource("5_xelri")]
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

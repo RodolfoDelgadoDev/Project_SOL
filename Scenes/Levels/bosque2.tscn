@@ -996,14 +996,10 @@ position = Vector2(752, 462)
 recuperacion = 10
 
 [node name="Goal" parent="Scene Manager" unique_id=1211350045 instance=ExtResource("10_7q5l0")]
-position = Vector2(656, 270)
-scale = Vector2(2, 2)
+position = Vector2(672, 270)
+scale = Vector2(3.805, 2)
 has_npc = false
-
-[node name="Goal2" parent="Scene Manager" unique_id=970117394 instance=ExtResource("10_7q5l0")]
-position = Vector2(688, 270)
-scale = Vector2(2, 2)
-has_npc = false
+creditos = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager" unique_id=1366796851]
 
