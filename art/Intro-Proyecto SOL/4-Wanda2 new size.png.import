@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://javmqjsg5cw"
-path="res://.godot/imported/Cinematic Diogo Rastas & Coli.png-d52f7eb9f8a0ceee6e6c25bceedd5450.ctex"
+uid="uid://bcdbfvu7h1nbs"
+path="res://.godot/imported/4-Wanda2 new size.png-a6da44b18b87942c0d9be9d1cf26e85d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cinematica/Cinematic Diogo Rastas & Coli.png"
-dest_files=["res://.godot/imported/Cinematic Diogo Rastas & Coli.png-d52f7eb9f8a0ceee6e6c25bceedd5450.ctex"]
+source_file="res://art/Intro-Proyecto SOL/4-Wanda2 new size.png"
+dest_files=["res://.godot/imported/4-Wanda2 new size.png-a6da44b18b87942c0d9be9d1cf26e85d.ctex"]
 
 [params]
 
