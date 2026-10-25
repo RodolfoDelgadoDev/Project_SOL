@@ -691,7 +691,7 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="Scene Manager" unique_id=1825471743]
 
 [node name="Boss_health" parent="Scene Manager/CanvasLayer" unique_id=1518512065 node_paths=PackedStringArray("boss") instance=ExtResource("13_6pq2g")]
-position = Vector2(320, 158)
+position = Vector2(286, 160)
 boss = NodePath("../../../Boss")
 
 [node name="Timer" parent="Scene Manager/CanvasLayer" unique_id=1645084447 instance=ExtResource("6_aqwqu")]

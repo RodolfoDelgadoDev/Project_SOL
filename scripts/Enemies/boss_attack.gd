@@ -65,6 +65,7 @@ func _ready():
 	# Asegurar que el Area2D siempre esté habilitado para la detección
 	attack_area.monitorable = true
 	attack_area.monitoring = true
+	healthbar.pull_in()
 
 
 func _create_timer(one_shot: bool) -> Timer:
