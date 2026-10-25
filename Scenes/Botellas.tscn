@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://ckpp11i2wdege"]
 
 [ext_resource type="Texture2D" uid="uid://dehupigx1763n" path="res://art/UI/Colibrí-Pause Screen820.png" id="1_3vb1u"]
-[ext_resource type="Script" uid="uid://c7u5ipa57sppu" path="res://scripts/game_over.gd" id="2_xafgn"]
+[ext_resource type="Script" uid="uid://bc8dxgv7lxkux" path="res://Scenes/botellas.gd" id="1_6xnil"]
 [ext_resource type="AudioStream" uid="uid://3gsb4hayxrbx" path="res://SFX/button_ok.mp3" id="3_ysyct"]
-[ext_resource type="AudioStream" uid="uid://cutx24v6upa6s" path="res://SFX/button_change.mp3" id="4_0deys"]
-[ext_resource type="AudioStream" uid="uid://b6r4combydyxl" path="res://SFX/pause.mp3" id="5_spi0s"]
 [ext_resource type="FontFile" uid="uid://you5japxysx1" path="res://fonts/Jersey/Jersey10-Regular.ttf" id="6_l5wld"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="7_r6vh3"]
 [ext_resource type="StyleBox" uid="uid://dssb3q1bvccp3" path="res://art/UI/menubox.tres" id="8_i5t4c"]
@@ -17,7 +15,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[node name="Botellas" type="Control" unique_id=437205181]
+[node name="Botellas" type="Control" unique_id=437205181 node_paths=PackedStringArray("botellas", "audiopla")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,6 +24,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6xnil")
+botellas = NodePath("Control/ExitButton")
+audiopla = NodePath("Control/audiobutton")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1612540118]
 layout_mode = 0
@@ -54,119 +55,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
-script = ExtResource("2_xafgn")
-button_ok = ExtResource("3_ysyct")
-button_change = ExtResource("4_0deys")
-pause = ExtResource("5_spi0s")
 
 [node name="GameText" type="Label" parent="Control" unique_id=99207278]
 light_mask = 0
+custom_maximum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -135.0
-offset_right = 239.0
-offset_bottom = 36.0
+offset_left = -97.0
+offset_top = -105.0
+offset_right = 103.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.839216, 0.596078, 1)
 theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
 theme_override_constants/outline_size = 19
 theme_override_fonts/font = ExtResource("6_l5wld")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 26
 text = "Las botellas pueden
 expandir posibilidades
 ¿Te vas a perder del viaje?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseContainer" type="HBoxContainer" parent="Control" unique_id=1691993215]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
+[node name="ExitButton" type="Button" parent="Control" unique_id=516990025]
+layout_mode = 0
 offset_left = -119.5
 offset_top = 43.0
 offset_right = 129.5
 offset_bottom = 88.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="ExitButton" type="Button" parent="Control/PauseContainer" unique_id=516990025]
-layout_mode = 2
 theme_override_colors/font_color = Color(0.61624336, 0.11982379, 1.4439226e-07, 1)
 theme_override_colors/font_focus_color = Color(0.9587384, 0.6908335, 0.43484265, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("7_r6vh3")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 21
 theme_override_styles/focus = ExtResource("8_i5t4c")
 text = "VOLVER AL INICIO"
 flat = true
 
 [node name="audiobutton" type="AudioStreamPlayer2D" parent="Control" unique_id=2101607742]
+stream = ExtResource("3_ysyct")
 panning_strength = 0.0
-
-[node name="OptionsContainer" type="HBoxContainer" parent="Control" unique_id=988330239]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = 52.0
-offset_right = 113.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackButton" type="Button" parent="Control/OptionsContainer" unique_id=355538658]
-layout_mode = 2
-focus_neighbor_left = NodePath("../MusicButton")
-focus_neighbor_right = NodePath("../DifficultyButton")
-theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_outline_color = Color(0.67451, 0.192157, 0.235294, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("7_r6vh3")
-theme_override_styles/focus = ExtResource("8_i5t4c")
-text = "ATRÁS"
-flat = true
-
-[node name="DifficultyButton" type="Button" parent="Control/OptionsContainer" unique_id=1243983589]
-layout_mode = 2
-focus_neighbor_left = NodePath("../BackButton")
-focus_neighbor_right = NodePath("../MusicButton")
-theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("7_r6vh3")
-theme_override_font_sizes/font_size = 10
-theme_override_styles/focus = ExtResource("8_i5t4c")
-text = "SIN ASISTENCIA"
-flat = true
-
-[node name="MusicButton" type="Button" parent="Control/OptionsContainer" unique_id=1620306514]
-layout_mode = 2
-focus_neighbor_left = NodePath("../DifficultyButton")
-focus_neighbor_right = NodePath("../BackButton")
-theme_override_colors/font_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_focus_color = Color(0.968627, 0.72549, 0.498039, 1)
-theme_override_colors/font_outline_color = Color(0.698039, 0.25098, 0.290196, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("7_r6vh3")
-theme_override_styles/focus = ExtResource("8_i5t4c")
-text = "MUSICA ON"
-flat = true
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=867369759]
 layout_mode = 0
@@ -182,7 +116,4 @@ color = Color(0, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_kddjp")
 frame_progress = 0.784997
 
-[connection signal="pressed" from="Control/PauseContainer/ExitButton" to="Control" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Control/OptionsContainer/BackButton" to="Control" method="_on_back_button_pressed"]
-[connection signal="pressed" from="Control/OptionsContainer/DifficultyButton" to="Control" method="_on_difficulty_button_pressed"]
-[connection signal="pressed" from="Control/OptionsContainer/MusicButton" to="Control" method="_on_music_button_pressed"]
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_exit_button_pressed"]
