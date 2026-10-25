@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://drae68gm1tipa" path="res://art/tileMapBoss.png" id="1_4e8m5"]
 [ext_resource type="Texture2D" uid="uid://cjbm1oqgvwhyt" path="res://art/Tilemap-RestRoom.png" id="1_22v0b"]
-[ext_resource type="Shader" uid="uid://d4d3ltfdvf0r6" path="res://ghost.gdshader" id="2_1p1vl"]
+[ext_resource type="Shader" uid="uid://7nt20jv0f41w" path="res://ghost.gdshader" id="2_1p1vl"]
 [ext_resource type="PackedScene" uid="uid://cmax2vhkuipx5" path="res://Scenes/Entities/player.tscn" id="2_e7vlc"]
 [ext_resource type="PackedScene" uid="uid://dvfn5t1ti8w87" path="res://Scenes/Entities/Boss.tscn" id="2_m7lbr"]
 [ext_resource type="Script" uid="uid://ck63lag4kwny3" path="res://scripts/scene_manager.gd" id="3_k2xfe"]
 [ext_resource type="Texture2D" uid="uid://djlbkkf81ehj3" path="res://art/psycho_texture.png" id="3_lyayq"]
-[ext_resource type="Shader" uid="uid://5ji2u32gefci" path="res://ghost_trail.gdshader" id="3_xxvrg"]
+[ext_resource type="Shader" uid="uid://cu2nqnoo3jtwd" path="res://ghost_trail.gdshader" id="3_xxvrg"]
 [ext_resource type="PackedScene" uid="uid://c8lilq4owyygk" path="res://Scenes/Entities/coin.tscn" id="4_p74jr"]
 [ext_resource type="PackedScene" uid="uid://dbe6g2o4e61" path="res://Scenes/goal.tscn" id="5_cc6t1"]
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="6_aqwqu"]
@@ -31,7 +31,7 @@
 [ext_resource type="Script" uid="uid://b43tgp4m0r7au" path="res://scripts/Traps/cubodehielo.gd" id="26_dds47"]
 [ext_resource type="AudioStream" uid="uid://cbow7xh67gbcv" path="res://SFX/bat_attack.mp3" id="27_41pmn"]
 [ext_resource type="AudioStream" uid="uid://dxvkod51ev133" path="res://SFX/player_hurt.mp3" id="28_q5ug0"]
-[ext_resource type="Script" uid="uid://calip111lgrul" path="res://scripts/blinking_light.gd" id="30_f5ib3"]
+[ext_resource type="Script" uid="uid://bum5q6hqoo6j5" path="res://scripts/blinking_light.gd" id="30_f5ib3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_daqb4"]
 shader = ExtResource("2_1p1vl")
@@ -785,7 +785,6 @@ light_node = NodePath("../Luces")
 player_node_path = NodePath("../Player")
 
 [node name="NinjaRosa" parent="Scene Manager" unique_id=1124166757 node_paths=PackedStringArray("light_node") instance=ExtResource("24_12qmp")]
-visible = false
 position = Vector2(328, 118)
 scale = Vector2(0.25, 0.25)
 wait_time = 0.35
