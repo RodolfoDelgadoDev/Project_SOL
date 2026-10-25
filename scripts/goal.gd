@@ -37,6 +37,10 @@ func _on_area_2d_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_in
 		var plasticoinstr = str(GameManager.plasticoin)
 		if creditos == true:
 			var targetScene = "res://Scenes/credits.tscn"
+			if GameManager.plasticoin == 8:
+				targetScene = "res://Scenes/Levels/Descansos/descanso8.tscn"
+			else:
+				targetScene = "res://Scenes/credits.tscn"
 			SceneManager.SceneTransition.Animator.play("Scene_Transition_in")
 			await get_tree().create_timer(2).timeout
 			get_tree().change_scene_to_file(targetScene)
