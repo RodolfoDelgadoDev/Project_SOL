@@ -2301,7 +2301,7 @@ frame_progress = 0.815725
 [node name="NPC2" parent="Scene Manager/JessicaJaime" unique_id=1134873285 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("44_m7lnx")]
 position = Vector2(-2, 8)
 dialogue_lines1 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau"])
-dialogue_lines7 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau"])
+dialogue_lines7 = Array[String](["Prepárense para los problemas", "Más vale que teman", "¡Para proteger al mundo de la devastación!", "¡Para unir a los pueblos dentro de nuestra nación!", "¡Para denunciar los males de la verdad y el amor!", "¡Jaime!", "¡Jessica!", "¡El Mejor equipo de delivery viaja a la velocidad de la luz!", "¡Ríndanse ahora o prepárense a luchar!", "Así es Miau Miau "])
 npc_portrait1 = ExtResource("45_crnk4")
 npc_portrait2 = ExtResource("46_t7cpu")
 npc_portrait3 = ExtResource("58_rxiha")
