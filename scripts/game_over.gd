@@ -22,17 +22,41 @@ func _ready():
 	audiobutton.stream = pause
 	audiobutton.play()
 	# Connect focus signals
-	OptionsButton.focus_entered.connect(_on_button_focused.bind(OptionsButton))
-	ExitButton.focus_entered.connect(_on_button_focused.bind(ExitButton))
-	ContinueButton.focus_entered.connect(_on_button_focused.bind(ContinueButton))
-	OptionsDiff.focus_entered.connect(_on_button_focused.bind(OptionsDiff))
-	OptionsMusica.focus_entered.connect(_on_button_focused.bind(OptionsMusica))
-	OptionsBack.focus_entered.connect(_on_button_focused.bind(OptionsBack))
-	ContinueButton.grab_focus()
+	if !OptionsButton:
+		print("Falta OptionsButton Button")
+	else:
+		OptionsButton.focus_entered.connect(_on_button_focused.bind(OptionsButton))
+	if !ExitButton:
+		print("Falta ExitButton Button")
+	else:
+		ExitButton.focus_entered.connect(_on_button_focused.bind(ExitButton))
+	if !ContinueButton:
+		print("Falta ContinueButton")
+	else:
+		ContinueButton.focus_entered.connect(_on_button_focused.bind(ContinueButton))
+	if !OptionsDiff:
+		print("Falta OptionsDiff Button")
+	else:
+		OptionsDiff.focus_entered.connect(_on_button_focused.bind(OptionsDiff))
+	if !OptionsMusica:
+		print("Falta OptionsMusica Button")
+	else:
+		OptionsMusica.focus_entered.connect(_on_button_focused.bind(OptionsMusica))
+	if !OptionsBack:
+		print("Falta OptionsBack Button")
+	else:
+		OptionsBack.focus_entered.connect(_on_button_focused.bind(OptionsBack))
+	if !ContinueButton:
+		print("Falta OptionsMusica Button")
+	else:
+		ContinueButton.grab_focus()
 	# Set initial state (hidden, scaled down)
-	OptionPanel.modulate.a = 0
-	OptionPanel.scale = Vector2(0.9, 0.9)
-	OptionPanel.visible = true
+	if !OptionPanel:
+		print("Falta OptionsMusica Button")
+	else:
+		OptionPanel.modulate.a = 0
+		OptionPanel.scale = Vector2(0.9, 0.9)
+		OptionPanel.visible = true
 	
 func _on_button_focused(button: Button):
 	# Stop any existing bounce animation
