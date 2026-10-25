@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://c10mexuhhb7lg" path="res://SFX/NPC_Voice2.mp3" id="19_c2nhh"]
 [ext_resource type="Texture2D" uid="uid://b2jxkejya7doh" path="res://art/NPCs Portraits/Olivia-Portrait.png" id="19_jitoy"]
 [ext_resource type="Texture2D" uid="uid://dui8457eewaf2" path="res://art/NPCs Portraits/Punkgurl-Portrait.png" id="20_jkrv7"]
-[ext_resource type="Texture2D" uid="uid://uoc082fyhq34" path="res://art/NPCs Portraits/Wanda-Portrait.png" id="22_7ki5b"]
 [ext_resource type="Texture2D" uid="uid://c2gnxuordc3r8" path="res://art/NPCs/Y/NPC-Y.png" id="22_oq0ky"]
 [ext_resource type="Texture2D" uid="uid://cd47efnx8mds6" path="res://art/NPCs Portraits/Y-Portrait.png" id="23_7foio"]
 [ext_resource type="Texture2D" uid="uid://buqi0sv16g5hj" path="res://art/NPCs Portraits/Nicky-Portrait.png" id="24_dhwge"]
@@ -36,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://clw625i2fj2ui" path="res://art/NPCs/Ver/NPC - Vero - Animation.png" id="31_ncv0s"]
 [ext_resource type="Texture2D" uid="uid://m68ywbxh6kpp" path="res://art/NPCs/Olga/NPC - Olga-sheet.png" id="32_fuf1i"]
 [ext_resource type="Texture2D" uid="uid://dvqycf46t80qg" path="res://art/NPCs/Nicky/Nicky-NPCs animation (1).png" id="33_158mo"]
-[ext_resource type="Texture2D" uid="uid://dy5dxxfi7ohgi" path="res://art/NPCs/Wanda/Wanda Standing.png" id="36_4jpbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo1o3"]
 texture = ExtResource("1_bjpdo")
@@ -1020,77 +1018,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lopf"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(256, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xkm4"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(224, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8w255"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(192, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pclei"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(160, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6en3y"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(128, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pn6qk"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(96, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1st5"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(64, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eywmh"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(32, 0, 32, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hclt3"]
-atlas = ExtResource("36_4jpbu")
-region = Rect2(0, 0, 32, 34)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_72av3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7lopf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0xkm4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8w255")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pclei")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6en3y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pn6qk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i1st5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eywmh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hclt3")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 3.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pe4q"]
 atlas = ExtResource("7_g88ge")
 region = Rect2(0, 0, 37, 17)
@@ -1762,20 +1689,6 @@ dialogue_lines5 = Array[String](["¿Viste lo del fantasma que sale en el apartam
 dialogue_lines6 = Array[String](["Esto dice que empezará a llover por algunas zonas hoy, ¿será verdad? El radar me indica eso, y el radar no miente", "Uff, qué día fuerte hoy, ¿verdad?", "Cero ganas de trabajar, ya quiero irme a mi casa."])
 dialogue_lines7 = Array[String](["Últimamente todo el mundo está disperso, ¿será por la lluvia en algunas zonas?", "Ya yo tengo que irme a esas zonas, lamentablemente vivo por allí.", "Deseéame suerte, porque la ruta se pone muy peligrosa. Nos vemos."])
 npc_portrait = ExtResource("24_dhwge")
-dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_c2nhh")
-
-[node name="Wanda" type="AnimatedSprite2D" parent="Scene Manager" unique_id=1925184402]
-position = Vector2(40, -25)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_72av3")
-frame = 8
-frame_progress = 1.0
-
-[node name="NPC" parent="Scene Manager/Wanda" unique_id=233932125 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
-position = Vector2(-2, 2)
-dialogue_lines1 = Array[String]([""])
-npc_portrait = ExtResource("22_7ki5b")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
 

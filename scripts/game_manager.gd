@@ -11,6 +11,7 @@ var extra_time : int = 0
 var music_on : bool = true
 var transicion_bg : int = 0
 var ninja_boss : int = 0
+var bate_entregado : bool = false
 
 const SAVE_FILE_PATH = "user://save_game.save"
 
@@ -27,7 +28,8 @@ func save_game() -> void:
 	var save_data = {
 		"playerDamage": playerDamage,
 		"levelNumber": levelNumber,
-		"plasticoin": plasticoin
+		"plasticoin": plasticoin,
+		"bate_entregado": bate_entregado
 	}
 	
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
@@ -60,6 +62,7 @@ func load_game() -> Dictionary:
 			playerDamage = int(save_data.get("playerDamage", playerDamage))
 			levelNumber = int(save_data.get("levelNumber", levelNumber))
 			plasticoin = int(save_data.get("plasticoin", plasticoin))
+			bate_entregado = bool(save_data.get("bate_entregado", bate_entregado))
 			print("¡Juego cargado exitosamente!")
 			return save_data
 		else:
