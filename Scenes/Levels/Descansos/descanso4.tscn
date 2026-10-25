@@ -1314,7 +1314,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1371378540]
-position = Vector2(21, 124)
 
 [node name="Piso" type="TileMapLayer" parent="." unique_id=1363458734]
 scale = Vector2(0.5, 0.5)
