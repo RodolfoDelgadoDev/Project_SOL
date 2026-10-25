@@ -535,7 +535,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -564,7 +564,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2jcdm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -600,7 +600,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61ypq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -636,7 +636,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_40585")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 3.0
 }]
@@ -714,7 +714,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -764,7 +764,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsx8e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -814,7 +814,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mysr3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1011,7 +1011,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8f1rr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -1159,7 +1159,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -1237,7 +1237,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1308,7 +1308,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hclt3")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 3.0
 }]
@@ -1734,13 +1734,14 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ktron")
 autoplay = "default"
 
-[node name="NPC" parent="Scene Manager/Ver" unique_id=1919836479 instance=ExtResource("17_tppcg")]
+[node name="NPC" parent="Scene Manager/Ver" unique_id=1919836479 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(-4, 2)
 dialogue_lines1 = Array[String](["Ñe tienes fobia a las arañas?"])
 dialogue_lines3 = Array[String](["", "", "", ""])
 dialogue_lines4 = Array[String](["Cada vez está más lindo este lugar ¿No te parece? Aunque aún hay arañas :C", "Mi hermano me contó cuando fundaron este lugar, era bastante acogedor,", "pero esa explosión masiva de una planta de las afueras, pues, destruyó casi todo", "Lo bueno es que se puede reparar, pero va a ser eterna la espera ¿No crees?"])
 dialogue_lines5 = Array[String](["La eternidad y la espera me están afectando", "¿Qué soy impaciente? Pero es que mira cómo está esto todavía...", "Capaz necesito un descanso y ya, me voy unos días", "¿Más optimismo? Ay Coli, es complicado, pero aprecio tu preocupación"])
 npc_portrait = ExtResource("25_q4224")
+dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_c2nhh")
 
 [node name="Nicky" type="AnimatedSprite2D" parent="Scene Manager" unique_id=619602393]

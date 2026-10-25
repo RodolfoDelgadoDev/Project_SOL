@@ -1672,6 +1672,7 @@ autoplay = "default"
 [node name="NPC" parent="Seccion1/Dreadlocks" unique_id=219039030 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
 position = Vector2(0, 12)
 dialogue_lines1 = Array[String](["Eres una persona valiosa, Coli. No tengo más consejos que darte", "Solo disfruta los momentos lindos de la vida"])
+dialogue_lines7 = Array[String](["Hay algunos secretos ocultos por ahí, siempre es bueno comenzar de cero", "Un abrazo, Colibrí"])
 npc_portrait = ExtResource("6_df24l")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_n4614")

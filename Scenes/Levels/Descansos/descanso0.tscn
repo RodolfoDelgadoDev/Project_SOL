@@ -551,7 +551,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kuks6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -573,7 +573,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arpj0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -618,7 +618,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_auy3r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -766,7 +766,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5m58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -844,7 +844,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eho2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -894,7 +894,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_61oxn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1075,7 +1075,7 @@ autoplay = "default"
 frame_progress = 0.329814
 
 [node name="Olga" parent="Scene Manager/Olga" unique_id=1933175540 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("8_lg3p3")]
-dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "- Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "- En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
+dialogue_lines1 = Array[String](["Esta es la sala de descanso, aqui podrás reposar antes de la siguiente entrega.", "Puede que en tu primer trabajo las cosas se pongan un poco espinosas.", "En cuanto cruces esa puerta no hay vuelta atras, hasta que termines tu tarea, claro."])
 dialogue_lines2 = Array[String](["¡Sobreviviste a las plantas y esos murciélagos! Bueno, esa entrega era fácil.", "¿A este lugar le haría muy bien una limpieza, no?", "Si tenés alergia a los perros, más vale que te cuides en la próxima entrega."])
 dialogue_lines3 = Array[String](["Colibrí, ¿sos vos?, no te reconocí detrás de todos esos escombros.", "¿Le tenés miedo a los fantasmas?", "Dicen por ahí que en el edificio adonde vas, hay un cuadro embrujado.", "¡Y muchas personas han visto sombras! ¡Tené cuidado, Colibrí!"])
 dialogue_lines4 = Array[String](["¿Qué te pareció esa visita fantasmal? No esperaba volver a verte después de eso", "Podría decirte que el próximo nivel estarás en un lugar más cerrado", "Algunas criaturas no solo orgánicas sino que máquinas defectuosas también te puedes encontrar"])
