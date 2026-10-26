@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_dwf1a"]
-[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_gictb"]
+[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_gictb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_r0lr3"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_df24l"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_ufwyp"]
@@ -50,7 +50,6 @@
 [ext_resource type="PackedScene" uid="uid://c6gxvhkjgpuiu" path="res://Scenes/Entities/test_npc2.tscn" id="44_m7lnx"]
 [ext_resource type="Texture2D" uid="uid://dsu2pt8ti5bpu" path="res://art/NPCs Portraits/Jessica.png" id="45_crnk4"]
 [ext_resource type="Texture2D" uid="uid://nqtkf6tm5ydc" path="res://art/NPCs Portraits/Jaime.png" id="46_t7cpu"]
-[ext_resource type="AudioStream" uid="uid://ctksywh20comf" path="res://SFX/NPC_Voice6.mp3" id="47_mp4su"]
 [ext_resource type="Texture2D" uid="uid://csau7tgmrc0jb" path="res://art/NPCs Portraits/Pela.png" id="49_5aoix"]
 [ext_resource type="Texture2D" uid="uid://x0pavt1rs2ni" path="res://art/NPCs Portraits/Lety.png" id="51_xrfik"]
 [ext_resource type="Texture2D" uid="uid://c4qtw3i3ffyfq" path="res://art/NPCs/Milo/Milo.png" id="52_s41a8"]
@@ -2311,8 +2310,6 @@ npc_portrait1 = ExtResource("45_crnk4")
 npc_portrait2 = ExtResource("46_t7cpu")
 npc_portrait3 = ExtResource("58_rxiha")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
-voice_sound1 = ExtResource("40_oot1f")
-voice_sound2 = ExtResource("47_mp4su")
 
 [node name="Olga2" type="AnimatedSprite2D" parent="Scene Manager" unique_id=682323321]
 position = Vector2(-200, -75)
