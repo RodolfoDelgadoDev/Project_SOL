@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://dr17f502lsjeq" path="res://Scenes/timer.tscn" id="11_8rrdm"]
 [ext_resource type="Texture2D" uid="uid://ctwbe7inacq6k" path="res://animations/Doors/Tutorial/Tutorial-Puerta.png" id="11_im21m"]
 [ext_resource type="Texture2D" uid="uid://dbgt2gn6vwfj7" path="res://art/keyboard.png" id="11_lrvp7"]
-[ext_resource type="Script" uid="uid://httgp8316njb" path="res://scripts/flechas.gd" id="11_n5k16"]
+[ext_resource type="Script" uid="uid://bulht4qi8pje6" path="res://scripts/flechas.gd" id="11_n5k16"]
 [ext_resource type="FontFile" uid="uid://bc632fhpjd3b8" path="res://fonts/Pixleify Sans/PixelifySans-VariableFont_wght.ttf" id="12_5s8cv"]
 [ext_resource type="Texture2D" uid="uid://72molumf43rx" path="res://art/barra.png" id="14_2twqs"]
 [ext_resource type="PackedScene" uid="uid://bc07026ptp2sm" path="res://Scenes/scene_transition.tscn" id="14_8qgl7"]
-[ext_resource type="Script" uid="uid://otpjpo1juoxb" path="res://scripts/barra_coso.gd" id="16_jmfc5"]
+[ext_resource type="Script" uid="uid://dp82gnq736afm" path="res://scripts/barra_coso.gd" id="16_jmfc5"]
 [ext_resource type="AudioStream" uid="uid://h4fw8bn8b7cf" path="res://Music/totorial.mp3" id="17_5tnc2"]
 [ext_resource type="PackedScene" uid="uid://dtt3stb4e27la" path="res://Scenes/Entities/trap5.tscn" id="20_she10"]
 [ext_resource type="AudioStream" uid="uid://sh5a1iwt3kmb" path="res://SFX/trapVidrio1.mp3" id="21_f13fh"]
@@ -803,7 +803,7 @@ patrol_path = Array[Vector2]([Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vecto
 
 [node name="TheBoss" parent="Scene Manager" unique_id=560627979 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("7_2pvst")]
 position = Vector2(56, -121)
-dialogue_lines = Array[String](["¿Tarde en tu primer día?", "Solo voy a explicarlo una vez...", "Tu tarea es simple, llevar el paquete hasta el cliente.", "Cada segundo que pasa, cada herida que te haces...", "Influirá sobre el estado del paquete.", "Por suerte, las botellas de energía te ayudarán a recuperar un poco.", "Intenta llegar rápido, y no te demores peleando.", "A veces, es mejor esquivar que luchar.", "Vamos, que se enfría el paquete!"])
+dialogue_lines = Array[String](["¿Tarde en tu primer día?", "Solo voy a explicarlo una vez...", "Tu tarea es simple, llevar el paquete hasta el cliente.", "Cada segundo que pasa, cada herida que te haces...", "Influirá sobre el estado del paquete.", "Por suerte, las botellas de energía te ayudarán a recuperar un poco.", "Intenta llegar rápido, y no te demores peleando.", "A veces, es mejor esquivar que luchar.", "Vamos ¡Que se enfría el paquete!"])
 npc_portrait = ExtResource("7_mgrnj")
 dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("8_sfxib")

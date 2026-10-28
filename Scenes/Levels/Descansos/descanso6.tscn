@@ -1419,7 +1419,7 @@ autoplay = "default"
 [node name="NPC" parent="Seccion1/Dreadlocks" unique_id=1168601875 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_1213d")]
 position = Vector2(0, 12)
 dialogue_lines6 = Array[String](["Ha sido un camino largo, ¿no es así? Agradezco tu esfuerzo, Colibrí, ahora me gustaria que descanses un rato.", "¿Querés un té?", "*Has recibido un té de limón*", "¿El ascenso de Juanito? Sí, ya se pudo gracias a tu ayuda."])
-dialogue_lines7 = Array[String](["Ha sido un camino largo, te esforzaste un montón, Colibrí, ahora me gustaría que descanses un rato", "¿Quieres un té?", "*Has recibido un té de durazno*"])
+dialogue_lines7 = Array[String](["Ha sido un camino largo, te esforzaste un montón, Colibrí, ahora me gustaría que descanses un rato.", "¿Quieres un té?", "*Has recibido un té de durazno*"])
 npc_portrait = ExtResource("5_yn6tp")
 dialogue_manager = NodePath("../../../Scene Manager/CanvasLayer/DialogueBox")
 voice_sound = ExtResource("19_8d5ik")

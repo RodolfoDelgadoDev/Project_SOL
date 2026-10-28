@@ -3728,8 +3728,8 @@ position = Vector2(39, -74)
 scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="Scene Manager/Olivia" unique_id=472261437 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
-dialogue_lines1 = Array[String](["¿¡QUÉEEE?! Sabía que eras rápidis, ¡pero no un luchador!", "Hasta la chica punk dijo que pasaste del cacas al destacas", "Espera, ESPERA. Te recomiendo esta canción Miracles de... The D? The Re Do? Algo así era. Es una canción muuuy antigua, pero muy buena. Seguro que los raros de al lado la conocen."])
-dialogue_lines8 = Array[String](["¿¡QUÉEEE?! Sabía que eras rápidis, ¡pero no un luchador!", "Hasta la chica punk dijo que pasaste del cacas al destacas", "Espera, ESPERA. Te recomiendo esta canción Miracles de... The D? The Re Do? Algo así era. Es una canción muuuy antigua, pero muy buena. Seguro que los raros de al lado la conocen."])
+dialogue_lines1 = Array[String](["¿¡QUÉEEE?! Sabía que eras rápidis, ¡pero no un luchador!", "Hasta la chica punk dijo que pasaste del cacas al destacas.", "Espera, ESPERA. Te recomiendo esta canción Miracles de... The D? The Re Do? Algo así era. Es una canción muuuy antigua, pero muy buena. Seguro que los raros de al lado la conocen."])
+dialogue_lines8 = Array[String](["¿¡QUÉEEE?! Sabía que eras rápidis, ¡pero no un luchador!", "Hasta la chica punk dijo que pasaste del cacas al destacas.", "Espera, ESPERA. Te recomiendo esta canción Miracles de... The D? The Re Do? Algo así era. Es una canción muuuy antigua, pero muy buena. Seguro que los raros de al lado la conocen."])
 npc_portrait = ExtResource("25_thiyx")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")
@@ -3794,8 +3794,8 @@ frame_progress = 0.840665
 
 [node name="NPC" parent="Scene Manager/Y" unique_id=1119149732 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("5_v5tso")]
 position = Vector2(0, 2)
-dialogue_lines1 = Array[String](["Hermano...Finalmente...", "AL FIN TERMINÉ.", "Ay Dios, ahora no sé qué dibujar. Me bloqueé.", "...ya", "Ya pensaré en algo para hacer afuera, obvio con tu ayuda, guardián.", "D dijo que quería hablar contigo."])
-dialogue_lines8 = Array[String](["Hermano...Finalmente...", "AL FIN TERMINÉ.", "Ay Dios, ahora no sé qué dibujar. Me bloqueé.", "...ya", "Ya pensaré en algo para hacer afuera, obvio con tu ayuda, guardián.", "D dijo que quería hablar contigo."])
+dialogue_lines1 = Array[String](["Hermano...Finalmente...", "AL FIN TERMINÉ.", "Ay Dios, ahora no sé qué dibujar. Me bloqueé.", "...ya.", "Ya pensaré en algo para hacer afuera, obvio con tu ayuda, guardián.", "D dijo que quería hablar contigo."])
+dialogue_lines8 = Array[String](["Hermano...Finalmente...", "AL FIN TERMINÉ.", "Ay Dios, ahora no sé qué dibujar. Me bloqueé.", "...ya.", "Ya pensaré en algo para hacer afuera, obvio con tu ayuda, guardián.", "D dijo que quería hablar contigo."])
 npc_portrait = ExtResource("35_c34uo")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("7_4w4ue")
@@ -3936,7 +3936,7 @@ script = ExtResource("59_skrba")
 
 [node name="NPC3" parent="Scene Manager/Pablo" unique_id=738062100 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("60_6xr0p")]
 position = Vector2(176, -18)
-dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conozcas por participar en diseños artisticos", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida", "Alen fue como un cometa, nos lanzó el software especial para llevar los registros y luego no lo volvimos a ver, aún es un misterio", "Antes este lugar no tenía nombre, después del desastre, ponerle Proyecto sol fue idea de D y Eric", "Ale escribió el documento de una especie nueva de murciélagos, mientras Jhon peleaba con uno", "Santi con Wanda diseñaron una alerta para cuando nuestra mochila está en riesgo", "Gaby diseñó varias habitaciones de la guarida con Juanito"])
+dialogue_lines1 = Array[String](["Hola, soy Pablo tal vez me conozcas por participar en diseños artisticos.", "Te puedo contar acerca de Javi, ayudó a programar ciertos sistemas para la electricidad de la guarida.", "Alen fue como un cometa, nos lanzó el software especial para llevar los registros y luego no lo volvimos a ver, aún es un misterio.", "Antes este lugar no tenía nombre, después del desastre, ponerle Proyecto sol fue idea de D y Eric.", "Ale escribió el documento de una especie nueva de murciélagos, mientras Jhon peleaba con uno.", "Santi con Wanda diseñaron una alerta para cuando nuestra mochila está en riesgo.", "Gaby diseñó varias habitaciones de la guarida con Juanito."])
 npc_portrait = ExtResource("61_tkmy8")
 dialogue_manager = NodePath("../../CanvasLayer/DialogueBox")
 voice_sound = ExtResource("62_emvc6")
