@@ -1286,7 +1286,6 @@ autoplay = "default"
 
 [node name="NPC" parent="Seccion1/Dreadlocks" unique_id=545577089 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_tppcg")]
 position = Vector2(0, 12)
-dialogue_lines1 = Array[String](["Buenas, ahora trabajo aqui :D"])
 dialogue_lines4 = Array[String](["Querido Colibrí, ¿cómo has estado? Veo que venís haciendo un excelente trabajo. Gracias.", "Hice un smoothie especial para vos, para que recargues energía, las cosas se empiezan a complicar más.", "*Recibiste un Smoothie*", "¡Mucha suerte!"])
 dialogue_lines5 = Array[String](["Hola, Co- ¿Qué casi logras conseguir todo, pero no pudiste?", "Siempre puedes practicar en otro momento, no todo proceso es lineal, ánimos."])
 dialogue_lines6 = Array[String](["Hoy estoy un poco ocupado ayudando a los demás.", "Se han complicado las cosas de repente, pero lograremos solucionarlo."])

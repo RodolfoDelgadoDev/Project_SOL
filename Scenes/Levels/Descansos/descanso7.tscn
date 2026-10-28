@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crn2d55k1tg52" path="res://art/Billar_TileMap.png" id="1_eywyh"]
 [ext_resource type="PackedScene" uid="uid://daucbvf8lcq2w" path="res://Scenes/Entities/lamparaLava1.tscn" id="2_7fovd"]
 [ext_resource type="Texture2D" uid="uid://cf31d3uorxnl5" path="res://art/NPCs/Dreadlocks/Dreadlocks Idle.png" id="4_dwf1a"]
-[ext_resource type="Script" uid="uid://buaibasau0sej" path="res://scripts/color_lights.gd" id="4_gictb"]
+[ext_resource type="Script" uid="uid://b5uoaslcym7pr" path="res://scripts/color_lights.gd" id="4_gictb"]
 [ext_resource type="Texture2D" uid="uid://03bd7vg318pb" path="res://art/Lava Light Bleue.png" id="5_r0lr3"]
 [ext_resource type="Texture2D" uid="uid://dqyllpp1j5gex" path="res://art/NPCs Portraits/Dreadlocks-Portrait.png" id="6_df24l"]
 [ext_resource type="Texture2D" uid="uid://0gi3mjgkvtyu" path="res://art/Spider 2.png" id="7_ufwyp"]
@@ -2126,14 +2126,6 @@ position = Vector2(4, 4)
 
 [node name="DialogueBox" parent="Scene Manager/CanvasLayer" unique_id=1041744095 instance=ExtResource("13_4ywpa")]
 
-[node name="NPC" parent="Scene Manager" unique_id=1396539329 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
-position = Vector2(-329, -75.46)
-scale = Vector2(0.27, 0.27)
-dialogue_lines1 = Array[String](["Ahora no, estoy en mi momento creativo"])
-npc_portrait = ExtResource("19_r6o2l")
-dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
-voice_sound = ExtResource("19_n4614")
-
 [node name="Scene_Transition" parent="Scene Manager" unique_id=2096577678 instance=ExtResource("14_73hre")]
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Scene Manager" unique_id=905100253]
@@ -2152,6 +2144,15 @@ hurtSFX = null
 [node name="SeñorGato" parent="Scene Manager" unique_id=1318757404 instance=ExtResource("17_fn6wd")]
 position = Vector2(-329, -76)
 scale = Vector2(0.27, 0.27)
+
+[node name="NPC" parent="Scene Manager" unique_id=1396539329 node_paths=PackedStringArray("dialogue_manager") instance=ExtResource("17_qbucu")]
+position = Vector2(-329, -75.46)
+scale = Vector2(0.27, 0.27)
+dialogue_lines1 = Array[String](["", ""])
+dialogue_lines7 = Array[String](["Miau, miau.", "Buenas, soy el Sr Gato, a veces hablo. No le digas a nadie.", "Me gusta el salmón.", "Miau, miau."])
+npc_portrait = ExtResource("19_r6o2l")
+dialogue_manager = NodePath("../CanvasLayer/DialogueBox")
+voice_sound = ExtResource("19_n4614")
 
 [node name="Olivia" parent="Scene Manager" unique_id=1648689285 instance=ExtResource("19_pm4l3")]
 position = Vector2(41, -75)
